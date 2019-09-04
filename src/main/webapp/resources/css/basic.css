@@ -1,3 +1,4 @@
+
 /* Basic sample */
 @media(min-width: 768px) {
 	body {
@@ -26,32 +27,6 @@
 		left: -50%;
 		top: 0%
 	}
-
-
-	.button_nav_odd {
-		margin: 0px 0px;
-		display: inline-block;
-		width: 30px;
-		height: 100%;
-		writing-mode:vertical-lr 
-	}
-	
-	
-	.button_nav_even {
-		background-color: pink;
-		margin: 0px 0px;
-		display: inline-block;
-		width: 30px;
-		height: 100%;
-		writing-mode:vertical-lr 
-	}
-	button{
-		width:30px;
-		height:70px;
-		writing-mode:vertical-lr;
-		background-color: rgba( 255, 255, 255, 0.0 );
-	}
-
 }
 
 @media(max-width: 768px) {
@@ -118,10 +93,6 @@
 	border: 1px solid #dce0dd;
 }
 
-
-
-
-
 .flipbook-viewport .shadow {
 	-webkit-transition: -webkit-box-shadow 0.5s;
 	-moz-transition: -moz-box-shadow 0.5s;
@@ -135,6 +106,7 @@
 	box-shadow: 0 0 20px #ccc;
 }
 
+/* page_div */
 .page_content_odd{
 	background-image: url('../img/papper_odd.jpg');
 	background-size: cover;
@@ -157,60 +129,3 @@
 }
 
 
-
-/*첫 페이지 */
-.title_head{
-	height: 20%;
-	margin: 0% auto;
-}
-.title_main {
-    position: relative;
-	width: 25%; /* 원하는 너비 */
-	min-width: 100px;
-	margin: 0% auto;
-}
- 
-.title_main:before {
-    content: "";
-    display: block;
-    padding-top: 130%; /* 1:1 비율 */
-}
- 
-.title_content {
-	background-image: url('../img/joung.jpg');
-	background-size: cover;
-	background-color: #3eb561;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-	left: 0;
-	border: 4px solid skyblue;
-}
-.title_info{
-	width: 30%;
-	min-width: 100px;
-	margin: 0px auto;
-	text-align: center;
-}
-.title_footter{
-	position:absolute;
-    bottom:0;
-    width:100%;
-    height:20px;   
-	text-align: right;
-}
-
-
-#title_page{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
-}
-.title_content_odd{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
-}
-#last_page{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;	
-}
