@@ -31,7 +31,15 @@ function main() {
 	
 		}
 	</script>
+<script>
+import React from 'react';
 
+import {render} from 'react-dom';
+import Greeter from './Greeter';
+
+ReactDOM.render(<Greeter />, document.getElementById('root'));
+
+</script>
 </head>
 
 <body class="no-js">
@@ -47,6 +55,11 @@ function main() {
 						<div class="title_head">
 
 							<h1>delicious</h1>
+							<div id="root"></div>
+							<script src="resources/js/webpack/home.js"></script>
+
+							
+							
 						</div>
 						<div class="title_main">
 								<div class="title_content">1:1 비율</div>
