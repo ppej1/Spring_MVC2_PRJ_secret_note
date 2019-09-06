@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
     						<!-- title page -->
-						<div class="title_head">
+					<div class="title_head">
 
 							<h1>delicious01</h1>
 						</div>
@@ -21,6 +21,7 @@
 						</div>
 
 					</div>
+
 
 					
     

@@ -16,21 +16,26 @@
  			display: none;
  		}
 	</style>
-
+	
+	<!-- turn.js 관련  -->
  	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+ 	<!-- turn.js 커스텀  -->
 	<script src="resources/js/turnJs.js"></script>
 	<link href="resources/css/page_button.css"  rel="stylesheet">
-	
-	
+
+
 <script>
 function main(){
 
+		//$('.flipbook').turn("disable", true);
+
+	
 		$('#btnGo').on('click', function () {
 
 			$(".flipbook").turn("disable", false);
 			$(".flipbook").turn("page", 2);
-			//$('.flipbook').turn("disable", true);
+			$('.flipbook').turn("disable", true);
 		});
 
 
@@ -38,7 +43,7 @@ function main(){
 			alert("ddd");
 			$(".flipbook").turn("disable", false);
 			$(".flipbook").turn("page", 14);
-			//$('.flipbook').turn("disable", true);
+			$('.flipbook').turn("disable", true);
 		})
 
 	
