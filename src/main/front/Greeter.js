@@ -10,7 +10,7 @@ class Greeter extends Component {
 
     render() {
 
-        return ( <div>
+        return ( <div class = 'abc'>
             hello { config.greetText}
 
             </div>
