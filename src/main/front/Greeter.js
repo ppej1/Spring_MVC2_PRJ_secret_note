@@ -1,23 +1,23 @@
-import React, {Component} from 'react';  // 설치한 react
+import React, {
+    Component
+} from 'react'; // 설치한 react
 
 import config from './config.json';
 
 
 
-class Greeter extends Component{
+class Greeter extends Component {
 
-render() {
+    render() {
 
-return (
-<div>
-hello
-{config.greetText}
+        return ( <div>
+            hello { config.greetText}
 
-</div>
+            </div>
 
-);
+        );
 
-}
+    }
 
 }
 
