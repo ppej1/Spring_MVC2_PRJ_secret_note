@@ -46,9 +46,6 @@
 }
  
 .title_content {
-	background-image: url('../img/joung.jpg');
-	background-size: cover;
-	background-color: #3eb561;
     position: absolute;
     top: 0;
     right: 0;
@@ -72,16 +69,3 @@
 	text-align: right;
 }
 
-
-#title_page{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
-}
-.title_content_odd{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
-}
-#last_page{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;	
-}

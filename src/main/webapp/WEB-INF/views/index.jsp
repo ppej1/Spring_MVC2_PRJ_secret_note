@@ -19,19 +19,23 @@
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script src="resources/js/turnJs.js"></script>
-	<link href="resources/css/page_button.css"  rel="stylesheet">
 	<script>
 function main() {		
 			$('.flipbook').turn("disable", true);
 
 			$('#btnlogin').on('click',function(){
-				alert("dd");
 				$("#login_form").submit();
 			});
 	
 		}
 	</script>
 
+
+
+	<!-- Css -->
+	<link href="resources/css/basic.css"  rel="stylesheet">
+	<link href="resources/css/page_button.css"  rel="stylesheet">
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 </head>
 
 <body class="no-js">
@@ -47,8 +51,6 @@ function main() {
 						<div class="title_head">
 
 							<h1>delicious</h1>
-							<div id="root"></div>
-							<script src="resources/js/webpack/home.js"></script>
 
 							
 							

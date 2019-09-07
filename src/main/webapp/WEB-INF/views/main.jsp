@@ -22,8 +22,9 @@
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
  	<!-- turn.js 커스텀  -->
 	<script src="resources/js/turnJs.js"></script>
+	<link href="resources/css/basic.css"  rel="stylesheet">
 	<link href="resources/css/page_button.css"  rel="stylesheet">
-
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 
 <script>
 function main(){

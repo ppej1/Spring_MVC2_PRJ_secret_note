@@ -5,8 +5,6 @@
 		overflow: hidden;
 		margin: 0;
 		padding: 0;
-		background-image: url('../img/foodTable.jpg');
-		background-size: cover;
 	}
 
 	.flipbook-viewport {
@@ -89,7 +87,6 @@
 	-ms-user-select: none;
 	user-select: none;
 	margin: 0;
-	background-image: url('../img/papper.jpg');
 	border: 1px solid #dce0dd;
 }
 
@@ -108,8 +105,6 @@
 
 /* page_div */
 .page_content_odd{
-	background-image: url('../img/papper_odd.jpg');
-	background-size: cover;
 	margin: 0px 0px;
 	display: inline-block;
 	width: calc(100% - 30px);
@@ -118,8 +113,6 @@
 	overflow-y: scroll;
 }
 .page_content_even {
-	background-image: url('../img/papper_even.jpg');
-	background-size: contain;
 	margin: 0px 0px;
 	display: inline-block;
 	width: calc(100% - 30px);

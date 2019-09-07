@@ -4,6 +4,7 @@ module.exports = {
   context: path.resolve(__dirname, 'front'),
   entry: {
     home: './home.js',
+    root: './root.js',
   },
   output: {
     path: path.resolve(__dirname, 'webapp/resources/js/webpack'),
