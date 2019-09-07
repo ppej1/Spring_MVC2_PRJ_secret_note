@@ -63,57 +63,57 @@ function main(){
  				<!--1 page-->
  				<div -ms-overflow-style: none; id="title_page">
  					<div class="page_content_odd title_content_odd">
- 						<jsp:include page="page/page_title.jsp" flush="false" />
- 						<jsp:include page="page/button_odd.jsp" flush="false" />
+ 						<jsp:include page="page/page_title.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
  					</div>
  					<!--2 page-->
  					<div id="page_2">
- 						<jsp:include page="page/button_even.jsp" flush="false" />
- 						<jsp:include page="page/page_2.jsp" flush="false" />
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_2.jsp"/>
  					</div>
  					<!--3 page-->
  					<div id="page_3">
- 						<jsp:include page="page/page_3.jsp" flush="false" />
- 						<jsp:include page="page/button_odd.jsp" flush="false" />
+ 						<jsp:include page="page/page_3.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
  					</div>
  					<!--4 page-->
  					<div id="page_4">
- 						<jsp:include page="page/button_even.jsp" flush="false" />
- 						<jsp:include page="page/page_4.jsp" flush="false" />
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_4.jsp"/>
  					</div>
  					<!--5 page-->
  					<div id="page_5">
- 						<jsp:include page="page/page_5.jsp" flush="false" />
- 						<jsp:include page="page/button_odd.jsp" flush="false" />
+ 						<jsp:include page="page/page_5.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
  					</div>
  					<!--6 page-->
  					<div id="page_6">
- 						<jsp:include page="page/button_even.jsp" flush="false" />
- 						<jsp:include page="page/page_6.jsp" flush="false" />
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_6.jsp"/>
  					</div>
  					<!--7 page-->
  					<div id="page_7">
- 						<jsp:include page="page/page_7.jsp" flush="false" />
- 						<jsp:include page="page/button_odd.jsp" flush="false" />
+ 						<jsp:include page="page/page_7.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
 
  					</div>
  					<!-- page_set end -->
  					<!--8 page-->
  					<div id="page_8">
- 						<jsp:include page="page/button_even.jsp" flush="false" />
- 						<jsp:include page="page/page_8.jsp" flush="false" />
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_8.jsp"/>
 
  					</div>
  					<!--9 page-->
  					<div id="page_9">
- 						<jsp:include page="page/page_9.jsp" flush="false" />
- 						<jsp:include page="page/button_odd.jsp" flush="false" />
+ 						<jsp:include page="page/page_9.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
 
  					</div>
  					<!-- page_set end -->
  					<!--last  page-->
  					<div id="last_page">
- 						<jsp:include page="page/page_last.jsp" flush="false" />
+ 						<jsp:include page="page/page_last.jsp"/>
 
  					</div>
  				</div>

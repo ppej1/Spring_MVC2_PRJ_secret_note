@@ -21,7 +21,7 @@
 	<script src="resources/js/turnJs.js"></script>
 	<script>
 function main() {		
-			$('.flipbook').turn("disable", true);
+			//$('.flipbook').turn("disable", true);
 
 			$('#btnlogin').on('click',function(){
 				$("#login_form").submit();
@@ -79,54 +79,56 @@ function main() {
 					
 
 				</div>
-				<!--2 page-->
-				<div id="page_2">
-					<div class="button_nav_even">
-						<!-- even page   -->
-						dfdsfsdf
-						<button type="button" id="btnGo">
-							tagdfdf
-						</button>
-						<button type="button" id="btnGo">
-							tagdfdfd
-						</button>
-						<button type="button" id="btnGo">
-							tag
-						</button>
-					</div>
-					<div class="page_content_even">
-						<!-- even page   -->
+ 					<!--2 page-->
+ 					<div id="page_2">
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_2.jsp"/>
+ 					</div>
+ 					<!--3 page-->
+ 					<div id="page_3">
+ 						<jsp:include page="page/page_3.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
+ 					</div>
+ 					<!--4 page-->
+ 					<div id="page_4">
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_4.jsp"/>
+ 					</div>
+ 					<!--5 page-->
+ 					<div id="page_5">
+ 						<jsp:include page="page/page_5.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
+ 					</div>
+ 					<!--6 page-->
+ 					<div id="page_6">
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_6.jsp"/>
+ 					</div>
+ 					<!--7 page-->
+ 					<div id="page_7">
+ 						<jsp:include page="page/page_7.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
 
-					</div>
-				</div>
-				<!--3 page-->
-				<div id="page_3">
-					<div class="page_content_odd">
-						<!-- odd page  main -->
+ 					</div>
+ 					<!-- page_set end -->
+ 					<!--8 page-->
+ 					<div id="page_8">
+ 						<jsp:include page="page/button_even.jsp"/>
+ 						<jsp:include page="page/page_8.jsp"/>
 
+ 					</div>
+ 					<!--9 page-->
+ 					<div id="page_9">
+ 						<jsp:include page="page/page_9.jsp"/>
+ 						<jsp:include page="page/button_odd.jsp"/>
 
-					</div>
-					<div class="button_nav_odd">
-						<!-- odd page  nav side -->
-						dfdsfsdf
-						<button type="button" id="btnGo">
-							tagdfdf
-						</button>
-						<button type="button" id="btnGo">
-							tagdfdfd
-						</button>
-						<button type="button" id="btnGo">
-							tag
-						</button>
-					</div>
-				</div>
-				
-				<!--last  page-->
-				<div id="last_page">
-						<div class="title_footter">
-								&copy;compuny-sesoc
-							</div>
-				</div>
+ 					</div>
+ 					<!-- page_set end -->
+ 					<!--last  page-->
+ 					<div id="last_page">
+ 						<jsp:include page="page/page_last.jsp"/>
+
+ 					</div>
 			</div>
 
 		</div>
