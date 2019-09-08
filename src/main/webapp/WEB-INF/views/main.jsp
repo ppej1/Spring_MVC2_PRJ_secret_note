@@ -7,6 +7,20 @@
  <head>
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="resources/css/main2.css"  rel="stylesheet">
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+	
+	<!-- turn.js 관련  -->
+ 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
+ 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
+	<script src="resources/js/turnJs.js"></script>
+
+
+
+ 
+ 
  	<style>
 	 	body {
  			background-color: black;
@@ -17,50 +31,38 @@
  		}
 	</style>
 
+	<script>
+	function main(){
 	
-	<!-- turn.js 관련  -->
- 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
- 	
-
- 	<!-- turn.js 커스텀  -->
- 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script src="resources/js/turnJs.js"></script>
-	<link href="resources/css/main.css"  rel="stylesheet">
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
-
-<script>
-function main(){
-
-		//$('.flipbook').turn("disable", true);
-
+			//$('.flipbook').turn("disable", true);
 	
-		$('#btnGo').on('click', function () {
-
-			$(".flipbook").turn("disable", false);
-			$(".flipbook").turn("page", 2);
-			$('.flipbook').turn("disable", true);
-		});
-
-
-		$("#btn_login").on('click', function () {
-			alert("ddd");
-			$(".flipbook").turn("disable", false);
-			$(".flipbook").turn("page", 14);
-			$('.flipbook').turn("disable", true);
-		})
-
+		
+			$('#btnGo').on('click', function () {
 	
-}
+				$(".flipbook").turn("disable", false);
+				$(".flipbook").turn("page", 2);
+				$('.flipbook').turn("disable", true);
+			});
+	
+	
+			$("#btn_login").on('click', function () {
+				alert("ddd");
+				$(".flipbook").turn("disable", false);
+				$(".flipbook").turn("page", 14);
+				$('.flipbook').turn("disable", true);
+			})
+	
+		
+	}
 
 
-</script>
+	</script>
  </head>
 
  <body class="no-js">
 
  	<div class="flipbook-viewport">
- 		<div class="container">
+ 		<div class="flipbook-container">
 
  			<div class="flipbook">
  				<!--1 page-->

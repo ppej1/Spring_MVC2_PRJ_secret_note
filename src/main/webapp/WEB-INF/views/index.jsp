@@ -7,6 +7,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Css -->
+	<link href="resources/css/main2.css"  rel="stylesheet">
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
+	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+	<script src="resources/js/turnJs.js"></script>
+	
+	
 	<style>
 	 	body {
  			background-color: black;
@@ -16,9 +26,7 @@
  			display: none;
  		}
 	</style>
-	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
-	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script src="resources/js/turnJs.js"></script>
+
 	<script>
 	function main() {		
 			//$('.flipbook').turn("disable", true);
@@ -30,16 +38,14 @@
 		}
 	</script>
 
-	<!-- Css -->
-	<link href="resources/css/main.css"  rel="stylesheet">
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+
+
 </head>
 
 <body class="no-js">
 
 	<div class="flipbook-viewport">
-		<div class="container">
+		<div class="flipbook-container">
 
 			<div class="flipbook">
 				<!--1 page-->
@@ -50,8 +56,6 @@
 
 							<h1>delicious</h1>
 
-							
-							
 						</div>
 						<div class="title_main">
 								<div class="title_content">1:1 비율</div>
@@ -79,8 +83,6 @@
 				</div>
  					<!--2 page-->
  					<div id="page_2">
-		<div id="home"></div>
-		<script src="resources/js/webpack/home.js"></script>
 
  					</div>
  					<!--3 page-->
