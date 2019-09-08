@@ -5,8 +5,8 @@
   <!-- even page   -->
 <div>
 
-<div id="root"></div>
-<div id="home"></div>
+		<div id="root"></div>
+		<div id="home"></div>
 </div>
 
 </div>

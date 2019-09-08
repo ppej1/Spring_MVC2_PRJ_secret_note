@@ -8,8 +8,8 @@
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="resources/css/main2.css"  rel="stylesheet">
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/main.css"  rel="stylesheet">
+	<link href="resources/css/pages_button2.css"  rel="stylesheet">
 	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 	
 	<!-- turn.js 관련  -->

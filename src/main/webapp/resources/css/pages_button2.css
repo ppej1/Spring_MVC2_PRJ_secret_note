@@ -19,12 +19,12 @@
 		writing-mode:vertical-lr 
 	}
 	
-	button{
-		width:80px;
-		height: 80px;
+	.button_nav_even button{
 		background-color: rgba( 255, 255, 255, 0.0 );
 	}
-
+	.button_nav_odd button{
+		background-color: rgba( 255, 255, 255, 0.0 );
+	}
 }
 
 /*첫 페이지 */

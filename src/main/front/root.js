@@ -2,8 +2,8 @@
 import React from 'react';
 
 import {render} from 'react-dom';
-
+import Example from './Example';
 render(
-<h2>root</h2>
+<Example/>
 		,
 		document.getElementById('root'));

@@ -9,8 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Css -->
-	<link href="resources/css/main2.css"  rel="stylesheet">
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/main.css"  rel="stylesheet">
+	<link href="resources/css/pages_button2.css"  rel="stylesheet">
 	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
