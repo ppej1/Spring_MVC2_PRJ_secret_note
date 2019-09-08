@@ -9,13 +9,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Css -->
+
+	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
+
 	<link href="resources/css/main.css"  rel="stylesheet">
 	<link href="resources/css/pages_button2.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
-	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
-	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script src="resources/js/turnJs.js"></script>
-	
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">	
 	
 	<style>
 	 	body {
@@ -103,7 +102,8 @@
 
 
 
-
+	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+	<script src="resources/js/turnJs.js"></script>
 </body>
 
 </html>
