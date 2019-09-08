@@ -3,19 +3,13 @@
 
 <div class="page_content_even">
   <!-- even page   -->
-	<div>
-	<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+<div>
 
-<button type="button" class="btn btn-link">Link</button>
-	
-	
-	</div>
+<div id="root"></div>
+<div id="home"></div>
+</div>
 
 </div>
+
+	<script src="resources/js/webpack/root.js"></script>
+	<script src="resources/js/webpack/home.js"></script>

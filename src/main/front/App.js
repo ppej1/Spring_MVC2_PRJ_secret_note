@@ -2,7 +2,6 @@ import React from 'react';
 import { Table } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 export default class App extends React.Component {
   render() {
     return (

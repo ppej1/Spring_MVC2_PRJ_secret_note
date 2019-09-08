@@ -20,11 +20,10 @@
 	.flipbook-viewport .container {
 		position: absolute;
 		top: 50px;
-		left: 50%;
+		left: 40%;
 		margin: auto;
 		padding-right: 0px;
     	padding-left: 0px;
-
 	}
 
 	.flipbook-viewport .flipbook {

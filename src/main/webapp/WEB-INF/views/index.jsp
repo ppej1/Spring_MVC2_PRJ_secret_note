@@ -30,11 +30,9 @@
 		}
 	</script>
 
-
-
 	<!-- Css -->
-	<link href="resources/css/basic.css"  rel="stylesheet">
-	<link href="resources/css/page_button.css"  rel="stylesheet">
+	<link href="resources/css/main.css"  rel="stylesheet">
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
 	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 </head>
 
@@ -81,6 +79,8 @@
 				</div>
  					<!--2 page-->
  					<div id="page_2">
+		<div id="home"></div>
+		<script src="resources/js/webpack/home.js"></script>
 
  					</div>
  					<!--3 page-->
