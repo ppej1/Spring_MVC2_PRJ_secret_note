@@ -34,7 +34,8 @@
  			});
 
  			$('body').removeClass('no-js');
- 			
+ 			alert("#flipbook has " + $("#flipbook").turn("pages") + " pages");
+ 			$('.flipbook').turn("disable", true);
  			main();
  			
  		}
