@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   context: path.resolve(__dirname, 'front'),
   entry: {
-
     button_even: './button_even.js',
+
   },
   output: {
     path: path.resolve(__dirname, 'webapp/resources/js/webpack'),
