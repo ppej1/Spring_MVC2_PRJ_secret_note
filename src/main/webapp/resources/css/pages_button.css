@@ -1,0 +1,79 @@
+
+/*button_div  */
+@media(min-width: 768px) {
+	.button_nav_odd {
+		margin: 0px 0px;
+		display: inline-block;
+		width: 30px;
+		height: 100%;
+		writing-mode:vertical-lr 
+	}
+	
+	
+	.button_nav_even {
+		background-color: pink;
+		margin: 0px 0px;
+		display: inline-block;
+		width: 30px;
+		height: 100%;
+		writing-mode:vertical-lr 
+	}
+	
+	.button_nav_even button{
+		width: 30px;
+		height: 60px;
+		font-size: 1em;
+		writing-mode:vertical-lr 
+	}
+	.button_nav_odd button{
+		width: 30px;
+		height: 60px;
+		font-size: 1em;
+		writing-mode:vertical-lr 
+	}
+	
+	
+}
+
+/*첫 페이지 */
+.title_head{
+	height: 20%;
+	margin: 0% auto;
+}
+.title_main {
+    position: relative;
+	width: 25%; /* 원하는 너비 */
+	min-width: 100px;
+	margin: 0% auto;
+}
+ 
+.title_main:before {
+    content: "";
+    display: block;
+    padding-top: 130%; /* 1:1 비율 */
+}
+ 
+.title_content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	left: 0;
+	border: 4px solid skyblue;
+}
+.title_info{
+	width: 30%;
+	min-width: 100px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+
+.title_footter{
+	position:absolute;
+    bottom:0;
+    width:100%;
+    height:20px;   
+	text-align: right;
+}
+

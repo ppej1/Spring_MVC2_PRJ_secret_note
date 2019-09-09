@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   context: path.resolve(__dirname, 'front'),
   entry: {
-    home: './home.js',
-    root: './root.js',
+
+    button_even: './button_even.js',
   },
   output: {
     path: path.resolve(__dirname, 'webapp/resources/js/webpack'),

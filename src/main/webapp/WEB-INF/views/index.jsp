@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
 
 	<link href="resources/css/main.css"  rel="stylesheet">
-	<link href="resources/css/pages_button2.css"  rel="stylesheet">
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
 	<link href="resources/css/backgroundImg.css"  rel="stylesheet">	
 	
 	<style>

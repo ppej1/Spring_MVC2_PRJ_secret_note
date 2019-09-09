@@ -1,16 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<head>
 
+</head>
     				<div class="button_nav_odd">
-						<!-- title  nav side -->
-						모두의 주방
-						<button type="button" id="btnGo1">
-							tagdfdf
-						</button>
-						<button type="button" id="btnGo2">
-							tagdfdfd
-						</button>
-						<button type="button" id="btnGo">
-							tag
-						</button>
+							<div id='button_even'></div>
+							
 					</div>
+					
+					
+						<script src="resources/js/webpack/button_even.js"></script>
