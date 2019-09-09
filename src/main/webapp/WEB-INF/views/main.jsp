@@ -25,19 +25,8 @@
 	<script>
 	function main(){
 			$('.flipbook').turn("disable", true);
-			navButton();
-	}
-	function navButton(){
-		$('.btn-go-menu').on('click', function () {
-			$(".flipbook").turn("disable", false);
-			$(".flipbook").turn("page", 2);
-			$('.flipbook').turn("disable", true);
-		});	
-		$('.btn-go-check').on('click', function () {
-			$(".flipbook").turn("disable", false);
-			$(".flipbook").turn("page", 4);
-			$('.flipbook').turn("disable", true);
-		});	
+			
+ 	
 		$('.btn-go-stock').on('click', function () {
 			$(".flipbook").turn("disable", false);
 			$(".flipbook").turn("page", 8);
@@ -58,6 +47,9 @@
 			$(".flipbook").turn("page", 20);
 			$('.flipbook').turn("disable", true);	
 		});	
+	}
+	function navButton(){
+		
 	}
 	</script>
  </head>
@@ -189,6 +181,8 @@
 	<!-- turn.js 관련  -->
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
 	<script src="resources/js/turnJs.js"></script>
+	<script src="resources/js/nav.js"></script>
+	
  </body>
 
  </html>
