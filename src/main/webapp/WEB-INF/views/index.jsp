@@ -90,12 +90,12 @@
 				</div>
 	 					<!-- 인삿말 -->
 						<div id="page_0">
-	 						<jsp:include page="page/page_0.jsp"/>
+	 						<jsp:include page="page/page_00.jsp"/>
 	 					</div>
 	 					
 	 					<!-- 회원가입 및 약관 -->
 		 				<div id="page_1">
-		 					<jsp:include page="page/page_1.jsp"/>
+		 					<jsp:include page="page/page_01.jsp"/>
 		 				</div>
 
 			</div>

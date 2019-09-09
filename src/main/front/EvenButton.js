@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class EvenButton extends React.Component {
 	render() {
 	    return (
-	    <div>
-	    </div>
 	      <div>
 	        <Button color="primary" id="main_page">メーン</Button>
 	        <Button color="secondary" id="check_page">チェック</Button>
