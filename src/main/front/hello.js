@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const hello = (props) => {
   return (

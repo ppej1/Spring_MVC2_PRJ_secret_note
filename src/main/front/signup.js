@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Table } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class signup extends React.Component {
 	

@@ -22,9 +22,10 @@
  		}
 	</style>
 
-	<script>
+		<script>
 	function main(){
-			$('.flipbook').turn("disable", true);
+		alert("#flipbook has " + $("#flipbook").turn("pages") + " pages");
+		$('.flipbook').turn("disable", true);
 			
 		$('.btn-go-menu').on('click', function () {
 			$('.flipbook').turn("disable", false);
@@ -58,10 +59,9 @@
 			$('.flipbook').turn("disable", true);
 		});	
 	}
-	function navButton(){
-		
-	}
 	</script>
+
+
  </head>
 
  <body class="no-js">
@@ -191,6 +191,8 @@
 	<!-- turn.js 관련  -->
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
 	<script src="resources/js/turnJs.js"></script>
+	
+
 	
  </body>
 

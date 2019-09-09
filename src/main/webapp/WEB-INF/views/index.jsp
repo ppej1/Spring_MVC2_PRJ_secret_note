@@ -27,9 +27,7 @@
 	</style>
 
 	<script>
-	function main() {		
-			$('.flipbook').turn("disable", true);
-			
+	function main() {					
 			$('#btnlogin').on('click',function(){
 				$("#login_form").submit();
 			});
@@ -89,12 +87,12 @@
 
 				</div>
 	 					<!-- 인삿말 -->
-						<div id="page_0">
+						<div id="page_00">
 	 						<jsp:include page="page/page_00.jsp"/>
 	 					</div>
 	 					
 	 					<!-- 회원가입 및 약관 -->
-		 				<div id="page_1">
+		 				<div id="page_01">
 		 					<jsp:include page="page/page_01.jsp"/>
 		 				</div>
 
