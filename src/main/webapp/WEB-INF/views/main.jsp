@@ -101,84 +101,8 @@
  						<jsp:include page="page/button_odd.jsp"/>
  					</div>
  					<!-- 재고관리  -->
- 					<!--8 page 재고 달력 1-->
- 					<div id="page_08">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_08.jsp"/>
- 					</div>
- 					<!--9 page 재고달력 2 -->
- 					<div id="page_09">
- 						<jsp:include page="page/page_09.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
+ 					<!--6 page 체크리스트 -->
 
- 					<!--10 page 재고 페이지1-->
- 					<div id="page_10">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_10.jsp"/>
- 					</div>
- 					<!--11 page 재고 페이지 2-->
- 					<div id="page_11">
- 						<jsp:include page="page/page_11.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!-- page_set end -->
- 					<!-- 사용관련 기능  -->
- 					<!--12 page 사용 달력 1-->
- 					<div id="page_12">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_12.jsp"/>
- 					</div>
- 					<!--13 page 사용 달력 2-->
- 					<div id="page_13">
- 						<jsp:include page="page/page_13.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!--14 page 사용 페이지 1-->
- 					<div id="page_14">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_14.jsp"/>
- 					</div>
- 					<!--15 page 사용 페이지 2-->
- 					<div id="page_15">
- 						<jsp:include page="page/page_15.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!-- page_set end -->
- 					<!-- 폐기 관련 기능  -->
- 					<!--16 page 폐기 달력 1-->
- 					<div id="page_16">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_16.jsp"/>
- 					</div>
- 					<!--17 page 폐기 달력 2-->
- 					<div id="page_17">
- 						<jsp:include page="page/page_17.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!--18 page 폐기 페이지 1-->
- 					<div id="page_18">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_18.jsp"/>
- 					</div>
- 					<!--19 page 폐기 페이지 2-->
- 					<div id="page_19">
- 						<jsp:include page="page/page_19.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!-- page_set end -->
- 					<!-- 분석 관련 기능  -->
- 					<!--20 page 분석 페이지 1-->
- 					<div id="page_20">
- 						<jsp:include page="page/button_even.jsp"/>
- 						<jsp:include page="page/page_20.jsp"/>
- 					</div>
- 					<!--21 page 분석 페이지 2-->
- 					<div id="page_21">
- 						<jsp:include page="page/page_21.jsp"/>
- 						<jsp:include page="page/button_odd.jsp"/>
- 					</div>
- 					<!-- page_set end --> 					
  					
  					<!--last  page-->
  					<div id="last_page">
