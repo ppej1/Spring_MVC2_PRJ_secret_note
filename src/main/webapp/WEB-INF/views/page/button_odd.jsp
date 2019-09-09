@@ -8,5 +8,4 @@
 							
 					</div>
 					
-					
-						<script src="resources/js/webpack/button_even.js"></script>
+				<script src="resources/js/webpack/button_even.js"></script>	
