@@ -157,7 +157,7 @@
 	
 		<script>
 	function main(){
-		
+		console.log("a");
 		$('.flipbook').turn("disable", true);	
 	}
 

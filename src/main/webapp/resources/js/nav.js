@@ -1,7 +1,0 @@
-			$(function(){
-				navButton();
-			});
-
-function navButton(){
-
-		}

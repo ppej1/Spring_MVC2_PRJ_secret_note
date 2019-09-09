@@ -91,7 +91,7 @@
 	<script src="resources/js/turnJs.js"></script>
 		<script>
 	function main() {	
-			alert(".flipbook has " + $(".flipbook").turn("pages") + " pages");
+			//alert(".flipbook has " + $(".flipbook").turn("pages") + " pages");
 			
  			$('.flipbook').turn("disable", true);
 			$('#btnlogin').on('click',function(){

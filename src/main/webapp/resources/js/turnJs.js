@@ -2,32 +2,32 @@
 
  			var mql = window.matchMedia("screen and (min-width: 768px)");
  			if (mql.matches) {
- 				console.log("1200px");
+ 				//console.log("1200px");
  				loadApp1();
  				$(window).resize(function () {
- 					console.log(window.innerWidth);
+ 					//console.log(window.innerWidth);
  					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
  				});
 
  			} else {
- 				console.log("768px");
+ 				//console.log("768px");
  				loadApp2();
  				$(window).resize(function () {
- 					console.log(window.innerWidth);
+ 					//console.log(window.innerWidth);
  					$('.flipbook').turn('size', window.innerWidth, window.innerHeight);
  				});
  			}
  			mql.addListener(function (e) {
  				if (e.matches) {
- 					console.log("1200px");
+ 					//console.log("1200px");
  					$(window).resize(function () {
- 						console.log(window.innerWidth);
+ 						//console.log(window.innerWidth);
  						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
  					});
  				} else {
- 					console.log("768px");
+ 					//console.log("768px");
  					$(window).resize(function () {
- 						console.log(window.innerWidth);
+ 						//console.log(window.innerWidth);
  						$('.flipbook').turn('size', window.innerWidth, window.innerHeight);
  					});
  				}
@@ -66,12 +66,12 @@
  				autoCenter: true,
  				
  				when: {
- 					turning: function(event, page, view) {
+ 					turned: function(event, page, view) {
  						
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
- 						alert(book + "," + currentPage +"," + pages);
+ 						console.log(book + "," + currentPage +"," + pages);
  						nav();
  					}
  				
@@ -123,44 +123,45 @@
  			complete: load
  		});
 
-		
-		
 		function nav(){
+			console.log("odd");	
 			$('.btn-go-menu').on('click', function () {
-				alert("2");
+				console.log("2");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 2);
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-go-check').on('click', function () {
-				alert("4");
+				console.log("4");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 4);
 				$('.flipbook').turn("disable", true);
 			});	
 	 	
 			$('.btn-go-stock').on('click', function () {
-				alert("8");
+				console.log("8");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 8);
 				$('.flipbook').turn("disable", true);	
 			});	
 			$('.btn-go-use').on('click', function () {
-				alert("12");
+				console.log("12");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 12);
 				$('.flipbook').turn("disable", true);		
 			});	
 			$('.btn-go-Disposal').on('click', function () {
-				alert("16");
+				console.log("16");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 16);
 				$('.flipbook').turn("disable", true);	
 			});	
 			$('.btn-go-Analysis').on('click', function () {
-				alert("20");
+				console.log("20");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 20);
 				$('.flipbook').turn("disable", true);
 			});	
-		}
+		}	
+		
+

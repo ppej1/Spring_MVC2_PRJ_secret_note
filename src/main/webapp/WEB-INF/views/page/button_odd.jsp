@@ -10,11 +10,3 @@
 							<button type="button" class="btn btn-info btn-go-Analysis">分析</button>	
 				      	</div>
 					</div>
-		<script>
-	function main(){
-		
-		$('.flipbook').turn("disable", true);	
-			nav();
-	}
-
-	</script>
