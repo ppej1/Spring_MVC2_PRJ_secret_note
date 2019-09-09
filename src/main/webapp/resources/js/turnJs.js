@@ -103,6 +103,6 @@
  			test: Modernizr.csstransforms,
  			yep: ['resources/lib/turn.js'],
  			nope: ['resources/lib/turn.html4.min.js'],
- 			both: ['resources/css/basic.css'],
+ 			both: ['resources/css/main.css'],
  			complete: load
  		});

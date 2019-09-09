@@ -5,6 +5,8 @@ module.exports = {
   entry: {
     home: './home.js',
     root: './root.js',
+    signup_1: './signup_1.js',
+    hello_1: './hello_1.js',
   },
   output: {
     path: path.resolve(__dirname, 'webapp/resources/js/webpack'),
