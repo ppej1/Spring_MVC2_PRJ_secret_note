@@ -26,23 +26,6 @@
  		}
 	</style>
 
-	<script>
-	function main() {					
-			$('#btnlogin').on('click',function(){
-				$("#login_form").submit();
-			});
-			
-			$('#btnSignup').on('click', function () {
-				$(".flipbook").turn("disable", false);
-				$(".flipbook").turn("page", 2);
-				$('.flipbook').turn("disable", true);
-			});
-		}
-	
-	</script>
-
-
-
 </head>
 
 <body class="no-js">
@@ -106,6 +89,24 @@
 
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script src="resources/js/turnJs.js"></script>
+		<script>
+	function main() {	
+			alert(".flipbook has " + $(".flipbook").turn("pages") + " pages");
+			
+ 			$('.flipbook').turn("disable", true);
+			$('#btnlogin').on('click',function(){
+				$("#login_form").submit();
+			});
+			
+			$('#btnSignup').on('click', function () {
+				$(".flipbook").turn("disable", false);
+				$(".flipbook").turn("page", 2);
+				$('.flipbook').turn("disable", true);
+			});
+		}
+	
+	</script>
+	
 </body>
 
 </html>

@@ -22,44 +22,7 @@
  		}
 	</style>
 
-		<script>
-	function main(){
-		alert("#flipbook has " + $("#flipbook").turn("pages") + " pages");
-		$('.flipbook').turn("disable", true);
-			
-		$('.btn-go-menu').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 2);
-			$('.flipbook').turn("disable", true);
-		});	
-		$('.btn-go-check').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
-		});	
- 	
-		$('.btn-go-stock').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 2);
-			$('.flipbook').turn("disable", true);	
-		});	
-		$('.btn-go-use').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
-			$('.flipbook').turn("disable", true);		
-		});	
-		$('.btn-go-Disposal').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 2);
-			$('.flipbook').turn("disable", true);	
-		});	
-		$('.btn-go-Analysis').on('click', function () {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
-		});	
-	}
-	</script>
+
 
 
  </head>
@@ -192,7 +155,13 @@
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
 	<script src="resources/js/turnJs.js"></script>
 	
+		<script>
+	function main(){
+		
+		$('.flipbook').turn("disable", true);	
+	}
 
+	</script>
 	
  </body>
 
