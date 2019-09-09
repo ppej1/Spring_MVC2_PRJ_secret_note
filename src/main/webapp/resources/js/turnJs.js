@@ -1,4 +1,5 @@
 		function load() {
+
  			var mql = window.matchMedia("screen and (min-width: 768px)");
  			if (mql.matches) {
  				console.log("1200px");
@@ -35,6 +36,7 @@
  			$('body').removeClass('no-js');
  			
  			main();
+ 			
  		}
 
  		function loadApp1() {
@@ -98,11 +100,11 @@
 
  		}
  		// Load the HTML4 version if there's not CSS transform
-
- 		yepnope({
+		yepnope({
  			test: Modernizr.csstransforms,
  			yep: ['resources/lib/turn.js'],
  			nope: ['resources/lib/turn.html4.min.js'],
  			both: ['resources/css/main.css'],
  			complete: load
  		});
+
