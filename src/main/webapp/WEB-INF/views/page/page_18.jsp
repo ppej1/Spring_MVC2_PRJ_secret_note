@@ -6,7 +6,13 @@
 </script>
 <div class="page_content_even">
  	<!-- odd page  main -->
- 	<div><h1>폐기 이력</h1></div>
+ 	 						<div class="page_title_container">
+								<div class="page_title_container_div">
+									<h1>폐기 이력</h1>
+								</div>
+							</div>
+							<div class="page_container">
+
 	<div class="alert alert-dark" role="alert" style="height:auto; width:90%;">
 		<ul>
 			<li>소고기</li>
@@ -23,4 +29,6 @@
 	      	<input type="date" id="currentDate2">
 	      </cite>
       </footer>
+      							
+							</div>
 </div>

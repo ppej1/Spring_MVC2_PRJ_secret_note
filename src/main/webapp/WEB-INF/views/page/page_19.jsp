@@ -49,8 +49,17 @@ var mixedChart = new Chart(ctx, {
 
 <div class="page_content_odd">
  	<!-- odd page  main -->	 	
+ 	 												<div class="page_title_container">
+								<div class="page_title_container_div">
+									<h1>폐기 달력1</h1>
+								</div>
+							</div>
+							<div class="page_container">
+							
+
  	<div>
  		<canvas id="junkChart" width="100" height="80%"></canvas>
  	</div>
+ 								</div>
 </div>
 
