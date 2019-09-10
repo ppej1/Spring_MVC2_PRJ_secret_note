@@ -12,7 +12,7 @@
 }
 .page_content_even {
 	background-image: url('../img/papper_even.jpg');
-	background-size: contain;
+	background-size: cover;
 }
 
 .title_content {

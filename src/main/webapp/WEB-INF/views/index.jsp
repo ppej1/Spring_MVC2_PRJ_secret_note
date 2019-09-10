@@ -8,9 +8,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Css -->
+		
 
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>	
+	<!-- Css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">	
+	
 
 	<link href="resources/css/main.css"  rel="stylesheet">
 	<link href="resources/css/pages_button.css"  rel="stylesheet">
@@ -36,38 +40,7 @@
 			<div class="flipbook">
 				<!--1 page-->
 				<div -ms-overflow-style: none; id="title_page">
-					<div class="page_content_odd title_content_odd">
-						<!-- title page -->
-						<div class="title_head">
-
-							<h1>delicious</h1>
-
-						</div>
-						<div class="title_main">
-								<div class="title_content">1:1 비율</div>
-						
-						</div>
-						<div class="title_info">
-								<form action="login" method="post" id="login_form">
-									id: <input type="text" name="userid"><br>
-									password: <input type="text" name="userpwd">
-								</form>
-								<button type="button" id="btnlogin">
-									전송
-								</button>
-								<button type="button" id="btnSignup">회원가입</button>
-						</div>
-						<div class="title_footter">
-							&copy;compuny-sesoc
-						</div>
-						
-
-					</div>
-					<div class="button_nav_odd">
-
-					</div>
-					
-
+					<jsp:include page="page/login.jsp"/>
 				</div>
 	 					<!-- 인삿말 -->
 						<div id="page_00">
