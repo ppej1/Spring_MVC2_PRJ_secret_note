@@ -1,4 +1,4 @@
-		function load() {
+	function load() {
 
  			var mql = window.matchMedia("screen and (min-width: 768px)");
  			if (mql.matches) {
