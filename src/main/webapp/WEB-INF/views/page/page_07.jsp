@@ -1,60 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<head>
-	<style>
-		.comment_container {
-			width: 90%;
-			height: 73%;
-			margin: 0% auto 2% auto;
-			overflow-y: scroll;
-		}
-		.page_title_container {
-			width: 100%;
-			min-height: 10%;
-		}
-		.page_title_container_div {
-
-			margin: 3% auto;
-			margin-bottom: 2%;
-
-			text-align: center;
-			width: 90%;
-			min-height: 90%
-		}
-		.page_title_container_div h1{
-				font-family: 'Dancing Script', cursive;
-				font-size: 2.7rem;
-		}
-		.comment_body_container {
-			width: 100%;
-
-		}
-
-
-
-		.write-coment-container {
-			margin:auto;
-			width: 90%;
-			height: 10%;
-		}
-
-
-		.card {
-			width: 90%;
-			margin: 0px auto;
-
-		}
-
-		.card-body {
-			padding: 1rem;
-		}
-
-		.card-header {
-			padding: .3rem 1rem;
-		}
-	</style>
-</head>
 <div class="page_content_odd">
 	<!-- odd page  main -->
 	<div class="page_title_container">

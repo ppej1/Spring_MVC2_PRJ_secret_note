@@ -68,7 +68,7 @@ export default class signup extends React.Component {
 	  	          <td>
 	  		          어쩌구저쩌구 2.
 	  		          <Label check>
-	  				      <Input type="checkbox" id="checkbox2" />{'동의하십니까?'}
+	  				      <Input type="checkbox" id="checkbox2" /> {'동의하십니까?'}
 	  			      </Label>
 	  		      </td>
 	  	      </tr>
@@ -79,7 +79,7 @@ export default class signup extends React.Component {
 	  	      	  <td>
 	  		          어쩌구저쩌구 3.
 	  		          <Label check>
-	  				      <Input type="checkbox" id="checkbox3" />{'동의하십니까?'}
+	  				      <Input type="checkbox" id="checkbox3" /> {'동의하십니까?'}
 	  			      </Label>
 	  		      </td>
 	  	      </tr>
@@ -87,7 +87,7 @@ export default class signup extends React.Component {
 	          </FormGroup>
 	          <Input type="submit" id="submitBtn" value="회원가입" />
 	        	  </Form>
-  			<Button color="danger" id="cancelBtn">danger</Button>{' '}
+  			<Button color="danger" id="cancelBtn">cancel</Button>{' '}
           </div>
     );
   }

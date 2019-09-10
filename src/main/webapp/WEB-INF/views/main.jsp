@@ -7,13 +7,16 @@
  <head>
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<!-- jQuery -->
  	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
-	
+	<!-- bootstrap 및 css관련 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">	
-	
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+
+	<!-- calendar -->	
+	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
+	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />
+
 	
  	<style>
 	 	body {
@@ -23,10 +26,8 @@
  			display: none;
  		}
 	</style>
-
-
-
-
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
  </head>
 
  <body class="no-js">
@@ -156,7 +157,9 @@
 	<!-- turn.js 관련  -->
  	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
 	<script src="resources/js/turnJs.js"></script>
-	
+	<!-- calendar -->
+	<script src='resources/js/fullcalendar/core/main.js'></script>
+	<script src='resources/js/fullcalendar/daygrid/main.js'></script>		
 		<script>
 	function main(){
 		console.log("a");

@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
-<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />
-<script src='resources/js/fullcalendar/core/main.js'></script>
-<script src='resources/js/fullcalendar/daygrid/main.js'></script>
+<div class="page_content_even">
+ <!-- odd page  main -->
+ 		<div class="page_title_container">
+		<div class="page_title_container_div">
+			<h1>Calendar</h1>
+		</div>
+	</div>
+	<div class="page_container">
+			<div id='calendar'></div>
+	</div>
+</div>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
@@ -32,6 +38,7 @@
 	    events: [
 	      {
 	        title: 'simple event',
+	        click: 'abcd',
 	        start: '2019-09-02'
 	      },
 	      {
@@ -46,7 +53,3 @@
 	});
 </script>
 
-<div class="page_content_even">
- <!-- odd page  main -->
-	<div id='calendar'></div>
-</div>
