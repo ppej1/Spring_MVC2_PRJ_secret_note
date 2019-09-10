@@ -6,7 +6,7 @@
  				loadApp1();
  				$(window).resize(function () {
  					//console.log(window.innerWidth);
- 					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
+ 					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
  				});
 
  			} else {
@@ -22,7 +22,7 @@
  					//console.log("1200px");
  					$(window).resize(function () {
  						//console.log(window.innerWidth);
- 						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
+ 						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
  					});
  				} else {
  					//console.log("768px");
@@ -51,7 +51,7 @@
 
  				// Height
 
- 				height: window.innerHeight - 100,
+ 				height: window.innerHeight - 50,
 
  				// Elevation
 
