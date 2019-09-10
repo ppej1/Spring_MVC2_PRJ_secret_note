@@ -1,0 +1,35 @@
+	body {
+		background-image: url('../img/foodTable.jpg');
+		background-size: cover;
+	}
+	.flipbook-viewport .page{
+	background-image: url('../img/papper.jpg');
+	border: 1px solid #dce0dd;
+}
+.page_content_odd{
+	background-image: url('../img/papper_odd.jpg');
+	background-size: cover;
+}
+.page_content_even {
+	background-image: url('../img/papper_even.jpg');
+	background-size: cover;
+}
+
+.title_content {
+	background-image: url('../img/joung.jpg');
+	background-size: cover;
+	background-color: #3eb561;
+}
+
+#title_page{
+	background-image: url('../img/foodtableTitle.jpg');
+	background-size: cover;
+}
+.title_content_odd{
+	background-image: url('../img/foodtableTitle.jpg');
+	background-size: cover;
+}
+#last_page{
+	background-image: url('../img/foodtableTitle.jpg');
+	background-size: cover;	
+}
