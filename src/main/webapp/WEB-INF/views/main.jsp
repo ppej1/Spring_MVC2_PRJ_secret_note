@@ -156,10 +156,10 @@
 	<script src="resources/js/turnJs.js"></script>
 	
 		<script>
-	function main(){
+	/* function main(){
 		console.log("a");
 		$('.flipbook').turn("disable", true);	
-	}
+	} */
 
 	</script>
 	
