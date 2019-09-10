@@ -3,7 +3,7 @@
  						<div class="page_content_odd">
 						<div class="page_title_container">
 								<div class="page_title_container_div">
-									<h1>제고 달력2</h1>
+									<h1>재고 달력2</h1>
 								</div>
 							</div>
 							<div class="page_container">
