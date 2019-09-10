@@ -21,10 +21,10 @@
 	    eventClick: function(info) {
 	      var eventObj = info.event;
 
-	      if (eventObj.data) {
+	      if (eventObj.url) {
 	        alert(
 	          'Clicked ' + eventObj.title + '.\n' +
-	          'Will open ' + eventObj.data + ' in a new tab'
+	          'Will open ' + eventObj.url + ' in a new tab'
 	        );
 
 	        //window.open(eventObj.url);

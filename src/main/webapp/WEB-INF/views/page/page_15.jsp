@@ -73,7 +73,7 @@
     <!-- odd page  main -->
     <div class="page_title_container">
         <div class="page_title_container_div">
-            <h1>재고달력1</h1>
+            <h1>재고관리2</h1>
         </div>
     </div>
     <div class="page_container">

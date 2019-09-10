@@ -8,7 +8,7 @@
 	<!-- odd page  main -->
 	<div class="page_title_container">
 		<div class="page_title_container_div">
-			<h1>체크리스트 달력1</h1>
+			<h1>재고관리1</h1>
 		</div>
 	</div>
 	<div class="page_container">
