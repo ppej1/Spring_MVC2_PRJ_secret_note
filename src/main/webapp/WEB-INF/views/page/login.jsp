@@ -4,11 +4,13 @@
 <head>
 	<style>
 		.title_head {
+		font-family: 'Dancing Script', cursive;
 			width: 100%;
 			height: 20%;
 			text-align: center;
 			padding-top: 4%;
 			padding-bottom: 4%;
+			font-size: 30rem;
 		}
 
 		.title_head h1 {
@@ -17,16 +19,17 @@
 
 		.title_center {
 			width: 100%;
-			height: 67%;
+			height: 64%;
 		}
 
 		.title_bottom {
+			font-family: 'Dancing Script', cursive;
 			width: 210px;
-			height:13%;
+			height:16%;
 			float: right;
 		}
 		.title_login{
-			font-family: 'Dancing Script', cursive;
+			
 			font-size: 0.7rem;
 			text-align: right;
 		}
@@ -56,6 +59,9 @@
 			height: 20px;
 			text-align: right;
 			background-color: #4d9ff7;
+		}
+		.register {
+		text-align: right;
 		}
 	</style>
 </head>
@@ -94,6 +100,9 @@
  			 <button type="button" id="btnlogin" class="btn btn-primary">電送</button>
 			</div>	
 			</form>
+		</div>
+		<div class="register">
+			<a href="#"id="btnSignup">register </a>
 		</div>
 
 
