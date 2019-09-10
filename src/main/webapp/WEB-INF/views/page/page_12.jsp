@@ -21,13 +21,13 @@
 	    eventClick: function(info) {
 	      var eventObj = info.event;
 
-	      if (eventObj.url) {
+	      if (eventObj.data) {
 	        alert(
 	          'Clicked ' + eventObj.title + '.\n' +
-	          'Will open ' + eventObj.url + ' in a new tab'
+	          'Will open ' + eventObj.data + ' in a new tab'
 	        );
 
-	        window.open(eventObj.url);
+	        //window.open(eventObj.url);
 
 	        info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
 	      } else {
@@ -38,7 +38,7 @@
 	    events: [
 	      {
 	        title: 'simple event',
-	        click: 'abcd',
+	        data: 'abcd',
 	        start: '2019-09-02'
 	      },
 	      {
