@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="page_content_even">
- <!-- odd page  main -->
  		<div class="page_title_container">
 		<div class="page_title_container_div">
 			<h1>Calendar</h1>
 		</div>
 	</div>
 	<div class="page_container">
-			<div id='calendar'></div>
+			<div id='stockcalendar1'></div>
 	</div>
 </div>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-	  var calendarEl = document.getElementById('calendar');
+	  var calendarEl = document.getElementById('stockcalendar1');
 
 	  var calendar = new FullCalendar.Calendar(calendarEl, {
 	    plugins: [ 'dayGrid' ],
