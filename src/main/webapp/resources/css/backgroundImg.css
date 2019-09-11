@@ -3,7 +3,7 @@
 		background-size: cover;
 	}
 	.flipbook-viewport .page{
-	background-image: url('../img/papper.jpg');
+	//background-image: url('../img/papper.jpg');
 	border: 1px solid #dce0dd;
 }
 .page_content_odd{
@@ -22,12 +22,13 @@
 }
 
 #title_page{
+	//background-color: #edf4f5;
 	background-image: url('../img/foodtableTitle.jpg');
 	background-size: cover;
 }
 .title_content_odd{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
+	//background-image: url('../img/foodtableTitle.jpg');
+	//background-size: cover;
 }
 #last_page{
 	background-image: url('../img/foodtableTitle.jpg');

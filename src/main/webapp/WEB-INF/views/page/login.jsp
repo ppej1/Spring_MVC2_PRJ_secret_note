@@ -65,7 +65,7 @@
 		}
 	</style>
 </head>
-<div class="page_content_odd title_content_odd">
+<div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
 	<div class="title_head">
 		<h1>delicious</h1>

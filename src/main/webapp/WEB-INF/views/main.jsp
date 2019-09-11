@@ -40,7 +40,7 @@
  			<div class="flipbook">
  				<!--1 page - title page-->
  				<div -ms-overflow-style: none; id="title_page">
- 					<div class="page_content_odd title_content_odd">
+ 					<div class="page_content_odd_title title_content_odd">
  						<jsp:include page="page/page_title.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
