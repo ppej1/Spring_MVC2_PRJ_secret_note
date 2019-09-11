@@ -93,7 +93,6 @@
 
 /* 페이지 00 */
 .term_container {
-	overflow: scroll;
 	margin: 2% 2%;
 	font-size: 0.8rem;
 	width: 96%;
@@ -115,7 +114,7 @@
 
 .page_title_container_div {
 
-	margin: 3% auto;
+	margin: 1% auto;
 	margin-bottom: 2%;
 
 	text-align: center;
@@ -125,7 +124,6 @@
 
 .page_title_container_div h1 {
 	font-family: 'Dancing Script', cursive;
-	font-size: 2.7rem;
 }
 
 /* 06페이지 */
@@ -165,7 +163,7 @@
 }
 
 .write-coment-container {
-	margin: auto;
+	margin: 10px auto;
 	width: 90%;
 	height: 10%;
 }
