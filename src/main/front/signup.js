@@ -13,11 +13,7 @@ export default class signup extends React.Component {
 
   render() {
     return (
-    	<div class="page_title_container">
-    		<div class="page_title_container_div">
-    			<h1>Check List</h1>
-    		</div>
-    	</div>
+    		
     	<div class="page_container">
 	        <Form action="signup" method="POST" id="signup_form">
 	        <FormGroup>
@@ -86,7 +82,7 @@ export default class signup extends React.Component {
 	        </Table>
 	          </FormGroup>
 	          <Input type="submit" id="submitBtn" value="회원가입" />
-	        	  </Form>
+	        </Form>
   			<Button color="danger" id="cancelBtn">cancel</Button>{' '}
           </div>
     );
