@@ -11,6 +11,8 @@
  	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<!-- bootstrap 및 css관련 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">	
 
 	<!-- calendar -->	
@@ -154,7 +156,7 @@
 	function main(){
 		console.log("a");
 
-		//$('.flipbook').turn("disable", true);	
+		$('.flipbook').turn("disable", true);	
 	}
 	</script>
 	
