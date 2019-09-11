@@ -1,54 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- 						<div class="page_content_odd">
-		<div class="page_title_container">
+	pageEncoding="UTF-8"%>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var calendarEl = document.getElementById('UsageCalendar2');
+
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			plugins : [ 'dayGrid' ],
+			header : {
+				left : 'dayGridMonth,dayGridWeek,dayGridDay',
+				center : 'title'
+			},
+			eventClick : function(info) {
+				var eventObj = info.event;
+
+				if (eventObj.url) {
+					alert('Clicked ' + eventObj.title + '.\n' + 'Will open '
+							+ eventObj.url + ' in a new tab');
+
+					//window.open(eventObj.url);
+
+					info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
+				} else {
+					//$('.flipbook').turn("disable", false);
+					$('.flipbook').turn("page", 16);
+					//$('.flipbook').turn("disable", true);
+				}
+			},
+			defaultDate : '2019-09-03',
+			events : [ {
+				title : 'JUNK List',
+				data : 'abcd',
+				start : '2019-09-02T09:30:00',
+				end : '2019-09-04T18:30:00',
+				color : 'green'
+			}, {
+				title : 'JUNK List',
+				data : 'abcd',
+				start : '2019-09-05T09:30:00',
+				end : '2019-09-10T18:30:00',
+				color : 'blue'
+			}]
+		});
+
+		calendar.render();
+	});
+</script>
+
+<div class="page_content_odd">
+	<!-- odd page  main -->
+	<div class="page_title_container">
 		<div class="page_title_container_div">
-			<h1>Calendar</h1>
+			<h1>UsageCalendar2</h1>
 		</div>
 	</div>
 	<div class="page_container">
-			<div id='stockcalendar2'></div>
+		<div id='UsageCalendar2'></div>
 	</div>
- 						</div>
- 						
- 						
- 						<script>
-	document.addEventListener('DOMContentLoaded', function() {
-	  var calendarEl = document.getElementById('stockcalendar2');
-
-	  var calendar = new FullCalendar.Calendar(calendarEl, {
-	    plugins: [ 'dayGrid' ],
-	    eventClick: function(info) {
-	      var eventObj = info.event;
-
-	      if (eventObj.url) {
-	        alert(
-	          'Clicked ' + eventObj.title + '.\n' +
-	          'Will open ' + eventObj.url + ' in a new tab'
-	        );
-
-	        //window.open(eventObj.url);
-
-	        info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
-	      } else {
-	        alert('Clicked ' + eventObj.title);
-	      }
-	    },
-	    defaultDate: '2019-09-15',
-	    events: [
-	      {
-	        title: 'simple event',
-	        data: 'abcd',
-	        start: '2019-09-02'
-	      },
-	      {
-	        title: 'event with URL',
-	        url: 'https://www.google.com/',
-	        start: '2019-09-03'
-	      }
-	    ]
-	  });
-
-	  calendar.render();
-	});
-</script>
+</div>

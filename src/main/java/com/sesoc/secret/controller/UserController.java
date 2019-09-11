@@ -25,4 +25,8 @@ public class UserController {
 		System.out.println(user);
 		return "index";
 	}
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(User_VO user, Model model) {
+		return "index";
+	}
 }

@@ -156,6 +156,31 @@
 				$('.flipbook').turn("page", 18);
 				//$('.flipbook').turn("disable", true);
 			});	
+
+			/* even button */
+
+			$('.btn_plus').on('click', function () {
+				console.log("20");
+				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				//$('.flipbook').turn("disable", true);
+			});	
+			$('.btn_minus').on('click', function () {
+				console.log("20");
+				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				//$('.flipbook').turn("disable", true);
+			});	
+			$('.btn-userInfo').on('click', function () {
+				console.log("20");
+				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				//$('.flipbook').turn("disable", true);
+			});	
+			$('.log-out').on('click', function () {
+				console.log("logout");
+				location.href = "logout";
+			});	
 		}	
 		
 

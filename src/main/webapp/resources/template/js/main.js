@@ -1,105 +1,201 @@
-jQuery(document).ready(function($) {
+(function($) {
 
 	'use strict';
-      
-      $('#form-submit .date').datepicker({
-      });
+
+	// bootstrap dropdown hover
+
+  // loader
+  var loader = function() {
+    setTimeout(function() { 
+      if($('#loader').length > 0) {
+        $('#loader').removeClass('show');
+      }
+    }, 1);
+  };
+  loader();
+
+	
+	$('nav .dropdown').hover(function(){
+		var $this = $(this);
+		$this.addClass('show');
+		$this.find('> a').attr('aria-expanded', true);
+		$this.find('.dropdown-menu').addClass('show');
+	}, function(){
+		var $this = $(this);
+			$this.removeClass('show');
+			$this.find('> a').attr('aria-expanded', false);
+			$this.find('.dropdown-menu').removeClass('show');
+	});
+
+
+	$('#dropdown04').on('show.bs.dropdown', function () {
+	  console.log('show');
+	});
+
+	// home slider
+	$('.home-slider').owlCarousel({
+    loop:true,
+    autoplay: true,
+    margin:0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav:true,
+    autoplayHoverPause: true,
+    items: 1,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:1,
+        nav:false
+      },
+      1000:{
+        items:1,
+        nav:true
+      }
+    }
+	});
+
+  $('.home-slider-loop-false').owlCarousel({
+    loop:false,
+    autoplay: true,
+    margin:0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav:true,
+    autoplayHoverPause: true,
+    items: 1,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:1,
+        nav:false
+      },
+      1000:{
+        items:1,
+        nav:true
+      }
+    }
+  });
+
+	// owl carousel
+	var majorCarousel = $('.js-carousel-1');
+	majorCarousel.owlCarousel({
+    loop:true,
+    autoplay: true,
+    stagePadding: 7,
+    margin: 20,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav: true,
+    autoplayHoverPause: true,
+    items: 3,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:2,
+        nav:false
+      },
+      1000:{
+        items:3,
+        nav:true,
+        loop:false
+      }
+  	}
+	});
+
+	// owl carousel
+	var major2Carousel = $('.js-carousel-2');
+	major2Carousel.owlCarousel({
+    loop:true,
+    autoplay: true,
+    stagePadding: 7,
+    margin: 20,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav: true,
+    autoplayHoverPause: true,
+    items: 4,
+    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
+    responsive:{
+      0:{
+        items:1,
+        nav:false
+      },
+      600:{
+        items:3,
+        nav:false
+      },
+      1000:{
+        items:4,
+        nav:true,
+        loop:false
+      }
+  	}
+	});
+
+
+  $('.centernonloop').owlCarousel({
+    center: true,
+    items: 1,
+    loop: false,
+    margin:10,
+    dots: true,
+    responsive:{
+      600:{
+        items: 3
+      }
+    }
+  });
+
+
+	var contentWayPoint = function() {
+		var i = 0;
+		$('.element-animate').waypoint( function( direction ) {
+
+			if( direction === 'down' && !$(this.element).hasClass('element-animated') ) {
+				
+				i++;
+
+				$(this.element).addClass('item-animate');
+				setTimeout(function(){
+
+					$('body .element-animate.item-animate').each(function(k){
+						var el = $(this);
+						setTimeout( function () {
+							var effect = el.data('animate-effect');
+							if ( effect === 'fadeIn') {
+								el.addClass('fadeIn element-animated');
+							} else if ( effect === 'fadeInLeft') {
+								el.addClass('fadeInLeft element-animated');
+							} else if ( effect === 'fadeInRight') {
+								el.addClass('fadeInRight element-animated');
+							} else {
+								el.addClass('fadeInUp element-animated');
+							}
+							el.removeClass('item-animate');
+						},  k * 100);
+					});
+					
+				}, 100);
+				
+			}
+
+		} , { offset: '95%' } );
+	};
+	contentWayPoint();
 
 
 
-      var owl = $("#owl-testimonial");
-
-        owl.owlCarousel({
-          
-          pagination : true,
-          paginationNumbers: false,
-          autoPlay: 6000, //Set AutoPlay to 3 seconds
-          items : 1, //10 items above 1000px browser width
-          itemsDesktop : [1000,1], //5 items between 1000px and 901px
-          itemsDesktopSmall : [900,1], // betweem 900px and 601px
-          itemsTablet: [600,1], //2 items between 600 and 0
-          itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-          
-      });
-
-
-        
-        $('.recommendedgroup > div').hide();
-        $('.recommendedgroup > div:first-of-type').show();
-        $('.tabs a').click(function(e){
-          e.preventDefault();
-            var $this = $(this),
-            tabgroup = '#'+$this.parents('.tabs').data('recommendedgroup'),
-            others = $this.closest('li').siblings().children('a'),
-            target = $this.attr('href');
-        others.removeClass('active');
-        $this.addClass('active');
-        $(tabgroup).children('div').hide();
-        $(target).show();
-      
-        })
-
-
-        $('.weathergroup > div').hide();
-        $('.weathergroup > div:first-of-type').show();
-        $('.tabs a').click(function(e){
-          e.preventDefault();
-            var $this = $(this),
-            tabgroup = '#'+$this.parents('.tabs').data('weathergroup'),
-            others = $this.closest('li').siblings().children('a'),
-            target = $this.attr('href');
-        others.removeClass('active');
-        $this.addClass('active');
-        $(tabgroup).children('div').hide();
-        $(target).show();
-      
-        })
-
-
-        $('.tabgroup > div').hide();
-        $('.tabgroup > div:first-of-type').show();
-        $('.tabs a').click(function(e){
-          e.preventDefault();
-            var $this = $(this),
-            tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
-            others = $this.closest('li').siblings().children('a'),
-            target = $this.attr('href');
-        others.removeClass('active');
-        $this.addClass('active');
-        $(tabgroup).children('div').hide();
-        $(target).show();
-      
-        })
-
-
-
-        $(".pop-button").click(function () {
-            $(".pop").fadeIn(300);
-            
-        });
-
-        $(".pop > span").click(function () {
-            $(".pop").fadeOut(300);
-        });
-
-
-        $(window).on("scroll", function() {
-            if($(window).scrollTop() > 100) {
-                $(".header").addClass("active");
-            } else {
-                //remove the background property so it comes transparent again (defined in your css)
-               $(".header").removeClass("active");
-            }
-        });
-
-
-	/************** Mixitup (Filter Projects) *********************/
-    	$('.projects-holder').mixitup({
-            effects: ['fade','grayscale'],
-            easing: 'snap',
-            transitionSpeed: 400
-        });
-
-
-
-});
+})(jQuery);
