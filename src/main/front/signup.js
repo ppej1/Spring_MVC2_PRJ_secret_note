@@ -13,6 +13,7 @@ export default class signup extends React.Component {
 
   render() {
     return (
+    		
     	<div class="page_container">
 	        <Form action="signup" method="POST" id="signup_form">
 	        <FormGroup>
