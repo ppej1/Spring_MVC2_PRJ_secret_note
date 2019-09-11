@@ -130,7 +130,6 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: right;
-	overflow-y: scroll;
 }
 
 .page_content_odd_title{
@@ -139,5 +138,4 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: left;
-	overflow-y: scroll;
 }
