@@ -1,75 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="resources/template/css/bootstrap.css">
-    <link rel="stylesheet" href="resources/template/css/animate.css">
-    <link rel="stylesheet" href="resources/template/css/owl.carousel.min.css">
-
-    <link rel="stylesheet" href="resources/template/css/magnific-popup.css">
-
-
-    <link rel="stylesheet" href="resources/template/fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="resources/template/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
-
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="resources/template/css/style.css">
   </head>
 <div class="page_content_even">
 	<!-- even page   -->
 
 	<div class="page_title_container">
-		<div class="page_title_container_div">
-			<h1>메인메뉴1</h1>
-		</div>
 	</div>
 	<div class="page_container">
-
-		<header role="banner">
-			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-			  <div class="container">
-				<a class="navbar-brand" href="#">Eatery</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-	  
-				<div class="collapse navbar-collapse" id="navbarsExample05">
-				  <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-					<li class="nav-item">
-					  <a class="nav-link active" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Recipes</a>
-					</li>
-					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-					  <div class="dropdown-menu" aria-labelledby="dropdown04">
-						<a class="dropdown-item" href="#">Catering</a>
-						<a class="dropdown-item" href="#">Birthday Party</a>
-						<a class="dropdown-item" href="#">Wedding Party</a>
-					  </div>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">About</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">News</a>
-					</li>
-				  </ul>
-	  
-				  <ul class="navbar-nav ml-auto">
-					<li class="nav-item cta-btn">
-					  <a class="nav-link" href="#">Contact Us</a>
-					</li>
-				  </ul>
-				  
-				</div>
-			  </div>
-			</nav>
-		  </header>
-		      <!-- END header -->
     
 			  <section class="home-slider owl-carousel">
 				<div class="slider-item" style="background-image: url('resources/template/img/hero_1.jpg');">
@@ -383,14 +322,3 @@
 
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
-    <script src="resources/template/js/jquery-3.2.1.min.js"></script>
-    <script src="resources/template/js/popper.min.js"></script>
-    <script src="resources/template/js/bootstrap.min.js"></script>
-    <script src="resources/template/js/owl.carousel.min.js"></script>
-    <script src="resources/template/js/jquery.waypoints.min.js"></script>
-
-    <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
-    <script src="resources/template/js/magnific-popup-options.js"></script>
-    
-
-    <script src="resources/template/js/main.js"></script>

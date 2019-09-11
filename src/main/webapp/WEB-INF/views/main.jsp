@@ -9,15 +9,30 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<!-- jQuery -->
  	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
+ 	
 	<!-- bootstrap 및 css관련 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
 	<!-- calendar -->	
 	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
 	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+	<!-- template -->
+    <link rel="stylesheet" href="resources/template/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/template/css/animate.css">
+    <link rel="stylesheet" href="resources/template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="resources/template/css/magnific-popup.css">
+    <link rel="stylesheet" href="resources/template/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="resources/template/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="resources/template/css/style.css">
+	<link href="resources/css/main.css"  rel="stylesheet">
+	<link href="resources/css/pages_button.css"  rel="stylesheet">
+	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
 
 	
  	<style>
@@ -28,8 +43,7 @@
  			display: none;
  		}
 	</style>
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+
  </head>
 
  <body class="no-js">
@@ -152,13 +166,25 @@
 	<!-- calendar -->
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>		
-		<script>
+	<script>
 	function main(){
 		console.log("a");
 
-		$('.flipbook').turn("disable", true);	
+		//$('.flipbook').turn("disable", true);	
 	}
 	</script>
+	<script src="resources/template/js/jquery-3.2.1.min.js"></script>
+    <script src="resources/template/js/popper.min.js"></script>
+    <script src="resources/template/js/bootstrap.min.js"></script>
+    <script src="resources/template/js/owl.carousel.min.js"></script>
+    <script src="resources/template/js/jquery.waypoints.min.js"></script>
+
+    <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
+    <script src="resources/template/js/magnific-popup-options.js"></script>
+    
+
+    <script src="resources/template/js/main.js"></script>
+	
 	
  </body>
 

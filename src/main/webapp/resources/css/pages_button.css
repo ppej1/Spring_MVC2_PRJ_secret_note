@@ -103,14 +103,14 @@
 /* 06~ 페이지 임시 저장 */
 .page_container {
 	width: 90%;
-	height: 85%;
+	height: 90%;
 	margin: 0% auto 2% auto;
 	overflow-y: scroll;
 }
 
 .page_title_container {
 	width: 100%;
-	min-height: 10%;
+	min-height: 5%;
 }
 
 .page_title_container_div {

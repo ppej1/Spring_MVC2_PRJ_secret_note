@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5 {
   outline: none;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border-radius: 0px !important;
+ border-radius: 0px !important;
 }
 
 .btn:focus, .btn:active, .form-control:focus, .form-control:active {
