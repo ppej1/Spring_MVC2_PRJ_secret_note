@@ -10,8 +10,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
-					<div class="flip-container"
-						ontouchstart="this.classList.toggle('hover');">
+					<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 						<div class="flipper first-service">
 							<div class="front">
 								<div class="icon">

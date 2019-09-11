@@ -41,7 +41,7 @@
 	});
 </script>
 
-<div class="page_content_odd">
+<div class="page_content_even">
 	<!-- odd page  main -->
 	<div class="page_title_container">
 		<div class="page_title_container_div">
