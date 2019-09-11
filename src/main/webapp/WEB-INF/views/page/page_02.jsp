@@ -92,7 +92,7 @@
             <p class="dishes-price">$12.00</p>
             <h2 class="dishes-heading">Baked broccoli</h2>
           </div>
-          <img src="img/dishes_2.jpg" alt="" class="img-fluid">
+          <img src="resources/template/img/dishes_2.jpg" alt="" class="img-fluid">
         </a>
         <a href="#" class="item-dishes">
           <div class="text">
@@ -106,7 +106,7 @@
             <p class="dishes-price">$12.00</p>
             <h2 class="dishes-heading">Eggplant parmigiana</h2>
           </div>
-          <img src="img/dishes_4.jpg" alt="" class="img-fluid">
+          <img src="resources/template/img/dishes_4.jpg" alt="" class="img-fluid">
         </a>
       </div>
     </section> <!-- .section -->

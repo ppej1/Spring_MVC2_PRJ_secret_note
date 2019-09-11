@@ -122,7 +122,6 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: left;
-	overflow-y: scroll;
 }
 .page_content_even {
 	margin: 0px 0px;
@@ -130,7 +129,6 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: right;
-	overflow-y: scroll;
 }
 
 .page_content_odd_title{
