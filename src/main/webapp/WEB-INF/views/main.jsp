@@ -28,6 +28,7 @@
 	</style>
 	<link href="resources/css/pages_button.css"  rel="stylesheet">
 	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
+
  </head>
 
  <body class="no-js">
@@ -150,7 +151,7 @@
 	<!-- calendar -->
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>		
-		<script>
+	<script>
 	function main(){
 		console.log("a");
 
