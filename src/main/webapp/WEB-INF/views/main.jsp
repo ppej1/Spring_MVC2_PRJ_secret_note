@@ -112,34 +112,24 @@
  						<jsp:include page="page/page_15.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
- 					<!--16 page 폐기 달력 1-->
+ 					<!--18 page 폐기 페이지 1-->
  					<div id="page_16">
  						<jsp:include page="page/button_even.jsp" flush="false"/>
  						<jsp:include page="page/page_16.jsp" flush="false"/>
  					</div>
- 					<!--17 page 폐기 달력 2-->
+ 					<!--19 page 폐기 페이지 2-->
  					<div id="page_17">
  						<jsp:include page="page/page_17.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
- 					<!--18 page 폐기 페이지 1-->
+ 					<!--20 page 분석 페이지 1-->
  					<div id="page_18">
  						<jsp:include page="page/button_even.jsp" flush="false"/>
  						<jsp:include page="page/page_18.jsp" flush="false"/>
  					</div>
- 					<!--19 page 폐기 페이지 2-->
+ 					<!--21 page 분석 페이지 2-->
  					<div id="page_19">
  						<jsp:include page="page/page_19.jsp" flush="false"/>
- 						<jsp:include page="page/button_odd.jsp" flush="false"/>
- 					</div>
- 					<!--20 page 분석 페이지 1-->
- 					<div id="page_20">
- 						<jsp:include page="page/button_even.jsp" flush="false"/>
- 						<jsp:include page="page/page_20.jsp" flush="false"/>
- 					</div>
- 					<!--21 page 분석 페이지 2-->
- 					<div id="page_21">
- 						<jsp:include page="page/page_21.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
  					<!--last  page-->

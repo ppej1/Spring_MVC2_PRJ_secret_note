@@ -150,16 +150,10 @@
 				$('.flipbook').turn("page", 12);
 				//$('.flipbook').turn("disable", true);		
 			});	
-			$('.btn-go-Disposal').on('click', function () {
-				console.log("16");
-				//$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 16);
-				//$('.flipbook').turn("disable", true);	
-			});	
 			$('.btn-go-Analysis').on('click', function () {
 				console.log("20");
 				//$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 20);
+				$('.flipbook').turn("page", 18);
 				//$('.flipbook').turn("disable", true);
 			});	
 		}	
