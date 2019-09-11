@@ -20,6 +20,8 @@
 	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
 	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />
 
+
+
 	<!-- template -->
     <link rel="stylesheet" href="resources/template/css/bootstrap.css">
     <link rel="stylesheet" href="resources/template/css/animate.css">
@@ -28,6 +30,7 @@
     <link rel="stylesheet" href="resources/template/fonts/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="resources/template/fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
+ 
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/template/css/style.css">
 	<link href="resources/css/main.css"  rel="stylesheet">
