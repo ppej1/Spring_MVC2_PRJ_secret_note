@@ -43,6 +43,8 @@
 
     </section>
     <!-- END slider -->
+
+
     <section class="section bg-light element-animate">
       <div class="container">
         <div class="row">
@@ -73,6 +75,7 @@
         </div>
       </div>
     </section>
+
     <section class="section element-animate">
 
       <div class="clearfix mb-5 pb-5">
@@ -146,7 +149,7 @@
             </div>
 
             <div class="sched d-block d-lg-flex">
-              <div class="bg-image" style="background-image: url('resources/template/img/dishes_1.jpg');"></div>
+              <div class="bg-image" style="background-image: url(resources/template/img/dishes_1.jpg');"></div>
               <div class="text">
                 <h3>Spicy Calamari and beans</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
@@ -186,8 +189,9 @@
 
 
       </div>
-    </section>
-    <!-- .section -->
+    </section> <!-- .section -->
+
+
 
     <section class="section element-animate">
 
@@ -301,6 +305,7 @@
 
     </section> <!-- .section -->
 
+
     <section class="py-5 bg-light">
       <div class="container">
         <div class="row justify-content-center">
@@ -329,12 +334,7 @@
     </section>
 
 
+
+
   </div>
 </div>
-
-
-
-<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16" />
-    </svg></div>

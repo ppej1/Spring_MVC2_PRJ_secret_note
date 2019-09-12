@@ -6,5 +6,6 @@
 			<h1>재고관리</h1>
 		</div>
 	</div>
-	<div class="page_container"></div>
+	<div class="page_container">
+	</div>
 </div>

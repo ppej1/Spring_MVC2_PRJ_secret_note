@@ -127,32 +127,32 @@
 			console.log("odd");	
 			$('.btn-go-menu').on('click', function () {
 				console.log("2");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 2);
 				//$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-go-check').on('click', function () {
 				console.log("4");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 4);
 				//$('.flipbook').turn("disable", true);
 			});	
 	 	
 			$('.btn-go-stock').on('click', function () {
 				console.log("8");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 8);
 				//$('.flipbook').turn("disable", true);	
 			});	
 			$('.btn-go-use').on('click', function () {
 				console.log("12");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 12);
 				//$('.flipbook').turn("disable", true);		
 			});	
 			$('.btn-go-Analysis').on('click', function () {
 				console.log("20");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 18);
 				//$('.flipbook').turn("disable", true);
 			});	
@@ -161,19 +161,19 @@
 
 			$('.btn_plus').on('click', function () {
 				console.log("20");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
 				//$('.flipbook').turn("disable", true);
 			});	
 			$('.btn_minus').on('click', function () {
 				console.log("20");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
 				//$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
 				console.log("20");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
 				//$('.flipbook').turn("disable", true);
 			});	
