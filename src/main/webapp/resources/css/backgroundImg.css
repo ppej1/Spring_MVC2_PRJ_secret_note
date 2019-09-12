@@ -3,7 +3,7 @@
 		background-size: cover;
 	}
 	.flipbook-viewport .page{
-	//background-image: url('../img/papper.jpg');
+	background-color: #edf4f5;
 	border: 1px solid #dce0dd;
 }
 .page_content_odd{

@@ -438,7 +438,10 @@ header .navbar .cta-btn a:hover {
   color: #cccccc;
   font-size: 14px;
 }
-
+.mb-4, .my-4 {
+    width: 100%;
+    margin-bottom: 1.5rem!important;
+}
 .sched, .blog {
   display: block;
   background-color: #fff;

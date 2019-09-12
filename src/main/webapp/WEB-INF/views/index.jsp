@@ -31,6 +31,8 @@
 	<link href="resources/css/main.css" rel="stylesheet">
 	<link href="resources/css/pages_button.css" rel="stylesheet">
 	<link href="resources/css/backgroundImg.css" rel="stylesheet">
+		<link href="resources/css/login.css" rel="stylesheet">
+	
 </head>
 
 <body class="no-js">
@@ -63,9 +65,9 @@
 
 	<script>
 		function main() {
-			//alert(".flipbook has " + $(".flipbook").turn("pages") + " pages");
 
-			//$('.flipbook').turn("disable", true);
+			$('.flipbook').turn("disable", true);
+			
 			$('#btnlogin').on('click', function() {
 				$("#login_form").submit();
 			});
@@ -73,6 +75,11 @@
 			$('#btnSignup').on('click', function() {
 				$(".flipbook").turn("disable", false);
 				$(".flipbook").turn("page", 2);
+				$('.flipbook').turn("disable", true);
+			});
+			$('#btnReturn').on('click', function() {
+				$(".flipbook").turn("disable", false);
+				$(".flipbook").turn("page", 1);
 				$('.flipbook').turn("disable", true);
 			});
 		}

@@ -29,7 +29,7 @@ p {
 }
 
 .mt-5, .my-5 {
-    margin-top: 1rem!important;
+    margin-top: 0.5rem!important;
 }
 .white-border-button a {
 	padding: 14px 20px;
@@ -673,6 +673,7 @@ transition-delay: 0.3s;
 /* back side */
 
 .back {
+	overflow : scroll;
   transform: rotateY(180deg);
 }
 
@@ -683,22 +684,22 @@ transition-delay: 0.3s;
 
 .first-service .front,
 .first-service .back {
-	background-color: rgba(244, 188, 81, 0.9);
+	background-color: rgba(63, 171, 27, 0.95);
 }
 
 .second-service .front,
 .second-service .back {
-	background-color: rgba(243, 158, 75, 0.9);
+	background-color: rgba(243, 158, 75, 0.95);
 }
 
 .third-service .front,
 .third-service .back {
-	background-color: rgba(185, 78, 94, 0.9);
+	background-color: rgba(185, 78, 94, 0.95);
 }
 
 .fourth-service .front,
 .fourth-service .back {
-	background-color: rgba(232, 104, 89, 0.9);
+	background-color: rgba(232, 104, 89, 0.95);
 }
 
 

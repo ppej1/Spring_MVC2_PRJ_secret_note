@@ -92,7 +92,6 @@ button:focus {
 .tm-block-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
   margin-bottom: 30px;
 }
 .nav-link {
@@ -266,30 +265,25 @@ thead {
   display: block;
 }
 .tm-col-avatar {
-  max-width: 425px;
-  width: 37%;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
 .tm-col-account-settings {
-  max-width: 822px;
-  width: 63%;
+
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
 .form-control {
-  background-color: #54657d;
-  color: #fff;
+  background-color: #4fe153;
   border: 0;
 }
 .form-control:focus {
-  background-color: #60738e;
-  color: #fff;
   border-color: transparent;
   box-shadow: 0 0 0 0.1rem rgb(180, 206, 233, 0.5);
 }
 .form-group label {
-  color: #fff;
   margin-bottom: 10px;
 }
 .tm-hide-sm {
@@ -320,11 +314,7 @@ thead {
 .tm-list > li {
   margin-bottom: 20px;
 }
-.form-control {
-  padding: 19px 18px;
-  border-radius: 0;
-  height: 50px;
-}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -339,16 +329,16 @@ thead {
 }
 .btn-primary {
   color: #fff;
-  background-color: #f5a623;
-  border: 2px solid #f5a623;
+  background-color: #4fe153;
+  border: 2px solid #4fe153;
   font-size: 90%;
   font-weight: 600;
 }
 .btn-primary:active,
 .btn-primary:hover {
-  color: #f5a623;
+  color: #4fe153;
   background-color: transparent;
-  border: 2px solid #f5a623;
+  border: 2px solid #4fe153;
 }
 .custom-file-input {
   cursor: pointer;
@@ -374,7 +364,7 @@ thead {
   color: #a0c0de;
 }
 .tm-bg-primary-dark {
-  background-color: #435c70;
+  background-color: #ffffff;
 }
 .tm-bg-gray {
   background-color: rgba(0, 0, 0, 0.05);
@@ -466,7 +456,7 @@ input[type="checkbox"]:focus {
 .custom-select {
   width: 100%;
   border: none;
-  color: #acc6de;
+  color: #007503;
   height: 50px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -479,7 +469,7 @@ input[type="checkbox"]:focus {
   -o-border-radius: 0;
   border-radius: 0;
   padding: 15px;
-  background: url(../img/arrow-down.png) 98% no-repeat #50657b;
+  background: url(../img/arrow-down.png) 98% no-repeat #4fe153;
 }
 .custom-select:focus {
   outline: 0;

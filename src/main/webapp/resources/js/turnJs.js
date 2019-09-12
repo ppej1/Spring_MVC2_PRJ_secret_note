@@ -73,11 +73,9 @@
  						pages = book.turn('pages');
  						console.log(book + "," + currentPage +"," + pages);
  						nav();
- 					}
- 				
- 				}	
- 				
- 				
+ 						
+ 				}		
+ 				}
  			});
  		}
 
@@ -182,5 +180,4 @@
 				location.href = "logout";
 			});	
 		}	
-		
 

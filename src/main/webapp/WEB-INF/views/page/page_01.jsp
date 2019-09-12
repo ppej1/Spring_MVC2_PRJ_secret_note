@@ -71,15 +71,17 @@
 									class="btn btn-primary btn-block text-uppercase">
 									Update Your Profile</button>
 							</div>
+							</form>
 							<div class="col-12">
 								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">
-									Delete Your Account</button>
+									class="btn btn-primary btn-block text-uppercase" id="btnReturn">
+									Return to login</button>
 							</div>
-						</form>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
