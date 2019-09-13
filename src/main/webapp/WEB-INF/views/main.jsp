@@ -167,7 +167,7 @@
 
 	</script>
 
-			 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
+	 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
 
    	<!-- main -->
     <script src="resources/template/js/popper.min.js"></script>
@@ -177,16 +177,16 @@
     <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
-	<!-- turn.js 관련  -->
-	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
-	
+
 	<!-- calendar -->
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>
 
 	
-
+	<!-- turn.js 관련  -->
+	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+	
 
 		
 
