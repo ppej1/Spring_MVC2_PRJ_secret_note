@@ -74,8 +74,20 @@
  						console.log(book + "," + currentPage +"," + pages);
  						nav();
  						
-
- 						
+ 						if(currentPage == 10 || currentPage == 11 ){
+ 							var tag = '';
+ 							tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
+ 							tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
+ 							tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+ 							tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+ 							$('.selectICon_div').html(tag);
+ 						}else{
+ 							tag = '';
+ 							tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+ 							tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+ 							$('.selectICon_div').html(tag);
+ 						}
+ 						 
  						
  				}		
  				}
