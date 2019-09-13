@@ -3,9 +3,7 @@
 
 <div class="page_content_odd">
 	<div class="page_container_full">
-		<div class="calendarContainer">
 
-			</div>
 		</div>
 
 </div>

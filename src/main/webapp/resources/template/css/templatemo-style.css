@@ -17,6 +17,7 @@ body {
 }
 a {
   transition: all 0.3s ease;
+  color:#4fe153;
 }
 a:focus,
 a:hover {
