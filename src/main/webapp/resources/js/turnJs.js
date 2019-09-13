@@ -74,6 +74,9 @@
  						console.log(book + "," + currentPage +"," + pages);
  						nav();
  						
+
+ 						
+ 						
  				}		
  				}
  			});

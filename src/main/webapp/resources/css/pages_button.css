@@ -21,14 +21,21 @@
 		width: 30px;
 		height: 60px;
 		font-size: 1em;
-		writing-mode: vertical-lr
+    	writing-mode: vertical-lr;
+    	
 	}
 
 	.button_nav_odd button {
 		width: 30px;
 		height: 60px;
 		font-size: 1em;
-		writing-mode: vertical-lr
+		writing-mode: vertical-lr;
+		padding-left: 0px;
+    	padding-right: 0px;
+	}
+	.tm-gray-circle img{
+	height: 100%;
+	width: 100%;
 	}
 
 
@@ -113,16 +120,10 @@
 }
 
 .page_title_container_div {
-
 	margin: 1% auto;
-
-	text-align: center;
+	text-align: right;
 	width: 90%;
 	min-height: 90%
-}
-
-.page_title_container_div h1 {
-	font-family: 'Dancing Script', cursive;
 }
 
 .page_container_full {

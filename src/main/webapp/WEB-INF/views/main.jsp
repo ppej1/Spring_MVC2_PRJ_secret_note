@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/template/css/style.css">
+	<link rel="stylesheet" href="resources/template/css/templatemo-style.css">		
 
 
     <!-- custum templet Style -->
@@ -162,10 +163,9 @@
 
 	}
 	
-
+	
 
 	</script>
-
 
 			 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
 

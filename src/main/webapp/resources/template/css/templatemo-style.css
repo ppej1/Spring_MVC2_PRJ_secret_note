@@ -179,11 +179,11 @@ button:focus {
 }
 .tm-notification-items {
   overflow-y: scroll;
-  height: 90%;
+  height: 100%;
 }
 .tm-notification-item {
   padding: 15px;
-  background-color: #4e657a;
+  background-color: #2eb932;
   color: #fff;
   font-size: 95%;
   margin-bottom: 15px;

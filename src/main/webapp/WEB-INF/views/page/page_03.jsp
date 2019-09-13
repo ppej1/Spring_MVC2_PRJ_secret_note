@@ -4,7 +4,7 @@
   <div class="page_title_container">
   </div>
   <div class="page_container">
-    <section >
+    <section>
 
       <div class="container">
         <div class="row">
