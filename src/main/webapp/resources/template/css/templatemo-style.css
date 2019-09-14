@@ -26,6 +26,9 @@ a:hover {
 button:focus {
   outline: 0;
 }
+tr:nth-child(2n) {
+	  background-color: #ffffff;
+}
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -87,13 +90,17 @@ button:focus {
 .tm-block-scroll {
   overflow-y: scroll;
 }
+.tm-block-list{
+	width: 90%;
+	margin : 0px auto;
+	height: 85%;
+    background-color: whitesmoke;
+}
 .tm-block-overflow {
   overflow: hidden;
 }
 .tm-block-title {
-  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 30px;
 }
 .nav-link {
   color: #fff;
@@ -202,18 +209,22 @@ button:focus {
   font-size: 90%;
 }
 .table {
-  background-color: #50697f;
-  color: #fff;
+  background-color: #c3ffc4;
+  color: #0a7164;
   font-size: 85%;
   margin-bottom: 0;
 }
+
 thead {
-  background-color: #486177;
+  background-color: #2eb932;
   color: #fff;
 }
 .table thead th {
   border-bottom: 0;
 }
+
+
+
 .tm-status-circle {
   display: inline-block;
   margin-right: 5px;
@@ -349,8 +360,8 @@ thead {
 }
 .table td,
 .table th {
-  border-top: 1px solid #415a70;
-  padding: 15px 25px;
+  border-top: 1px solid #ffffff;
+  padding: 12px 2px;
   vertical-align: middle;
 }
 .tm-table-small td,
