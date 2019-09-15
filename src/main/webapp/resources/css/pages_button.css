@@ -7,7 +7,6 @@
 		height: 100%;
 	}
 
-
 	.button_nav_even {
 		background-color: #edf4f5;
 		margin: 0px 0px;
@@ -137,27 +136,10 @@
 }
 
 /* 06페이지 */
-.alert {
-	font-size: 0.5rem;
-	width: 80%;
-	float: left;
+.checklistTable tr:hover{
+	background-color: rgba(0,0,0,0);
 }
 
-.checkListBtn_Div {
-	float: left;
-	width: 20%;
-	height: 50px;
-	text-align: center;
-}
-
-.checkListBtn_Div .btn {
-	height: 50px;
-
-}
-
-.checkListBtn_Div .row {
-	width: 100%;
-}
 
 /* 07페이지 */
 .comment_body_container {

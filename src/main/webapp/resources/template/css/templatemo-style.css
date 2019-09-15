@@ -29,6 +29,8 @@ button:focus {
 .tablelist tr:nth-child(2n) {
 	  background-color: #ffffff;
 }
+
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -332,7 +334,7 @@ thead {
 }
 .btn {
   border-radius: 0;
-  padding: 13px 28px;
+  padding: 7% 15%;
   transition: all 0.2s ease;
   max-width: 100%;
 }
@@ -383,6 +385,18 @@ thead {
 }
 .tm-table-mt {
   margin-top: 66px;
+}
+
+.checklistTable td,
+.checklistTable th{
+	padding: 1.7% 1%;
+}
+
+.checklistTable tr:nth-child(4n){
+	  background-color: #ffffff;
+}
+.checklistTable tr:nth-child(4n-1){
+	  background-color: #ffffff;
 }
 .page-item:first-child .page-link {
   border-top-left-radius: 0;
