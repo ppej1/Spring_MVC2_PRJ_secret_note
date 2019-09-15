@@ -26,7 +26,7 @@ a:hover {
 button:focus {
   outline: 0;
 }
-tr:nth-child(2n) {
+.tablelist tr:nth-child(2n) {
 	  background-color: #ffffff;
 }
 .navbar-brand {

@@ -5,7 +5,7 @@
 	<div class="page_container_full">
 		<h1 class="tm-block-title">DISPOSAL LIST</h1>
 		<div class="tm-block-scroll tm-block-list">
-			<table class="table">
+			<table class="table tablelist">
 				<thead>
 					<tr>
 						<th scope="col">NO.</th>

@@ -7,7 +7,7 @@
 <div class="page_content_even">
   <!-- even page   -->
 
-  <div class="page_title_container">
+  <div class="page_title_container_div">
   </div>
   <div class="page_container">
 

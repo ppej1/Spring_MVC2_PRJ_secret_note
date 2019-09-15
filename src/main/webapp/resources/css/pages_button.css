@@ -33,10 +33,7 @@
 		padding-left: 0px;
     	padding-right: 0px;
 	}
-	.tm-gray-circle img{
-	height: 100%;
-	width: 100%;
-	}
+
 
 
 }
@@ -119,13 +116,18 @@
 	min-height: 5%;
 }
 
-.page_title_container_div {
+.page_title_container_div_left {
+	margin: 1% auto;
+	text-align: left;
+	width: 90%;
+	min-height: 90%
+}
+.page_title_container_div_right {
 	margin: 1% auto;
 	text-align: right;
 	width: 90%;
 	min-height: 90%
 }
-
 .page_container_full {
 	background-color:white;
 	width: 100%;
@@ -190,3 +192,7 @@
 	padding: .3rem 1rem;
 }
 
+.tm-gray-circle img{
+	height: 100%;
+	width: 100%;
+	}

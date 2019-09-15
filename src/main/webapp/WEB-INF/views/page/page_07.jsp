@@ -5,7 +5,7 @@
     <!-- odd page  main -->
     <div class="page_container_full">
         <div class="page_title_container">
-            <div class="page_title_container_div">
+            <div class="page_title_container_div_right">
                 <h1>MEMO</h1>
             </div>
         </div>
