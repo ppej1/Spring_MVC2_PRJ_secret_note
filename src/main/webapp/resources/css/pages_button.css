@@ -177,4 +177,52 @@
 .tm-gray-circle img{
 	height: 100%;
 	width: 100%;
-	}
+}
+.info_page_container{
+	height: 93%;
+    margin: 3%;
+    background-color: #b8ffd5;
+}
+.info_detail_container{
+	height: 70%;
+}
+.info_detail{
+	height: 90%;
+}
+
+.detail_info{
+	height: 100%;
+	margin-bottom: 0px;
+	padding: 1%;
+}
+.detail_info .blog{
+	height: 100%;
+	margin-bottom: 0px;
+}
+.info_button_container{
+    height: 10%;
+    background-color: white;
+}
+.info_select_container{
+	height: 30%;
+	padding: 1%
+}
+.info_select{
+	width: 33.333%;
+    height: 100%;
+    margin: 0px;
+    float: left;
+    text-align: center;
+    padding: 8%;
+    font-size: 1.5rem; 
+}
+
+.detail_btn{
+	font-size: 1px;
+    float: right;
+    margin-top: 3px;
+    padding: 0%
+
+}
+
+/*11 page*/

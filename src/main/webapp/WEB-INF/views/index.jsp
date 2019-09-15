@@ -82,6 +82,7 @@
 				$(".flipbook").turn("page", 1);
 				$('.flipbook').turn("disable", true);
 			});
+
 		}
 	</script>
 	

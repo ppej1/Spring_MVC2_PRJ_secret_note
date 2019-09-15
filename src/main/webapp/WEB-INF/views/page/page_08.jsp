@@ -23,9 +23,9 @@
 					info.jsEvent
 				.preventDefault(); // prevents browser from following link in current tab.
 				} else {
-					//$('.flipbook').turn("disable", false);
+					$('.flipbook').turn("disable", false);
 					$('.flipbook').turn("page", 10);
-					//$('.flipbook').turn("disable", true);
+					$('.flipbook').turn("disable", true);
 				}
 			},
 			defaultDate: '2019-09-03',

@@ -96,7 +96,7 @@ button:focus {
 	width: 90%;
 	margin : 0px auto;
 	height: 85%;
-    background-color: whitesmoke;
+    background-color: #b8ffd5;
 }
 .tm-block-overflow {
   overflow: hidden;
@@ -591,6 +591,11 @@ input[type="checkbox"]:focus {
   color: #aacbea;
 }
 
+.btn-outline-secondary:hover{
+	color: #fff;
+    background-color: #4fe153;
+    border-color: #4fe153;
+}
 @media (min-width: 1200px) {
   .navbar-expand-xl .navbar-nav .nav-link {
     padding-left: 28px;

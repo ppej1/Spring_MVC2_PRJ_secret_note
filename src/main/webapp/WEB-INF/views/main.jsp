@@ -157,15 +157,7 @@
 	</div>
 	
 	
-	<script>
-	function main(){
-		//$('.flipbook').turn("disable", true);
 
-	}
-	
-	
-
-	</script>
 
 	 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
 
@@ -187,7 +179,16 @@
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
 	
+	<script>
+	function main(){
+		$('.flipbook').turn("disable", true);
 
+		$('#storageBtn').on('click', function () {
+			alert("dsdsds");
+		});	
+	}
+
+	</script>
 		
 
 

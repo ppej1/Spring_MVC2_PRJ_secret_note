@@ -72,7 +72,7 @@
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
  						console.log(book + "," + currentPage +"," + pages);
- 						nav();
+ 						
  						
  						if(currentPage == 10 || currentPage == 11 ){
  							var tag = '';
@@ -87,7 +87,7 @@
  							tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
  							$('.selectICon_div').html(tag);
  						}
- 						 
+ 						nav();
  						
  				}		
  				}
@@ -142,32 +142,32 @@
 				console.log("2");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 2);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-go-check').on('click', function () {
 				console.log("4");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 4);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 	 	
 			$('.btn-go-stock').on('click', function () {
 				console.log("8");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 8);
-				//$('.flipbook').turn("disable", true);	
+				$('.flipbook').turn("disable", true);	
 			});	
 			$('.btn-go-use').on('click', function () {
 				console.log("12");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 12);
-				//$('.flipbook').turn("disable", true);		
+				$('.flipbook').turn("disable", true);		
 			});	
 			$('.btn-go-Analysis').on('click', function () {
 				console.log("20");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 18);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 
 			/* even button */
@@ -176,23 +176,29 @@
 				console.log("20");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn_minus').on('click', function () {
 				console.log("20");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
 				console.log("20");
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.log-out').on('click', function () {
 				console.log("logout");
 				location.href = "logout";
 			});	
+			/* page 10 11 menu button */
+			$('#storageBtn').on('click', function () {
+				alert("상온을 클릭했음");
+			});		
+			
+			
 		}	
 
