@@ -67,10 +67,6 @@
 		function main() {
 
 			$('.flipbook').turn("disable", true);
-			
-			$('#btnlogin').on('click', function() {
-				$("#login_form").submit();
-			});
 
 			$('#btnSignup').on('click', function() {
 				$(".flipbook").turn("disable", false);

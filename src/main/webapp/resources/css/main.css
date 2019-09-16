@@ -20,14 +20,14 @@
 	.flipbook-viewport .flipbook-container {
 		position: absolute;
 		top: 20px;
-		left: 50%;
+		left: 4%;
 		margin: auto;
 		padding-right: 0px;
     	padding-left: 0px;
 	}
 
 	.flipbook-viewport .flipbook {
-		left: -50%;
+		left: 0%;
 		top: 0%
 	}
 }
@@ -68,7 +68,7 @@
 
 
 
-/* 공통 사용 */
+/* 怨듯넻 �궗�슜 */
 ::-webkit-scrollbar {
 
 	display: none;
