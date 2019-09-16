@@ -24,9 +24,9 @@
 					center: 'title'
 				},
 				eventClick: function (info) {
-					//$('.flipbook').turn("disable", false);
+					$('.flipbook').turn("disable", false);
 					$('.flipbook').turn("page", 6);
-					//$('.flipbook').turn("disable", true);
+					$('.flipbook').turn("disable", true);
 				},
 				defaultDate: '2019-09-15',
 				events: [{

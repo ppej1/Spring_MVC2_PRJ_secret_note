@@ -14,6 +14,23 @@
  		.no-js {
  			display: none;
  		}
+ 		.info_list{
+			width: 100%;
+		}
+		.labels tr td {
+			background-color: #4fe153;
+			font-weight: bold;
+			color: #fff;
+		}
+
+		.label tr td label {
+			display: block;
+		}
+
+		[data-toggle="toggle"] {
+			display: none;
+		}
+ 		
 	</style>
 	<!-- bootStrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -157,15 +174,7 @@
 	</div>
 	
 	
-	<script>
-	function main(){
-		//$('.flipbook').turn("disable", true);
 
-	}
-	
-	
-
-	</script>
 
 	 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
 
@@ -187,7 +196,16 @@
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
 	
+	<script>
+	function main(){
+		$('.flipbook').turn("disable", true);
 
+		$('#storageBtn').on('click', function () {
+			alert("dsdsds");
+		});	
+	}
+
+	</script>
 		
 
 

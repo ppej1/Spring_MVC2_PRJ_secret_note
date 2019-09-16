@@ -60,8 +60,8 @@ textarea.form-control {
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
-  border-color: #e9362f;
-  background: #e9362f;
+  border-color: #4fe153;
+  background: #ffffff;
 }
 
 .btn.btn-sm {

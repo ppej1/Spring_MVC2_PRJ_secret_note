@@ -29,6 +29,8 @@ button:focus {
 .tablelist tr:nth-child(2n) {
 	  background-color: #ffffff;
 }
+
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -191,7 +193,7 @@ button:focus {
 }
 .tm-notification-item {
   padding: 15px;
-  background-color: #2eb932;
+  background-color: #4fe153;
   color: #fff;
   font-size: 95%;
   margin-bottom: 15px;
@@ -200,10 +202,10 @@ button:focus {
   margin-bottom: 0;
 }
 .tm-notification-link {
-  color: #f5a623;
+  color: #ff0000;
 }
 .tm-text-color-secondary {
-  color: #bdcbd8;
+  color: #efff1d;
 }
 .tm-small {
   font-size: 90%;
@@ -216,7 +218,7 @@ button:focus {
 }
 
 thead {
-  background-color: #2eb932;
+  background-color: #4fe153;
   color: #fff;
 }
 .table thead th {
@@ -332,7 +334,7 @@ thead {
 }
 .btn {
   border-radius: 0;
-  padding: 13px 28px;
+  padding: 7% 15%;
   transition: all 0.2s ease;
   max-width: 100%;
 }
@@ -383,6 +385,18 @@ thead {
 }
 .tm-table-mt {
   margin-top: 66px;
+}
+
+.checklistTable td,
+.checklistTable th{
+	padding: 1.7% 1%;
+}
+
+.checklistTable tr:nth-child(4n){
+	  background-color: #ffffff;
+}
+.checklistTable tr:nth-child(4n-1){
+	  background-color: #ffffff;
 }
 .page-item:first-child .page-link {
   border-top-left-radius: 0;
@@ -577,6 +591,11 @@ input[type="checkbox"]:focus {
   color: #aacbea;
 }
 
+.btn-outline-secondary:hover{
+	color: #fff;
+    background-color: #4fe153;
+    border-color: #4fe153;
+}
 @media (min-width: 1200px) {
   .navbar-expand-xl .navbar-nav .nav-link {
     padding-left: 28px;

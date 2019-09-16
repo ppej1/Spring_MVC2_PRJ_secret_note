@@ -30,9 +30,9 @@
 			],
 
 			eventClick: function (data) {
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 6);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			}
 		});
 
