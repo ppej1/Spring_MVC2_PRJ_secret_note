@@ -14,6 +14,23 @@
  		.no-js {
  			display: none;
  		}
+ 		.info_list{
+			width: 100%;
+		}
+		.labels tr td {
+			background-color: #4fe153;
+			font-weight: bold;
+			color: #fff;
+		}
+
+		.label tr td label {
+			display: block;
+		}
+
+		[data-toggle="toggle"] {
+			display: none;
+		}
+ 		
 	</style>
 	<!-- bootStrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

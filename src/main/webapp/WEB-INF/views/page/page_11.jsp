@@ -1,27 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<head>
-	<style>
-		.info_list{
-			width: 100%;
-		}
-		.labels tr td {
-			background-color: #2cc16a;
-			font-weight: bold;
-			color: #fff;
-		}
-
-		.label tr td label {
-			display: block;
-		}
-
-		[data-toggle="toggle"] {
-			display: none;
-		}
-	</style>
-
-</head>
 <div class="page_content_odd">
 	<div class="page_container_full">
 		<div class="page_title_container">
