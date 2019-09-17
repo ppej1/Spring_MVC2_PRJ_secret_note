@@ -38,8 +38,9 @@ public class EmployeeController {
 			model.addAttribute("userimage", employee.getEImg());
 			model.addAttribute("useremail", employee.getEmail());
 			model.addAttribute("userphone", employee.getEPhone());
+			return "main";
 		}
-		return "main";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)

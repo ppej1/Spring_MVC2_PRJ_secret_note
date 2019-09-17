@@ -21,7 +21,7 @@ DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 CREATE TABLE Account
 (
 	accountName varchar2(20) NOT NULL,
-	aImg varchar2(20) NOT NULL,
+	aImg varchar2(200) NOT NULL,
 	aManager varchar2(20) NOT NULL,
 	aPhone varchar2(20) NOT NULL,
 	PRIMARY KEY (accountName)
@@ -31,12 +31,16 @@ CREATE TABLE Account
 CREATE TABLE CheckList
 (
 	ckSerialNumber varchar2(20) NOT NULL,
-	userid varchar2(20) NOT NULL,
 	ckTitle varchar2(100) NOT NULL,
 	-- check 제약 조건으로 완료. 미완료만 사용
-	completes varchar2(20) CHECK (completes IN ('完了','未完了')) NOT NULL,
+	completes varchar2(20) NOT NULL,
 	-- check제약조건으로 상중하만 입력 가능
-	importance varchar2(20) CHECK (importance IN ('上','中','下')) NOT NULL,
+	importance varchar2(20) NOT NULL,
+	-- 등록한 직원
+	registId varchar2(20) NOT NULL,
+	rDate date NOT NULL,
+	finisher varchar2(20),
+	fDate date,
 	PRIMARY KEY (ckSerialNumber)
 );
 
@@ -59,6 +63,7 @@ CREATE TABLE Disposal
 	userid varchar2(20) NOT NULL,
 	eDate date NOT NULL,
 	dAmount number NOT NULL,
+	condition varchar2(20) DEFAULT 'Disposal' NOT NULL,
 	PRIMARY KEY (dSerialNumber)
 );
 
@@ -73,7 +78,7 @@ CREATE TABLE Employee
 	email varchar2(20) NOT NULL,
 	ePhone varchar2(20) NOT NULL,
 	-- check 제약조건으로 퇴직, 현직 으로 나뉨
-	status varchar2(20) CHECK (status IN ('現職','退職')) NOT NULL,
+	status varchar2(20) NOT NULL,
 	PRIMARY KEY (userid)
 );
 
@@ -93,7 +98,7 @@ CREATE TABLE NuturitionDB
 	foodTitle varchar2(20) NOT NULL,
 	indexs varchar2(20) NOT NULL,
 	foodGroup varchar2(20) NOT NULL,
-	energyNumber number NOT NULL,
+	energy number NOT NULL,
 	protein number NOT NULL,
 	carbon number NOT NULL,
 	sugar number NOT NULL,
@@ -111,6 +116,8 @@ CREATE TABLE Receipt
 	userid varchar2(20) NOT NULL,
 	rAmount number NOT NULL,
 	rDate date NOT NULL,
+	-- 입고시 상태를 적어놓는다
+	rComment varchar2(100),
 	PRIMARY KEY (rSerialNumber)
 );
 
@@ -150,6 +157,7 @@ CREATE TABLE Uses
 	userid varchar2(20) NOT NULL,
 	uDate date NOT NULL,
 	uAmount number NOT NULL,
+	condition varchar2(20) DEFAULT 'Uses' NOT NULL,
 	PRIMARY KEY (uSerialNumber)
 );
 
@@ -166,12 +174,6 @@ ALTER TABLE Receipt
 ALTER TABLE Comments
 	ADD FOREIGN KEY (ckSerialNumber)
 	REFERENCES CheckList (ckSerialNumber)
-;
-
-
-ALTER TABLE CheckList
-	ADD FOREIGN KEY (userid)
-	REFERENCES Employee (userid)
 ;
 
 
@@ -246,7 +248,9 @@ ALTER TABLE Uses
 
 COMMENT ON COLUMN CheckList.completes IS 'check 제약 조건으로 완료. 미완료만 사용';
 COMMENT ON COLUMN CheckList.importance IS 'check제약조건으로 상중하만 입력 가능';
+COMMENT ON COLUMN CheckList.registId IS '등록한 직원';
 COMMENT ON COLUMN Employee.status IS 'check 제약조건으로 퇴직, 현직 으로 나뉨';
+COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 

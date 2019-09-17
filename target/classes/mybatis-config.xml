@@ -20,6 +20,6 @@
 	
 	<mappers>
 		<mapper resource="mappers/EmployeeMapper.xml" />
-
+		<mapper resource="mappers/CheckListMapper.xml" />
 	</mappers>
 </configuration>

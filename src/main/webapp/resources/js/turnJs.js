@@ -91,6 +91,12 @@
 					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
 					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
 					$('.selectICon_div').html(tag);
+				}else if(currentPage == 6 || currentPage== 7 ){
+					var tag = '';
+					tag+=  '<a href="#" class="btn_plus_checkList"><i class="fas fa-book-medical"></i></a>';
+					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+					$('.selectICon_div').html(tag);
 				}else{
 					tag = '';
 					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
@@ -171,7 +177,9 @@
 			});	
 
 			/* even button */
-
+			$('.btn_plus_checkList').on('click', function () {
+				createCheckList();
+			});	
 			$('.btn_plus').on('click', function () {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);

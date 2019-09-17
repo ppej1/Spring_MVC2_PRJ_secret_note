@@ -195,7 +195,9 @@
 	<!-- turn.js 관련  -->
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+	<!-- service -->
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
+	<script type="text/javascript" src="resources/js/checkList.js"></script>	
 	
 	<script>
 	function main(){

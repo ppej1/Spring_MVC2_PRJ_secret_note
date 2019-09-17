@@ -56,20 +56,3 @@ function dateToYYYYMMDD(date){
 
 
 
-
-function checklistPage(){
-	console.log(object.id);
-	console.log(startDate);
-	
-	var sendData = {
-      		"startDate": startDate
-         }
-         $.ajax({
-           type: 'POST',
-           url: 'loadCheckList',
-           data: sendData,
-           success: function(){
-           	output();
-           }
-         });
-}
