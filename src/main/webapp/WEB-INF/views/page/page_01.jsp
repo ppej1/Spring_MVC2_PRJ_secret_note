@@ -1,14 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-  <!-- accessterm page   -->
- 	<div class="page_content_odd">
- 		<h1>회원가입</h1>
-		<div id="signup_1"></div>
+<!-- accessterm page   -->
+<div class="page_content_odd">
 
- 	</div> 				
-<script src="resources/js/webpack/signup_1.js"></script>
+	<div class="page_title_container">
+		<div class="page_title_container_div"></div>
+	</div>
+	<div class="page_container">
+		<div class="container mt-5">
+			<div class="row tm-content-row">
+				<div class="col-12 tm-block-col">
+					<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+						<h2 class="tm-block-title">List of Accounts</h2>
+						<p class="text-white">Accounts</p>
+						<select class="custom-select">
+							<option value="0">Select account</option>
+							<option value="1">Admin</option>
+							<option value="2">Editor</option>
+							<option value="3">Merchant</option>
+							<option value="4">Customer</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- row -->
+			<div class="row tm-content-row">
+				<div class="tm-block-col tm-col-avatar">
+					<div class="tm-bg-primary-dark tm-block tm-block-avatar">
+						<h2 class="tm-block-title">Change Avatar</h2>
+						<div class="tm-avatar-container">
+							<img src="resources/data/img/profile/avatar.png" alt="Avatar" class="tm-avatar img-fluid mb-4" /> <a href="#"
+								class="tm-avatar-delete-link"> <i class="far fa-trash-alt tm-product-delete-icon"></i>
+							</a>
+						</div>
+						<input id="fileInput" type="file" style="display:none;" />
+						<input
+						  type="button"
+						  class="btn btn-primary btn-block mx-auto"
+						  value="UPLOAD PRODUCT IMAGE"
+						  onclick="document.getElementById('fileInput').click();"
+						/>
+					</div>
+				</div>
+				<div class="tm-block-col tm-col-account-settings">
+					<div class="tm-bg-primary-dark tm-block tm-block-settings">
+						<h2 class="tm-block-title">Account Settings</h2>
+						<form action="" class="tm-signup-form row">
+							<div class="form-group col-lg-6">
+								<label for="name">Account Name</label> <input id="name" name="name" type="text"
+									class="form-control validate" />
+							</div>
+							<div class="form-group col-lg-6">
+								<label for="email">Account Email</label> <input id="email" name="email" type="email"
+									class="form-control validate" />
+							</div>
+							<div class="form-group col-lg-6">
+								<label for="password">Password</label> <input id="password" name="password"
+									type="password" class="form-control validate" />
+							</div>
+							<div class="form-group col-lg-6">
+								<label for="password2">Re-enter Password</label> <input id="password2" name="password2"
+									type="password" class="form-control validate" />
+							</div>
+							<div class="form-group col-lg-6">
+								<label for="phone">Phone</label> <input id="phone" name="phone" type="tel"
+									class="form-control validate" />
+							</div>
+							<div class="form-group col-lg-6">
+								<label class="tm-hide-sm">&nbsp;</label>
+								<button type="submit" class="btn btn-primary btn-block text-uppercase">
+									Update Your Profile</button>
+							</div>
+						</form>
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary btn-block text-uppercase" id="btnReturn">
+								Return to login</button>
+						</div>
 
-
-
-
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

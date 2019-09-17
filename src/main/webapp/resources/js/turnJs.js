@@ -1,4 +1,4 @@
-		function load() {
+	function load() {
 
  			var mql = window.matchMedia("screen and (min-width: 768px)");
  			if (mql.matches) {
@@ -6,7 +6,7 @@
  				loadApp1();
  				$(window).resize(function () {
  					//console.log(window.innerWidth);
- 					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
+ 					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
  				});
 
  			} else {
@@ -22,7 +22,7 @@
  					//console.log("1200px");
  					$(window).resize(function () {
  						//console.log(window.innerWidth);
- 						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 100);
+ 						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
  					});
  				} else {
  					//console.log("768px");
@@ -51,7 +51,7 @@
 
  				// Height
 
- 				height: window.innerHeight - 100,
+ 				height: window.innerHeight - 50,
 
  				// Elevation
 
@@ -72,12 +72,25 @@
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
  						console.log(book + "," + currentPage +"," + pages);
+ 						
+ 						
+ 						if(currentPage == 10 || currentPage == 11 ){
+ 							var tag = '';
+ 							tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
+ 							tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
+ 							tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+ 							tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+ 							$('.selectICon_div').html(tag);
+ 						}else{
+ 							tag = '';
+ 							tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+ 							tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+ 							$('.selectICon_div').html(tag);
+ 						}
  						nav();
- 					}
- 				
- 				}	
- 				
- 				
+ 						
+ 				}		
+ 				}
  			});
  		}
 
@@ -127,41 +140,65 @@
 			console.log("odd");	
 			$('.btn-go-menu').on('click', function () {
 				console.log("2");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 2);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-go-check').on('click', function () {
 				console.log("4");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 4);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", true);
 			});	
 	 	
 			$('.btn-go-stock').on('click', function () {
 				console.log("8");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 8);
-				//$('.flipbook').turn("disable", true);	
+				$('.flipbook').turn("disable", true);	
 			});	
 			$('.btn-go-use').on('click', function () {
 				console.log("12");
-				//$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 12);
-				//$('.flipbook').turn("disable", true);		
-			});	
-			$('.btn-go-Disposal').on('click', function () {
-				console.log("16");
-				//$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 16);
-				//$('.flipbook').turn("disable", true);	
+				$('.flipbook').turn("disable", true);		
 			});	
 			$('.btn-go-Analysis').on('click', function () {
 				console.log("20");
-				//$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 20);
-				//$('.flipbook').turn("disable", true);
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 18);
+				$('.flipbook').turn("disable", true);
 			});	
+
+			/* even button */
+
+			$('.btn_plus').on('click', function () {
+				console.log("20");
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				$('.flipbook').turn("disable", true);
+			});	
+			$('.btn_minus').on('click', function () {
+				console.log("20");
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				$('.flipbook').turn("disable", true);
+			});	
+			$('.btn-userInfo').on('click', function () {
+				console.log("20");
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				$('.flipbook').turn("disable", true);
+			});	
+			$('.log-out').on('click', function () {
+				console.log("logout");
+				location.href = "logout";
+			});	
+			/* page 10 11 menu button */
+			$('#storageBtn').on('click', function () {
+				alert("상온을 클릭했음");
+			});		
+			
+			
 		}	
-		
 

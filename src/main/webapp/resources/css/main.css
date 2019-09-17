@@ -19,15 +19,15 @@
 
 	.flipbook-viewport .flipbook-container {
 		position: absolute;
-		top: 50px;
-		left: 50%;
+		top: 20px;
+		left: 4%;
 		margin: auto;
 		padding-right: 0px;
     	padding-left: 0px;
 	}
 
 	.flipbook-viewport .flipbook {
-		left: -50%;
+		left: 0%;
 		top: 0%
 	}
 }
@@ -122,7 +122,6 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: left;
-	overflow-y: scroll;
 }
 .page_content_even {
 	margin: 0px 0px;
@@ -130,7 +129,12 @@
 	width: calc(100% - 30px);
 	height: 100%;
 	float: right;
-	overflow-y: scroll;
 }
 
-
+.page_content_odd_title{
+	margin: 0px 0px;
+	display: inline-block;
+	width: calc(100% - 30px);
+	height: 100%;
+	float: left;
+}

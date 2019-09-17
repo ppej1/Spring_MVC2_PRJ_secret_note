@@ -3,7 +3,7 @@
 		background-size: cover;
 	}
 	.flipbook-viewport .page{
-	background-image: url('../img/papper.jpg');
+	background-color: #edf4f5;
 	border: 1px solid #dce0dd;
 }
 .page_content_odd{
@@ -22,14 +22,32 @@
 }
 
 #title_page{
+	//background-color: #edf4f5;
 	background-image: url('../img/foodtableTitle.jpg');
 	background-size: cover;
 }
 .title_content_odd{
-	background-image: url('../img/foodtableTitle.jpg');
-	background-size: cover;
+	//background-image: url('../img/foodtableTitle.jpg');
+	//background-size: cover;
 }
 #last_page{
 	background-image: url('../img/foodtableTitle.jpg');
 	background-size: cover;	
+}
+.page_content_odd{
+	background-image: url('../img/papper_odd.jpg');
+	background-size: cover;
+}
+.frozen_storage{
+	background-image: url('../img/foodtableTitle.jpg');
+	background-size: cover;
+}
+.cold_storage{
+
+	background-image: url('../img/foodTable.jpg');
+	background-size: cover;
+}
+.storage{
+	background-image: url('../img/foodtableTitle.jpg');
+	background-size: cover;
 }

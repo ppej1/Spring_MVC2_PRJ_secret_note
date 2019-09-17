@@ -7,14 +7,6 @@
  <head>
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">	
-	
-	<link href="resources/css/pages_button.css"  rel="stylesheet">
-	<link href="resources/css/backgroundImg.css"  rel="stylesheet">
-	
  	<style>
 	 	body {
  			background-color: black;
@@ -22,11 +14,50 @@
  		.no-js {
  			display: none;
  		}
+ 		.info_list{
+			width: 100%;
+		}
+		.labels tr td {
+			background-color: #4fe153;
+			font-weight: bold;
+			color: #fff;
+		}
+
+		.label tr td label {
+			display: block;
+		}
+
+		[data-toggle="toggle"] {
+			display: none;
+		}
+ 		
 	</style>
+	<!-- bootStrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- even ICON -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"/>
+	<!-- calendar -->	
+	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
+	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />		
 
 
+	<!-- main index page -->
+    <link rel="stylesheet" href="resources/template/css/animate.css">
+    <link rel="stylesheet" href="resources/template/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="resources/template/css/magnific-popup.css">
+    <link rel="stylesheet" href="resources/template/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="resources/template/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="resources/template/css/style.css">
+	<link rel="stylesheet" href="resources/template/css/templatemo-style.css">		
 
 
+    <!-- custum templet Style -->
+	<link rel="stylesheet" href="resources/css/main.css">
+	<link rel="stylesheet" href="resources/css/pages_button.css">
+	<link rel="stylesheet" href="resources/css/backgroundImg.css">
  </head>
 
  <body class="no-js">
@@ -37,7 +68,7 @@
  			<div class="flipbook">
  				<!--1 page - title page-->
  				<div -ms-overflow-style: none; id="title_page">
- 					<div class="page_content_odd title_content_odd">
+ 					<div class="page_content_odd_title title_content_odd">
  						<jsp:include page="page/page_title.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
@@ -111,34 +142,24 @@
  						<jsp:include page="page/page_15.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
- 					<!--16 page 폐기 달력 1-->
+ 					<!--18 page 폐기 페이지 1-->
  					<div id="page_16">
  						<jsp:include page="page/button_even.jsp" flush="false"/>
  						<jsp:include page="page/page_16.jsp" flush="false"/>
  					</div>
- 					<!--17 page 폐기 달력 2-->
+ 					<!--19 page 폐기 페이지 2-->
  					<div id="page_17">
  						<jsp:include page="page/page_17.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
- 					<!--18 page 폐기 페이지 1-->
+ 					<!--20 page 분석 페이지 1-->
  					<div id="page_18">
  						<jsp:include page="page/button_even.jsp" flush="false"/>
  						<jsp:include page="page/page_18.jsp" flush="false"/>
  					</div>
- 					<!--19 page 폐기 페이지 2-->
+ 					<!--21 page 분석 페이지 2-->
  					<div id="page_19">
  						<jsp:include page="page/page_19.jsp" flush="false"/>
- 						<jsp:include page="page/button_odd.jsp" flush="false"/>
- 					</div>
- 					<!--20 page 분석 페이지 1-->
- 					<div id="page_20">
- 						<jsp:include page="page/button_even.jsp" flush="false"/>
- 						<jsp:include page="page/page_20.jsp" flush="false"/>
- 					</div>
- 					<!--21 page 분석 페이지 2-->
- 					<div id="page_21">
- 						<jsp:include page="page/page_21.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
  					<!--last  page-->
@@ -151,20 +172,45 @@
  			</div>
  		</div>
 	</div>
-
-
-	<!-- turn.js 관련  -->
- 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script> 	
-	<script src="resources/js/turnJs.js"></script>
 	
-		<script>
+	
+
+
+	 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
+
+   	<!-- main -->
+    <script src="resources/template/js/popper.min.js"></script>
+    <script src="resources/template/js/bootstrap.min.js"></script>
+    <script src="resources/template/js/owl.carousel.min.js"></script>
+    <script src="resources/template/js/jquery.waypoints.min.js"></script>
+    <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
+    <script src="resources/template/js/magnific-popup-options.js"></script>
+    <script src="resources/template/js/main.js"></script>
+
+	<!-- calendar -->
+	<script src='resources/js/fullcalendar/core/main.js'></script>
+	<script src='resources/js/fullcalendar/daygrid/main.js'></script>
+
+	
+	<!-- turn.js 관련  -->
+	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+	
+	<script>
 	function main(){
-		console.log("a");
-		//$('.flipbook').turn("disable", true);	
+		$('.flipbook').turn("disable", true);
+
+		$('#storageBtn').on('click', function () {
+			alert("dsdsds");
+		});	
 	}
 
 	</script>
-	
+		
+
+
+
+
  </body>
 
  </html>
