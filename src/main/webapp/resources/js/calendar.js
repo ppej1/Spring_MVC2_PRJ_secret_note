@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		eventClick: function (info) {
 			object = info.event;
-			console.log("a");
+			date = new Date(object.start);
+			startDate = dateToYYYYMMDD(date)
+			
 			$('.flipbook').turn("disable", false);
 			$('.flipbook').turn("page", 6);
 			$('.flipbook').turn("disable", true);
-			checklistPage(object.id);
+			checklistPage(object.id, startDate);
 		},
 		defaultDate: '2019-09-15',
 		events: [{
@@ -25,11 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			color: 'red'
 		},
 		{
+			id: '444',
 			title: 'Check List',
 			start: '2019-09-01',
 			color: 'blue',
 		},
 		{
+			id: 33,
 			title: 'Check List',
 			start: '2019-09-02',
 			color: 'red'
@@ -40,7 +44,32 @@ document.addEventListener('DOMContentLoaded', function () {
 	calendar.render();
 });
 
+function dateToYYYYMMDD(date){
+    function pad(num) {
+        num = num + '';
+        return num.length < 2 ? '0' + num : num;
+    }
+    return date.getFullYear() + '-' + pad(date.getMonth()+1) + '-' + pad(date.getDate());
+}
+
+
+
+
+
+
 function checklistPage(){
-	console.log("b");
 	console.log(object.id);
+	console.log(startDate);
+	
+	var sendData = {
+      		"startDate": startDate
+         }
+         $.ajax({
+           type: 'POST',
+           url: 'loadCheckList',
+           data: sendData,
+           success: function(){
+           	output();
+           }
+         });
 }
