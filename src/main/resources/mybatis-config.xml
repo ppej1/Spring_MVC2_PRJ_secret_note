@@ -8,17 +8,18 @@
 		<typeAlias type="com.sesoc.secret.dto.CheckListVO" alias="CheckListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.CommentsVO" alias="CommentsVO"/>
 		<typeAlias type="com.sesoc.secret.dto.DisposalVO" alias="DisposalVO"/>
-		<typeAlias type="com.sesoc.secret.dto.EmployeeVO" alias="EmployeeVO"/>	
+		<typeAlias type="com.sesoc.secret.dto.Employee_VO" alias="Employee_VO"/>
 		<typeAlias type="com.sesoc.secret.dto.MainClassVO" alias="MainClassVO"/>
 		<typeAlias type="com.sesoc.secret.dto.NuturitionVO" alias="NuturitionVO"/>
 		<typeAlias type="com.sesoc.secret.dto.ReceiptVO" alias="ReceiptVO"/>
 		<typeAlias type="com.sesoc.secret.dto.StockVO" alias="StockVO"/>
 		<typeAlias type="com.sesoc.secret.dto.SubClassVO" alias="SubClassVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsesVO" alias="UsesVO"/>
+
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="mappers/UserMapper.xml" />
+		<mapper resource="mappers/EmployeeMapper.xml" />
 
 	</mappers>
 </configuration>

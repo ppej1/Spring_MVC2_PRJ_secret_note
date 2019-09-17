@@ -1,10 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<script>
+function login() {
+	var userid = document.getElementById("logid");
+	var userpwd = document.getElementById("logpwd");
+	if (userid.value == '' || userpwd.value.length == 0) {
+		alert('ID와 비밀번호를 입력하세요.');
+		userid.focus();
+		return;
+	}	
+	var form = document.getElementById("login_form");
+	form.submit();
+}
+</script>
 
-	<style>
 
-	</style>
 </head>
 <div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
@@ -30,15 +41,15 @@
 				</div>
 				<div style="float: left">
 					<div>
-						<input type="text" class="form-control" id="InputID" placeholder="ID">
+						<input type="text" class="form-control" id="logid" name="logid" placeholder="ID">
 
 					</div>
 					<div>
-						<input type="password" class="form-control" id="InputPassword" placeholder="Password">
+						<input type="password" class="form-control" id="logpwd" name="logpwd" placeholder="Password">
 					</div>
 				</div>
 				<div style="float: left">
-					<button type="button" id="btnlogin" class="btn btn-primary">電送</button>
+					<button type="button" id="btnlogin" class="btn btn-primary" onclick="login();">電送</button>
 				</div>
 			</form>
 			<div class="register">
