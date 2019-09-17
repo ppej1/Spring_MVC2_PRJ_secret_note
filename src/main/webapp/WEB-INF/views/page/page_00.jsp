@@ -10,68 +10,37 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						<div class="flip-container"
+							ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper first-service">
 								<div class="front">
 									<div class="icon">
-										<img src="resources/template/img/heart-icon.png" alt="">
+										<img src="resources/template/img/leaf.png" alt="">
 									</div>
-									<h4>제 1 장 총칙</h4>
+									<h4>第1章総則</h4>
 								</div>
 								<div class="back">
-									<p>Donec malesuada eu est in mattis. Aenean velit eros,
-										blandit et tortor non, viverra hendrerit velit. Maecenas ut
-										orci nec velit convallis lobortis sit amet ut magna. Ut rhoncus
-										suscipit arcu, sed facilisis risus.
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit reiciendis animi earum nesciunt reprehenderit in, exercitationem magni accusantium eveniet iste laboriosam dolorum, nam ea inventore omnis ullam cumque fuga laborum!
-										In, officia possimus quidem reprehenderit veritatis soluta recusandae itaque eligendi tenetur. Voluptatum enim esse accusantium quis adipisci minus iusto, doloremque, aut expedita doloribus eius debitis mollitia. Rem odit unde magni.
-										Et temporibus provident laboriosam unde, aperiam asperiores consequuntur ipsam quod officiis est tenetur voluptas qui sit fugit libero necessitatibus tempore harum quisquam, fugiat quis esse itaque, facere voluptates eos? Vero!
-										Odio facere aliquid rem maxime. Quisquam nobis deleniti perspiciatis quas officia, fuga nulla asperiores voluptatem, similique laborum natus reiciendis quis tenetur quibusdam dolores cum necessitatibus nisi inventore. Esse, doloribus minima!
-										Architecto animi commodi esse nesciunt dolorum quae, repellat nulla, veritatis nam qui quod repudiandae cupiditate maiores dignissimos vero excepturi nisi mollitia. Veritatis sunt consectetur corporis, quibusdam fugit aliquam at eligendi?
-										Est numquam ut corporis, rerum esse inventore voluptates similique accusamus totam praesentium. Error fugit atque qui quasi voluptate totam harum eligendi asperiores obcaecati dolorem autem, iste, pariatur perspiciatis cumque quod!
-										Nihil minima eum beatae necessitatibus ab eaque, voluptatum, aut sit rerum magni iste quaerat ut sequi accusantium saepe. Nobis provident doloremque ad error dolor cum necessitatibus. Nostrum, necessitatibus dolorem. Dicta.
-										Totam ullam quis voluptas saepe magni in sequi architecto. Odit eum similique fuga sit a delectus doloribus perferendis, laboriosam saepe libero accusantium vel totam quos voluptates, nihil ea, accusamus porro!
-										Quos dolorum tempora, fugiat vero culpa quae magnam nulla ad porro ipsum asperiores inventore ullam laborum maxime, corrupti hic, et necessitatibus suscipit minima voluptates. Ratione animi maiores id quas odit!
-										Error rem voluptatem fuga voluptate in, deserunt tempora ex delectus aliquam? Necessitatibus sequi in, cupiditate aliquam consectetur dolor ducimus, eos, perspiciatis iusto maxime dolores accusamus cum tempora omnis adipisci quos.
-										Maiores tenetur veritatis cumque ipsam sequi veniam officiis quam id quae recusandae repellat fugit rerum omnis soluta ex harum dolorem, voluptatum minus illum aliquid minima nisi nesciunt corrupti. Incidunt, sunt.
-										Fugiat hic architecto omnis, sequi id quam provident debitis, accusamus ex porro distinctio repellendus eveniet, aperiam itaque! Veritatis, autem earum sint non modi suscipit eum nemo facere architecto. Obcaecati, earum?
-										At cupiditate, ipsam dolores quis, modi quo aspernatur architecto ea debitis in, nam autem eos perspiciatis! Reprehenderit commodi praesentium officia iste deserunt dolorum ex quae? Pariatur mollitia quod natus harum!
-										Vel asperiores officia minima repellat ea sit eaque consequatur fugit pariatur culpa officiis nesciunt aspernatur tenetur dolorum esse porro molestias architecto, quia nisi! Eaque animi pariatur veniam cum, natus dicta?
-										Eius quaerat velit est non vero consequuntur id, et sit nemo temporibus cum ipsum adipisci! Cumque, laborum, iure dolor eaque doloremque maiores beatae tempore voluptate accusamus, repellendus expedita quia unde?
-										In vero maiores necessitatibus modi hic consequatur dolorem. Distinctio explicabo eaque rerum, accusamus quia omnis delectus voluptas! Vel debitis harum deserunt cupiditate iure error quisquam ipsa! Nobis necessitatibus sint ipsa!
-										Quo, quod assumenda quisquam, totam quia dolorem cum eligendi commodi autem repellendus ipsam minus ducimus? Suscipit quisquam amet ipsa, quis totam ipsam laborum voluptatem natus dolorum incidunt, cum harum neque.
-										Veniam obcaecati modi, porro dolor reprehenderit magnam labore atque assumenda incidunt harum. Et obcaecati dicta libero maiores, laborum deleniti ex saepe dolores vero hic molestiae accusamus ut similique explicabo nostrum!
-										Exercitationem architecto expedita repellendus porro quasi neque distinctio minus veritatis dolorum nam eaque quidem, beatae obcaecati corporis magnam deserunt perspiciatis, unde explicabo dolorem tempore blanditiis? Praesentium ex possimus pariatur eaque!
-										Dolor excepturi repellat expedita vel vitae dicta qui maiores, ratione enim eveniet earum pariatur vero quo, aliquid sit assumenda? Aspernatur, soluta ea. Ullam atque, placeat corrupti tenetur quasi asperiores hic?
-										Quo incidunt assumenda odio corporis expedita est exercitationem! Ut, ab. Velit neque quos esse, nobis iure necessitatibus autem doloribus ipsa architecto nihil beatae cum sequi enim nisi ipsum incidunt ducimus.
-										Dignissimos ea numquam repellat. Incidunt sed repellat mollitia et? Autem excepturi veritatis corrupti ipsum temporibus vel sunt cum ea corporis? Quas non totam iste magnam voluptatum, aspernatur qui doloremque architecto.
-										Ipsum ea veritatis natus esse, nostrum sed alias perferendis laboriosam quas libero distinctio, impedit placeat repudiandae? Excepturi non repellendus laborum nostrum quos, aliquam pariatur et impedit, expedita facere fuga quisquam.
-										Placeat voluptate ullam amet id, minima reprehenderit natus mollitia, accusamus consectetur quos quisquam quae totam quia animi. Illo facere excepturi voluptatibus consequatur tenetur et cumque. Sint quae voluptatum eos quam?
-										Minus cupiditate iusto ducimus aperiam reiciendis eligendi ex, beatae obcaecati. Natus soluta nemo molestiae, similique fugiat quis doloribus, animi eum reprehenderit fuga repellendus. At culpa impedit consequatur suscipit eligendi molestiae?
-										Maxime porro placeat, quae saepe ratione illo impedit nobis. Laborum molestiae ducimus assumenda. Iure asperiores soluta adipisci expedita harum. Magni, adipisci beatae dolores labore ipsa veniam atque iusto consequuntur dolore!
-										Aspernatur tenetur fuga, cum debitis facere quod quae adipisci perspiciatis, veniam expedita error, praesentium ratione atque eligendi iure dolore eveniet ad eius similique. Quidem ratione aliquid sapiente vel reiciendis. Officiis!
-										Recusandae incidunt in saepe eos, tenetur dolor consequatur vitae praesentium voluptate nostrum labore! Quis harum, delectus nobis cum incidunt ab possimus fugiat, tempora ea assumenda velit quidem illo cupiditate omnis!
-										Nihil vero excepturi laboriosam, inventore dignissimos voluptates recusandae quo a illo, vitae dolore sit totam in itaque nobis aspernatur sequi eaque? Nihil placeat eius dolorum, asperiores sapiente porro vero optio!
-										Sunt nostrum soluta culpa, maxime dolorem dolore quae, optio incidunt aliquid quidem quos exercitationem officiis repellat! Est, temporibus illo reiciendis quod optio nostrum, harum assumenda deleniti ducimus accusantium a nemo!
-									</p>
+									<p>本約款は、店長のsecret
+										note(以下「会社」)がオンラインで提供するサービス及びこれに付随する諸サービス(以下「在庫管理サービス」)の利用に関連して、会社と会員間の権利、義務及び責任事項、その他必要な事項を規定することを目的とします。</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						<div class="flip-container"
+							ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper second-service">
 								<div class="front">
 									<div class="icon">
-										<img src="resources/template/img/home-icon.png" alt="">
+										<img src="resources/template/img/signup.png" alt="">
 									</div>
-									<h4>Nullam sed turpis</h4>
+									<h4>第2章情報提供</h4>
 								</div>
 								<div class="back">
-									<p>Pellentesque habitant morbi tristique senectus et netus
-										et malesuada fames ac turpis egestas. Maecenas vel diam
-										porttitor, fermentum ante et, ornare elit. Morbi nec diam ex.
-										Pellentesque habitant morbi tristique senectus.</p>
+									<p>会社は、次の各号の事項を会員が分かりやすいように在庫管理サービスサービス内に表示します。
+										ただし、個人情報の処理方針と約款は会員が連結画面を通じて閲覧できるようにすることができます。 1.相互および代表者の声明
+										2.営業所所在地の住所(会員の不満を処理できる場所の住所を含む) 3.電話番号、電子メールアドレス 4.事業者登録番号
+										5.通信販売業届出番号 6.個人情報処理方針 7.サービス利用約款</p>
 								</div>
 							</div>
 						</div>
@@ -79,38 +48,51 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						<div class="flip-container"
+							ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper third-service">
 								<div class="front">
 									<div class="icon">
-										<img src="resources/template/img/best-offer-icon.png" alt="">
+										<img src="resources/template/img/signature.png" alt="">
 									</div>
-									<h4>Sed in luctus</h4>
+									<h4>第3条利用契約の締結及び適用</h4>
 								</div>
 								<div class="back">
-									<p>Mauris congue ex eu enim suscipit, in suscipit est
-										efficitur. Donec quis orci malesuada nunc lobortis aliquet et
-										ut lacus. Sed erat magna, fringilla ac imperdiet in, pulvinar
-										quis ante. Maecenas eleifend, sem vitae tristique.</p>
+									<p>①利用契約は会員になろうとする者(以下"加入申請者"と言います。)がこの約款の内容について同意をした次のサービス利用を申請して、会社がその申請について承諾することによって締結されます。
+
+										②会社は、加入申請者の申請に対して承諾することを原則とします。
+										ただし、会社は次の各号のいずれかに該当する利用申請については承諾を拒むことができます。
+
+										1.利用申請書内容を虚偽で記載したり、利用申請要件を満たしていない場合
+
+										2.会社がサービスを提供しない国で非正常的で遠回しな方法を通じてサービスを利用する場合
+
+										3.法令で禁止する行為を行う目的で申請する場合 4.社会の安寧と秩序または美風良俗を阻害する目的で申請した場合
+
+										5.不正な用途にサービスを利用しようとする場合p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+						<div class="flip-container"
+							ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper fourth-service">
 								<div class="front">
 									<div class="icon">
-										<img src="resources/template/img/chat-icon.png" alt="">
+										<img src="resources/template/img/privacy.png" alt="">
 									</div>
-									<h4>Fusce congue ipsum</h4>
+									<h4>第4条(個人情報の保護および利用)</h4>
 								</div>
 								<div class="back">
-									<p>Donec venenatis erat at leo dictum, at dictum eros
-										volutpat. Phasellus in dui sed purus varius hendrerit. Duis ac
-										enim ac orci efficitur condimentum vel eget purus. Sed vel
-										massa nulla. Curabitur consequat sem ac velit sollicitudin
-										ornare.</p>
+									<p>①会社は、関連法令が定めるところによって会員の個人情報を保護するために努力し、個人情報の保護および利用については、関連法令および会社の個人情報の処理方針に従います。
+										但し、会社が提供するサービス以外のリンクされたサービスでは、会社の個人情報処理方針が適用されません。
+
+										②サービスの特性によって会員の個人情報と関連がないニックネーム、キャラクターの写真、状態情報など、自分を紹介する内容が公開されます。
+
+										③会社は、関連法令によって関連国家機関などの要請がある場合を除いては会員の個人情報を本人の同意なしに他人に提供しません。
+
+										④会社は会員様の驥足事由に個人情報が流出され、発生した被害に対して責任を負いません。</p>
 								</div>
 							</div>
 						</div>
