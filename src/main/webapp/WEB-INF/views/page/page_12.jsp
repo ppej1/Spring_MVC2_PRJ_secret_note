@@ -14,25 +14,27 @@
 			eventClick: function (info) {
 				var eventObj = info.event;
 					
-				if (eventObj.data =='abcd') {
-					
-				} else {
-					
+				if (eventObj.id =='use') {
 					$('.flipbook').turn("disable", false);
 					$('.flipbook').turn("page", 14);
+					$('.flipbook').turn("disable", true);
+					console.log(eventObj.start);
+				} else if(eventObj.id =='disposal'){
+					$('.flipbook').turn("disable", false);
+					$('.flipbook').turn("page", 16);
 					$('.flipbook').turn("disable", true);
 				}
 			},
 			defaultDate: '2019-09-03',
 			events: [{
 				title: 'USE List1',
-				data: 'abcd',
+				id: 'use',
 				start: '2019-09-03T09:30:00',
 				end: '2019-09-03T09:30:00',
 				color: 'purple'
 			}, {
 				title: 'USE List2',
-				data: 'abcdaa',
+				id: 'disposal',
 				start: '2019-09-18T09:30:00',
 				end: '2019-09-23T18:30:00',
 				color: 'gray'
