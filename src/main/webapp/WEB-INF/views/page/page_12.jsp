@@ -28,7 +28,7 @@
 				title: 'USE List1',
 				data: 'abcd',
 				start: '2019-09-03T09:30:00',
-				end: '2019-09-07T18:30:00',
+				end: '2019-09-03T09:30:00',
 				color: 'purple'
 			}, {
 				title: 'USE List2',

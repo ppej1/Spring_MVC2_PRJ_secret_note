@@ -17,6 +17,7 @@
 			var calendarEl = document.getElementById('checkCalendar1');
 
 			var calendar = new FullCalendar.Calendar(calendarEl, {
+				eventLimit: true,
 				plugins: ['dayGrid'],
 				defaultView: 'dayGridMonth',
 				header: {
@@ -24,16 +25,17 @@
 					center: 'title'
 				},
 				eventClick: function (info) {
-					$('.flipbook').turn("disable", false);
-					$('.flipbook').turn("page", 6);
-					$('.flipbook').turn("disable", true);
+					object = info.event;
+					alert(object.start);
+					//$('.flipbook').turn("disable", false);
+					//$('.flipbook').turn("page", 6);
+					//$('.flipbook').turn("disable", true);
 				},
 				defaultDate: '2019-09-15',
 				events: [{
 					title: 'Check List',
 					data: 'abcd',
-					start: '2019-09-01T12:30:00',
-					end: '2019-09-05T15:30:00',
+					start: '2019-09-01',
 					color: 'red'
 				}]
 			});

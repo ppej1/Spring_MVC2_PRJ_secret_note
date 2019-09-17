@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sesoc.secret.dao.UserRepository;
-import com.sesoc.secret.dto.User_VO;
+import com.sesoc.secret.dto.EmployeeVO;
 
 @Controller
 public class UserController {
@@ -21,12 +21,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public String home(User_VO user, Model model) {
+	public String home(EmployeeVO user, Model model) {
 		System.out.println(user);
 		return "index";
 	}
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(User_VO user, Model model) {
+	public String logout(EmployeeVO user, Model model) {
 		return "index";
 	}
 }
