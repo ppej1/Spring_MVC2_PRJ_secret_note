@@ -37,6 +37,29 @@
 		})
 	};
 	
+	function regdata(){
+		var userid = document.getElementById("userid");
+		var userpwd = document.getElementById("userpwd");
+		var username = document.getElementById("userName");
+		var rank = document.getElementById("rank");
+		var email = document.getElementById("email");
+		var phone = document.getElementById("ePhone");
+
+		var img = document.getElementById("eImg");
+		
+		if (
+			userid.value == '' || userpwd.value == ''
+			|| username.value == '' || rank.value =='0' 
+			|| email.value == '' || phone.value == ''
+			)
+		{
+			alert('빈칸을 채워주세요.');
+			userid.focus();
+			return;
+		}
+		var form = document.getElementById("regForm");
+		form.submit();
+	}
 </script>
 
 <style>
@@ -53,7 +76,7 @@ span {
 		<div class="page_title_container_div"></div>
 	</div>
 	<div class="page_container">
-		<form id="loginForm" action="signup" method="POST" enctype="multipart/form-data">
+		<form id="regForm" action="signup" method="POST" enctype="multipart/form-data">
 			<div class="container mt-5">
 				<div class="row tm-content-row">
 					<div class="col-12 tm-block-col">
@@ -124,8 +147,8 @@ span {
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
-								<button type="submit"
-									class="btn btn-primary btn-block text-uppercase">Sign
+								<button type="button"
+									class="btn btn-primary btn-block text-uppercase" onclick="regdata();">Sign
 									Up</button>
 							</div>
 							<div class="col-12">

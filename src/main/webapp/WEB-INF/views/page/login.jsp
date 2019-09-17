@@ -49,7 +49,7 @@ function login() {
 					</div>
 				</div>
 				<div style="float: left">
-					<button type="button" id="btnlogin" class="btn btn-primary" onclick="login()">電送</button>
+					<button type="button" id="btnlogin" class="btn btn-primary" onclick="login();">電送</button>
 				</div>
 			</form>
 			<div class="register">
