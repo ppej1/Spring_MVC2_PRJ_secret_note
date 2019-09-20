@@ -40,6 +40,8 @@
 
 		calendar.render();
 	});
+	
+	$("#StockCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
 </script>
 
 <div class="page_content_odd">

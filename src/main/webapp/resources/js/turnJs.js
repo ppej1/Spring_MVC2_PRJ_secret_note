@@ -171,7 +171,7 @@
 			});	
 
 			/* even button */
-
+ 
 			$('.btn_plus').on('click', function () {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
@@ -196,6 +196,8 @@
 				alert("상온을 클릭했음");
 			});		
 			
-			
+			$('#test1').on('click', function () {
+				fusedList();
+	         });  
 		}	
 
