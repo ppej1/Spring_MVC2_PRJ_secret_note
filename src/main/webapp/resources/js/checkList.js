@@ -8,7 +8,7 @@ function checklistPage() {
 	setnowDate(startDate);
 
 	var sendData = {
-		"rdate": startDate
+		"completes": startDate
 	}
 	$.ajax({
 		type: 'POST',
@@ -16,6 +16,8 @@ function checklistPage() {
 		data: sendData,
 		success: chekListOutput
 	});
+	
+
 }
 
 function chekListOutput(data) {
@@ -29,7 +31,7 @@ function chekListOutput(data) {
 	tag += '<td rowspan="2">&nbsp;</td>';
 	tag += '</tr>';
 	tag += '<tr>';
-	tag += '<td id="rdate" data-value="2019-09-01">등록일</td>';
+	tag += '<td id="completes" data-value="'+nowdate+'">등록일</td>';
 	tag += '<td>등록자</td>';
 	tag += '<td>완료자</td>';
 	tag += '<td>완료자</td>';
@@ -46,13 +48,13 @@ function chekListOutput(data) {
 			tag += '<tbody>';
 			tag += '<tr>';
 			tag += '<th scope="row" rowspan="2">';
-			tag += '<a href="#" class="tm-product-delete-link" data-value="' + item.ckSerialNumber + '" >';
+			tag += '<a href="#" class="tm-product-delete-link successCheck" data-value="' + item.ckSerialNumber + '" >';
 			tag += '<i class="fas fa-check"></i></a>';
 			tag += '</th>';
 			tag += '<td class="tm-product-name" colspan="3">' + item.ckTitle + '</td>"';
 			tag += '<td>' + item.importance + '</td>';
 			tag += '<td rowspan="2">';
-			tag += '<a href="#" class="tm-product-delete-link" data-value="1">';
+			tag += '<a href="#" class="tm-product-delete-link deleteCheck" data-value="' + item.ckSerialNumber + '">';
 			tag += '<i class="far fa-trash-alt tm-product-delete-icon"></i>';
 			tag += '</a>';
 			tag += '</td';
@@ -68,6 +70,16 @@ function chekListOutput(data) {
 	}
 
 	$("#checklistTable").html(tag);
+	
+	
+	$(".successCheck").on('click',function(){
+		ckSerialNumber = $(this).attr("data-value");
+		successCheck(ckSerialNumber);
+	});
+	$(".deleteCheck").on('click',function(){
+		ckSerialNumber = $(this).attr("data-value");
+		deleteCheck(ckSerialNumber);
+	});
 }
 
 function createCheckList() {
@@ -93,8 +105,32 @@ function createCheckList() {
 		checklistPage();
 		//팝업창이 닫히게 될 때 실행 된 내용
 	});
+}
 
+function successCheck(){
+alert(ckSerialNumber);
+var sendData = {
+		"ckSerialNumber": ckSerialNumber
+	}
+$.ajax({
+	type: 'POST',
+	url: 'successCheckList',
+	data: sendData,
+	success: checklistPage
 
+})
 
+}
+function deleteCheck(){
+alert(ckSerialNumber);
+var sendData = {
+		"ckSerialNumber": ckSerialNumber
+	}
+$.ajax({
+	type: 'POST',
+	url: 'deleteCheckList',
+	data: sendData,
+	success: checklistPage
 
+})
 }

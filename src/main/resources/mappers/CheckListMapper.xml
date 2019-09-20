@@ -22,15 +22,36 @@
 			#{completes},
 			#{importance},
 			#{registid},
-			#{rdate}
+			sysdate
 		)
 	
 	</insert>
 	<select id="selectListByDate" parameterType="CheckListVO" resultType="CheckListVO">
 		select 
-		*
+		CKSERIALNUMBER
+		,CKTITLE
+		,COMPLETES
+		,IMPORTANCE
+		,REGISTID
+		,to_char(RDATE, 'YYYY-MM-DD') AS RDATE
+		,FINISHER
+		,to_char(FDATE, 'YYYY-MM-DD') AS FDATE
 		FROM CHECKLIST
 		WHERE 	
-		RDATE = #{rdate}
+		COMPLETES = #{completes}
 	</select>
+	<update id="successCheckList" parameterType="CheckListVO">
+	update CHECKLIST
+	set 
+		FDATE = sysdate,
+		FINISHER = #{finisher}
+	WHERE
+		CKSERIALNUMBER = #{ckSerialNumber}
+	</update>
+	<delete id="deleteCheckList" parameterType="CheckListVO">
+	DELETE CHECKLIST
+	WHERE
+		CKSERIALNUMBER = #{ckSerialNumber}
+	
+	</delete>
 </mapper>

@@ -10,8 +10,8 @@
 
 	<script>
 		$(function () {
-			var rdate = $( "#rdate", opener.document ).attr("data-value");
-			$("#rdate").val(rdate);
+			var completes = $( "#completes", opener.document ).attr("data-value");
+			$("#completes").val(completes);
 			$("#createBtn").on('click', function () {
 				$("#checklistform").submit();
 				self.close();
@@ -34,7 +34,7 @@
 			<option value="중">중</option>
 			<option value="하">하</option>
 		</select>
-		<input type="hidden" name="rdate" id="rdate">
+		<input type="hidden" name="completes" id="completes">
 	</form>
 	<button type="button" id="createBtn">생성</button>
 	<button type="reset" id="cancelBtn">취소</button>

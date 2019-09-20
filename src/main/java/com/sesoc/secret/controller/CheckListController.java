@@ -26,7 +26,6 @@ public class CheckListController {
 	@RequestMapping(value = "/insertCheckList", method = RequestMethod.POST)
 	public String  insertCheckList(CheckListVO checklist, HttpSession session){
 		checklist.setRegistid((String)session.getAttribute("loginId"));
-		checklist.setCompletes(checklist.getRdate());
 		System.out.println(checklist);
 		int result = repo.insertCheckList(checklist);
 		return "popup/insertCheckList";
@@ -42,5 +41,26 @@ public class CheckListController {
 		System.out.println(list);
 		return list;
 	}
+
+	@RequestMapping(value = "/successCheckList", method = RequestMethod.POST)
+	@ResponseBody
+	public int successCheckList(CheckListVO checkList, HttpSession session){
+		checkList.setFinisher((String)session.getAttribute("loginId"));
+		System.out.println(checkList);
+
+		int result = repo.successCheckList(checkList);
+		return 0;
+	}
+	
+	@RequestMapping(value = "/deleteCheckList", method = RequestMethod.POST)
+	@ResponseBody
+	public int deleteCheckList(CheckListVO checkList){
+		System.out.println(checkList);
+		int result = repo.deleteCheckList(checkList);
+		return 0;
+	}
+	
+	
+
 	
 }

@@ -134,7 +134,7 @@
  				autoCenter: true,
  				
  				
- 				when: {
+ 				when:{
  					turned: function(event, page, view) {
  						
  						var book = $(this),
@@ -144,7 +144,7 @@
  						set_even_button(currentPage);
  						nav();
  						
- 				}
+ 				}		
  				}
  			});
 

@@ -10,4 +10,8 @@ public interface CheckListMapper {
 
 	ArrayList<CheckListVO> selectListByDate(CheckListVO checkList);
 
+	int successCheckList(CheckListVO checkList);
+
+	int deleteCheckList(CheckListVO checkList);
+
 }

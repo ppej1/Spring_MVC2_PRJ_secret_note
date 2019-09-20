@@ -15,13 +15,29 @@ public class CheckListRepository {
 
 	public ArrayList<CheckListVO> selectListByDate(CheckListVO checkList) {
 		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
-		return mapper.selectListByDate(checkList);
+		ArrayList<CheckListVO> list  = mapper.selectListByDate(checkList);
+		for (CheckListVO check : list) {
+			if (check.getFdate() == null ) {
+				check.setFdate(" ");
+				check.setFinisher(" ");
+			}
+		}
+		return list;
 	}
 
-	public int insertCheckList(CheckListVO checklist) {
+	public int insertCheckList(CheckListVO checkList) {
 		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
-		
-		return mapper.insertCheckList(checklist);
+		return mapper.insertCheckList(checkList);
+	}
+
+	public int successCheckList(CheckListVO checkList) {
+		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
+		return mapper.successCheckList(checkList);
+	}
+
+	public int deleteCheckList(CheckListVO checkList) {
+		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
+		return mapper.deleteCheckList(checkList);
 	}
 	
 	
