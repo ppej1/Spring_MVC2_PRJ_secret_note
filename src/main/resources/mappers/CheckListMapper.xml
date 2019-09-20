@@ -26,4 +26,11 @@
 		)
 	
 	</insert>
+	<select id="selectListByDate" parameterType="CheckListVO" resultType="CheckListVO">
+		select 
+		*
+		FROM CHECKLIST
+		WHERE 	
+		RDATE = #{rdate}
+	</select>
 </mapper>

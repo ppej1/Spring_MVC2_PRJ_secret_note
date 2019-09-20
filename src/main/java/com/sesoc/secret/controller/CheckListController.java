@@ -39,6 +39,7 @@ public class CheckListController {
 	public ArrayList<CheckListVO> loadCheckList(CheckListVO checkList){
 		System.out.println(checkList);
 		ArrayList<CheckListVO> list = repo.selectListByDate(checkList);
+		System.out.println(list);
 		return list;
 	}
 	

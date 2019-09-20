@@ -14,8 +14,8 @@ public class CheckListRepository {
 	SqlSession session;
 
 	public ArrayList<CheckListVO> selectListByDate(CheckListVO checkList) {
-		// TODO Auto-generated method stub
-		return null;
+		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
+		return mapper.selectListByDate(checkList);
 	}
 
 	public int insertCheckList(CheckListVO checklist) {

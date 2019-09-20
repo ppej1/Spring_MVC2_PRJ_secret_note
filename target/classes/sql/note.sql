@@ -254,5 +254,5 @@ COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 
-
+create sequence ck_seq;
 

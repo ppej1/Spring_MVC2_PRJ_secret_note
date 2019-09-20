@@ -131,7 +131,21 @@
 
  				// Auto center this flipbook
 
- 				autoCenter: true
+ 				autoCenter: true,
+ 				
+ 				
+ 				when: {
+ 					turned: function(event, page, view) {
+ 						
+ 						var book = $(this),
+ 						currentPage = book.turn('page'),
+ 						pages = book.turn('pages');
+ 						
+ 						set_even_button(currentPage);
+ 						nav();
+ 						
+ 				}
+ 				}
  			});
 
 
