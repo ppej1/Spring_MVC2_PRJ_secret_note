@@ -191,6 +191,7 @@
 			});	
 
 			/* even button */
+
 			$('.btn_plus_checkList').on('click', function () {
 				createCheckList();
 			});	
@@ -218,6 +219,8 @@
 				alert("상온을 클릭했음");
 			});		
 			
-			
+			$('#test1').on('click', function () {
+				fusedList();
+	         });  
 		}	
 

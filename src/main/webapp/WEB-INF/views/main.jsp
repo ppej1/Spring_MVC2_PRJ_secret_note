@@ -59,7 +59,6 @@
 	<link rel="stylesheet" href="resources/css/pages_button.css">
 	<link rel="stylesheet" href="resources/css/backgroundImg.css">
  </head>
-
  <body class="no-js">
 
  	<div class="flipbook-viewport">
@@ -190,6 +189,7 @@
 	<!-- calendar -->
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>
+	<script src='resources/js/fullcalendar/moment/main.js'></script>
 
 	
 	<!-- turn.js 관련  -->

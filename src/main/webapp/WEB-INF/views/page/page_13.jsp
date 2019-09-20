@@ -13,39 +13,40 @@
 			},
 			eventClick: function (info) {
 				var eventObj = info.event;
-
-				if (eventObj.url) {
-					alert('Clicked ' + eventObj.title + '.\n' + 'Will open ' +
-						eventObj.url + ' in a new tab');
-
-					//window.open(eventObj.url);
-
-					info.jsEvent
-				.preventDefault(); // prevents browser from following link in current tab.
-				} else {
+				
+				if (eventObj.id =='use') {
+					$('.flipbook').turn("disable", false);
+					$('.flipbook').turn("page", 14);
+					$('.flipbook').turn("disable", true);
+					console.log(eventObj.start);
+					fusedList();
+				} else if(eventObj.id =='disposal'){
 					$('.flipbook').turn("disable", false);
 					$('.flipbook').turn("page", 16);
 					$('.flipbook').turn("disable", true);
+					fdisposalList();
 				}
 			},
 			defaultDate: '2019-09-03',
 			events: [{
 				title: 'JUNK List',
-				data: 'abcd',
+				id: 'use',
 				start: '2019-09-02T09:30:00',
 				end: '2019-09-04T18:30:00',
 				color: 'green'
 			}, {
 				title: 'JUNK List',
-				data: 'abcd',
+				id: 'disposal',
 				start: '2019-09-05T09:30:00',
 				end: '2019-09-10T18:30:00',
-				color: 'blue'
+				color: 'red'
 			}]
 		});
 
 		calendar.render();
 	});
+	
+	$("#UsageCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
 </script>
 
 <div class="page_content_odd">

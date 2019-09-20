@@ -15,11 +15,15 @@
 		<typeAlias type="com.sesoc.secret.dto.StockVO" alias="StockVO"/>
 		<typeAlias type="com.sesoc.secret.dto.SubClassVO" alias="SubClassVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsesVO" alias="UsesVO"/>
+		<typeAlias type="com.sesoc.secret.dto.UsedListVO" alias="UsedListVO"/>
+		<typeAlias type="com.sesoc.secret.dto.DisposalListVO" alias="DisposalListVO"/>
 
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mappers/EmployeeMapper.xml" />
 		<mapper resource="mappers/CheckListMapper.xml" />
+		<mapper resource="mappers/UsedMapper.xml" />
+		<mapper resource="mappers/DisposalMapper.xml" />
 	</mappers>
 </configuration>

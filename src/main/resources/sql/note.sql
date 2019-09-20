@@ -61,7 +61,7 @@ CREATE TABLE Disposal
 	dSerialNumber varchar2(20) NOT NULL,
 	scSerialNumber varchar2(20) NOT NULL,
 	userid varchar2(20) NOT NULL,
-	eDate date NOT NULL,
+	dDate date NOT NULL,
 	dAmount number NOT NULL,
 	condition varchar2(20) DEFAULT 'Disposal' NOT NULL,
 	PRIMARY KEY (dSerialNumber)
@@ -72,7 +72,7 @@ CREATE TABLE Employee
 (
 	userid varchar2(20) NOT NULL,
 	userpwd varchar2(20) NOT NULL,
-	eImg varchar2(20) NOT NULL,
+	eImg varchar2(200) NOT NULL,
 	userName varchar2(20) NOT NULL,
 	rank varchar2(20) NOT NULL,
 	email varchar2(20) NOT NULL,
