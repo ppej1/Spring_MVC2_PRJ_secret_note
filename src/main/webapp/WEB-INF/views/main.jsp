@@ -39,7 +39,6 @@
 	<!-- calendar -->	
 	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
 	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />		
-	<script src='resources/js/fullcalendar/interaction/main.js'></script>
 
 	<!-- main index page -->
     <link rel="stylesheet" href="resources/template/css/animate.css">
