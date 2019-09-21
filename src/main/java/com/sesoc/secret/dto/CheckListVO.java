@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CheckListVO {
 	String ckSerialNumber;
-	String userid;
 	String ckTitle;
 	String completes;
 	String importance;
-	
+	String registid;
+	String rdate;
+	String finisher;
+	String fdate;
 }

@@ -67,7 +67,14 @@
  				
  				when: {
  					turned: function(event, page, view) {
- 						
+ 			 			$("#checkCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#checkCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#StockCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#StockCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#UsageCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#UsageCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+
+
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
@@ -84,10 +91,23 @@
  		
  		
  		function set_even_button(currentPage){
- 			if(currentPage == 10 || currentPage == 11 ){
+
+				if (currentPage != 1) {
+						$('.flipbook').turn("disable", true);
+				}
+				if(currentPage == 1 ){
+					$('.flipbook').turn("disable", false);
+
+				}else if(currentPage == 10 || currentPage == 11 ){
 					var tag = '';
 					tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
 					tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
+					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+					$('.selectICon_div').html(tag);
+				}else if(currentPage == 6 || currentPage== 7 ){
+					var tag = '';
+					tag+=  '<a href="#" class="btn_plus_checkList"><i class="fas fa-book-medical"></i></a>';
 					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
 					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
 					$('.selectICon_div').html(tag);
@@ -125,7 +145,21 @@
 
  				// Auto center this flipbook
 
- 				autoCenter: true
+ 				autoCenter: true,
+ 				
+ 				
+ 				when:{
+ 					turned: function(event, page, view) {
+ 						$('.flipbook').turn("disable", true);
+ 						var book = $(this),
+ 						currentPage = book.turn('page'),
+ 						pages = book.turn('pages');
+ 						
+ 						set_even_button(currentPage);
+ 						nav();
+ 						
+ 				}		
+ 				}
  			});
 
 
@@ -172,6 +206,9 @@
 
 			/* even button */
 
+			$('.btn_plus_checkList').on('click', function () {
+				createCheckList();
+			});	
 			$('.btn_plus').on('click', function () {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 1);
@@ -194,8 +231,6 @@
 			/* page 10 11 menu button */
 			$('#storageBtn').on('click', function () {
 				alert("상온을 클릭했음");
-			});		
-			
-			
+			});	
 		}	
 

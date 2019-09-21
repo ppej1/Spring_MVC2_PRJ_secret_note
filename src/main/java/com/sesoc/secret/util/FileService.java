@@ -1,7 +1,6 @@
 package com.sesoc.secret.util;
 
 import java.io.File;
-import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.web.multipart.MultipartFile;
