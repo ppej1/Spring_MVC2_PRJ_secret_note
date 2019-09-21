@@ -39,7 +39,7 @@
 	<!-- calendar -->	
 	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
 	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />		
-	<script src='fullcalendar/interaction/main.js'></script>
+	<script src='resources/js/fullcalendar/interaction/main.js'></script>
 
 	<!-- main index page -->
     <link rel="stylesheet" href="resources/template/css/animate.css">
@@ -66,10 +66,9 @@
 
  			<div class="flipbook">
  				<!--1 page - title page-->
- 				<div -ms-overflow-style: none; id="title_page">
- 					<div class="page_content_odd_title title_content_odd">
+ 					<div -ms-overflow-style: none; id="title_page">
  						<jsp:include page="page/page_title.jsp" flush="false"/>
- 						<jsp:include page="page/button_odd.jsp" flush="false"/>
+ 						<%--  <jsp:include page="page/button_odd.jsp" flush="false"/> --%>
  					</div>
  					<!--2 page mainpage 1-->
  					<div id="page_02">
@@ -166,7 +165,7 @@
  						<jsp:include page="page/page_last.jsp" flush="false"/>
 
  					</div>
- 				</div>
+ 				
 
  			</div>
  		</div>
@@ -190,18 +189,18 @@
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>
 	<script src='resources/js/fullcalendar/moment/main.js'></script>
-
-	
-	<!-- turn.js 관련  -->
-	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/checkList.js"></script>	
 	
+	<!-- turn.js 관련  -->
+	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+
+	
 	<script>
 	function main(){
-		$('.flipbook').turn("disable", true);
+		//$('.flipbook').turn("disable", true);
 
 		$('#storageBtn').on('click', function () {
 			alert("dsdsds");

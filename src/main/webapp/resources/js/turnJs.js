@@ -67,7 +67,14 @@
  				
  				when: {
  					turned: function(event, page, view) {
- 						
+ 			 			$("#checkCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#checkCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#StockCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#StockCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#UsageCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+ 			 			$("#UsageCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
+
+
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
@@ -84,7 +91,14 @@
  		
  		
  		function set_even_button(currentPage){
- 			if(currentPage == 10 || currentPage == 11 ){
+
+				if (currentPage != 1) {
+						$('.flipbook').turn("disable", true);
+				}
+				if(currentPage == 1 ){
+					$('.flipbook').turn("disable", false);
+
+				}else if(currentPage == 10 || currentPage == 11 ){
 					var tag = '';
 					tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
 					tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
@@ -136,7 +150,7 @@
  				
  				when:{
  					turned: function(event, page, view) {
- 						
+ 						$('.flipbook').turn("disable", true);
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
