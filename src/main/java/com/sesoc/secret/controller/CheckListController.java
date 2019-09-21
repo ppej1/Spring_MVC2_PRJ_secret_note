@@ -60,7 +60,14 @@ public class CheckListController {
 		return 0;
 	}
 	
-	
+	@RequestMapping(value = "/loadAllCheckList", method = RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<CheckListVO> loadAllCheckList(){
+		System.out.println("dd");
+		ArrayList<CheckListVO> list = repo.selectAllList();
+		System.out.println(list);
+		return list;
+	}	
 
 	
 }

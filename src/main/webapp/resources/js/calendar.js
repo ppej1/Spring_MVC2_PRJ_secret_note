@@ -1,8 +1,48 @@
 /*page03*/
 document.addEventListener('DOMContentLoaded', function () {
+	var list = [
+		{
+			title : 'Check',
+			id : 'abcd',
+			start : '2019-09-02T10:30:00',
+			color : 'blue'
+		}, {
+			title : 'Check',
+			id : 'abcd',
+			start : '2019-09-01T12:30:00',
+			color : 'yellow'
+		},
+		
+		{
+			title : 'Check',
+			id : 'abcd',
+			start : '2019-09-01T12:30:00',
+			color : 'blue'
+		}
+		
+		
+		
+	];
+	var json = {};
+	$.ajax({
+		type: 'POST',
+		url: 'loadAllCheckList',
+		success: function(data){
+			$.each(data, function (index, item) {
+				json.title = item.ckTitle;
+				json.id = item.ckSerialNumber;
+				json.start = item.completes;
+			});
+		}
+	});	
+	
+	
+	
 	var calendarEl = document.getElementById('checkCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
+
+	
 		 navLinks: true,
 		 navLinkDayClick: function(date, jsEvent) {
 				startDate = dateToYYYYMMDD(date)
@@ -32,26 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		
 		defaultDate: '2019-09-15',
-		events: [{
-			id: '555',
-			title: 'Check List',
-			start: '2019-09-01',
-			color: 'red'
-		},
-		{
-			id: '444',
-			title: 'Check List',
-			start: '2019-09-01',
-			color: 'blue',
-		},
-		{
-			id: 33,
-			title: 'Check List',
-			start: '2019-09-02',
-			color: 'red'
-		}
-		
-		]
+		events: list 
 	});
 	calendar.render();
 });
@@ -80,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		defaultView : 'dayGridMonth',
 		events : [ {
 			title : 'Check',
-			data : 'abcd',
+			id : 'abcd',
 			start : '2019-09-02T10:30:00',
 			color : 'blue'
 		}, {
@@ -249,6 +270,9 @@ document.addEventListener('DOMContentLoaded', function () {
 /*page13*/
 
 document.addEventListener('DOMContentLoaded', function () {
+	
+	
+	
 	var calendarEl = document.getElementById('UsageCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -279,15 +303,31 @@ document.addEventListener('DOMContentLoaded', function () {
 			title: 'JUNK List',
 			id: 'use',
 			start: '2019-09-02T09:30:00',
-			end: '2019-09-04T18:30:00',
 			color: 'green'
 		}, {
 			title: 'JUNK List',
 			id: 'disposal',
 			start: '2019-09-05T09:30:00',
-			end: '2019-09-10T18:30:00',
 			color: 'red'
-		}]
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}
+		
+		
+		]
 	});
 
 	calendar.render();
