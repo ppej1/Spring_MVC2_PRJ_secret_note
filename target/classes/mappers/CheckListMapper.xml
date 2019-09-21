@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.CheckListMapper">
+	<insert id="insertCheckList" parameterType="CheckListVO">
+		insert into CHECKLIST
+		(
+				CKSERIALNUMBER,
+				CKTITLE,
+				COMPLETES,
+				IMPORTANCE,
+				REGISTID,
+				RDATE
+		)
+		values
+		(
+			ck_seq.nextval,
+			#{ckTitle},
+			#{completes},
+			#{importance},
+			#{registid},
+			sysdate
+		)
+	
+	</insert>
+	<select id="selectListByDate" parameterType="CheckListVO" resultType="CheckListVO">
+		select 
+		CKSERIALNUMBER
+		,CKTITLE
+		,COMPLETES
+		,IMPORTANCE
+		,REGISTID
+		,to_char(RDATE, 'YYYY-MM-DD') AS RDATE
+		,FINISHER
+		,to_char(FDATE, 'YYYY-MM-DD') AS FDATE
+		FROM CHECKLIST
+		WHERE 	
+		COMPLETES = #{completes}
+	</select>
+	<update id="successCheckList" parameterType="CheckListVO">
+	update CHECKLIST
+	set 
+		FDATE = sysdate,
+		FINISHER = #{finisher}
+	WHERE
+		CKSERIALNUMBER = #{ckSerialNumber}
+	</update>
+	<delete id="deleteCheckList" parameterType="CheckListVO">
+	DELETE CHECKLIST
+	WHERE
+		CKSERIALNUMBER = #{ckSerialNumber}
+	
+	</delete>
+</mapper>

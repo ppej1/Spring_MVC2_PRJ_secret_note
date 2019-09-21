@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.DisposalMapper">
+	<select id="disposalList" resultType="DisposalListVO">
+		SELECT
+			d.dSerialNumber,
+			m.mClass,
+			s.location,
+			s.sName,
+			e.userName,
+			e.rank,
+			d.dAmount,
+			d.dDate
+		FROM
+			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            INNER JOIN Employee e ON d.userid = e.userid
+			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
+	</select>
+</mapper>
