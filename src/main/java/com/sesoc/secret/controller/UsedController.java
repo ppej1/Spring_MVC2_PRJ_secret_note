@@ -22,7 +22,6 @@ public class UsedController {
 	@ResponseBody
 	public List<UsedListVO> usedList(Model model){
 		List<UsedListVO> list = repo.usedList();
-		System.out.println(list);
 		return list;
 	}
 }

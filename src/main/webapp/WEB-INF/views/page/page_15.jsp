@@ -3,7 +3,35 @@
 <script src="resources/js/Chart/dist/Chart.min.js"></script>
 <script src="resources/js/Chart/dist/Chart.bundle.min.js"></script>
 <script src="resources/js/Chart/dist/Chart.min.css"></script>
+
 <script>
+var sName = [];
+var uAmount = [];
+
+function cusedList() {
+	$.ajax({
+		type :'GET'
+		, url : 'usedList'
+		, success : output2
+	})
+}
+
+function output2(resp) {
+	
+	$.each(resp, function(index, item){
+		sName.push(item.sname)
+		uAmount.push(item.uamount)
+	})
+}
+
+/* function addData(chart, sName, uAmount) {
+	chart.data.labels.push(sName);
+	chart.data.datasets.forEach((dataset) => {
+	      dataset.data.push(uAmount);
+    });
+	chart.update();
+} */
+
 var ctx = document.getElementById('usedChart');
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
@@ -44,6 +72,8 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+
 </script>
 <div class="page_content_odd">
 	<div class="page_container_full">

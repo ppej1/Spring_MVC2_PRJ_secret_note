@@ -6,11 +6,11 @@ function fdisposalList() {
 	$.ajax({
 		type :'GET'
 		, url : 'disposalList'
-		, success : output2
+		, success : output3
 	})
 }
 
-function output2(resp) {
+function output3(resp) {
 		var tag = '<thead>'
 			tag += '<tr>'
 			tag += '<th scope="col">NO.</th>'

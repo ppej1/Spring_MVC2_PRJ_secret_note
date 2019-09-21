@@ -11,6 +11,7 @@
 				left: 'dayGridMonth,dayGridWeek,dayGridDay',
 				center: 'title'
 			},
+			defaultView : 'dayGridMonth',
 			eventClick: function (info) {
 				var eventObj = info.event;
 					

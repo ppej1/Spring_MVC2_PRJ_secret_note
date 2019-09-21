@@ -41,6 +41,7 @@ function output1(resp) {
 		$("#newUsedList").html(tag);
 	}
 
+cusedList();
 </script>
 
 <div class="page_content_even">
