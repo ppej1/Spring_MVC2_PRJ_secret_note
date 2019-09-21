@@ -1,47 +1,28 @@
 /*page03*/
+var jsonEvents = [];
+function json(data){
+	
+	$.each(data, function (index, item) {
+		events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});
+		console.log(item);
+
+	});
+	jsonEvents = JSON.stringify(events);
+	
+}
 document.addEventListener('DOMContentLoaded', function () {
-	var list = [
-		{
-			title : 'Check',
-			id : 'abcd',
-			start : '2019-09-02T10:30:00',
-			color : 'blue'
-		}, {
-			title : 'Check',
-			id : 'abcd',
-			start : '2019-09-01T12:30:00',
-			color : 'yellow'
-		},
-		
-		{
-			title : 'Check',
-			id : 'abcd',
-			start : '2019-09-01T12:30:00',
-			color : 'blue'
-		}
-		
-		
-		
-	];
-	var json = {};
+	events = [];
+	
 	$.ajax({
 		type: 'POST',
 		url: 'loadAllCheckList',
-		success: function(data){
-			$.each(data, function (index, item) {
-				json.title = item.ckTitle;
-				json.id = item.ckSerialNumber;
-				json.start = item.completes;
-			});
-		}
-	});	
-	
-	
-	
+		dataType: 'json',
+		success: json
+	});
+	alert(jsonEvents);
 	var calendarEl = document.getElementById('checkCalendar1');
 
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-
+	var calendar = new FullCalendar.Calendar(calendarEl,{
 	
 		 navLinks: true,
 		 navLinkDayClick: function(date, jsEvent) {
@@ -53,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				checklistPage(object.id, startDate);
 		  },
 		eventLimit: true,
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		defaultView: 'dayGridMonth',
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
@@ -72,8 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		
 		defaultDate: '2019-09-15',
-		events: list 
-	});
+		events: events
+		
+	});	
 	calendar.render();
 });
 
@@ -87,38 +69,39 @@ function dateToYYYYMMDD(date){
 
 /*page04*/
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { 
+
 	var calendarEl = document.getElementById('checkCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
 		 navLinks: true,
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header : {
 			left : 'dayGridMonth,dayGridWeek,dayGridDay',
 			center : 'title'
 		},
 		eventLimit: true,
 		defaultView : 'dayGridMonth',
-		events : [ {
-			title : 'Check',
+		events :[ {
+			"title" : 'Check',
 			id : 'abcd',
-			start : '2019-09-02T10:30:00',
+			start : "2019-09-02T10:30:00",
 			color : 'blue'
 		}, {
-			title : 'Check',
-			data : 'abcd',
-			start : '2019-09-01T12:30:00',
+			"title" : 'Check',
+			id : 'abcd',
+			start : "2019-09-01T12:30:00",
 			color : 'yellow'
 		},
 		
 		{
-			title : 'Check',
+			"title" : 'Check',
 			data : 'abcd',
 			start : '2019-09-01T12:30:00',
 			color : 'blue'
 		}
 		
-		],
+		] ,
 
 		eventClick : function(data) {
 			$('.flipbook').turn("disable", false);
@@ -137,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('StockCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -178,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('StockCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -220,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('UsageCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -276,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('UsageCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
