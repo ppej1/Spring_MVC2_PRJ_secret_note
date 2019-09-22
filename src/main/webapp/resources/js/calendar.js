@@ -1,8 +1,18 @@
+
+
+function dateToYYYYMMDD(date){
+    function pad(num) {
+        num = num + '';
+        return num.length < 2 ? '0' + num : num;
+    }
+    return date.getFullYear() + '-' + pad(date.getMonth()+1) + '-' + pad(date.getDate());
+}
 /*page03*/
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function() {
 	var calendarEl = document.getElementById('checkCalendar1');
 
-	var calendar = new FullCalendar.Calendar(calendarEl, {
+	var calendar = new FullCalendar.Calendar(calendarEl,{
+	
 		 navLinks: true,
 		 navLinkDayClick: function(date, jsEvent) {
 				startDate = dateToYYYYMMDD(date)
@@ -10,10 +20,69 @@ document.addEventListener('DOMContentLoaded', function () {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 6);
 				$('.flipbook').turn("disable", true);
-				checklistPage(object.id, startDate);
+				checklistPage(startDate);
 		  },
 		eventLimit: true,
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
+		defaultView: 'dayGridMonth',
+		header: {
+			left: 'dayGridMonth,dayGridWeek,dayGridDay',
+			center: 'title'
+		},
+		 
+		eventClick: function (info) {
+			object = info.event;
+			date = new Date(object.start);
+			startDate = dateToYYYYMMDD(date)
+			
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("disable", true);
+			checklistPage(object.id, startDate);
+		},
+		
+		defaultDate: '2019-09-03',
+		events: function(start, end, callback){
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function(data){
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});						
+					});
+
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
+		
+	});	
+	calendar.render();
+});
+
+
+
+/*page04*/
+$(document).ready(function() {
+
+	var calendarEl = document.getElementById('checkCalendar2');
+
+	var calendar = new FullCalendar.Calendar(calendarEl,{
+	
+		 navLinks: true,
+		 navLinkDayClick: function(date, jsEvent) {
+				startDate = dateToYYYYMMDD(date)
+				alert(startDate)
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 6);
+				$('.flipbook').turn("disable", true);
+				checklistPage(startDate);
+		  },
+		eventLimit: true,
+		plugins: ['dayGrid'],
 		defaultView: 'dayGridMonth',
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
@@ -32,80 +101,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		
 		defaultDate: '2019-09-15',
-		events: [{
-			id: '555',
-			title: 'Check List',
-			start: '2019-09-01',
-			color: 'red'
-		},
-		{
-			id: '444',
-			title: 'Check List',
-			start: '2019-09-01',
-			color: 'blue',
-		},
-		{
-			id: 33,
-			title: 'Check List',
-			start: '2019-09-02',
-			color: 'red'
+		events: function(start, end, callback){
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function(data){
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});						
+					});
+
+					console.log(events);
+					callback(events);
+				}
+			});
 		}
 		
-		]
-	});
-	calendar.render();
-});
-
-function dateToYYYYMMDD(date){
-    function pad(num) {
-        num = num + '';
-        return num.length < 2 ? '0' + num : num;
-    }
-    return date.getFullYear() + '-' + pad(date.getMonth()+1) + '-' + pad(date.getDate());
-}
-
-/*page04*/
-
-document.addEventListener('DOMContentLoaded', function() {
-	var calendarEl = document.getElementById('checkCalendar2');
-
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-		 navLinks: true,
-		plugins: ['dayGrid','interaction'],
-		header : {
-			left : 'dayGridMonth,dayGridWeek,dayGridDay',
-			center : 'title'
-		},
-		eventLimit: true,
-		defaultView : 'dayGridMonth',
-		events : [ {
-			title : 'Check',
-			data : 'abcd',
-			start : '2019-09-02T10:30:00',
-			color : 'blue'
-		}, {
-			title : 'Check',
-			data : 'abcd',
-			start : '2019-09-01T12:30:00',
-			color : 'yellow'
-		},
-		
-		{
-			title : 'Check',
-			data : 'abcd',
-			start : '2019-09-01T12:30:00',
-			color : 'blue'
-		}
-		
-		],
-
-		eventClick : function(data) {
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
-			$('.flipbook').turn("disable", true);
-		}
-	});
-
+	});	
 	calendar.render();
 });
 
@@ -116,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('StockCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -157,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('StockCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -199,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('UsageCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -249,10 +262,13 @@ document.addEventListener('DOMContentLoaded', function () {
 /*page13*/
 
 document.addEventListener('DOMContentLoaded', function () {
+	
+	
+	
 	var calendarEl = document.getElementById('UsageCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
-		plugins: ['dayGrid','interaction'],
+		plugins: ['dayGrid'],
 		header: {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
@@ -279,15 +295,31 @@ document.addEventListener('DOMContentLoaded', function () {
 			title: 'JUNK List',
 			id: 'use',
 			start: '2019-09-02T09:30:00',
-			end: '2019-09-04T18:30:00',
 			color: 'green'
 		}, {
 			title: 'JUNK List',
 			id: 'disposal',
 			start: '2019-09-05T09:30:00',
-			end: '2019-09-10T18:30:00',
 			color: 'red'
-		}]
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}, {
+			title: 'JUNK List',
+			id: 'disposal',
+			start: '2019-09-05T09:30:00',
+			color: 'red'
+		}
+		
+		
+		]
 	});
 
 	calendar.render();

@@ -14,4 +14,6 @@ public interface CheckListMapper {
 
 	int deleteCheckList(CheckListVO checkList);
 
+	ArrayList<CheckListVO> selectAllList();
+
 }

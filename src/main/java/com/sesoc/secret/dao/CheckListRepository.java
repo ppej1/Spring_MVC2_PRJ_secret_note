@@ -39,6 +39,12 @@ public class CheckListRepository {
 		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
 		return mapper.deleteCheckList(checkList);
 	}
+
+	public ArrayList<CheckListVO> selectAllList() {
+		CheckListMapper mapper = session.getMapper(CheckListMapper.class);
+		ArrayList<CheckListVO> list  = mapper.selectAllList();
+		return list;
+	}
 	
 	
 	

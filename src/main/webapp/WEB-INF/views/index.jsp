@@ -31,7 +31,8 @@
 	<link href="resources/css/main.css" rel="stylesheet">
 	<link href="resources/css/pages_button.css" rel="stylesheet">
 	<link href="resources/css/backgroundImg.css" rel="stylesheet">
-		<link href="resources/css/login.css" rel="stylesheet">
+	<link href="resources/css/login.css" rel="stylesheet">
+	<link rel="shortcut icon" href="resources/img/chess.ico">
 	
 </head>
 

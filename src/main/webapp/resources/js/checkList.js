@@ -6,7 +6,7 @@ function setnowDate() {
 
 function checklistPage() {
 	setnowDate(startDate);
-
+	
 	var sendData = {
 		"completes": startDate
 	}
@@ -51,7 +51,7 @@ function chekListOutput(data) {
 			tag += '<a href="#" class="tm-product-delete-link successCheck" data-value="' + item.ckSerialNumber + '" >';
 			tag += '<i class="fas fa-check"></i></a>';
 			tag += '</th>';
-			tag += '<td class="tm-product-name" colspan="3">' + item.ckTitle + '</td>"';
+			tag += '<td class="tm-product-name" colspan="3">' + '<a href ="#" class ="tm-product-serial" data-value="' + item.ckSerialNumber + '" >'+ item.ckTitle + '</a></td>"';
 			tag += '<td>' + item.importance + '</td>';
 			tag += '<td rowspan="2">';
 			tag += '<a href="#" class="tm-product-delete-link deleteCheck" data-value="' + item.ckSerialNumber + '">';
@@ -71,7 +71,7 @@ function chekListOutput(data) {
 
 	$("#checklistTable").html(tag);
 	
-	
+	memoListPage();
 	$(".successCheck").on('click',function(){
 		ckSerialNumber = $(this).attr("data-value");
 		successCheck(ckSerialNumber);

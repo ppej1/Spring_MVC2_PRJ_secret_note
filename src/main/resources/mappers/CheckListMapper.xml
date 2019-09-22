@@ -54,4 +54,12 @@
 		CKSERIALNUMBER = #{ckSerialNumber}
 	
 	</delete>
+	<select id="selectAllList" parameterType="CheckListVO" resultType="CheckListVO">
+				select 
+		CKSERIALNUMBER
+		,CKTITLE
+		,COMPLETES
+		,to_char(FDATE, 'YYYY-MM-DD') AS FDATE
+		FROM CHECKLIST
+	</select>
 </mapper>
