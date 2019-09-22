@@ -1,25 +1,6 @@
 /*page03*/
+$(document).ready(function() {
 
-function json(data){
-	
-	$.each(data, function (index, item) {
-		events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});
-		console.log(item);
-
-	});
-	var jsonEvents = JSON.stringify(events);
-	alert(jsonEvents);
-
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-	events = [];
-	$.ajax({
-		type: 'POST',
-		url: 'loadAllCheckList',
-		dataType: 'json',
-		success: json
-	});
 	var calendarEl = document.getElementById('checkCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl,{
@@ -53,11 +34,27 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		
 		defaultDate: '2019-09-15',
-		events: events
+		events: function(start, end, callback){
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function(data){
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});						
+					});
+
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
 		
 	});	
 	calendar.render();
 });
+
 
 function dateToYYYYMMDD(date){
     function pad(num) {

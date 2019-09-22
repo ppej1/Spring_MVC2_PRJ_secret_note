@@ -173,7 +173,7 @@
 	
 
 
-	 <script src="resources/template/js/jquery-3.2.1.min.js"></script>
+	 <script src="resources/template/js/jquery-3.4.1.min.js"></script>
 
    	<!-- main -->
     <script src="resources/template/js/popper.min.js"></script>
