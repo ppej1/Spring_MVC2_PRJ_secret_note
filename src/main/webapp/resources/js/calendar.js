@@ -1,5 +1,5 @@
 /*page03*/
-var jsonEvents = [];
+
 function json(data){
 	
 	$.each(data, function (index, item) {
@@ -7,19 +7,19 @@ function json(data){
 		console.log(item);
 
 	});
-	jsonEvents = JSON.stringify(events);
-	
+	var jsonEvents = JSON.stringify(events);
+	alert(jsonEvents);
+
 }
+
 document.addEventListener('DOMContentLoaded', function () {
 	events = [];
-	
 	$.ajax({
 		type: 'POST',
 		url: 'loadAllCheckList',
 		dataType: 'json',
 		success: json
 	});
-	alert(jsonEvents);
 	var calendarEl = document.getElementById('checkCalendar1');
 
 	var calendar = new FullCalendar.Calendar(calendarEl,{
