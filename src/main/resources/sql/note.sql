@@ -255,4 +255,4 @@ COMMENT ON COLUMN SubClass.price IS '
 ';
 
 create sequence ck_seq;
-
+create sequence comment_seq;
