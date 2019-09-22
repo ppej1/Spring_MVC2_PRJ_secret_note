@@ -51,6 +51,7 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/template/css/style.css">
 	<link rel="stylesheet" href="resources/template/css/templatemo-style.css">		
+	 <link rel="shortcut icon" href="resources/img/chess.ico">
 
 
     <!-- custum templet Style -->
@@ -191,6 +192,9 @@
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/checkList.js"></script>	
+	<script type="text/javascript" src="resources/js/uses.js"></script>	
+	<script type="text/javascript" src="resources/js/disposal.js"></script>	
+	<script type="text/javascript" src="resources/js/memo.js"></script>	
 	
 	<!-- turn.js 관련  -->
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
