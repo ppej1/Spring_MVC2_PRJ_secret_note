@@ -11,7 +11,8 @@
 	CSERIALNUMBER,
 	CKSERIALNUMBER,
 	USERID,
-	COMMNETS,
+	COMMENTS,
+	CHECKDATE,
 	CDATE
 	)
 	values
@@ -20,7 +21,26 @@
 	#{ckSerialNumber},
 	#{userid},
 	#{comments},
+	#{checkDate},
 	sysdate
 	)
 	</insert>
+	<select id="loadAllMemo" parameterType="CommentsVO" resultType="CommentsVO_img">
+		select 
+			CSERIALNUMBER,
+			CKSERIALNUMBER,
+			USERID,
+			COMMENTS,
+			CHECKDATE,
+			CDATE,
+			EIMG
+	FROM 
+		comments join employee using (USERID) 
+	WHERE  
+	  CHECKDATE = #{checkDate}   
+		<if test="ckSerialNumber > -1">
+			AND CKSERIALNUMBER = #{ckSerialNumber}
+		</if>
+  
+	</select                                                                                                                                                                                                                                               >
 </mapper>

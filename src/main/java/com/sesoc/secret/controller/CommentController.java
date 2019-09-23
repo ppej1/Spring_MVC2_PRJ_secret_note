@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.CommentRepository;
-import com.sesoc.secret.dao.commentRepository;
 import com.sesoc.secret.dto.CommentsVO;
 import com.sesoc.secret.dto.CommentsVO_img;
 
@@ -23,9 +22,11 @@ public class CommentController {
 	@RequestMapping(value = "/loadAllComment", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CommentsVO_img> loadAllMemo(CommentsVO comments){
-		System.out.println(comments);
+		System.out.println("allComment" + comments);
+		ArrayList<CommentsVO_img> result = repo.loadAllMemo (comments);
+		System.out.println("result" + result);
 		
-		return null;
+		return result;
 	}		
 	
 	
@@ -34,7 +35,7 @@ public class CommentController {
 	public int insertComment(CommentsVO comments, HttpSession session){
 		comments.setUserid((String)session.getAttribute("loginId"));
 
-		System.out.println(comments);
+		System.out.println("insert: " + comments);
 		int result = repo.insertComment(comments);
 		return result;
 	}		

@@ -190,6 +190,7 @@ button:focus {
 .tm-notification-items {
   overflow-y: scroll;
   height: 100%;
+  background-color: whitesmoke;
 }
 .tm-notification-item {
   padding: 15px;

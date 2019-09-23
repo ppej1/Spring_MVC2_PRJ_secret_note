@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommentsVO_img {
-	String cSerialNumber;
+	String cserialNumber;
 	String ckSerialNumber;
 	String userid;
 	String comments;
+	String checkDate;
 	String cDate;
 	String eImg;
 
