@@ -11,56 +11,7 @@
         </div>
         <div class="comment_container">
             <div class="tm-notification-items" id="tm-notification-items">
-                <div class="media tm-notification-item">
-                    <div class="tm-gray-circle"><img src="resources/data/img/profile/avatar.png" alt="Avatar Image"
-                            class="rounded-circle"></div>
-                    <div class="media-body">
-                        <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                class="tm-notification-link">product updates</a>. Check new orders.</p>
-                        <span class="tm-small tm-text-color-secondary">By Tw</span>
-                        <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                    </div>
-                </div>
-                <div class="media tm-notification-item">
-                    <div class="tm-gray-circle"><img src="resources/data/img/profile/avatar.png" alt="Avatar Image"
-                            class="rounded-circle"></div>
-                    <div class="media-body">
-                        <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                class="tm-notification-link">product updates</a>. Check new orders.</p>
-                        <span class="tm-small tm-text-color-secondary">By Tw</span>
-                        <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                    </div>
-                </div> 
-                <div class="media tm-notification-item">
-                    <div class="tm-gray-circle"><img src="resources/data/img/profile/avatar.png" alt="Avatar Image"
-                            class="rounded-circle"></div>
-                    <div class="media-body">
-                        <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                class="tm-notification-link">product updates</a>. Check new orders.</p>
-                        <span class="tm-small tm-text-color-secondary">By Tw</span>
-                        <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                    </div>
-                </div>
-                <div class="media tm-notification-item">
-                    <div class="tm-gray-circle"><img src="resources/data/img/profile/avatar.png" alt="Avatar Image"
-                            class="rounded-circle"></div>
-                    <div class="media-body">
-                        <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                class="tm-notification-link">product updates</a>. Check new orders.</p>
-                        <span class="tm-small tm-text-color-secondary">By Tw</span>
-                        <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                    </div>
-                </div>
-                <div class="media tm-notification-item">
-                    <div class="tm-gray-circle"><img src="resources/data/img/profile/avatar.png" alt="Avatar Image"
-                            class="rounded-circle"></div>
-                    <div class="media-body">
-                        <p class="mb-2"><b>Jessica</b> and <b>6 others</b> sent you new <a href="#"
-                                class="tm-notification-link">product updates</a>. Check new orders.</p>
-                        <span class="tm-small tm-text-color-secondary">By Tw</span>
-                        <span class="tm-small tm-text-color-secondary">6h ago.</span>
-                    </div>
-                </div>                                                               
+ 				<!-- memo.js -->                                                              
             </div>
         </div>
         <div class="write-coment-container">

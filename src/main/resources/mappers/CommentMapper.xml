@@ -42,5 +42,10 @@
 			AND CKSERIALNUMBER = #{ckSerialNumber}
 		</if>
   
-	</select                                                                                                                                                                                                                                               >
+	</select>
+	<delete id="deleteComment">
+		DELETE COMMENTS
+		WHERE CSERIALNUMBER =  #{cserialNumber}
+		AND USERID = #{userid}
+	</delete>
 </mapper>

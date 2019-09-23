@@ -11,4 +11,7 @@ public interface CommentMapper {
 
 	ArrayList<CommentsVO_img> loadAllMemo(CommentsVO comments);
 
+	int deleteComment(CommentsVO comments);
+
+
 }

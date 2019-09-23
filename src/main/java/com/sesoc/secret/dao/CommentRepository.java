@@ -25,4 +25,13 @@ public class CommentRepository {
 		return mapper.loadAllMemo(comments);
 	}
 
+
+	public int deleteComment(CommentsVO comments) {
+		CommentMapper mapper = session.getMapper(CommentMapper.class);
+		return mapper.deleteComment(comments);
+	}
+
+
+
+
 }

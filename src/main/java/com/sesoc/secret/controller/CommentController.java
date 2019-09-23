@@ -38,5 +38,14 @@ public class CommentController {
 		System.out.println("insert: " + comments);
 		int result = repo.insertComment(comments);
 		return result;
-	}		
+	}	
+	@RequestMapping(value = "/deleteComment", method = RequestMethod.POST)
+	@ResponseBody
+	public int deleteComment(CommentsVO comments, HttpSession session){
+		comments.setUserid((String)session.getAttribute("loginId"));
+		int result = repo.deleteComment(comments);
+
+		
+		return result;
+	}	
 }

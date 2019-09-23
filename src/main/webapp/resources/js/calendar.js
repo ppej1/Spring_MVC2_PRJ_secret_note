@@ -1,27 +1,25 @@
-
-
-function dateToYYYYMMDD(date){
-    function pad(num) {
-        num = num + '';
-        return num.length < 2 ? '0' + num : num;
-    }
-    return date.getFullYear() + '-' + pad(date.getMonth()+1) + '-' + pad(date.getDate());
+function dateToYYYYMMDD(date) {
+	function pad(num) {
+		num = num + '';
+		return num.length < 2 ? '0' + num : num;
+	}
+	return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
 }
 /*page03*/
-$(document).ready(function() {
+$(document).ready(function () {
 	var calendarEl = document.getElementById('checkCalendar1');
 
-	var calendar = new FullCalendar.Calendar(calendarEl,{
-	
-		 navLinks: true,
-		 navLinkDayClick: function(date, jsEvent) {
-				startDate = dateToYYYYMMDD(date)
-				alert(startDate)
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 6);
-				$('.flipbook').turn("disable", true);
-				checklistPage(startDate);
-		  },
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+
+		navLinks: true,
+		navLinkDayClick: function (date, jsEvent) {
+			startDate = dateToYYYYMMDD(date)
+			alert(startDate)
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("disable", true);
+			checklistPage(startDate);
+		},
 		eventLimit: true,
 		plugins: ['dayGrid'],
 		defaultView: 'dayGridMonth',
@@ -29,28 +27,32 @@ $(document).ready(function() {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
 		},
-		 
+
 		eventClick: function (info) {
 			object = info.event;
 			date = new Date(object.start);
 			startDate = dateToYYYYMMDD(date)
-			
+
 			$('.flipbook').turn("disable", false);
 			$('.flipbook').turn("page", 6);
 			$('.flipbook').turn("disable", true);
 			checklistPage(object.id, startDate);
 		},
-		
+
 		defaultDate: '2019-09-03',
-		events: function(start, end, callback){
+		events: function (start, end, callback) {
 			$.ajax({
 				type: 'POST',
 				url: 'loadAllCheckList',
 				dataType: 'json',
-				success: function(data){
+				success: function (data) {
 					var events = [];
 					$.each(data, function (index, item) {
-						events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});						
+						events.push({
+							title: item.ckTitle,
+							id: item.ckSerialNumber,
+							start: item.completes
+						});
 					});
 
 					console.log(events);
@@ -58,29 +60,29 @@ $(document).ready(function() {
 				}
 			});
 		}
-		
-	});	
+
+	});
 	calendar.render();
 });
 
 
 
 /*page04*/
-$(document).ready(function() {
+$(document).ready(function () {
 
 	var calendarEl = document.getElementById('checkCalendar2');
 
-	var calendar = new FullCalendar.Calendar(calendarEl,{
-	
-		 navLinks: true,
-		 navLinkDayClick: function(date, jsEvent) {
-				startDate = dateToYYYYMMDD(date)
-				alert(startDate)
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 6);
-				$('.flipbook').turn("disable", true);
-				checklistPage(startDate);
-		  },
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+
+		navLinks: true,
+		navLinkDayClick: function (date, jsEvent) {
+			startDate = dateToYYYYMMDD(date)
+			alert(startDate)
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("disable", true);
+			checklistPage(startDate);
+		},
 		eventLimit: true,
 		plugins: ['dayGrid'],
 		defaultView: 'dayGridMonth',
@@ -88,28 +90,32 @@ $(document).ready(function() {
 			left: 'dayGridMonth,dayGridWeek,dayGridDay',
 			center: 'title'
 		},
-		 
+
 		eventClick: function (info) {
 			object = info.event;
 			date = new Date(object.start);
 			startDate = dateToYYYYMMDD(date)
-			
+
 			$('.flipbook').turn("disable", false);
 			$('.flipbook').turn("page", 6);
 			$('.flipbook').turn("disable", true);
 			checklistPage(object.id, startDate);
 		},
-		
+
 		defaultDate: '2019-09-15',
-		events: function(start, end, callback){
+		events: function (start, end, callback) {
 			$.ajax({
 				type: 'POST',
 				url: 'loadAllCheckList',
 				dataType: 'json',
-				success: function(data){
+				success: function (data) {
 					var events = [];
 					$.each(data, function (index, item) {
-						events.push({title:item.ckTitle, id : item.ckSerialNumber, start : item.completes});						
+						events.push({
+							title: item.ckTitle,
+							id: item.ckSerialNumber,
+							start: item.completes
+						});
 					});
 
 					console.log(events);
@@ -117,8 +123,8 @@ $(document).ready(function() {
 				}
 			});
 		}
-		
-	});	
+
+	});
 	calendar.render();
 });
 
@@ -145,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				//window.open(eventObj.url);
 
 				info.jsEvent
-			.preventDefault(); // prevents browser from following link in current tab.
+					.preventDefault(); // prevents browser from following link in current tab.
 			} else {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 10);
@@ -186,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				//window.open(eventObj.url);
 
 				info.jsEvent
-			.preventDefault(); // prevents browser from following link in current tab.
+					.preventDefault(); // prevents browser from following link in current tab.
 			} else {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 10);
@@ -218,17 +224,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			center: 'title'
 		},
 		eventLimit: true,
-		defaultView : 'dayGridMonth',
+		defaultView: 'dayGridMonth',
 		eventClick: function (info) {
 			var eventObj = info.event;
-				
-			if (eventObj.id =='use') {
+
+			if (eventObj.id == 'use') {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 14);
 				$('.flipbook').turn("disable", true);
 				console.log(eventObj.start);
 				fusedList();
-			} else if(eventObj.id =='disposal'){
+			} else if (eventObj.id == 'disposal') {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 16);
 				$('.flipbook').turn("disable", true);
@@ -262,9 +268,9 @@ document.addEventListener('DOMContentLoaded', function () {
 /*page13*/
 
 document.addEventListener('DOMContentLoaded', function () {
-	
-	
-	
+
+
+
 	var calendarEl = document.getElementById('UsageCalendar2');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -276,14 +282,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		eventLimit: true,
 		eventClick: function (info) {
 			var eventObj = info.event;
-			
-			if (eventObj.id =='use') {
+
+			if (eventObj.id == 'use') {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 14);
 				$('.flipbook').turn("disable", true);
 				console.log(eventObj.start);
 				fusedList();
-			} else if(eventObj.id =='disposal'){
+			} else if (eventObj.id == 'disposal') {
 				$('.flipbook').turn("disable", false);
 				$('.flipbook').turn("page", 16);
 				$('.flipbook').turn("disable", true);
@@ -292,33 +298,33 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 		defaultDate: '2019-09-03',
 		events: [{
-			title: 'JUNK List',
-			id: 'use',
-			start: '2019-09-02T09:30:00',
-			color: 'green'
-		}, {
-			title: 'JUNK List',
-			id: 'disposal',
-			start: '2019-09-05T09:30:00',
-			color: 'red'
-		}, {
-			title: 'JUNK List',
-			id: 'disposal',
-			start: '2019-09-05T09:30:00',
-			color: 'red'
-		}, {
-			title: 'JUNK List',
-			id: 'disposal',
-			start: '2019-09-05T09:30:00',
-			color: 'red'
-		}, {
-			title: 'JUNK List',
-			id: 'disposal',
-			start: '2019-09-05T09:30:00',
-			color: 'red'
-		}
-		
-		
+				title: 'JUNK List',
+				id: 'use',
+				start: '2019-09-02T09:30:00',
+				color: 'green'
+			}, {
+				title: 'JUNK List',
+				id: 'disposal',
+				start: '2019-09-05T09:30:00',
+				color: 'red'
+			}, {
+				title: 'JUNK List',
+				id: 'disposal',
+				start: '2019-09-05T09:30:00',
+				color: 'red'
+			}, {
+				title: 'JUNK List',
+				id: 'disposal',
+				start: '2019-09-05T09:30:00',
+				color: 'red'
+			}, {
+				title: 'JUNK List',
+				id: 'disposal',
+				start: '2019-09-05T09:30:00',
+				color: 'red'
+			}
+
+
 		]
 	});
 

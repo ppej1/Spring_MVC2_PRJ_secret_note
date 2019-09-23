@@ -1,5 +1,5 @@
 var nowdate = '';
-var comment_num = -1;
+var comment_num = 99999;
 
 function setnowDate() {
 	nowdate = startDate;
@@ -23,11 +23,12 @@ function memoListPage() {
 	});
 
 	$("#button-comment").on('click', function () {
+		alert("aa")
 		insertComment(comment_num);
-		
+
 	});
 	$("#title_comment").on('click', function () {
-		co_num = -1;
+		co_num = 99999;
 		set_comment_num(co_num);
 		selectList(comment_num);
 	});
@@ -56,19 +57,19 @@ function loadAllComment(data) {
 	$.each(data, function (index, item) {
 		console.log(item)
 		tag += '<div class="media tm-notification-item">';
-		tag += '<div class="tm-gray-circle"><img src="resources/img/employee/'+item.eImg+'" alt="Avatar Image" class="rounded-circle"></div>';
+		tag += '<div class="tm-gray-circle"><img src="resources/img/employee/' + item.eimg + '" alt="Avatar Image" class="rounded-circle"></div>';
 		tag += '<div class="media-body">';
-		tag += ' <p class="mb-2">'+item.comments+'</p>';
-		tag += ' <span class="tm-small tm-text-color-secondary">'+item.userid+'</span>';
-		tag += '  <span class="tm-small tm-text-color-secondary">'+item.cdate+'</span>';
+		tag += ' <p class="mb-2">' + item.comments + '</p>';
+		tag += ' <span class="tm-small tm-text-color-secondary">' + item.userid + '</span>';
+		tag += '  <span class="tm-small tm-text-color-secondary">' + item.cdate + '</span>';
 		tag += '  <span class="xbtn" data-value="' + item.cserialNumber + '">x</span>';
 		tag += '</div> ';
 		tag += ' </div>';
 	});
 
 	$("#tm-notification-items").html(tag);
-	
-	
+
+
 	$(".xbtn").on('click', function () {
 		cserialNumber = $(this).attr("data-value");
 		deleteComment(cserialNumber)
@@ -76,35 +77,38 @@ function loadAllComment(data) {
 	});
 }
 
-function deleteComment(cserialNumber)
-{
+function deleteComment(cserialNumber) {
 	var sendData = {
-			"cserialNumber": cserialNumber
+		"cserialNumber": cserialNumber
+	}
+	$.ajax({
+		type: 'POST',
+		data: sendData,
+		dataType: 'json',
+		url: 'deleteComment',
+		success: function () {
+			selectList(comment_num);
 		}
-		$.ajax({
-			type: 'POST',
-			data: sendData,
-			dataType: 'json',
-			url: 'loadAllComment',
-			success: loadAllComment
-		});
+	});
 
 
 }
 
 
-	function insertComment(comment_num) {
-		console.log(comment_num);
-		comments = $("#comment_input").val();
-		var sendData = {
-			"ckSerialNumber": comment_num,
-			"comments": comments,
-			"checkDate": nowdate
-		}
-		$.ajax({
-			type: 'POST',
-			data: sendData,
-			url: 'insertComment',
-			success: selectList
-		});
+function insertComment(comment_num) {
+	console.log(comment_num);
+	comments = $("#comment_input").val();
+	var sendData = {
+		"ckSerialNumber": comment_num,
+		"comments": comments,
+		"checkDate": nowdate
 	}
+	$.ajax({
+		type: 'POST',
+		data: sendData,
+		url: 'insertComment',
+		success: function () {
+			selectList(comment_num);
+		}
+	});
+}
