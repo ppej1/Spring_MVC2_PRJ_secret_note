@@ -38,7 +38,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"/>
 	<!-- calendar -->	
 	<link href='resources/js/fullcalendar/core/main.css' rel='stylesheet' />
-	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />		
+	<link href='resources/js/fullcalendar/daygrid/main.css' rel='stylesheet' />	
 
 	<!-- main index page -->
     <link rel="stylesheet" href="resources/template/css/animate.css">
@@ -186,9 +186,12 @@
     <script src="resources/template/js/main.js"></script>
 
 	<!-- calendar -->
+	
 	<script src='resources/js/fullcalendar/core/main.js'></script>
 	<script src='resources/js/fullcalendar/daygrid/main.js'></script>
 	<script src='resources/js/fullcalendar/moment/main.js'></script>
+
+	
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/checkList.js"></script>	
