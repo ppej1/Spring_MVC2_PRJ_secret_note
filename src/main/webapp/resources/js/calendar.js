@@ -12,6 +12,7 @@
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: function (start, end, timezone, callback) {
+			var events = [];
 			$.ajax({
 				type: 'POST',
 				url: 'loadAllCheckList',
@@ -22,16 +23,15 @@
 						events.push({
 							title: item.ckTitle,
 							id: item.ckSerialNumber,
-							start: item.completes,
-							color : 'blue'
+							start: item.completes
 						});
 					});
-
 					console.log(events);
 					callback(events);
+
 				}
 			});
-		}
+      }
     	  
     	  
     });
