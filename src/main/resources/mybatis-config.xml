@@ -7,6 +7,7 @@
 		<typeAlias type="com.sesoc.secret.dto.AccountVO" alias="AccountVO"/>
 		<typeAlias type="com.sesoc.secret.dto.CheckListVO" alias="CheckListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.CommentsVO" alias="CommentsVO"/>
+		<typeAlias type="com.sesoc.secret.dto.CommentsVO_img" alias="CommentsVO_img"/>		
 		<typeAlias type="com.sesoc.secret.dto.DisposalVO" alias="DisposalVO"/>
 		<typeAlias type="com.sesoc.secret.dto.Employee_VO" alias="Employee_VO"/>
 		<typeAlias type="com.sesoc.secret.dto.MainClassVO" alias="MainClassVO"/>
@@ -25,5 +26,6 @@
 		<mapper resource="mappers/CheckListMapper.xml" />
 		<mapper resource="mappers/UsedMapper.xml" />
 		<mapper resource="mappers/DisposalMapper.xml" />
+		<mapper resource="mappers/CommentMapper.xml" />		
 	</mappers>
 </configuration>

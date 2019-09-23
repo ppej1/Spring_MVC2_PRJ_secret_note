@@ -6,7 +6,7 @@
     <div class="page_container_full">
         <div class="page_title_container">
             <div class="page_title_container_div_right">
-                <h1>MEMO</h1>
+                <h1 id="title_comment">COMMENT</h1>
             </div>
         </div>
         <div class="comment_container">
@@ -29,10 +29,9 @@
         <div class="write-coment-container">
             <hr>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" class="form-control" placeholder="comment for checkList" id ="comment_input">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-comment">Button</button>
                 </div>
             </div>
         </div>

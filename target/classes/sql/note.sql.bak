@@ -21,7 +21,7 @@ DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 CREATE TABLE Account
 (
 	accountName varchar2(20) NOT NULL,
-	aImg varchar2(200) NOT NULL,
+	aImg varchar2(20) NOT NULL,
 	aManager varchar2(20) NOT NULL,
 	aPhone varchar2(20) NOT NULL,
 	PRIMARY KEY (accountName)
@@ -49,7 +49,7 @@ CREATE TABLE Comments
 (
 	cSerialNumber varchar2(20) NOT NULL,
 	ckSerialNumber varchar2(20) NOT NULL,
-	userid varchar2(20) NOT NULL,
+	cRegistId varchar2(20),
 	commnets varchar2(100) NOT NULL,
 	cDate date NOT NULL,
 	PRIMARY KEY (cSerialNumber)
@@ -72,7 +72,7 @@ CREATE TABLE Employee
 (
 	userid varchar2(20) NOT NULL,
 	userpwd varchar2(20) NOT NULL,
-	eImg varchar2(200) NOT NULL,
+	eImg varchar2(20) NOT NULL,
 	userName varchar2(20) NOT NULL,
 	rank varchar2(20) NOT NULL,
 	email varchar2(20) NOT NULL,
@@ -177,12 +177,6 @@ ALTER TABLE Comments
 ;
 
 
-ALTER TABLE Comments
-	ADD FOREIGN KEY (userid)
-	REFERENCES Employee (userid)
-;
-
-
 ALTER TABLE Disposal
 	ADD FOREIGN KEY (userid)
 	REFERENCES Employee (userid)
@@ -254,5 +248,5 @@ COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 
-create sequence ck_seq;
-create sequence comment_seq;
+
+
