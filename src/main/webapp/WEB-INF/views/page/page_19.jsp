@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 <div class="page_content_odd">
     <div class="page_container_full">
-  
+  		<h1 class="tm-block-title">ANALYSIS CHART2</h1>
     </div>
 </div>

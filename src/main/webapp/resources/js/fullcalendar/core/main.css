@@ -714,14 +714,14 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* "primary" coloring */
 .fc-button-primary {
   color: #fff;
-  background-color: #4fe153;
-  border-color: #ffffff;
+  background-color: #2C3E50;
+  border-color: #2C3E50;
 }
 
 .fc-button-primary:hover {
-  color: #4fe153;
-  background-color: #ffffff;
-  border-color: #4fe153;
+  color: #fff;
+  background-color: #1e2b37;
+  border-color: #1a252f;
 }
 
 .fc-button-primary:focus {
@@ -731,15 +731,15 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-button-primary:disabled {
   color: #fff;
-  background-color: #276b23;
-  border-color: #276b23;
+  background-color: #2C3E50;
+  border-color: #2C3E50;
 }
 
 .fc-button-primary:not(:disabled):active,
 .fc-button-primary:not(:disabled).fc-button-active {
-  color: #4fe153;
-  background-color: #ffffff;
-  border-color: #73bc75;
+  color: #fff;
+  background-color: #1a252f;
+  border-color: #151e27;
 }
 
 .fc-button-primary:not(:disabled):active:focus,
@@ -830,7 +830,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 }
 
 .fc-toolbar h2 {
-  font-size: 1.5rem;
+  font-size: 1.75em;
   margin: 0;
 }
 
