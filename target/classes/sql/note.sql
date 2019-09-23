@@ -50,7 +50,8 @@ CREATE TABLE Comments
 	cSerialNumber varchar2(20) NOT NULL,
 	ckSerialNumber varchar2(20) NOT NULL,
 	userid varchar2(20) NOT NULL,
-	commnets varchar2(100) NOT NULL,
+	comments varchar2(100) NOT NULL,
+	CheckDate date not null,
 	cDate date NOT NULL,
 	PRIMARY KEY (cSerialNumber)
 );

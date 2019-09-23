@@ -17,7 +17,8 @@ function checklistPage() {
 		success: chekListOutput
 	});
 	
-
+	
+	
 }
 
 function chekListOutput(data) {
@@ -71,7 +72,7 @@ function chekListOutput(data) {
 
 	$("#checklistTable").html(tag);
 	
-	memoListPage();
+	
 	$(".successCheck").on('click',function(){
 		ckSerialNumber = $(this).attr("data-value");
 		successCheck(ckSerialNumber);
@@ -80,6 +81,9 @@ function chekListOutput(data) {
 		ckSerialNumber = $(this).attr("data-value");
 		deleteCheck(ckSerialNumber);
 	});
+	
+	memoListPage(nowdate);
+
 }
 
 function createCheckList() {

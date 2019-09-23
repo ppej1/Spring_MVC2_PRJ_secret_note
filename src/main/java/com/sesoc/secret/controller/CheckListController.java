@@ -55,7 +55,6 @@ public class CheckListController {
 	@RequestMapping(value = "/deleteCheckList", method = RequestMethod.POST)
 	@ResponseBody
 	public int deleteCheckList(CheckListVO checkList){
-		System.out.println(checkList);
 		int result = repo.deleteCheckList(checkList);
 		return 0;
 	}
@@ -63,9 +62,7 @@ public class CheckListController {
 	@RequestMapping(value = "/loadAllCheckList", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CheckListVO> loadAllCheckList(){
-		System.out.println("dd");
 		ArrayList<CheckListVO> list = repo.selectAllList();
-		System.out.println(list);
 		return list;
 	}	
 
