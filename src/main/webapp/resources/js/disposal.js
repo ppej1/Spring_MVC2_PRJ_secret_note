@@ -23,7 +23,7 @@ function output3(resp) {
 	 	$.each(resp, function(index, item){
 	 		tag += '<tbody>'
 		    tag += '<tr>'
-			tag += '<th scope="row"><b>'+item.dSerialNumber+'</b></th>'
+			tag += '<th scope="row"><b>'+item.dserialNumber+'</b></th>'
 			tag += '<td>'+item.mclass+'</td>'
 			tag += '<td><b>'+item.location+'</b></td>'		
 			tag += '<td><b>'+item.sname+'</b></td>'
@@ -37,45 +37,77 @@ function output3(resp) {
 		$("#newDisposalList").html(tag);
 	}
 
+cdisposalList();
 
+
+
+var sName2 = [];
+var dAmount = [];
+
+function cdisposalList() {
+	$.ajax({
+		type :'GET'
+		, url : 'disposalList'
+		, success : output4
+	})
+}
+
+function output4(resp) {
+	
+	$.each(resp, function(index, item){
+		sName2.push(item.sname)
+		dAmount.push(item.damount)
+	})
+	
+	for(var i = 0; i < dAmount.length; i++){
+		pieChart2.push((dAmount[i]/sum(dAmount))*100)
+	}
+}
+
+var label2 = sName2;
+var usedData = dAmount;
+var preUsedData = [18,47,75,34]; //예상폐기량
 
 var ctx = document.getElementById('disposalChart');
 var myChart = new Chart(ctx, {
-    type: 'horizontalBar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 1, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }],
-        options: {
-            scales: {
-            	xAxes: [{
-                    display: true,
-                    ticks: {
-                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-                        // OR //
-                        beginAtZero: true   // minimum value will be 0.
-                    }
-                }]
-            }
-        }
+  type: 'horizontalBar',
+  data: {
+    labels: label2,
+    datasets: [
+      {
+        label: "폐기량",
+        backgroundColor: "#3e95cd",
+        data: usedData
+      }, {
+        label: "예상폐기량",
+        backgroundColor: "#c45850",
+        data: preUsedData
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Disposal Graph'
     }
+  }
 });
+
+//For a pie chart
+
+var pieChart2 = [];
+
+var ctx2 = document.getElementById('disposalChart2');
+var myPieChart2 = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: label2,
+        datasets: [
+          {
+            backgroundColor: "#ff6384",
+            data: pieChart2
+          }
+        ]
+      }
+});
+

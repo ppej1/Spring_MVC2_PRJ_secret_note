@@ -18,6 +18,7 @@
 		<typeAlias type="com.sesoc.secret.dto.UsesVO" alias="UsesVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsedListVO" alias="UsedListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.DisposalListVO" alias="DisposalListVO"/>
+		<typeAlias type="com.sesoc.secret.dto.GraphVO" alias="GraphVO"/>
 
 	</typeAliases>
 	
@@ -27,5 +28,6 @@
 		<mapper resource="mappers/UsedMapper.xml" />
 		<mapper resource="mappers/DisposalMapper.xml" />
 		<mapper resource="mappers/CommentMapper.xml" />		
+		<mapper resource="mappers/GraphMapper.xml" />
 	</mappers>
 </configuration>

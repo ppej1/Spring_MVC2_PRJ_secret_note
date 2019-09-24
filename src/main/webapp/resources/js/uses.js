@@ -58,54 +58,64 @@ function output2(resp) {
 		sName.push(item.sname)
 		uAmount.push(item.uamount)
 	})
+	
+	for(var i = 0; i < uAmount.length; i++){
+		pieChart.push((uAmount[i]/sum(uAmount))*100)
+	}
 }
 
-/* function addData(chart, sName, uAmount) {
-	chart.data.labels.push(sName);
-	chart.data.datasets.forEach((dataset) => {
-	      dataset.data.push(uAmount);
-    });
-	chart.update();
-} */
+var label = sName;
+var usedData = uAmount;
+var preUsedData = [18,47,75,34]; //예상사용량 
+
 
 var ctx = document.getElementById('usedChart');
 var myChart = new Chart(ctx, {
-    type: 'horizontalBar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 1, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }],
-        options: {
-            scales: {
-            	xAxes: [{
-                    display: true,
-                    ticks: {
-                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-                        // OR //
-                        beginAtZero: true   // minimum value will be 0.
-                    }
-                }]
-            }
-        }
+  type: 'horizontalBar',
+  data: {
+    labels: label,
+    datasets: [
+      {
+        label: "사용량",
+        backgroundColor: "#3e95cd",
+        data: usedData
+      }, {
+        label: "예상사용량",
+        backgroundColor: "#c45850",
+        data: preUsedData
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Used Graph'
     }
+  }
+});
+
+//For a pie chart
+function sum(array) {
+	  var result = 0;
+	  for (var i = 0; i < array.length; i++){
+			result += parseInt(array[i]);
+	  }
+	  return result;
+}
+
+var pieChart = [];
+
+var ctx = document.getElementById('usedChart2');
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: label,
+        datasets: [
+          {
+            backgroundColor: "#ff6384",
+            data: pieChart
+          }
+        ]
+      }
 });
 

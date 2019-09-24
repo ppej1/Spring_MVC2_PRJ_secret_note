@@ -4,6 +4,7 @@
 <div class="page_content_odd">
 	<div class="page_container_full">
 		<h1 class="tm-block-title">DISPOSAL CHART</h1>
-		<canvas id="disposalChart" width="80%" height="60%"></canvas>
+		<canvas id="disposalChart" width="80%" height="60%"></canvas><br>
+		<canvas id="disposalChart2" width="80%" height="60%"></canvas>
 	</div>
 </div>

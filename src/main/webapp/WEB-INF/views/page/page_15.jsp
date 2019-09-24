@@ -7,6 +7,7 @@
 <div class="page_content_odd">
 	<div class="page_container_full">
 		<h1 class="tm-block-title">USED CHART</h1>
-		<canvas id="usedChart" width="80%" height="60%"></canvas>
+		<canvas id="usedChart" width="80%" height="60%"></canvas><br>
+		<canvas id="usedChart2" width="80%" height="60%"></canvas>		
 	</div>
 </div>
