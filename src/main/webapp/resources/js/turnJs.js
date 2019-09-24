@@ -41,10 +41,10 @@
  		}
 
  		function loadApp1() {
+
  			// Create the flipbook
 
  			$('.flipbook').turn({
- 			
  				// Width
 
  				width: window.innerWidth - 100,
@@ -66,8 +66,6 @@
  				autoCenter: true,
  				
  				when: {
- 					
- 			
  					turned: function(event, page, view) {
  			 			$("#checkCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
  			 			$("#checkCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
@@ -80,6 +78,7 @@
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
+ 						set_CalendarPage(currentPage);
  						set_even_button(currentPage);
  						nav();
  						
@@ -87,7 +86,27 @@
  				}
  			});
  		}
+ 		
+ 		function set_CalendarPage(currentPage){
+ 			if (currentPage == 4 || currentPage == 5 ) {
+ 				calendarPage04();
+ 				calendarPage05();
+ 				
+ 			}
+ 			if (currentPage == 8 || currentPage == 9 ) {
+ 				calendarPage08();
 
+ 				calendarPage09();
+ 			}
+ 			if (currentPage == 12 || currentPage == 13 ) {
+ 				calendarPage12();
+
+ 				calendarPage13();
+ 			} 			
+ 			
+ 			
+ 		}
+ 		
  		
  		
  		
@@ -222,7 +241,9 @@
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
-				alert("회원 정보 수정")
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.log-out').on('click', function () {
 				console.log("logout");
@@ -232,14 +253,5 @@
 			$('#storageBtn').on('click', function () {
 				alert("상온을 클릭했음");
 			});	
-			$('.go_back_home').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 1);
-				$('.flipbook').turn("disable", true);
-			});				
-			
-			
-			
-			
 		}	
 

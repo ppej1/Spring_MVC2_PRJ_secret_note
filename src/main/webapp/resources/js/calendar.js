@@ -10,7 +10,9 @@ function dateToYYYYMMDD(date) {
 	return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
 }
 /*page 04*/
-$(document).ready(function (){
+function calendarPage04(){
+	
+
 	$('#checkCalendar1').fullCalendar({
 		header: {
 			left: 'prev,next today',
@@ -58,11 +60,11 @@ $(document).ready(function (){
 			});
 		}
 	});
-});
+}
 
 
 /*page 05*/
-$(document).ready(function () {
+function calendarPage05() {
 
 	$('#checkCalendar2').fullCalendar({
 		header: {
@@ -111,16 +113,17 @@ $(document).ready(function () {
 			});
 		}
 	});
-});
+}
 
 
 
 
 
 /*page08*/
-$(document).ready(function (){
+function calendarPage08(){
+	
+
 	$('#StockCalendar1').fullCalendar({
-		
 		header: {
 			left: 'prev,next today',
 			center: 'title',
@@ -129,7 +132,6 @@ $(document).ready(function (){
 		defaultDate: yyyy + '-' + mm + '-' + dd,
 		navLinks: true,
 		navLinkDayClick: function (date, jsEvent) {
-			alert("ddd")
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
@@ -154,7 +156,6 @@ $(document).ready(function (){
 				success: function (data) {
 					var events = [];
 					$.each(data, function (index, item) {
-						
 						events.push({
 							title: item.ckTitle,
 							id: item.ckSerialNumber,
@@ -167,5 +168,160 @@ $(document).ready(function (){
 			});
 		}
 	});
-});
+}
 
+
+
+/*page09*/
+function calendarPage09(){
+	
+
+	$('#StockCalendar2').fullCalendar({
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay,listWeek'
+		},
+		defaultDate: yyyy + '-' + mm + '-' + dd,
+		navLinks: true,
+		navLinkDayClick: function (date, jsEvent) {
+			selectdate = new Date(date);
+			startDate = dateToYYYYMMDD(selectdate);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("disable", true);
+		},
+		eventClick: function (calEvent, jsEvent, view) {
+			date = new Date(calEvent.start);
+			startDate = dateToYYYYMMDD(date);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("disable", true);
+		},
+		editable: true,
+		eventLimit: true, // allow "more" link when too many events
+		events: function (start, end, timezone, callback) {
+			var events = [];
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function (data) {
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({
+							title: item.ckTitle,
+							id: item.ckSerialNumber,
+							start: item.completes
+						});
+					});
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
+	});
+}
+
+
+
+/*page12*/
+function calendarPage12(){
+	
+
+	$('#UsageCalendar1').fullCalendar({
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay,listWeek'
+		},
+		defaultDate: yyyy + '-' + mm + '-' + dd,
+		navLinks: true,
+		navLinkDayClick: function (date, jsEvent) {
+			selectdate = new Date(date);
+			startDate = dateToYYYYMMDD(selectdate);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 14);
+			$('.flipbook').turn("disable", true);
+		},
+		eventClick: function (calEvent, jsEvent, view) {
+			date = new Date(calEvent.start);
+			startDate = dateToYYYYMMDD(date);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 14);
+			$('.flipbook').turn("disable", true);
+		},
+		editable: true,
+		eventLimit: true, // allow "more" link when too many events
+		events: function (start, end, timezone, callback) {
+			var events = [];
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function (data) {
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({
+							title: item.ckTitle,
+							id: item.ckSerialNumber,
+							start: item.completes
+						});
+					});
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
+	});
+}
+/*page13*/
+function calendarPage13(){
+	
+
+	$('#UsageCalendar2').fullCalendar({
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay,listWeek'
+		},
+		defaultDate: yyyy + '-' + mm + '-' + dd,
+		navLinks: true,
+		navLinkDayClick: function (date, jsEvent) {
+			selectdate = new Date(date);
+			startDate = dateToYYYYMMDD(selectdate);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 14);
+			$('.flipbook').turn("disable", true);
+		},
+		eventClick: function (calEvent, jsEvent, view) {
+			date = new Date(calEvent.start);
+			startDate = dateToYYYYMMDD(date);
+			$('.flipbook').turn("disable", false);
+			$('.flipbook').turn("page", 14);
+			$('.flipbook').turn("disable", true);
+		},
+		editable: true,
+		eventLimit: true, // allow "more" link when too many events
+		events: function (start, end, timezone, callback) {
+			var events = [];
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllCheckList',
+				dataType: 'json',
+				success: function (data) {
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({
+							title: item.ckTitle,
+							id: item.ckSerialNumber,
+							start: item.completes
+						});
+					});
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
+	});
+}
