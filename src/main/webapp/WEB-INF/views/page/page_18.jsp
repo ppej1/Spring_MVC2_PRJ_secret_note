@@ -30,13 +30,6 @@ function output5(resp){
 		  var data_2 = setTheoryData(rawData);
 
 
-function output5 (resp){
-	$.each(resp, function(index, item){
-		graphData.push(item.sname)
-		graphData.push(item.uamount)
-	})
-}
-
 		  chart = anychart.scatter();
 
 		  chart.title("The calculated formula: " + result.string + "\nThe coefficient of determination (R2): " + result.r2.toPrecision(2));
