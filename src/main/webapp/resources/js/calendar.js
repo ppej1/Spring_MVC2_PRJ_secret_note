@@ -10,6 +10,15 @@ function dateToYYYYMMDD(date) {
 	return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
 }
 /*page 04*/
+function resetPage(){
+	tag = "";
+	$('#checkCalendar1').html(tag);
+	$('#checkCalendar2').html(tag);
+	$('#StockCalendar1').html(tag);
+	$('#StockCalendar2').html(tag);
+	$('#UsageCalendar1').html(tag);
+	$('#UsageCalendar2').html(tag);
+}
 function calendarPage04(){
 	
 

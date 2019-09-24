@@ -88,19 +88,21 @@
  		}
  		
  		function set_CalendarPage(currentPage){
+ 			
  			if (currentPage == 4 || currentPage == 5 ) {
+ 				resetPage();
  				calendarPage04();
  				calendarPage05();
  				
  			}
- 			if (currentPage == 8 || currentPage == 9 ) {
+ 			if (currentPage == 8 || currentPage == 9 ) {	
+ 				resetPage();
  				calendarPage08();
-
  				calendarPage09();
  			}
- 			if (currentPage == 12 || currentPage == 13 ) {
+ 			if (currentPage == 12 || currentPage == 13 ) {	
+ 				resetPage();
  				calendarPage12();
-
  				calendarPage13();
  			} 			
  			
