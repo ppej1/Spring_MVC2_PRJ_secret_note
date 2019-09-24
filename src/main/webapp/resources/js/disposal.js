@@ -1,7 +1,13 @@
-function fdisposalList() {
+function fdisposalList(startDate) {
+	
+	
+	var sendData = {
+			"dDate": startDate
+		}
 	$.ajax({
-		type :'GET'
-		, url : 'disposalList'
+		type :'POST'
+		, url : 'disposalListOneDay'
+		,data: sendData
 		, success : output3
 	})
 }
@@ -37,9 +43,9 @@ function output3(resp) {
 		$("#newDisposalList").html(tag);
 	}
 
+
+
 cdisposalList();
-
-
 
 var sName2 = [];
 var dAmount = [];

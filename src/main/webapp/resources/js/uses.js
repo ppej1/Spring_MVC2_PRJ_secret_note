@@ -1,9 +1,14 @@
-function fusedList() {
-	$.ajax({
-		type :'GET'
-		, url : 'usedList'
-		, success : output1
-	})
+function fusedList(startDate) {
+	
+	var sendData = {
+			"uDate": startDate
+		}
+		$.ajax({
+			type: 'POST',
+			url: 'usedListOneDay',
+			data: sendData,
+			success: output1
+		});
 }
 
 function output1(resp) {

@@ -17,4 +17,9 @@ public class DisposalRepository {
 		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
 		return mapper.disposalList();
 	}
+
+	public List<DisposalListVO> disposalListOneDay(DisposalListVO disposal) {
+		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
+		return mapper.disposalListOneDay(disposal);
+	}
 }

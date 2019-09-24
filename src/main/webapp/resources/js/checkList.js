@@ -112,7 +112,6 @@ function createCheckList() {
 }
 
 function successCheck() {
-	alert(ckSerialNumber);
 	var sendData = {
 		"ckSerialNumber": ckSerialNumber
 	}
@@ -127,7 +126,6 @@ function successCheck() {
 }
 
 function deleteCheck() {
-	alert(ckSerialNumber);
 	var sendData = {
 		"ckSerialNumber": ckSerialNumber
 	}

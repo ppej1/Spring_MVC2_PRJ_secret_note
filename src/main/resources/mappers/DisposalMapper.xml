@@ -20,4 +20,23 @@
             INNER JOIN Employee e ON d.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
 	</select>
+	<select id="disposalListOneDay" parameterType="DisposalListVO" resultType="DisposalListVO">
+		SELECT
+			d.dSerialNumber,
+			m.mClass,
+			s.location,
+			s.sName,
+			e.userName,
+			e.rank,
+			d.dAmount,
+			d.dDate
+		FROM
+			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            INNER JOIN Employee e ON d.userid = e.userid
+			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
+        WHERE
+        dDate = #{dDate}
+	</select>	
+	
+	
 </mapper>

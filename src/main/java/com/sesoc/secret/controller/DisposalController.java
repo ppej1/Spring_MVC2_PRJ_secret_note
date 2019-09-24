@@ -24,4 +24,12 @@ public class DisposalController {
 		System.out.println(list);
 		return list;
 	}
+	@RequestMapping(value = "/disposalListOneDay", method = RequestMethod.POST)
+	@ResponseBody
+	public List<DisposalListVO> disposalListOneDay(DisposalListVO disposal){
+		System.out.println(disposal);
+		List<DisposalListVO> list = repo.disposalListOneDay(disposal);
+		System.out.println(list);
+		return list;
+	}
 }

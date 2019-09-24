@@ -8,4 +8,6 @@ public interface DisposalMapper {
 
 	List<DisposalListVO> disposalList();
 
+	List<DisposalListVO> disposalListOneDay(DisposalListVO disposal);
+
 }

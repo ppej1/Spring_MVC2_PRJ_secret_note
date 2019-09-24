@@ -17,7 +17,6 @@ function output5 (resp){
 		graphData.push(item.sname)
 		graphData.push(item.uamount)
 	})
-	alert(JSON.stringify(graphData))
 }
 
 var speedCanvas = document.getElementById("AnalysisChart");

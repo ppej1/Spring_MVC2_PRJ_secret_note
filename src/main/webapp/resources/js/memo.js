@@ -23,7 +23,6 @@ function memoListPage() {
 	});
 
 	$("#button-comment").on('click', function () {
-		alert("aa")
 		insertComment(comment_num);
 
 	});

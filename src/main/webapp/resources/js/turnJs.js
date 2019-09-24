@@ -86,22 +86,26 @@
  				}
  			});
  		}
- 		
+	
  		function set_CalendarPage(currentPage){
- 			
- 			if (currentPage == 4 || currentPage == 5 ) {
- 				resetPage();
+ 			tag = "";
+ 			if (currentPage == 4) {
+ 	 			tag = "";
+ 	 			$('#checkCalendar1').html(tag);
+ 	 			$('#checkCalendar2').html(tag);
  				calendarPage04();
  				calendarPage05();
  				
  			}
- 			if (currentPage == 8 || currentPage == 9 ) {	
- 				resetPage();
+ 			if (currentPage == 8) {	
+ 	 			$('#StockCalendar1').html(tag);
+ 	 			$('#StockCalendar2').html(tag);
  				calendarPage08();
  				calendarPage09();
  			}
- 			if (currentPage == 12 || currentPage == 13 ) {	
- 				resetPage();
+ 			if (currentPage == 12) {
+ 	 			$('#UsageCalendar1').html(tag);
+ 	 			$('#UsageCalendar2').html(tag);
  				calendarPage12();
  				calendarPage13();
  			} 			
