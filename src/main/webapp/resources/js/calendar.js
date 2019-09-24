@@ -10,9 +10,7 @@ function dateToYYYYMMDD(date) {
 	return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
 }
 /*page 04*/
-function calendarPage04(){
-	
-
+$(document).ready(function (){
 	$('#checkCalendar1').fullCalendar({
 		header: {
 			left: 'prev,next today',
@@ -60,11 +58,11 @@ function calendarPage04(){
 			});
 		}
 	});
-}
+});
 
 
 /*page 05*/
-function calendarPage05() {
+$(document).ready(function () {
 
 	$('#checkCalendar2').fullCalendar({
 		header: {
@@ -113,17 +111,16 @@ function calendarPage05() {
 			});
 		}
 	});
-}
+});
 
 
 
 
 
 /*page08*/
-function calendarPage08(){
-	
-
+$(document).ready(function (){
 	$('#StockCalendar1').fullCalendar({
+		
 		header: {
 			left: 'prev,next today',
 			center: 'title',
@@ -132,6 +129,7 @@ function calendarPage08(){
 		defaultDate: yyyy + '-' + mm + '-' + dd,
 		navLinks: true,
 		navLinkDayClick: function (date, jsEvent) {
+			alert("ddd")
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
@@ -156,6 +154,7 @@ function calendarPage08(){
 				success: function (data) {
 					var events = [];
 					$.each(data, function (index, item) {
+						
 						events.push({
 							title: item.ckTitle,
 							id: item.ckSerialNumber,
@@ -168,160 +167,5 @@ function calendarPage08(){
 			});
 		}
 	});
-}
+});
 
-
-
-/*page09*/
-function calendarPage09(){
-	
-
-	$('#StockCalendar2').fullCalendar({
-		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
-		},
-		defaultDate: yyyy + '-' + mm + '-' + dd,
-		navLinks: true,
-		navLinkDayClick: function (date, jsEvent) {
-			selectdate = new Date(date);
-			startDate = dateToYYYYMMDD(selectdate);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
-			$('.flipbook').turn("disable", true);
-		},
-		eventClick: function (calEvent, jsEvent, view) {
-			date = new Date(calEvent.start);
-			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
-			$('.flipbook').turn("disable", true);
-		},
-		editable: true,
-		eventLimit: true, // allow "more" link when too many events
-		events: function (start, end, timezone, callback) {
-			var events = [];
-			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
-				success: function (data) {
-					var events = [];
-					$.each(data, function (index, item) {
-						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
-						});
-					});
-					console.log(events);
-					callback(events);
-				}
-			});
-		}
-	});
-}
-
-
-
-/*page12*/
-function calendarPage12(){
-	
-
-	$('#UsageCalendar1').fullCalendar({
-		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
-		},
-		defaultDate: yyyy + '-' + mm + '-' + dd,
-		navLinks: true,
-		navLinkDayClick: function (date, jsEvent) {
-			selectdate = new Date(date);
-			startDate = dateToYYYYMMDD(selectdate);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 14);
-			$('.flipbook').turn("disable", true);
-		},
-		eventClick: function (calEvent, jsEvent, view) {
-			date = new Date(calEvent.start);
-			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 14);
-			$('.flipbook').turn("disable", true);
-		},
-		editable: true,
-		eventLimit: true, // allow "more" link when too many events
-		events: function (start, end, timezone, callback) {
-			var events = [];
-			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
-				success: function (data) {
-					var events = [];
-					$.each(data, function (index, item) {
-						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
-						});
-					});
-					console.log(events);
-					callback(events);
-				}
-			});
-		}
-	});
-}
-/*page13*/
-function calendarPage13(){
-	
-
-	$('#UsageCalendar2').fullCalendar({
-		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
-		},
-		defaultDate: yyyy + '-' + mm + '-' + dd,
-		navLinks: true,
-		navLinkDayClick: function (date, jsEvent) {
-			selectdate = new Date(date);
-			startDate = dateToYYYYMMDD(selectdate);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 14);
-			$('.flipbook').turn("disable", true);
-		},
-		eventClick: function (calEvent, jsEvent, view) {
-			date = new Date(calEvent.start);
-			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 14);
-			$('.flipbook').turn("disable", true);
-		},
-		editable: true,
-		eventLimit: true, // allow "more" link when too many events
-		events: function (start, end, timezone, callback) {
-			var events = [];
-			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
-				success: function (data) {
-					var events = [];
-					$.each(data, function (index, item) {
-						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
-						});
-					});
-					console.log(events);
-					callback(events);
-				}
-			});
-		}
-	});
-}

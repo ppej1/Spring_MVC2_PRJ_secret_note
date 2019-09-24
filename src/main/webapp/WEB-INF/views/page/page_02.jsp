@@ -15,8 +15,8 @@
 						class="row slider-text align-items-center justify-content-center">
 						<div class="col-md-8 text-center col-sm-12 element-animate">
 							<h1>ログアウトしてメイン画面で</h1>
-							<a href="home" class="btn btn-white btn-outline-white">初画面で。</a>
-							</p>
+							<a href="#" class="btn btn-white btn-outline-white go_back_home">初画面で。</a>
+							
 						</div>
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 							<a
 								href="http://ec2-3-19-240-8.us-east-2.compute.amazonaws.com/potoFolio/index"
 								class="btn btn-white btn-outline-white">会社のホームページへ</a>
-							</p>
+							
 						</div>
 					</div>
 				</div>
