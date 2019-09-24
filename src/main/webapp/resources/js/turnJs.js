@@ -74,11 +74,11 @@
  			 			$("#UsageCalendar1 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
  			 			$("#UsageCalendar2 > div.fc-toolbar.fc-header-toolbar > div.fc-left > div > button.fc-dayGridMonth-button.fc-button.fc-button-primary.fc-button-active").trigger("click");
 
-
+ 			 			
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
- 						
+ 						set_CalendarPage(currentPage);
  						set_even_button(currentPage);
  						nav();
  						
@@ -86,6 +86,27 @@
  				}
  			});
  		}
+ 		
+ 		function set_CalendarPage(currentPage){
+ 			if (currentPage == 4 || currentPage == 5 ) {
+ 				calendarPage04();
+ 				calendarPage05();
+ 				
+ 			}
+ 			if (currentPage == 8 || currentPage == 9 ) {
+ 				calendarPage08();
+
+ 				calendarPage09();
+ 			}
+ 			if (currentPage == 12 || currentPage == 13 ) {
+ 				calendarPage12();
+
+ 				calendarPage13();
+ 			} 			
+ 			
+ 			
+ 		}
+ 		
  		
  		
  		
