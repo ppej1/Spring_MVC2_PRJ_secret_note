@@ -13,7 +13,7 @@ var arr = new Array(12).fill(0);
 
 function output5(resp){
 	resp.forEach((item) => arr[parseInt(item.mdate)-1] += item.damount*item.price) 
-	alert(JSON.stringify(arr))
+	//alert(JSON.stringify(arr))
 	
 	//experimental data
 	
@@ -21,7 +21,7 @@ function output5(resp){
 	
 	rawData = arr.map((v, i) => {return [i+1, v]})
 	
-	alert(JSON.stringify(rawData))
+	//alert(JSON.stringify(rawData))
 	
 	anychart.onDocumentReady(function () {
 			
