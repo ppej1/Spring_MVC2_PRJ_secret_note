@@ -258,6 +258,6 @@ COMMENT ON COLUMN SubClass.price IS '
 ';
 
 
-create sequence ck_seq;
-create sequence comment_seq;
-
+CREATE SEQUENCE ck_seq;
+CREATE SEQUENCE comment_seq;
+CREATE SEQUENCE st_seq;

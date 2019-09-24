@@ -25,9 +25,9 @@
 		init();
 		$("#stockRegist").on('click', stockregist);
 		$(".del").on('click', stockDelete);
-		$("#frozen_storageBtn").on('click', fSearch);
-		$("#cold_storageBtn").on('click', cSearch);
-		$("#storageBtn").on('click', sSearch);
+		$("#frozen").on('click', fSearch);
+		$("#cold").on('click', cSearch);
+		$("#storage").on('click', sSearch);
 		$("#cancel").on('click', function() {
 			$("#stockRegist").val("재고 등록");
 		})
@@ -45,6 +45,7 @@
 
 	// 냉동고 검색
 	function fSearch() {
+		var location = $(this).text();
 		$.ajax({
 			type : 'GET',
 			url : 'fSearch',
@@ -53,6 +54,7 @@
 		});
 	}
 	function cSearch() {
+		var location = $(this).text();
 		$.ajax({
 			type : 'GET',
 			url : 'cSearch',
@@ -61,10 +63,11 @@
 		});
 	}
 	function sSearch() {
+		var location = $(this).text();
 		$.ajax({
 			type : 'GET',
 			url : 'sSearch',
-			data : "storage=" + location,
+			data : "location=" + location,
 			success : output
 		});
 	}
@@ -101,12 +104,16 @@
 		$.each(resp,function(index, item) {
 			tag += '<tbody>';
 			tag += '<tr>';
-			tag += '<td>' + item.rdate + '</td>';
+			tag += '<td>' + item.rDate + '</td>';
 			tag += '<td>' + item.rRegistid + '</td>';
 			tag += '<td class="tm-product-name" colspan="3">&nbsp;</td>';
 			tag += '<td>' + item.sDate'</td>';
 			tag += '<td>' + item.sRegistid'</td>';
-			tag += '<td rowspan="2">&nbsp;</td>';
+			tag += '<td rowspan="2">';
+			tag += '<a href="#" class="tm-product-delete-link deleteCheck" data-value="' + item.ckSerialNumber + '">';
+			tag += '<i class="far fa-trash-alt tm-product-delete-icon"></i>';
+			tag += '</a>';
+			tag += '</td>';
 			tag += '</tr>';
 			tag += '<tr>';
 			tag += '<td>' + item.sName+ '</td>';
@@ -120,13 +127,13 @@
 			tag += '</tbody>';
 						});
 		}
-		$("#stock ").html(tag);
+		$("#stockListTable").html(tag);
 		$(".del").on('click', stockdelete);
 		$(".update").on('click', stockupdate);
 	}
 
 	//재료 상태 수정
-	function stockupdate(booknum) {
+	function stockupdate(stocknum) {
 		if ($("#stockRegist").val() != '재고 등록')
 			return;
 		var stocknum = $(this).attr("data-value");
@@ -135,12 +142,17 @@
 
 		$.ajax({
 			type : 'GET',
-			url : 'updatebook',
-			data : "booknum=" + booknum,
+			url : 'updateStockList',
+			data : "stocknum=" + stocknum,
 			success : function(resp) {
 				var rDate = resp.rDate;
-				var fName = resp.fName;
+				var rRegistid = resp.rRegistid;
+				var sDate = resp.sDate;
+				var sRegistid = resp.sRegistid;
+				var sName = resp.sName;
 				var amount = resp.amount;
+				var unit = resp.unit;
+				var price = resp.price;
 				var location = resp.location;
 				var deDate = resp.deDate;
 				var status = resp.status;
@@ -148,8 +160,13 @@
 				stockno = resp.stocknum;
 
 				$("#rDate").val(rDate);
-				$("#fName").val(fName);
+				$("#rRegistid").val(rRegistid);
+				$("#sDate").val(sDate);
+				$("#sRegistid").val(sRegistid);
+				$("#sName").val(sName);
 				$("#amount").val(amount);
+				$("#unit").val(unit);
+				$("#price").val(price);
 				$("#location").val(location);
 				$("#deDate").val(deDate);
 				$("#status").val(status);
@@ -163,7 +180,7 @@
 
 		$.ajax({
 			type : 'GET',
-			url : 'deletestock',
+			url : 'deleteStockList',
 			data : "stocknum=" + stocknum,
 			success : function(resp) {
 				if (resp == 'success') {
@@ -177,18 +194,17 @@
 
 	// 재고 등록 / 재고 상태 수정 처리
 	function bookregist() {
-		var shelfname = $("#rDate").val();
-		var btitle = $("#fName").val();
-		var writer = $("#amount").val();
-		var publisher = $("#deDate").val();
-		var purchasedate = $("#status").val();
+		var rDate = $("#rDate").val();
+		var rRegistid = $("#rRegistid").val();
+		var sDate = $("#sDate").val();
+		var sRegistid = $("#sRegistid").val();
+		var sName = $("#sName").val();
+		var amount = $("#amount").val();
+		var unit = $("#unit").val();
 		var price = $("#price").val();
-		var bookreview = $("#bookreview").val();
-
-		if (btitle.length == 0 || writer.length == 0 || publisher.length == 0) {
-			alert("데이터를 정확히 입력해 주세요");
-			return;
-		}
+		var location = $("#location").val();
+		var deDate = $("#deDate").val();
+		var status = $("#status").val();
 
 		if (isNaN(price)) {
 			alert("금액은 숫자로만 입력해 주세요");
@@ -196,35 +212,42 @@
 			return;
 		}
 
-		var mybookreview = {
-			"shelfname" : shelfname,
-			"btitle" : btitle,
-			"writer" : writer,
-			"publisher" : publisher,
-			"purchasedate" : purchasedate,
+		var stockCheck = {
+			"rDate" : rDate,
+			"rRegistid" : rRegistid,
+			"sDate" : sDate,
+			"sRegistid" : sRegistid,
+			"sName" : sName,
+			"amount" : amount,
+			"unit" : unit,
 			"price" : price,
-			"bookreview" : bookreview
+			"location" : location,
+			"deDate" : deDate,
+			"status" : status
 		};
 		var url = '';
-		if ($("#bookRegist").val() == '독서평 등록') {
+		if ($("#stockRegist").val() == '재고 등록') {
 			url = 'regist';
 		} else {
-			mybookreview.booknum = bookno
-			url = 'updatebook';
+			stockCheck.stocknum = stockno
+			url = 'updateStockList';
 		}
 
 		$.ajax({
 			type : 'POST',
 			url : url,
-			data : mybookreview,
+			data : stockCheck,
 			success : function(resp) {
-				$("#shelfname").val("");
-				$("#btitle").val("");
-				$("#writer").val("");
-				$("#publisher").val("");
-				$("#purchasedate").val("");
+				$("#rDate").val("");
+				$("#rRegistid").val("");
+				$("#sDate").val("");
+				$("#sRegistid").val("");
+				$("#amount").val("");
+				$("#unit").val("");
 				$("#price").val("");
-				$("#bookreview").val("");
+				$("#location").val("");
+				$("#deDate").val("");
+				$("#status").val("");
 
 				init();
 			}
@@ -242,33 +265,48 @@
 							<div class="bg-image"
 								style="background-image: url('resources/template/img/dishes_1.jpg');">
 							</div>
-							<div class="text">
+							<div class="input-group mb-3">
 								<form>
 									<table id="regist">
-										<tr>
-											<th>시리얼 넘버</th>
-											<td><input id="SN" type="text" name="SN" />
-										</tr>
 										<tr>
 											<th>입고일</th>
 											<td><input id="rDate" type="text" name="rDate" />
 										</tr>
 										<tr>
 											<th>재료명</th>
-											<td><input id="fName" type="text" name="fName" />
+											<td colspan ="2"><input id="sName" type="text" name="sName" />
 										</tr>
 										<tr>
 											<th>개수</th>
 											<td><input id="amount" type="text" name="amount" />
+											<td><select id="unit" name="utni">
+													<option value="kg">kg</option>
+													<option value="g">g</option>
+													<option value="ko">個</option>
+													<option value="l">l</option>
+													<option value="ml">ml</option>
+													<option value="bottle">本</option>
+											</select></td>
 										</tr>
 										<tr>
 											<th>위치</th>
-											<td><select id="location" name="location">
-													<option value="냉동">frozen</option>
-													<option value="냉장">cold</option>
-													<option value="상온">sangon</option>
+											<td colspan ="2"><select id="location" name="location">
+													<option value="frozen">冷凍</option>
+													<option value="cold">冷蔵</option>
+													<option value="storage">常温</option>
 											</select></td>
 										</tr>
+										<tr>
+											<th>폐기 예정일</th>
+											<td colspan ="2"><input id="deDate" type="date" name="deDate" /></td>
+										<tr>
+											<th>위치</th>
+											<td colspan ="2"><select id="location" name="location">
+													<option value="stock">在庫</option>
+													<option value="use">使用</option>
+													<option value="disposal">廃棄</option>
+											</select></td>
+										</tr> 
 									</table>
 								</form>
 							</div>
@@ -286,13 +324,13 @@
 			</div>
 			<div class="info_select_container">
 				<div class="info_select frozen_storage">
-					<a href="#" id="frozen_storageBtn"><span>냉동</span></a>
+					<a href="#" id="frozen_storageBtn"><span class="frozen">냉동</span></a>
 				</div>
 				<div class="info_select cold_storage">
-					<a href="#" id="cold_storageBtn"><span>냉장</span></a>
+					<a href="#" id="cold_storageBtn"><span class="cold">냉장</span></a>
 				</div>
 				<div class="info_select storage">
-					<a href="#" id="storageBtn"><span>상온</span></a>
+					<a href="#" id="storageBtn"><span class="storage">상온</span></a>
 				</div>
 			</div>
 		</div>
