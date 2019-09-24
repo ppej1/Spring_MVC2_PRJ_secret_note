@@ -34,7 +34,7 @@ function chekListOutput(data) {
 	tag += '<tr>';
 	tag += '<td id="completes" data-value="'+nowdate+'">등록일</td>';
 	tag += '<td>등록자</td>';
-	tag += '<td>완료자</td>';
+	tag += '<td>완료일</td>';
 	tag += '<td>완료자</td>';
 	tag += '</tr>';
 	tag += '</thead>';
