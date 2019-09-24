@@ -1,0 +1,14 @@
+package com.sesoc.secret.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GraphVO {
+	String useprice;
+	String disposalprice;
+	String mdate;
+}

@@ -1,67 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script> 
-var ctx = document.getElementById('scatterChart');
-var scatterChart = new Chart(ctx, {
-    type: 'scatter',
-    data: {
-        datasets: [{
-            label: 'Scatter Dataset',
-            pointBackgroundColor : [
-            	'rgba(255, 99, 132, 0.2)'
-                ],
-            pointBorderColor : [
-            	'rgba(255, 99, 132, 1)'
-                ],
-            pointBorderWidth : 1
-            ,
-            data: [{
-                x: 1,
-                y: 1
-            }, {
-                x: 1,
-                y: 2
-            }, {
-                x: 2,
-                y: 3
-            }, {
-                x: 4,
-                y: 5
-            }, {
-                x: 5,
-                y: 5
-            }, {
-                x: 10,
-                y: 10
-            }, {
-                x: 10,
-                y: 20
-            }, {
-                x: 20,
-                y: 30
-            }, {
-                x: 40,
-                y: 50
-            }, {
-                x: 50,
-                y: 50
-            }]
-        }]
-    },
-    options: {
-        scales: {
-            xAxes: [{
-                type: 'linear',
-                position: 'bottom'
-            }]
-        }
+<script>
+$(function(){
+	$.ajax({
+		type :'GET'
+		, url : 'graphList'
+		, success : output5
+	})
+})
+
+var graphData = [];
+
+
+function output5 (resp){
+	$.each(resp, function(index, item){
+		graphData.push(item.sname)
+		graphData.push(item.uamount)
+	})
+	alert(JSON.stringify(graphData))
+}
+
+var speedCanvas = document.getElementById("AnalysisChart");
+
+var speedData = {
+  labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+  datasets: [{
+    label: "Car Speed (mph)",
+    data: [79, 59, 75, 20, 24, 55, 40, 2, 16, 80, 50, 61],
+  }]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
     }
+  }
+};
+
+var lineChart = new Chart(speedCanvas, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
 });
 </script>
     
 <div class="page_content_even">
 	<div class="page_container_full">
 		<h1 class="tm-block-title">ANALYSIS CHART1</h1>
-		<canvas id="scatterChart" width="80%" height="60%"></canvas>
+		<canvas id="AnalysisChart" width="80%" height="60%"></canvas>
 	</div>
 </div>
