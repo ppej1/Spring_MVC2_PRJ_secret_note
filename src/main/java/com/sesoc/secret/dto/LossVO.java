@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GraphVO {
-	String useprice;
-	String disposalprice;
+public class LossVO {
+	String sName;
+	int price;
+	int dAmount;
 	String mdate;
 }

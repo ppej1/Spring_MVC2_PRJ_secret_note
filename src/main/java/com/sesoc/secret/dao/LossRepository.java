@@ -6,16 +6,16 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sesoc.secret.dto.GraphVO;
+import com.sesoc.secret.dto.LossVO;
 
 @Repository
-public class GraphRepository {
+public class LossRepository {
 	@Autowired
 	SqlSession session;
 
-	public List<GraphVO> graphList() {
-		GraphMapper mapper = session.getMapper(GraphMapper.class);
+	public List<LossVO> lossList() {
+		LossMapper mapper = session.getMapper(LossMapper.class);
 	
-		return mapper.graphList();
+		return mapper.lossList();
 	}
 }

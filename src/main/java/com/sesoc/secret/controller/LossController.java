@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sesoc.secret.dao.GraphRepository;
-import com.sesoc.secret.dto.GraphVO;
+import com.sesoc.secret.dao.LossRepository;
+import com.sesoc.secret.dto.LossVO;
 
 @Controller
-public class GraphController {
+public class LossController {
 	
 	@Autowired
-	GraphRepository repo;
+	LossRepository repo;
 	
-	@RequestMapping(value = "/graphList", method = RequestMethod.GET)
+	@RequestMapping(value = "/lossList", method = RequestMethod.GET)
 	@ResponseBody
-	public List<GraphVO> graphList(Model model){
-		List<GraphVO> list = repo.graphList();
+	public List<LossVO> lossList(Model model){
+		List<LossVO> list = repo.lossList();
 		System.out.println(list);
 		return list;
 	}
