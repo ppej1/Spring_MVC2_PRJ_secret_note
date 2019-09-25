@@ -18,4 +18,10 @@ public class LossRepository {
 	
 		return mapper.lossList();
 	}
+	
+	public List<LossVO> lossList2() {
+		LossMapper mapper = session.getMapper(LossMapper.class);
+	
+		return mapper.lossList2();
+	}
 }

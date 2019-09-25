@@ -32,17 +32,17 @@ function output5(resp){
 
 		  chart = anychart.scatter();
 
-		  chart.title("The calculated formula: " + result.string + "\nThe coefficient of determination (R2): " + result.r2.toPrecision(2));
+		  chart.title("EACH MONTH TOTAL LOSS STATUS GRAPH / YEAR");
 
 		  chart.legend(true);
 
 		  // creating the first series (marker) and setting the experimental data
 		  var series1 = chart.marker(data_1);
-		  series1.name("Experimental data");
+		  series1.name("Loss Data");
 
 		  // creating the second series (line) and setting the theoretical data
 		  var series2 = chart.line(data_2);
-		  series2.name("Theoretically calculated data");
+		  series2.name("Loss Linear Regression");
 		  series2.markers(true);
 
 		  chart.container("AnalysisChart");

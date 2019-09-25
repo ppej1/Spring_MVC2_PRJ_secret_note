@@ -24,4 +24,10 @@ public class UsedRepository {
 		
 		return mapper.usedListOneDay(used);
 	}
+	
+	public List<UsedListVO> usedList2() {
+		UsedMapper mapper = session.getMapper(UsedMapper.class);
+	
+		return mapper.usedList2();
+	}
 }

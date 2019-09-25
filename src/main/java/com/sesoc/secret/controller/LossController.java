@@ -22,7 +22,13 @@ public class LossController {
 	@ResponseBody
 	public List<LossVO> lossList(Model model){
 		List<LossVO> list = repo.lossList();
-		System.out.println(list);
+		return list;
+	}
+	
+	@RequestMapping(value = "/lossList2", method = RequestMethod.GET)
+	@ResponseBody
+	public List<LossVO> lossList2(Model model){
+		List<LossVO> list = repo.lossList2();
 		return list;
 	}
 }
