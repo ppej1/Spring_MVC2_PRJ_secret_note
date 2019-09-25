@@ -21,7 +21,6 @@ public class DisposalController {
 	@ResponseBody
 	public List<DisposalListVO> disposalList(){
 		List<DisposalListVO> list = repo.disposalList();
-		System.out.println(list);
 		return list;
 	}
 	@RequestMapping(value = "/disposalListOneDay", method = RequestMethod.POST)
