@@ -19,13 +19,13 @@
 		)
 		VALUES
 		(
-			#{userid},
-			#{userpwd},
-			#{eImg},
-			#{userName},
-			#{rank},
-			#{email},
-			#{ePhone}
+			#{userid}
+			,#{userpwd}
+			,#{eImg}
+			,#{userName}
+			,#{rank}
+			,#{email}
+			,#{ePhone}
 			<if test="status == null">
 			,'現職'
 			</if>
