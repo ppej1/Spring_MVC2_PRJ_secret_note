@@ -9,5 +9,7 @@ public interface UsedMapper {
 	List<UsedListVO> usedList();
 
 	List<UsedListVO> usedListOneDay(UsedListVO used);
+	
+	List<UsedListVO> usedList2();
 
 }

@@ -37,5 +37,14 @@
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
 		WHERE
 			uDate = #{uDate}
-	</select>	
+	</select>
+	
+	<select id="usedList2" resultType="UsedListVO">
+		SELECT
+            s.sName,
+            sum(u.uAmount*s.price) AS uAmount
+		FROM
+			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+        GROUP BY s.sName
+	</select>
 </mapper>

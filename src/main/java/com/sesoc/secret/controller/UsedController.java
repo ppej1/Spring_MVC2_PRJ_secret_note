@@ -28,9 +28,14 @@ public class UsedController {
 	@RequestMapping(value = "/usedListOneDay", method = RequestMethod.POST)
 	@ResponseBody
 	public List<UsedListVO> usedListOneDay(UsedListVO used){
-		System.out.println(used);
 		List<UsedListVO> list = repo.usedListOneDay(used);
-		System.out.println(list);
+		return list;
+	}
+	
+	@RequestMapping(value = "/usedList2", method = RequestMethod.GET)
+	@ResponseBody
+	public List<UsedListVO> usedList2(Model model){
+		List<UsedListVO> list = repo.usedList2();
 		return list;
 	}
 }

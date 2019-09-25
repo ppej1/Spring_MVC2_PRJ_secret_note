@@ -116,10 +116,6 @@ function calendarPage05() {
 	});
 }
 
-
-
-
-
 /*page08*/
 function calendarPage08() {
 

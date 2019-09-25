@@ -14,4 +14,13 @@
 		FROM
 			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
 	</select>
+	
+	<select id="lossList2" resultType="LossVO">
+		SELECT
+            s.sName,
+            sum(d.dAmount*s.price) As dAmount
+		FROM
+			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+        GROUP BY s.sName
+	</select>
 </mapper>
