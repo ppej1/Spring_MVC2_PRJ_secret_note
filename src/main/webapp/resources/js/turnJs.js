@@ -78,79 +78,18 @@
  						var book = $(this),
  						currentPage = book.turn('page'),
  						pages = book.turn('pages');
- 						set_CalendarPage(currentPage);
  						set_even_button(currentPage);
  						nav();
  						
- 				}		
+ 					}		
  				}
  			});
  		}
 	
- 		function set_CalendarPage(currentPage){
- 			tag = "";
- 			if (currentPage == 4) {
- 	 			tag = "";
- 	 			$('#checkCalendar1').html(tag);
- 	 			$('#checkCalendar2').html(tag);
- 				calendarPage04();
- 				calendarPage05();
- 				
- 			}
- 			if (currentPage == 8) {	
- 	 			$('#StockCalendar1').html(tag);
- 	 			$('#StockCalendar2').html(tag);
- 				calendarPage08();
- 				calendarPage09();
- 			}
- 			if (currentPage == 12) {
- 	 			$('#UsageCalendar1').html(tag);
- 	 			$('#UsageCalendar2').html(tag);
- 				calendarPage12();
- 				calendarPage13();
- 			} 			
- 			
- 			
- 		}
- 		
- 		
- 		
- 		
- 		
- 		function set_even_button(currentPage){
 
-				if (currentPage != 1) {
-						$('.flipbook').turn("disable", true);
-				}
-				if(currentPage == 1 ){
-					$('.flipbook').turn("disable", false);
-
-				}else if(currentPage == 10 || currentPage == 11 ){
-					var tag = '';
-					tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
-					tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
-					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
-					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
-					$('.selectICon_div').html(tag);
-				}else if(currentPage == 6 || currentPage== 7 ){
-					var tag = '';
-					tag+=  '<a href="#" class="btn_plus_checkList"><i class="fas fa-book-medical"></i></a>';
-					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
-					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
-					$('.selectICon_div').html(tag);
-				}else{
-					tag = '';
-					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
-					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
-					$('.selectICon_div').html(tag);
-				}
- 		}
- 		
- 		
  		function loadApp2() {
 
  			// Create the flipbook
-
 
 
  			$('.flipbook').turn({
@@ -183,16 +122,10 @@
  						pages = book.turn('pages');
  						
  						set_even_button(currentPage);
- 						nav();
- 						
- 				}		
+ 						nav();		
+ 					}		
  				}
  			});
-
-
-
-
-
  		}
  		// Load the HTML4 version if there's not CSS transform
 		yepnope({
@@ -202,33 +135,61 @@
  			both: ['resources/css/main.css'],
  			complete: load
  		});
+ 		
+ 		/* 여기 까지 기본 코드 (중앙 )*/
+ 		/////  기능 관려 코드 
+		
+		
+		
+		
+ 		
+ 		function set_even_button(currentPage){
 
+				if (currentPage != 1) {
+						$('.flipbook').turn("disable", true);
+				}
+				
+				if(currentPage == 1 ){
+					$('.flipbook').turn("disable", false);
+
+				}else if(currentPage == 10 || currentPage == 11 ){
+					var tag = '';
+					tag+=  '<a href="#" class="btn_plus"><i class="fas fa-plus-square"></i></a>';
+					tag+=  '<a href="#" class="btn_minus"><i class="fas fa-minus-square"></i></a>';
+					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+					$('.selectICon_div').html(tag);
+				}else if(currentPage == 6 || currentPage== 7 ){
+					var tag = '';
+					tag+=  '<a href="#" class="btn_plus_checkList"><i class="fas fa-book-medical"></i></a>';
+					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+					$('.selectICon_div').html(tag);
+				}else{
+					tag = '';
+					tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
+					tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
+					$('.selectICon_div').html(tag);
+				}
+ 		}		
+		
+		
 		function nav(){
 			$('.btn-go-menu').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 2);
-				$('.flipbook').turn("disable", true);
+				location.href = "introducemenu";
 			});	
 			$('.btn-go-check').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 4);
-				$('.flipbook').turn("disable", true);
+				location.href = "CheckListSystem";
 			});	
 	 	
 			$('.btn-go-stock').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 8);
-				$('.flipbook').turn("disable", true);	
+				location.href = "StockListSystem";	
 			});	
 			$('.btn-go-use').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 12);
-				$('.flipbook').turn("disable", true);		
+				location.href = "UseDisposalSystem";		
 			});	
 			$('.btn-go-Analysis').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 18);
-				$('.flipbook').turn("disable", true);
+				location.href = "ChartSystem";
 			});	
 
 			/* even button */
