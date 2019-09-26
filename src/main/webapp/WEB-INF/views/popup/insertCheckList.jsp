@@ -13,11 +13,20 @@
 			var completes = $( "#completes", opener.document ).attr("data-value");
 			$("#completes").val(completes);
 			$("#createBtn").on('click', function () {
-				alert($("#ckTitle").val());
+				var sendData = {
+						"ckTitle": $("#ckTitle").val(),
+						"importance": $("#importance").val(),
+						"completes": completes
+			};
+			$.ajax({
+					type: 'POST',
+					url: 'insertCheckList',
+					data: sendData,
+					success: function (data) {
+						self.close();
+				}
+			});
 				
-				
-				$("#checklistform").submit();
-				self.close();
 			});
 			$("#cancelBtn").on('click', function () {
 				self.close();

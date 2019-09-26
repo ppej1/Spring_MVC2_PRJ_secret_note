@@ -5,7 +5,6 @@ function setnowDate() {
 }
 
 function checklistPage() {
-	alert(startDate);
 	setnowDate(startDate);
 
 	var sendData = {

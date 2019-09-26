@@ -95,19 +95,23 @@ function deleteComment(cserialNumber) {
 
 
 function insertComment(comment_num) {
-	console.log(comment_num);
-	comments = $("#comment_input").val();
-	var sendData = {
-		"ckSerialNumber": comment_num,
-		"comments": comments,
-		"checkDate": nowdate
-	}
-	$.ajax({
-		type: 'POST',
-		data: sendData,
-		url: 'insertComment',
-		success: function () {
-			selectList(comment_num);
-		}
-	});
+			if(comment_num != 0){
+				comments = $("#comment_input").val();
+				var sendData = {
+					"ckSerialNumber": comment_num,
+					"comments": comments,
+					"checkDate": nowdate
+				}
+				$.ajax({
+					type: 'POST',
+					data: sendData,
+					url: 'insertComment',
+					success: function () {
+						selectList(comment_num);
+					}
+				});
+			}else{
+				alert("체크리스트를 선택해 주세요 ")
+			}
+
 }
