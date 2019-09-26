@@ -15,28 +15,43 @@
 								<form>
 									<table id="regist">
 										<tr>
-											<th>시리얼 넘버</th>
-											<td><input id="SN" type="text" name="SN" />
-										</tr>
-										<tr>
-											<th>입고일</th>
-											<td><input id="rDate" type="text" name="rDate" />
-										</tr>
-										<tr>
-											<th>재료명</th>
-											<td><input id="fName" type="text" name="fName" />
-										</tr>
-										<tr>
-											<th>개수</th>
-											<td><input id="amount" type="text" name="amount" />
-										</tr>
-										<tr>
-											<th>위치</th>
-											<td><select id="location" name="location">
-													<option value="냉동">frozen</option>
-													<option value="냉장">cold</option>
-													<option value="상온">sangon</option>
+											<td class="tm-product-name"  colspan  ="2"><select id="account" name="account">
+													<option value="OURHOME">OUR HOME</option>
+													<option value="CJ">CJ</option>
+													<option value="HYUNDAI">HYUNDAI</option>
+													<option value="SAMSUNG">SAMSUNG</option>
 											</select></td>
+											<th>担当者</th>
+											<td colspan = "2"><input id="aManager" type="text" name="aManager" /></td>
+										</tr>
+										
+										<tr>
+											<th>材料名</th>
+											<td colspan = "2"><input id="sName" type="text" name="sName" /></td>
+										</tr>
+										<tr>
+											<th>個数</th>
+											<td><input id="amount" type="text" name="amount" /></td>
+											<td><select id="unit" name="unit">
+													<option value="l">l</option>
+													<option value="ml">ml</option>
+													<option value="k">k</option>
+													<option value="kg">kg</option>
+													<option value="gae">個</option>
+													<option value="bottle">本</option>
+											</select></td>
+										</tr>
+										<tr>
+											<th>価格</th>
+											<td colspan = "2"><input id="price" type="text" name="price" /></td>
+										</tr>
+										<tr>
+											<th>廃棄予定日</th>
+											<td colspan = "2"><input id="deDate" type="date" name="deDate" /></td>
+										</tr>
+										<tr>
+											<th>状態</th>
+											<td colspan = "2"><input id="status" type="text" name="status" /></td>
 										</tr>
 									</table>
 								</form>
@@ -48,9 +63,8 @@
 
 				</div>
 				<div class="info_button_container">
-					<button type="button" class="btn btn-primary btn-sm detail_btn">사용하기</button>
-					<button type="button" class="btn btn-primary btn-sm detail_btn">폐기하기</button>
-					<button type="button" class="btn btn-primary btn-sm detail_btn">다듬기</button>
+					<button type="button" id="regist" name="regist" class="btn btn-primary btn-sm detail_btn">입고 등록</button>
+					<button type="button" id="cancel" name="cancel" class="btn btn-primary btn-sm detail_btn">취소</button>
 				</div>
 			</div>
 			<div class="info_select_container">
