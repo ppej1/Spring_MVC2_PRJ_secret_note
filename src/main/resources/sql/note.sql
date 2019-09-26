@@ -12,6 +12,9 @@ DROP TABLE Employee CASCADE CONSTRAINTS;
 DROP TABLE SubClass CASCADE CONSTRAINTS;
 DROP TABLE MainClass CASCADE CONSTRAINTS;
 DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
+DROP SEQUENCE ck_seq;
+DROP SEQUENCE comment_seq;
+DROP SEQUENCE st_seq;
 
 
 
@@ -81,13 +84,13 @@ CREATE TABLE Employee
 (
    userid varchar2(20) NOT NULL,
    userpwd varchar2(20) NOT NULL,
-   eImg varchar2(200) NOT NULL,
+   eImg varchar2(200) DEFAULT 'avatar.png' NOT NULL,
    userName varchar2(20) NOT NULL,
    rank varchar2(20) NOT NULL,
    email varchar2(20) NOT NULL,
    ePhone varchar2(20) NOT NULL,
    -- check 제약조건으로 퇴직, 현직 으로 나뉨
-   status varchar2(20) NOT NULL,
+   status varchar2(20) DEFAULT '現職' NOT NULL,
    PRIMARY KEY (userid)
 );
 

@@ -34,12 +34,4 @@ window.onload = function() {
 		}
 		document.getElementById("re_pwdresult").innerHTML = "";
 	}
-	var eimg = document.getElementById("eimg");
-	document.getElementById("eimg").onkeyup = function() {
-		if (eimg.value.length < 1) {
-			document.getElementById("imgresult").innerHTML = "사진을 선택하시오.";
-			return false;
-		}
-		document.getElementById("imgresult").innerHTML = "";
-	}
 }
