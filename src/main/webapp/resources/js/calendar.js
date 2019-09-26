@@ -27,7 +27,7 @@ function calendarPage04() {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 			checklistPage(startDate);
 		},
@@ -35,7 +35,7 @@ function calendarPage04() {
 			date = new Date(calEvent.start);
 			startDate = dateToYYYYMMDD(date);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 			checklistPage(calEvent.id, startDate);
 		},
@@ -79,7 +79,7 @@ function calendarPage05() {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 			checklistPage(startDate);
 		},
@@ -87,7 +87,7 @@ function calendarPage05() {
 			date = new Date(calEvent.start);
 			startDate = dateToYYYYMMDD(date);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 6);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 			checklistPage(calEvent.id, startDate);
 		},
@@ -132,38 +132,19 @@ function calendarPage08() {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 		},
 		eventClick: function (calEvent, jsEvent, view) {
 			date = new Date(calEvent.start);
 			startDate = dateToYYYYMMDD(date);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
-		events: function (start, end, timezone, callback) {
-			var events = [];
-			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
-				success: function (data) {
-					var events = [];
-					$.each(data, function (index, item) {
-						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
-						});
-					});
-					console.log(events);
-					callback(events);
-				}
-			});
-		}
+		events: []
 	});
 }
 
@@ -185,38 +166,19 @@ function calendarPage09() {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 		},
 		eventClick: function (calEvent, jsEvent, view) {
 			date = new Date(calEvent.start);
 			startDate = dateToYYYYMMDD(date);
 			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 10);
+			$('.flipbook').turn("page", 4);
 			$('.flipbook').turn("disable", true);
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
-		events: function (start, end, timezone, callback) {
-			var events = [];
-			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
-				success: function (data) {
-					var events = [];
-					$.each(data, function (index, item) {
-						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
-						});
-					});
-					console.log(events);
-					callback(events);
-				}
-			});
-		}
+		events:[]
 	});
 }
 
@@ -233,36 +195,69 @@ function calendarPage12() {
 			right: 'month,agendaWeek,agendaDay,listWeek'
 		},
 		defaultDate: yyyy + '-' + mm + '-' + dd,
+
 		eventClick: function (calEvent, jsEvent, view) {
 			date = new Date(calEvent.start);
 			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 14);
-			$('.flipbook').turn("disable", true);
+			if (calEvent.id == 'use') {
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 4);
+				$('.flipbook').turn("disable", true);
+				fusedList(startDate);
+			} else if (calEvent.id == 'disposal') {
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 6);
+				$('.flipbook').turn("disable", true);
+				fdisposalList(startDate);
+			}
+
+
+
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
 		events: function (start, end, timezone, callback) {
 			var events = [];
 			$.ajax({
-				type: 'POST',
-				url: 'loadAllCheckList',
-				dataType: 'json',
+				type: 'GET',
+				url: 'usedList',
 				success: function (data) {
-					var events = [];
 					$.each(data, function (index, item) {
 						events.push({
-							title: item.ckTitle,
-							id: item.ckSerialNumber,
-							start: item.completes
+							title: item.sname,
+							id: 'use',
+							start: item.udate,
+							color : 'yellow'
 						});
 					});
-					console.log(events);
-					callback(events);
+					$.ajax({
+						type :'GET'
+						, url : 'disposalList'
+						, success : function(data2){
+							$.each(data2, function (index, item) {
+								events.push({
+									title: item.sname,
+									id: 'disposal',
+									start: item.ddate,
+									color : 'green'
+								});
+							});
+							
+							console.log(events);
+							callback(events);
+						}
+					});
+					
+					
+					
+					
+
 				}
 			});
+
+
 		}
-	});
+	})
 }
 /*page13*/
 function calendarPage13() {
@@ -281,12 +276,12 @@ function calendarPage13() {
 			startDate = dateToYYYYMMDD(date);
 			if (calEvent.id == 'use') {
 				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 14);
+				$('.flipbook').turn("page", 4);
 				$('.flipbook').turn("disable", true);
 				fusedList(startDate);
 			} else if (calEvent.id == 'disposal') {
 				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 16);
+				$('.flipbook').turn("page", 6);
 				$('.flipbook').turn("disable", true);
 				fdisposalList(startDate);
 			}
