@@ -23,22 +23,14 @@ public class CheckListController {
 		return "popup/insertCheckList";
 	}
 
-	@RequestMapping(value = "/insertCheckList", method = RequestMethod.POST)
-	public String  insertCheckList(CheckListVO checklist, HttpSession session){
-		checklist.setRegistid((String)session.getAttribute("loginId"));
-		System.out.println("인풋됨"+ checklist);
-		int result = repo.insertCheckList(checklist);
-		return "popup/insertCheckList";
-	}	
+
 	
 	
 	/*ajax*/
 	@RequestMapping(value = "/loadCheckList", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CheckListVO> loadCheckList(CheckListVO checkList){
-		System.out.println(checkList);
 		ArrayList<CheckListVO> list = repo.selectListByDate(checkList);
-		System.out.println(list);
 		return list;
 	}
 
@@ -46,8 +38,6 @@ public class CheckListController {
 	@ResponseBody
 	public int successCheckList(CheckListVO checkList, HttpSession session){
 		checkList.setFinisher((String)session.getAttribute("loginId"));
-		System.out.println(checkList);
-
 		int result = repo.successCheckList(checkList);
 		return 0;
 	}
@@ -66,5 +56,14 @@ public class CheckListController {
 		return list;
 	}	
 
+	
+	@RequestMapping(value = "/insertCheckList", method = RequestMethod.POST)
+	@ResponseBody
+	public String  insertCheckList(CheckListVO checklist, HttpSession session){
+		checklist.setRegistid((String)session.getAttribute("loginId"));
+		System.out.println("인풋됨"+ checklist);
+		int result = repo.insertCheckList(checklist);
+		return "popup/insertCheckList";
+	}		
 	
 }
