@@ -126,7 +126,7 @@ function calendarPage08() {
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay,listWeek'
 		},
-		defaultDate: yyyy + '-' + mm + '-' + dd,
+		defaultDate: yyyy + '-' + (mm-1) + '-' + dd,
 		navLinks: true,
 		navLinkDayClick: function (date, jsEvent) {
 			selectdate = new Date(date);
@@ -194,7 +194,7 @@ function calendarPage12() {
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay,listWeek'
 		},
-		defaultDate: yyyy + '-' + mm + '-' + dd,
+		defaultDate: yyyy + '-' + (mm-1) + '-' + dd,
 
 		eventClick: function (calEvent, jsEvent, view) {
 			date = new Date(calEvent.start);

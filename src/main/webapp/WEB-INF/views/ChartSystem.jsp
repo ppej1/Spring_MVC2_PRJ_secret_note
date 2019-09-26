@@ -93,8 +93,7 @@
   			<div class="flipbook">
   				<!--1 page - title page-->
   				<div -ms-overflow-style: none; id="title_page">
-  					<jsp:include page="page/page_title.jsp" flush="false" />
-  					<%--  <jsp:include page="page/button_odd.jsp" flush="false"/> --%>
+
   				</div>
   				<!--20 page 분석 페이지 1-->
   				<div id="page_18">
@@ -135,7 +134,7 @@
   	<script type="text/javascript" src="resources/js/uses.js"></script>
   	<script type="text/javascript" src="resources/js/disposal.js"></script>
 
-
+<!-- anychart -->
   	<script src="resources/js/anychart/js/regression.min.js"></script>
   	<script src="resources/js/anychart/js/anychart-base.min.js"></script>
   	<script src="resources/js/anychart/js/anychart-exports.min.js"></script>

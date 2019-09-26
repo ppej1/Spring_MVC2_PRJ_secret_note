@@ -22,4 +22,9 @@ public class DisposalRepository {
 		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
 		return mapper.disposalListOneDay(disposal);
 	}
+
+	public List<DisposalListVO> disposalAmountPieChart1(DisposalListVO disposal) {
+		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
+		return mapper.disposalAmountPieChart1(disposal);
+	}
 }

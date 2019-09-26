@@ -10,4 +10,6 @@ public interface DisposalMapper {
 
 	List<DisposalListVO> disposalListOneDay(DisposalListVO disposal);
 
+	List<DisposalListVO> disposalAmountPieChart1(DisposalListVO disposal);
+
 }

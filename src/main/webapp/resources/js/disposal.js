@@ -1,6 +1,12 @@
+var nowdate = '';
+
+function setnowDate() {
+	nowdate = startDate;
+}
+
 function fdisposalList(startDate) {
-	
-	
+	setnowDate(startDate);
+
 	var sendData = {
 			"dDate": startDate
 		}
@@ -9,7 +15,19 @@ function fdisposalList(startDate) {
 		, url : 'disposalListOneDay'
 		,data: sendData
 		, success : output3
+	});
+	
+	var sendData = {
+			"dDate": startDate
+		}
+	$.ajax({
+		type :'POST'
+		, url : 'disposalAmountPieChart1'
+		,data: sendData
+		, success : disposalAmountPieChart1
 	})
+
+	
 }
 
 function output3(resp) {
@@ -44,76 +62,34 @@ function output3(resp) {
 	}
 
 
+// pg 17  그래프
 
-cdisposalList();
+function disposalAmountPieChart1(resp){
+		var result = [];
 
-var sName2 = [];
-var dAmount = [];
+			result = resp.map(item => [item.sname,parseInt(item.damount)])
 
-function cdisposalList() {
-	$.ajax({
-		type :'GET'
-		, url : 'disposalList'
-		, success : output4
-	})
-}
+			
+			anychart.onDocumentReady(function () {
+			    // create pie chart with passed data
+			    var chart = anychart.pie(result);
 
-function output4(resp) {
-	
-	$.each(resp, function(index, item){
-		sName2.push(item.sname)
-		dAmount.push(item.damount)
-	})
-	
-	for(var i = 0; i < dAmount.length; i++){
-		pieChart2.push((dAmount[i]/sum(dAmount))*100)
-	}
-}
+			    // set chart title text settings
+			    chart.title('종류별 폐기량')
+			            //set chart radius
+			            .radius('43%')
+			            // create empty area in pie chart
+			            .innerRadius('30%');
 
-var label2 = sName2;
-var usedData = dAmount;
-var preUsedData = [18,47,75,34]; //예상폐기량
+			    // set container id for the chart
+			    chart.container('pieChart');
+			    // initiate chart drawing
+			    chart.draw();
+			});
+			
+			
+			
+};
 
-var ctx = document.getElementById('disposalChart');
-var myChart = new Chart(ctx, {
-  type: 'horizontalBar',
-  data: {
-    labels: label2,
-    datasets: [
-      {
-        label: "폐기량",
-        backgroundColor: "#3e95cd",
-        data: usedData
-      }, {
-        label: "예상폐기량",
-        backgroundColor: "#c45850",
-        data: preUsedData
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Disposal Graph'
-    }
-  }
-});
 
-//For a pie chart
-
-var pieChart2 = [];
-
-var ctx2 = document.getElementById('disposalChart2');
-var myPieChart2 = new Chart(ctx2, {
-    type: 'pie',
-    data: {
-        labels: label2,
-        datasets: [
-          {
-            backgroundColor: "#ff6384",
-            data: pieChart2
-          }
-        ]
-      }
-});
 
