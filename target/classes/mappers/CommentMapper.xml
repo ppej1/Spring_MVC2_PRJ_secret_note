@@ -38,7 +38,7 @@
 		comments join employee using (USERID) 
 	WHERE  
 	  CHECKDATE = #{checkDate}   
-		<if test="ckSerialNumber > -1">
+		<if test="ckSerialNumber != 0">
 			AND CKSERIALNUMBER = #{ckSerialNumber}
 		</if>
   

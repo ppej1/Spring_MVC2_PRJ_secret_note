@@ -13,6 +13,9 @@
 			var completes = $( "#completes", opener.document ).attr("data-value");
 			$("#completes").val(completes);
 			$("#createBtn").on('click', function () {
+				alert($("#ckTitle").val());
+				
+				
 				$("#checklistform").submit();
 				self.close();
 			});
@@ -27,7 +30,7 @@
 	<h1>체크리스트 등록</h1>
 	<form id="checklistform" action="insertCheckList" method="post">
 		<label>내용</label>
-		<input type="text" name="ckTitle" id="ckTitle">
+		<input type="text" name="ckTitle" id="ckTitle" value="">
 		<label>난이도</label>
 		<select name="importance" id="importance">
 			<option value="상">상</option>

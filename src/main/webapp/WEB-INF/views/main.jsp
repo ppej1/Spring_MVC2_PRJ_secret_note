@@ -9,7 +9,6 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<style>
 	 	body {
- 			background-color: black;
  		}
  		.no-js {
  			display: none;
@@ -100,6 +99,7 @@
     <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
+	<script type="text/javascript" src="resources/js/page/introducemenu.js"></script>		
 
 	
 	<script>

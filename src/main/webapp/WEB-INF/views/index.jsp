@@ -10,7 +10,6 @@
 
 	<style>
 		body {
-			background-color: black;
 		}
 
 		.no-js {

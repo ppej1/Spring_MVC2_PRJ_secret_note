@@ -26,7 +26,7 @@ public class CheckListController {
 	@RequestMapping(value = "/insertCheckList", method = RequestMethod.POST)
 	public String  insertCheckList(CheckListVO checklist, HttpSession session){
 		checklist.setRegistid((String)session.getAttribute("loginId"));
-		System.out.println(checklist);
+		System.out.println("인풋됨"+ checklist);
 		int result = repo.insertCheckList(checklist);
 		return "popup/insertCheckList";
 	}	

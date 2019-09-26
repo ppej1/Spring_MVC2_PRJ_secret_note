@@ -1,5 +1,5 @@
 var nowdate = '';
-var comment_num = 99999;
+var comment_num = 0;
 
 function setnowDate() {
 	nowdate = startDate;
@@ -27,7 +27,7 @@ function memoListPage() {
 
 	});
 	$("#title_comment").on('click', function () {
-		co_num = 99999;
+		co_num = 0;
 		set_comment_num(co_num);
 		selectList(comment_num);
 	});

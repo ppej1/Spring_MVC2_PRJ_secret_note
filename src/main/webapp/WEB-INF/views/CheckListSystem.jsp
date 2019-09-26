@@ -9,7 +9,6 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<style>
 	 	body {
- 			background-color: black;
  		}
  		.no-js {
  			display: none;
@@ -120,12 +119,11 @@
     <script src="resources/template/js/main.js"></script>
 
 	<!-- service -->
+	<script type="text/javascript" src="resources/js/page/CheckListSystem.js"></script>		
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/checkList.js"></script>	
 	<script type="text/javascript" src="resources/js/memo.js"></script>	
-		
-<!-- 	<script src='resources/js/fullcalendar/lib/jquery.min.js'></script> -->
-	
+
 
 	
 	<script>
