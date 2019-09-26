@@ -18,19 +18,33 @@ import com.sesoc.secret.util.FileService;
 public class EmployeeController {
 	@Autowired
 	EmployeeRepository repo;
-	
-	final String uploadPath="/FinalProject/secret_note/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
+
+	final String uploadPath = "/FinalProject/secret_note/src/main/webapp/resources/img/employee"; // C
+
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
+	public String insertUserInfo() {
+		return "popup/insertUserInfo";
+	}
+
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertUserInfo(Employee_VO employee, HttpSession session) {
+		employee.setUserid((String) session.getAttribute("loginId"));
+		System.out.println("인풋됨" + employee);
+		int result = repo.insertUserInfo(employee);
+		return "popup/insertUserInfo";
+	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
-		if(logid == null || logpwd == null){
+		if (logid == null || logpwd == null) {
 			return "index";
 		}
 		Employee_VO result = new Employee_VO();
 		result.setUserid(logid);
 		result.setUserpwd(logpwd);
-		Employee_VO employee = repo.selectone(result);	
-		if(employee != null){
+		Employee_VO employee = repo.selectone(result);
+		if (employee != null) {
 			session.setAttribute("loginId", employee.getUserid());
 			session.setAttribute("loginName", employee.getUserName());
 			model.addAttribute("userimage", employee.getEImg());
@@ -40,7 +54,7 @@ public class EmployeeController {
 		}
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String home(Employee_VO employee, Model model, MultipartFile upload) {
 		String savedfile = FileService.saveFile(upload, uploadPath);
@@ -48,19 +62,19 @@ public class EmployeeController {
 		int result = repo.insert(employee);
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Employee_VO employee, Model model, HttpSession session) {
 		session.invalidate();
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "/idcheck", method = RequestMethod.GET)
 	@ResponseBody
 	public String idcheck(Employee_VO employee) {
 		Employee_VO user = repo.selectone(employee);
 		String message = "This is already used id.";
-		if(user == null) {
+		if (user == null) {
 			message = "You can use this id.";
 		}
 		return message;
