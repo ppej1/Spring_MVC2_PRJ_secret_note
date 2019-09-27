@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sesoc.secret.dao.EmployeeRepository;
+import com.sesoc.secret.dto.CheckListVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.util.FileService;
 
@@ -20,7 +21,22 @@ public class EmployeeController {
 	EmployeeRepository repo;
 	
 	final String uploadPath="../../../workspace/Final_Spring/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
-
+	
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
+	public String  insertUserInfo(){
+		System.out.println("들어가나?");
+		return "popup/insertUserInfo";
+	}
+/*	
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.POST)
+	@ResponseBody
+	public String  insertUserInfo(Employee_VO employee, HttpSession session){
+		employee.setUserid((String)session.getAttribute("loginId"));
+		System.out.println("수정됨"+ employee);
+		int result = repo.insertCheckList(employee);
+		return "popup/insertUserInfo";
+	}	*/
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
 		if(logid == null || logpwd == null){
