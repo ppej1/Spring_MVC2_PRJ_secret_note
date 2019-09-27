@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.CommentMapper">
+	<insert id="insertComment" parameterType="CommentsVO">
+	insert into COMMENTS
+	(
+	CSERIALNUMBER,
+	CKSERIALNUMBER,
+	USERID,
+	COMMENTS,
+	CHECKDATE,
+	CDATE
+	)
+	values
+	(
+	comment_seq.nextval,
+	#{ckSerialNumber},
+	#{userid},
+	#{comments},
+	#{checkDate},
+	sysdate
+	)
+	</insert>
+	<select id="loadAllMemo" parameterType="CommentsVO" resultType="CommentsVO_img">
+		select 
+			CSERIALNUMBER,
+			CKSERIALNUMBER,
+			USERID,
+			COMMENTS,
+			CHECKDATE,
+			CDATE,
+			EIMG
+	FROM 
+		comments join employee using (USERID) 
+	WHERE  
+	  CHECKDATE = #{checkDate}   
+		<if test="ckSerialNumber != 0">
+			AND CKSERIALNUMBER = #{ckSerialNumber}
+		</if>
+  
+	</select>
+	<delete id="deleteComment">
+		DELETE COMMENTS
+		WHERE CSERIALNUMBER =  #{cserialNumber}
+		AND USERID = #{userid}
+	</delete>
+</mapper>

@@ -7,6 +7,7 @@
 		<typeAlias type="com.sesoc.secret.dto.AccountVO" alias="AccountVO"/>
 		<typeAlias type="com.sesoc.secret.dto.CheckListVO" alias="CheckListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.CommentsVO" alias="CommentsVO"/>
+		<typeAlias type="com.sesoc.secret.dto.CommentsVO_img" alias="CommentsVO_img"/>		
 		<typeAlias type="com.sesoc.secret.dto.DisposalVO" alias="DisposalVO"/>
 		<typeAlias type="com.sesoc.secret.dto.Employee_VO" alias="Employee_VO"/>
 		<typeAlias type="com.sesoc.secret.dto.MainClassVO" alias="MainClassVO"/>
@@ -15,11 +16,18 @@
 		<typeAlias type="com.sesoc.secret.dto.StockVO" alias="StockVO"/>
 		<typeAlias type="com.sesoc.secret.dto.SubClassVO" alias="SubClassVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsesVO" alias="UsesVO"/>
+		<typeAlias type="com.sesoc.secret.dto.UsedListVO" alias="UsedListVO"/>
+		<typeAlias type="com.sesoc.secret.dto.DisposalListVO" alias="DisposalListVO"/>
+		<typeAlias type="com.sesoc.secret.dto.LossVO" alias="LossVO"/>
 
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mappers/EmployeeMapper.xml" />
-
+		<mapper resource="mappers/CheckListMapper.xml" />
+		<mapper resource="mappers/UsedMapper.xml" />
+		<mapper resource="mappers/DisposalMapper.xml" />
+		<mapper resource="mappers/CommentMapper.xml" />		
+		<mapper resource="mappers/LossMapper.xml" />		
 	</mappers>
 </configuration>

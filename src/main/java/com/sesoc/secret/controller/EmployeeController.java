@@ -29,22 +29,20 @@ public class EmployeeController {
 		Employee_VO result = new Employee_VO();
 		result.setUserid(logid);
 		result.setUserpwd(logpwd);
-		System.out.println("위"+result);
 		Employee_VO employee = repo.selectone(result);	
-		System.out.println("아래"+employee);
 		if(employee != null){
 			session.setAttribute("loginId", employee.getUserid());
 			session.setAttribute("loginName", employee.getUserName());
 			model.addAttribute("userimage", employee.getEImg());
 			model.addAttribute("useremail", employee.getEmail());
 			model.addAttribute("userphone", employee.getEPhone());
+			return "main";
 		}
-		return "main";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String home(Employee_VO employee, Model model, MultipartFile upload) {
-		System.out.println(employee);
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		employee.setEImg(savedfile);
 		int result = repo.insert(employee);

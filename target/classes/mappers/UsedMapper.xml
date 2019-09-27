@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.UsedMapper">
+	<select id="usedList" resultType="UsedListVO">
+		SELECT
+			u.uSerialNumber,
+			m.mClass,
+			s.location,
+			s.sName,
+			e.userName,
+			e.rank,
+			u.uAmount,
+			TO_CHAR(u.uDate,'yyyy-MM-dd') AS udate
+		FROM
+			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+            INNER JOIN Employee e ON u.userid = e.userid
+			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
+	</select>
+
+	<select id="usedListOneDay" parameterType="UsedListVO" resultType="UsedListVO">
+		SELECT
+			u.uSerialNumber,
+			m.mClass,
+			s.location,
+			s.sName,
+			e.userName,
+			e.rank,
+			u.uAmount,
+			u.uDate
+		FROM
+			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+            INNER JOIN Employee e ON u.userid = e.userid
+			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
+		WHERE
+			uDate = #{uDate}
+	</select>
+	
+	<select id="usedList2" resultType="UsedListVO">
+		SELECT
+            s.sName,
+            sum(u.uAmount*s.price) AS uAmount
+		FROM
+			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+        GROUP BY s.sName
+	</select>
+</mapper>

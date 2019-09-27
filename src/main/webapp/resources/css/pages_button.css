@@ -1,4 +1,7 @@
 /*button_div  */
+*{
+	font-size: 99.1%
+}
 @media(min-width: 768px) {
 	.button_nav_odd {
 		margin: 0px 0px;
@@ -34,8 +37,6 @@
 	}
 
 
-
-}
 
 
 /* button -even */
@@ -151,7 +152,6 @@
 	width: 90%;
 	height: 73%;
 	margin: 0% auto 2% auto;
-	overflow-y: scroll;
 }
 
 .write-coment-container {
