@@ -185,11 +185,13 @@
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn_minus').on('click', function () {
-				updateUserInfo();
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 1);
+				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
 				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 2);
+				$('.flipbook').turn("page", 1);
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.log-out').on('click', function () {

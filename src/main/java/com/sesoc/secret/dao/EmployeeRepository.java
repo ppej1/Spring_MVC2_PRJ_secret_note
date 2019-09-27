@@ -13,21 +13,16 @@ public class EmployeeRepository {
 
 	public int insert(Employee_VO employee) {
 		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-
+		
 		int result = mapper.insert(employee);
-
+		
 		return result;
 	}
 
 	public Employee_VO selectone(Employee_VO employee) {
 		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-
+		
 		return mapper.selectone(employee);
-	}
-
-	public int insertUserInfo(Employee_VO employee) {
-		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-		return mapper.insertUserInfo(employee);
 	}
 
 }
