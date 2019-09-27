@@ -201,6 +201,11 @@
 			$(".btn_plus_Account").on('click',function(){
 				createAccount();
 			});
+			
+			
+			$(".btn_plus_subClass").on('click',function(){
+				insertSubClass();
+			});
 
 		}	
 

@@ -1,7 +1,7 @@
 
 
-function createAccount() {
-	var url = "insertAccount";
+function insertSubClass() {
+	var url = "insertSubClass";
 	var name = "popup test";
 	var option = "width = 500, height = 500, top = 100, left = 200, location = no"
 
@@ -19,7 +19,7 @@ function createAccount() {
 		return win;
 	};
 
-	var insertAccount = openDialog(url, name, option, function (win) {
+	var insertSubClass = openDialog(url, name, option, function (win) {
 		
 		//팝업창이 닫히게 될 때 실행 된 내용
 	});

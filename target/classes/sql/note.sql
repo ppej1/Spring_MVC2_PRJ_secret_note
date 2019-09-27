@@ -1,4 +1,4 @@
-
+﻿
 /* Drop Tables */
 
 DROP TABLE Receipt CASCADE CONSTRAINTS;
@@ -92,9 +92,8 @@ CREATE TABLE Employee
 
 CREATE TABLE MainClass
 (
-	mcSerialNumber varchar2(20) NOT NULL,
-	mClass varchar2(20) NOT NULL,
-	mcImg varchar2(20) NOT NULL,
+	mcSerialNumber number NOT NULL,
+	mClass varchar2(40),
 	PRIMARY KEY (mcSerialNumber)
 );
 
@@ -142,9 +141,9 @@ CREATE TABLE Stock
 CREATE TABLE SubClass
 (
 	scSerialNumber varchar2(20) NOT NULL,
-	mcSerialNumber varchar2(20) NOT NULL,
+	mcSerialNumber number NOT NULL,
 	foodCode varchar2(20),
-	sImg varchar2(20) NOT NULL,
+	sImg varchar2(20),
 	sName varchar2(20) NOT NULL,
 	unit varchar2(20) NOT NULL,
 	-- 
@@ -267,3 +266,23 @@ COMMENT ON COLUMN SubClass.price IS '
 CREATE SEQUENCE ck_seq;
 CREATE SEQUENCE comment_seq;
 CREATE SEQUENCE st_seq;
+CREATE SEQUENCE mc_seq;
+
+
+
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(2,'견과류및종실류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(3,'곡류및그제품');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(4,'과일류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(5,'난류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(6,'당류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(7,'두류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(8,'버섯류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(9,'소스류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(10,'어패류및기타수산물');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(11,'우유및유제품류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(12,'유지류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(13,'육류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(14,'차류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(15,'채소류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(16,'향신료류');

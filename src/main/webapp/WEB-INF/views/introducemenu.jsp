@@ -101,6 +101,7 @@
     <script src="resources/template/js/main.js"></script>
 
 	<script type="text/javascript" src="resources/js/page/introducemenu.js"></script>		
+	<script src="resources/js/account.js"></script>
 	
 	<script>
 	function main(){

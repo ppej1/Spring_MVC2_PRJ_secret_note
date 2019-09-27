@@ -118,6 +118,7 @@
     <script src="resources/template/js/jquery.magnific-popup.min.js"></script>
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
+	<script src="resources/js/subclass.js"></script>
 
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/page/StockListSystem.js"></script>			
