@@ -197,8 +197,5 @@
 				location.href = "logout";
 			});	
 			/* page 10 11 menu button */
-			$('#storageBtn').on('click', function () {
-				alert("상온을 클릭했음");
-			});	
 		}	
 
