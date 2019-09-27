@@ -8,7 +8,12 @@ function setnowDate() {
 function set_comment_num() {
 	comment_num = co_num;
 }
+$(function(){
+	$("#button-comment").on('click', function () {
+		insertComment(comment_num);
 
+	});
+})
 function memoListPage() {
 	setnowDate(startDate);
 
@@ -22,10 +27,6 @@ function memoListPage() {
 		selectList(comment_num);
 	});
 
-	$("#button-comment").on('click', function () {
-		insertComment(comment_num);
-
-	});
 	$("#title_comment").on('click', function () {
 		co_num = 0;
 		set_comment_num(co_num);

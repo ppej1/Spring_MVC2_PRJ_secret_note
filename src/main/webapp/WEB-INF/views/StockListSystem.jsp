@@ -138,8 +138,31 @@
 			calendarPage09();
 	}
 	</script>
-		
+<script>
+$(function(){
+	$('#frozen_storageBtn').on('click', function () {
+		alert("냉동을 클릭했음");
+	});	
+})
+$(function(){
+	$('#cold_storageBtn').on('click', function () {
+		alert("냉장을 클릭했음");
+	});	
+})
+$(function(){
+	$('#storageBtn').on('click', function () {
+		alert("상온을 클릭했음");
+	});	
+})
+</script>		
+<script>
 
+$(document).ready(function () {
+	$('[data-toggle="toggle"]').change(function () {
+		$(this).parents().next('.hide').toggle();
+	});
+});
+</script>
 
 
 
