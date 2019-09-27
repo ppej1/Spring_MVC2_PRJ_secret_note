@@ -97,7 +97,7 @@ span {
 				<div class="row tm-content-row">
 					<div class="tm-block-col tm-col-avatar">
 						<div class="tm-bg-primary-dark tm-block tm-block-avatar">
-							<h2 class="tm-block-title">Change Avatar</h2>
+							<h2 class="tm-block-title">Change Picture</h2>
 							<div class="tm-avatar-container">
 								<img id="upload" src="resources/data/img/profile/avatar.png"
 									alt="Avatar" class="tm-avatar img-fluid mb-4" /> <a href="#"
@@ -106,6 +106,7 @@ span {
 								</a>
 							</div>
 							<input id="eimg" name="upload" type="file" style="display: none;" />
+							<span id = "imgresult"></span>
 							<input type="button" class="btn btn-primary btn-block mx-auto"
 								value="UPLOAD PRODUCT IMAGE"
 								onclick="document.getElementById('eimg').click();" />

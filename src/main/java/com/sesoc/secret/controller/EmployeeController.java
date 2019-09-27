@@ -19,7 +19,7 @@ public class EmployeeController {
 	@Autowired
 	EmployeeRepository repo;
 	
-	final String uploadPath="/FinalProject/secret_note/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
+	final String uploadPath="../../../workspace/Final_Spring/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {

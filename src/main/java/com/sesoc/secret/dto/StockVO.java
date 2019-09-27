@@ -8,9 +8,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StockVO {
-	String sSerialNumber;
-	String scSerialNumber;
-	String userid;
-	String sDate;
-	String deDate;
+	private String sSerialNumber;
+	private String rDate;
+	private String rRegistid;
+	private String sDate;
+	private String sRegistid;
+	private int amount;
+	private String unit;
+	private int price;
+	private String location;
+	private String deDate;
+	private String status;
 }

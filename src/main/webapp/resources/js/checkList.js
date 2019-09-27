@@ -58,7 +58,7 @@ function chekListOutput(data) {
 			tag += '<a href="#" class="tm-product-delete-link deleteCheck" data-value="' + item.ckSerialNumber + '">';
 			tag += '<i class="far fa-trash-alt tm-product-delete-icon"></i>';
 			tag += '</a>';
-			tag += '</td';
+			tag += '</td>';
 			tag += '</tr>';
 			tag += '<tr>';
 			tag += '<td>' + item.rdate + '</td>';
