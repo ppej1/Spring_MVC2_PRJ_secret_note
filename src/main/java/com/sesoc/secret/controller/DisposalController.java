@@ -21,12 +21,13 @@ public class DisposalController {
 	@ResponseBody
 	public List<DisposalListVO> disposalList(){
 		List<DisposalListVO> list = repo.disposalList();
+
 		return list;
 	}
 	@RequestMapping(value = "/disposalListOneDay", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> disposalListOneDay(DisposalListVO disposal){
-		System.out.println(disposal);
+
 		List<DisposalListVO> list = repo.disposalListOneDay(disposal);
 		System.out.println(list);
 		return list;
@@ -36,9 +37,9 @@ public class DisposalController {
 	@RequestMapping(value = "/disposalAmountPieChart1", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> disposalAmountPieChart1(DisposalListVO disposal){
-		System.out.println(disposal);
+		System.out.println("pie"+disposal);
 		List<DisposalListVO> list = repo.disposalAmountPieChart1(disposal);
-		System.out.println(list);
+		System.out.println("pie22"+list);
 		return list;
 	}	
 }

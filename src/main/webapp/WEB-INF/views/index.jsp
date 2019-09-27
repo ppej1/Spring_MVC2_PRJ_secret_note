@@ -66,7 +66,6 @@
 
 	<script>
 		function main() {
-					alert("ddd");
 			$('.flipbook').turn("disable", true);
 			
 			$('#btnSignup').on('click', function() {
@@ -74,11 +73,13 @@
 				$(".flipbook").turn("page", 2);
 				$('.flipbook').turn("disable", true);
 			});
+			
 			$('#btnReturn').on('click', function() {
 				$(".flipbook").turn("disable", false);
 				$(".flipbook").turn("page", 1);
 				$('.flipbook').turn("disable", true);
 			});
+
 		}
 	</script>
 	

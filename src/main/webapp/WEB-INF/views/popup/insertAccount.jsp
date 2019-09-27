@@ -17,6 +17,11 @@
 	<link href="resources/css/backgroundImg.css" rel="stylesheet">
 	<link href="resources/css/login.css" rel="stylesheet">
 	<link rel="shortcut icon" href="resources/img/chess.ico">
+	<style>
+	.button_popup.col-12 {
+    margin-bottom: 10px;
+	}	
+	</style>
 </head>
 <body>
 
@@ -64,14 +69,14 @@
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="acontent">内容</label> 
-									<input id="acontent" name="acontent" type="text" class="form-control validate" />
+									<textarea rows="6" cols="50" id="acontent" name="acontent" class="form-control validate" ></textarea>								
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="aURL">会社のホームページ</label> 
 									<input id="aURL" name="aURL" type="text" class="form-control validate" />
 								</div>
 							</div>
-							<div class="col-12">
+							<div class="col-12 button_popup">
 								<label class="tm-hide-sm">&nbsp;</label>
 								<button type="button" class="btn btn-primary btn-block text-uppercase" onclick="regdata();">登録</button>
 							</div>
@@ -104,7 +109,7 @@
 					self.close();
 				});
 			});
-		
+
 			function previewImage(input) {
 				// 이미지를 선택하면
 				if (input.files && input.files[0]) {

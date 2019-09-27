@@ -17,6 +17,11 @@
 	<link href="resources/css/backgroundImg.css" rel="stylesheet">
 	<link href="resources/css/login.css" rel="stylesheet">
 	<link rel="shortcut icon" href="resources/img/chess.ico">
+		<style>
+	.button_popup.col-12 {
+    margin-bottom: 10px;
+	}	
+	</style>
 </head>
 <body>
 
@@ -28,9 +33,9 @@
 				<div class="row tm-content-row">
 					<div class="tm-block-col tm-col-avatar">
 						<div class="tm-bg-primary-dark tm-block tm-block-avatar">
-							<h2 class="tm-block-title">取引先 登録</h2>
+							<h2 class="tm-block-title">材料登録</h2>
 							<div class="tm-avatar-container">
-								<img id="upload" src="resources/img/company/nobrand.jpg"
+								<img id="upload" src="resources/img/meterial/food.jpg"
 									alt="Avatar" class="tm-avatar img-fluid mb-4" /> <a href="#"
 									class="tm-avatar-delete-link" id="deleteImg"> <i
 									class="far fa-trash-alt tm-product-delete-icon"></i>
@@ -39,7 +44,7 @@
 							<input id="simg" name="upload" type="file" style="display: none;" />
 							<span id = "imgresult"></span>
 							<input type="button" class="btn btn-primary btn-block mx-auto"
-								value="UPLOAD COMPANY IMAGE"
+								value="UPLOAD MATERIAL IMAGE"
 								onclick="document.getElementById('simg').click();" />
 						</div>
 					</div>
@@ -48,7 +53,7 @@
 							<h2 class="tm-block-title">取引先</h2>
 							<div class="tm-signup-form row">
 								<div class="form-group col-lg-6">
-									<label for="mcserialNumber">会社名</label> 
+									<label for="mcserialNumber">大分類</label> 
 									<select id="mcserialNumber" name="mcserialNumber"class="form-control validate">
 									<option value="">a</option>
 									<option value="">a</option>
@@ -58,26 +63,31 @@
 									<span id="mcserialNumber"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="foodCode">会社名</label> 
+									<label for="foodCode">FOOD CODE</label> 
 									<input id="foodCode" name="foodCode" type="text" class="form-control validate" />
 									<span id="foodCode"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="sName">担当マネージャー</label> 
+									<label for="sName">材料名</label> 
 									<input id="sName" name="sName" type="text" class="form-control validate" />
 									<span id="sName"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="unit">携帯電話</label>
-									 <input type="text" id="unit" name="aPhone" class="form-control validate" />
+									<label for="unit">大分類</label> 
+									<select id="unit" name="unit"class="form-control validate">
+									<option value="">a</option>
+									<option value="">a</option>
+									<option value="">a</option>
+									<option value="">a</option>
+									</select>
 									<span id="unit"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="price">内容</label> 
+									<label for="price">価格</label> 
 									<input id="price" name="price" type="number" class="form-control validate" />
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="location">会社名</label> 
+									<label for="location">貯蔵位置</label> 
 									<select id="location" name="mcserialNumber"class="form-control validate">
 									<option value="">a</option>
 									<option value="">a</option>
@@ -87,11 +97,11 @@
 									<span id="location"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="eDate">会社のホームページ</label> 
+									<label for="eDate">賞味期限</label> 
 									<input id="eDate" name="eDate" type="number" class="form-control validate" />
 								</div>
 							</div>
-							<div class="col-12">
+							<div class="col-12 button_popup">
 								<label class="tm-hide-sm">&nbsp;</label>
 								<button type="button" class="btn btn-primary btn-block text-uppercase" onclick="regdata();">登録</button>
 							</div>
@@ -136,7 +146,7 @@
 				}
 			};
 			function deleteImage(){
-				$("#upload").attr("src", "resources/img/company/nobrand.jpg")
+				$("#upload").attr("src", "resources/img/meterial/food.jpg")
 
 			}
 			function regdata(){

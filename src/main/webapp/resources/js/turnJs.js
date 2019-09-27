@@ -142,12 +142,7 @@
  		function set_even_button(currentPage){
 
 			if (currentPage != 1) {
-					$('.flipbook').turn("disable", true);
-			}
-			if(currentPage == 1 ){
-				$('.flipbook').turn("disable", false);
-
-			}else{
+				$('.flipbook').turn("disable", true);
 				tag = '';
 				tag+=  '<a href="#" class="btn_plus_Account"><i class="fas fa-book-medical"></i></a>';
 				tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
