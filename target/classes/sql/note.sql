@@ -23,7 +23,7 @@ DROP SEQUENCE st_seq;
 CREATE TABLE Account
 (
 	accountName varchar2(20) NOT NULL,
-	aImg varchar2(20) NOT NULL,
+	aImg varchar2(200) NOT NULL,
 	aManager varchar2(20) NOT NULL,
 	aPhone varchar2(20) NOT NULL,
 	-- 회사설명
@@ -143,7 +143,7 @@ CREATE TABLE SubClass
 	scSerialNumber varchar2(20) NOT NULL,
 	mcSerialNumber number NOT NULL,
 	foodCode varchar2(20),
-	sImg varchar2(20),
+	sImg varchar2(200),
 	sName varchar2(20) NOT NULL,
 	unit varchar2(20) NOT NULL,
 	-- 
