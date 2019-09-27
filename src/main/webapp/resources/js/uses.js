@@ -1,5 +1,5 @@
 function fusedList(startDate) {
-	
+
 	var sendData = {
 			"uDate": startDate
 		}

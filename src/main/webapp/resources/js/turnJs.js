@@ -6,7 +6,7 @@
  				loadApp1();
  				$(window).resize(function () {
  					//console.log(window.innerWidth);
- 					$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
+ 					$('.flipbook').turn('size', window.innerWidth - 90, window.innerHeight - 45);
  				});
 
  			} else {
@@ -22,7 +22,7 @@
  					//console.log("1200px");
  					$(window).resize(function () {
  						//console.log(window.innerWidth);
- 						$('.flipbook').turn('size', window.innerWidth - 100, window.innerHeight - 50);
+ 						$('.flipbook').turn('size', window.innerWidth - 90, window.innerHeight - 45);
  					});
  				} else {
  					//console.log("768px");
@@ -47,11 +47,11 @@
  			$('.flipbook').turn({
  				// Width
 
- 				width: window.innerWidth - 100,
+ 				width: window.innerWidth - 90,
 
  				// Height
 
- 				height: window.innerHeight - 50,
+ 				height: window.innerHeight - 45,
 
  				// Elevation
 
@@ -190,9 +190,7 @@
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
-				$('.flipbook').turn("disable", false);
-				$('.flipbook').turn("page", 1);
-				$('.flipbook').turn("disable", true);
+					alert("회원정보 수정");
 			});	
 			$('.log-out').on('click', function () {
 				console.log("logout");

@@ -377,6 +377,7 @@ thead {
 }
 .table-hover tbody tr:hover {
   color: #a0c0de;
+  background-color: rgba(0,0,0,.0);
 }
 .tm-bg-primary-dark {
   background-color: #ffffff;

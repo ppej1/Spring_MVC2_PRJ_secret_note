@@ -1,4 +1,7 @@
 /*button_div  */
+*{
+	font-size: 99.1%
+}
 @media(min-width: 768px) {
 	.button_nav_odd {
 		margin: 0px 0px;
@@ -34,8 +37,6 @@
 	}
 
 
-
-}
 
 
 /* button -even */
