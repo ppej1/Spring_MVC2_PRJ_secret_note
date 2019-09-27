@@ -5,71 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="resources/js/valid.js"></script>
-<script>
-	$(function() {
-		$("#eimg").on("change", function() {
-			previewImage(this); // 미리보기 함수
-		})
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-		$("#idcheck").on("click", idcheck);
-		
-		$("#btnReturn").on("click", function(){
-			location.replace("home");
-		})
-	});
-
-	function previewImage(input) {
-		// 이미지를 선택하면
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			reader.onload = function(e) {
-				$("#upload").attr("src", e.target.result)
-			}
-			reader.readAsDataURL(input.files[0]);
-		}
-	};
-
-	function idcheck() {
-		var userid = $("#userid").val();
-		$.ajax({
-			type : 'GET',
-			url : 'idcheck',
-			data : "userid=" + userid,
-			success : function(resp) {
-				alert(resp);
-			}
-		})
-	};
-	
-	function regdata(){
-		var userid = document.getElementById("userid");
-		var userpwd = document.getElementById("userpwd");
-		var username = document.getElementById("userName");
-		var rank = document.getElementById("rank");
-		var email = document.getElementById("email");
-		var phone = document.getElementById("ePhone");
-
-		var img = document.getElementById("eImg");
-		
-		if (
-			userid.value == '' || userpwd.value == ''
-			|| username.value == '' || rank.value =='0' 
-			|| email.value == '' || phone.value == ''
-			)
-		{
-			alert('빈칸을 채워주세요.');
-			userid.focus();
-			return;
-		}
-		var form = document.getElementById("regForm");
-		form.submit();
-	}
-</script>
-
-
-
-
+		<!-- page 01 02 -->
+	<link rel="stylesheet" href="resources/template/css/bootstrap.min_signup.css" />		
+	<link rel="stylesheet" href="resources/template/css/templatemo-style.css">		
+	<link rel="stylesheet" href="resources/template/css/templatemo-style-login.css">	
+		<!-- custom -->
+	<link href="resources/css/main.css" rel="stylesheet">
+	<link href="resources/css/pages_button.css" rel="stylesheet">
+	<link href="resources/css/backgroundImg.css" rel="stylesheet">
+	<link href="resources/css/login.css" rel="stylesheet">
+	<link rel="shortcut icon" href="resources/img/chess.ico">
 </head>
 <body>
 
@@ -163,5 +111,72 @@
 		</form>
 	</div>
 
+
+
+
+
+	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
+
+<script src="resources/js/valid.js"></script>
+<script>
+	$(function() {
+		$("#eimg").on("change", function() {
+			previewImage(this); // 미리보기 함수
+		})
+
+		$("#idcheck").on("click", idcheck);
+		
+		$("#btnReturn").on("click", function(){
+			location.replace("home");
+		})
+	});
+
+	function previewImage(input) {
+		// 이미지를 선택하면
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$("#upload").attr("src", e.target.result)
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	};
+
+	function idcheck() {
+		var userid = $("#userid").val();
+		$.ajax({
+			type : 'GET',
+			url : 'idcheck',
+			data : "userid=" + userid,
+			success : function(resp) {
+				alert(resp);
+			}
+		})
+	};
+	
+	function regdata(){
+		var userid = document.getElementById("userid");
+		var userpwd = document.getElementById("userpwd");
+		var username = document.getElementById("userName");
+		var rank = document.getElementById("rank");
+		var email = document.getElementById("email");
+		var phone = document.getElementById("ePhone");
+
+		var img = document.getElementById("eImg");
+		
+		if (
+			userid.value == '' || userpwd.value == ''
+			|| username.value == '' || rank.value =='0' 
+			|| email.value == '' || phone.value == ''
+			)
+		{
+			alert('빈칸을 채워주세요.');
+			userid.focus();
+			return;
+		}
+		var form = document.getElementById("regForm");
+		form.submit();
+	}
+</script>
 </body>
 </html>
