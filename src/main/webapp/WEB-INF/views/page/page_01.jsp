@@ -93,8 +93,7 @@ span {
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
-								<button type="button"
-									class="btn btn-primary btn-block text-uppercase" id="btnReturn">
+								<button type="button" class="btn btn-primary btn-block text-uppercase" id="btnReturn">
 									Return to login</button>
 							</div>
 						</div>
@@ -103,5 +102,4 @@ span {
 			</div>
 		</form>
 	</div>
-
 </div>

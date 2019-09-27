@@ -12,4 +12,6 @@ public class AccountVO {
 	String aImg;
 	String aManager;
 	String aPhone;
+	String acontent;
+	String aURL;
 }

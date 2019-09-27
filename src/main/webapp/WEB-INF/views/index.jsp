@@ -62,12 +62,13 @@
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script src="resources/js/turnJs.js"></script>
+	    <script src="resources/template/js/bootstrap.min.js"></script>
 
 	<script>
 		function main() {
-
+					alert("ddd");
 			$('.flipbook').turn("disable", true);
-
+			
 			$('#btnSignup').on('click', function() {
 				$(".flipbook").turn("disable", false);
 				$(".flipbook").turn("page", 2);
@@ -78,11 +79,9 @@
 				$(".flipbook").turn("page", 1);
 				$('.flipbook').turn("disable", true);
 			});
-
 		}
 	</script>
 	
-	    <script src="resources/template/js/bootstrap.min.js"></script>
 	
 </body>
 

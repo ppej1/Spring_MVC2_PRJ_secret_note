@@ -9,7 +9,7 @@
 					<div class="col-md-16 mb-4">
 						<div class="blog d-block d-lg-flex">
 							<div class="bg-image"
-								style="background-image: url('resources/template/img/ourhome.jpg');"></div>
+								style="background-image: url('resources/img/company/ourhome.jpg');"></div>
 							<div class="text">
 								<h3>OUR HOME</h3>
 								<p>アワーホームは食材事業のマーケットリーダーとして最高品質の商品を合理的な価格で提供します。 顧客のニーズに
@@ -27,7 +27,7 @@
 					<div class="col-md-16 mb-4">
 						<div class="blog d-block d-lg-flex">
 							<div class="bg-image"
-								style="background-image: url('resources/template/img/cj.jpg');"></div>
+								style="background-image: url('resources/img/company/cj.jpg');"></div>
 							<div class="text">
 								<h3>CJ FRESH WAY</h3>
 								<p>CJプレッシウェイは良い食材を流通し、健康で美味しい食文化を創出する大韓民国最高のグローバル食材の流通およびフードサービス専門企業です。</p>
@@ -44,7 +44,7 @@
 					<div class="col-md-16 mb-4">
 						<div class="blog d-block d-lg-flex">
 							<div class="bg-image"
-								style="background-image: url('resources/template/img/hyundai.jpg');"></div>
+								style="background-image: url('resources/img/company/hyundai.jpg');"></div>
 							<div class="text">
 								<h3>HYUNDAI GREEN FOOD</h3>
 								<p>現代グリーンフードはお客様の成功を支援するグリーンパートナーで、商品の供給だけでなく衛生、メニューの開発などのコンサルティングを提供するトータルフードビジネスソリューションを提示します。</p>
@@ -60,7 +60,7 @@
 					<div class="col-md-16 mb-4">
 						<div class="blog d-block d-lg-flex">
 							<div class="bg-image"
-								style="background-image: url('resources/template/img/samsung.jpg');"></div>
+								style="background-image: url('resources/img/company/samsung.jpg');"></div>
 							<div class="text">
 								<h3>SAMSUNG WELL STORY</h3>
 								<p>自然の新鮮さが生きている食材を安全に流通します。全国6つの物流センターを基盤に1日平均1,000トンの食材を24時間以内に配送しています。</p>
