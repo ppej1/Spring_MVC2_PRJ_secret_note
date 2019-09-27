@@ -8,27 +8,27 @@
 <insert id="insert" parameterType="Employee_VO">
 		INSERT INTO Employee
 		(
-			userid,
-			userpwd,
-			eImg,
-			userName,
-			rank,
-			email,
-			ePhone,
-			status
+			userid
+			,userpwd
+			<if test = "eImg != null">
+			,eImg
+			</if>
+			,userName
+			,rank
+			,email
+			,ePhone
 		)
 		VALUES
 		(
-			#{userid},
-			#{userpwd},
-			#{eImg},
-			#{userName},
-			#{rank},
-			#{email},
-			#{ePhone}
-			<if test="status == null">
-			,'現職'
-			</if>
+			#{userid}
+			,#{userpwd}
+			<If test = "eImg != null">
+			,#{eImg}
+			</If>
+			,#{userName}
+			,#{rank}
+			,#{email}
+			,#{ePhone}
 		)
 	</insert>
 	
