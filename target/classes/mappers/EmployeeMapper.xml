@@ -5,41 +5,37 @@
 
 
 <mapper namespace="com.sesoc.secret.dao.EmployeeMapper">
-<insert id="insert" parameterType="Employee_VO">
+	<insert id="insert" parameterType="Employee_VO">
 		INSERT INTO Employee
 		(
-			userid
-			,userpwd
-			<if test = "eImg != null">
-			,eImg
-			</if>
-			,userName
-			,rank
-			,email
-			,ePhone
+		userid
+		,userpwd
+		,eImg
+		,userName
+		,rank
+		,email
+		,ePhone
 		)
 		VALUES
 		(
-			#{userid}
-			,#{userpwd}
-			<If test = "eImg != null">
-			,#{eImg}
-			</If>
-			,#{userName}
-			,#{rank}
-			,#{email}
-			,#{ePhone}
+		#{userid}
+		,#{userpwd}
+		,#{eImg}
+		,#{userName}
+		,#{rank}
+		,#{email}
+		,#{ePhone}
 		)
 	</insert>
-	
+
 	<select id="selectone" parameterType="Employee_VO" resultType="Employee_VO">
-	select
+		select
 		*
-	from
+		from
 		Employee
-	where userid = #{userid}
-	<if test="userpwd != null">
-		and userpwd = #{userpwd}
-	</if>
+		where userid = #{userid}
+		<if test="userpwd != null">
+			and userpwd = #{userpwd}
+		</if>
 	</select>
 </mapper>
