@@ -54,11 +54,8 @@
 							<div class="tm-signup-form row">
 								<div class="form-group col-lg-6">
 									<label for="mcserialNumber">大分類</label> 
-									<select id="mcserialNumber" name="mcserialNumber"class="form-control validate">
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
+									<select id="mcserialNumber" size ="1" name="mcserialNumber"class="form-control validate select_mcserialNumber">
+									
 									</select>
 									<span id="mcserialNumber"></span>
 								</div>
@@ -73,7 +70,7 @@
 									<span id="sName"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="unit">大分類</label> 
+									<label for="unit">単位</label> 
 									<select id="unit" name="unit"class="form-control validate">
 									<option value="">a</option>
 									<option value="">a</option>
@@ -89,10 +86,9 @@
 								<div class="form-group col-lg-6">
 									<label for="location">貯蔵位置</label> 
 									<select id="location" name="mcserialNumber"class="form-control validate">
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
+									<option value="1">冷凍</option>
+									<option value="2">冷蔵</option>
+									<option value="3">常温</option>
 									</select>
 									<span id="location"></span>
 								</div>
@@ -123,6 +119,7 @@
 <script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 		<script>
 			$(function() {
+				MainClass();
 				$("#deleteImg").on("click", function() {
 					deleteImage(); // 미리보기 함수
 				})		
@@ -135,6 +132,29 @@
 				});
 			});
 		
+			
+			function MainClass(){
+				$.ajax({
+					url:'selectMainClassList',
+					type: 'post',
+					success: outputMainClass	
+				});
+				
+			}
+			
+			
+			function outputMainClass(data){
+				var tag = '';
+				$.each(data, function (index, item) {
+					tag += '<option value="'+ item.mcSerialNumber +'">'+ item.mclass +'</option>';	
+				});
+				$(".select_mcserialNumber").html(tag);
+
+			}
+			
+			
+			
+			
 			function previewImage(input) {
 				// 이미지를 선택하면
 				if (input.files && input.files[0]) {
@@ -152,6 +172,8 @@
 			function regdata(){
 				alert("dddd")
 			}
+			
+			
 		</script>
 </body>
 </html>
