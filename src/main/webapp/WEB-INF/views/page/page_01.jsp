@@ -40,7 +40,7 @@
 		})
 	};
 	function deleteImage(){
-		$("#upload").attr("src", "resources/data/img/profile/avatar.png")
+		$("#upload").attr("src", "resources/img/employee/avatar.png")
 
 	}
 	function regdata(){

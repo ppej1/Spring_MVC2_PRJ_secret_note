@@ -45,6 +45,10 @@ public class EmployeeController {
 	public String home(Employee_VO employee, Model model, MultipartFile upload) {
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		employee.setEImg(savedfile);
+		if (employee.getEImg() == "") {
+			employee.setEImg("avatar.png");
+		}
+		System.out.println("ddd"+ employee.getEImg());
 		int result = repo.insert(employee);
 		return "index";
 	}
