@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountVO {
+	String accountserial;
 	String accountName;
 	String aImg;
 	String aManager;
