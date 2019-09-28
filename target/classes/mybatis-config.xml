@@ -30,5 +30,6 @@
 		<mapper resource="mappers/CommentMapper.xml" />		
 		<mapper resource="mappers/LossMapper.xml" />	
 		<mapper resource="mappers/StockMapper.xml" />		
+		<mapper resource="mappers/AccountMapper.xml" />	
 	</mappers>
 </configuration>

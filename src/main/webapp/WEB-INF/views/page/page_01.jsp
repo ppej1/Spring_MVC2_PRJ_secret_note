@@ -1,5 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script src="resources/js/valid.js"></script>
+<script>
+	$(function() {
+		$("#deleteImg").on("click", function() {
+			deleteImage(); // 미리보기 함수
+		})	
+		$("#eimg").on("change", function() {
+			previewImage(this); // 미리보기 함수
+		})
+
+		$("#idcheck").on("click", idcheck);
+		
+		$("#btnReturn").on("click", function(){
+			location.replace("home");
+		})
+	});
+
+	function previewImage(input) {
+		// 이미지를 선택하면
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$("#upload").attr("src", e.target.result)
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	};
+
+	function idcheck() {
+		var userid = $("#userid").val();
+		$.ajax({
+			type : 'GET',
+			url : 'idcheck',
+			data : "userid=" + userid,
+			success : function(resp) {
+				alert(resp);
+			}
+		})
+	};
+	function deleteImage(){
+		$("#upload").attr("src", "resources/data/img/profile/avatar.png")
+
+	}
+	function regdata(){
+		var userid = document.getElementById("userid");
+		var userpwd = document.getElementById("userpwd");
+		var username = document.getElementById("userName");
+		var rank = document.getElementById("rank");
+		var email = document.getElementById("email");
+		var phone = document.getElementById("ePhone");
+
+		var img = document.getElementById("eImg");
+		
+		if (
+			userid.value == '' || userpwd.value == ''
+			|| username.value == '' || rank.value =='0' 
+			|| email.value == '' || phone.value == ''
+			)
+		{
+			alert('빈칸을 채워주세요.');
+			userid.focus();
+			return;
+		}
+		var form = document.getElementById("regForm");
+		form.submit();
+	}
+</script>
 
 <style>
 span {
@@ -40,7 +107,7 @@ span {
 							<div class="tm-avatar-container">
 								<img id="upload" src="resources/data/img/profile/avatar.png"
 									alt="Avatar" class="tm-avatar img-fluid mb-4" /> <a href="#"
-									class="tm-avatar-delete-link"> <i
+									class="tm-avatar-delete-link" id="deleteImg"> <i
 									class="far fa-trash-alt tm-product-delete-icon"></i>
 								</a>
 							</div>
@@ -93,7 +160,8 @@ span {
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
-								<button type="button" class="btn btn-primary btn-block text-uppercase" id="btnReturn">
+								<button type="button"
+									class="btn btn-primary btn-block text-uppercase" id="btnReturn">
 									Return to login</button>
 							</div>
 						</div>
@@ -102,68 +170,5 @@ span {
 			</div>
 		</form>
 	</div>
+
 </div>
-
-
-
-<script src="resources/js/valid.js"></script>
-<script>
-	$(function() {
-		$("#eimg").on("change", function() {
-			previewImage(this); // 미리보기 함수
-		})
-
-		$("#idcheck").on("click", idcheck);
-		
-		$("#btnReturn").on("click", function(){
-			location.replace("home");
-		})
-	});
-
-	function previewImage(input) {
-		// 이미지를 선택하면
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			reader.onload = function(e) {
-				$("#upload").attr("src", e.target.result)
-			}
-			reader.readAsDataURL(input.files[0]);
-		}
-	};
-
-	function idcheck() {
-		var userid = $("#userid").val();
-		$.ajax({
-			type : 'GET',
-			url : 'idcheck',
-			data : "userid=" + userid,
-			success : function(resp) {
-				alert(resp);
-			}
-		})
-	};
-	
-	function regdata(){
-		var userid = document.getElementById("userid");
-		var userpwd = document.getElementById("userpwd");
-		var username = document.getElementById("userName");
-		var rank = document.getElementById("rank");
-		var email = document.getElementById("email");
-		var phone = document.getElementById("ePhone");
-
-		var img = document.getElementById("eImg");
-		
-		if (
-			userid.value == '' || userpwd.value == ''
-			|| username.value == '' || rank.value =='0' 
-			|| email.value == '' || phone.value == ''
-			)
-		{
-			alert('빈칸을 채워주세요.');
-			userid.focus();
-			return;
-		}
-		var form = document.getElementById("regForm");
-		form.submit();
-	}
-</script>

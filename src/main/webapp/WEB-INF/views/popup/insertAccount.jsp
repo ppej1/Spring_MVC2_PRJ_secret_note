@@ -73,7 +73,7 @@
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="aURL">会社のホームページ</label> 
-									<input id="aURL" name="aURL" type="text" class="form-control validate" />
+									<input id="aURL" name="aURL" type="text" class="form-control validate" value="http://" />
 								</div>
 							</div>
 							<div class="col-12 button_popup">
@@ -125,7 +125,8 @@
 
 			}
 			function regdata(){
-				alert("dddd")
+				$("#accountForm").submit();	
+
 			}
 		</script>
 </body>
