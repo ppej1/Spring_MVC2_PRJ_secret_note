@@ -9,9 +9,9 @@ DROP TABLE Disposal CASCADE CONSTRAINTS;
 DROP TABLE Stock CASCADE CONSTRAINTS;
 DROP TABLE Uses CASCADE CONSTRAINTS;
 DROP TABLE Employee CASCADE CONSTRAINTS;
+DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 DROP TABLE SubClass CASCADE CONSTRAINTS;
 DROP TABLE MainClass CASCADE CONSTRAINTS;
-DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 
 
 
@@ -67,7 +67,7 @@ CREATE TABLE Disposal
 	dSerialNumber varchar2(40) NOT NULL,
 	scSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
-	eDate date NOT NULL,
+	dDate date NOT NULL,
 	dAmount number NOT NULL,
 	condition varchar2(40) DEFAULT 'Disposal' NOT NULL,
 	PRIMARY KEY (dSerialNumber)
@@ -84,7 +84,7 @@ CREATE TABLE Employee
 	email varchar2(40) NOT NULL,
 	ePhone varchar2(40) NOT NULL,
 	-- check 제약조건으로 퇴직, 현직 으로 나뉨
-	status varchar2(40)
+	status varchar2(40),
 	PRIMARY KEY (userid)
 );
 
@@ -99,7 +99,6 @@ CREATE TABLE MainClass
 
 CREATE TABLE NuturitionDB
 (
-	foodCode varchar2(40) NOT NULL,
 	foodTitle varchar2(40) NOT NULL,
 	indexs varchar2(40) NOT NULL,
 	foodGroup varchar2(40) NOT NULL,
@@ -109,7 +108,9 @@ CREATE TABLE NuturitionDB
 	sugar number NOT NULL,
 	natrium number NOT NULL,
 	chole number NOT NULL,
-	PRIMARY KEY (foodCode)
+	nutritionserial number NOT NULL,
+	foodCode varchar2(40) NOT NULL UNIQUE,
+	PRIMARY KEY (nutritionserial)
 );
 
 
@@ -142,7 +143,6 @@ CREATE TABLE SubClass
 (
 	scSerialNumber varchar2(40) NOT NULL,
 	mcSerialNumber varchar2(40) NOT NULL,
-	foodCode varchar2(40),
 	sImg varchar2(200),
 	sName varchar2(40) NOT NULL,
 	unit varchar2(40) NOT NULL,
@@ -150,7 +150,8 @@ CREATE TABLE SubClass
 	-- 
 	price number NOT NULL,
 	location varchar2(40) NOT NULL,
-	dDate varchar2(20) NOT NULL,
+	foodCode varchar2(40) NOT NULL,
+	eDate varchar2(20) NOT NULL,
 	PRIMARY KEY (scSerialNumber)
 );
 
@@ -218,14 +219,14 @@ ALTER TABLE SubClass
 ;
 
 
-ALTER TABLE SubClass
-	ADD FOREIGN KEY (foodCode)
-	REFERENCES NuturitionDB (foodCode)
+ALTER TABLE Disposal
+	ADD FOREIGN KEY (scSerialNumber)
+	REFERENCES SubClass (scSerialNumber)
 ;
 
 
-ALTER TABLE Disposal
-	ADD FOREIGN KEY (scSerialNumber)
+ALTER TABLE NuturitionDB
+	ADD FOREIGN KEY (foodCode)
 	REFERENCES SubClass (scSerialNumber)
 ;
 
@@ -262,11 +263,15 @@ COMMENT ON COLUMN SubClass.price IS '
 ';
 
 
+
+
+
+
 CREATE SEQUENCE ck_seq;
 CREATE SEQUENCE comment_seq;
 CREATE SEQUENCE st_seq;
 CREATE SEQUENCE mc_seq;
-
+CREATE SEQUENCE ac_seq;
 
 
 insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');

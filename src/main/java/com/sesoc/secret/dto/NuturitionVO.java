@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NuturitionVO {
+	String nutritionserial;
 	String foodCode;
 	String foodTitle;
 	String indexs;
