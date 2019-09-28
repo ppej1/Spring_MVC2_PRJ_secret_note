@@ -80,7 +80,9 @@
  						pages = book.turn('pages');
  						set_even_button(currentPage);
  						nav();
- 						
+ 						if (currentPage == 2) {
+ 	 						turn();
+						}
  					}		
  				}
  			});

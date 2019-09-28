@@ -4,6 +4,34 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.sesoc.secret.dao.AccoutMapper">
-
+<mapper namespace="com.sesoc.secret.dao.AccountMapper">
+	<insert id="insertAccount" parameterType="AccountVO">
+	insert into ACCOUNT
+	(
+	ACCOUNTNAME,
+	AIMG,
+	AMANAGER,
+	APHONE,
+	ACONTENTS,
+	AURL
+	)
+	values(
+	#{accountName},
+	#{aImg},
+	#{aManager},
+	#{aPhone},
+	#{acontents},
+	#{aURL}
+	)
+	</insert>
+	<select id="selectAllList" resultType="AccountVO">
+	select 
+	 	ACCOUNTNAME,
+		AIMG,
+		AMANAGER,
+		APHONE,
+		ACONTENTS,
+		AURL
+	from ACCOUNT
+	</select>
 </mapper>

@@ -22,10 +22,10 @@ DROP SEQUENCE st_seq;
 
 CREATE TABLE Account
 (
-	accountName varchar2(20) NOT NULL,
-	aImg varchar2(200) NOT NULL,
-	aManager varchar2(20) NOT NULL,
-	aPhone varchar2(20) NOT NULL,
+	accountName varchar2(50) NOT NULL,
+	aImg varchar2(200),
+	aManager varchar2(50) NOT NULL,
+	aPhone varchar2(50) NOT NULL,
 	-- 회사설명
 	aContents varchar2(1000),
 	-- 홈페이지 주소

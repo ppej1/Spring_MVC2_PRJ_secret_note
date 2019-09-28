@@ -20,7 +20,7 @@ function createAccount() {
 	};
 
 	var insertAccount = openDialog(url, name, option, function (win) {
-		
+		turn();
 		//팝업창이 닫히게 될 때 실행 된 내용
 	});
 }

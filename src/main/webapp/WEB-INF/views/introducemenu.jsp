@@ -109,6 +109,7 @@
 		$('.flipbook').turn("disable", false);
 		$('.flipbook').turn("page", 2);
 		$('.flipbook').turn("disable", true);
+		
 	}
 	</script>
 		

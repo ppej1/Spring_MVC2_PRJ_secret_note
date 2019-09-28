@@ -53,9 +53,9 @@
 							<h2 class="tm-block-title">取引先</h2>
 							<div class="tm-signup-form row">
 								<div class="form-group col-lg-6">
-									<label for="accontName">会社名</label> 
-									<input id="accontName" name="accontName" type="text" class="form-control validate" />
-									<span id="accontName"></span>
+									<label for="accountName">会社名</label> 
+									<input id="accountName" name="accountName" type="text" class="form-control validate" />
+									<span id="accountName"></span>
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="aManager">担当マネージャー</label> 
@@ -68,8 +68,8 @@
 									<span id="aPhone"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="acontent">内容</label> 
-									<textarea rows="6" cols="50" id="acontent" name="acontent" class="form-control validate" ></textarea>								
+									<label for="acontents">内容</label> 
+									<textarea rows="6" cols="50" id="acontents" name="acontents" class="form-control validate" ></textarea>								
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="aURL">会社のホームページ</label> 
@@ -126,7 +126,6 @@
 			}
 			function regdata(){
 				$("#accountForm").submit();	
-
 			}
 		</script>
 </body>

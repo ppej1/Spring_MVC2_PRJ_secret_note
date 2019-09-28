@@ -1,5 +1,7 @@
 package com.sesoc.secret.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sesoc.secret.dao.AccountRepository;
 import com.sesoc.secret.dto.AccountVO;
+import com.sesoc.secret.dto.CheckListVO;
 import com.sesoc.secret.util.FileService;
 @Controller
 public class AccountController {
@@ -27,16 +30,21 @@ public class AccountController {
 	
 	
 	@RequestMapping(value = "/insertAccount", method = RequestMethod.POST)
-	@ResponseBody
 	public String home(AccountVO account, Model model, MultipartFile upload) {
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		account.setAImg(savedfile);
 		System.out.println(account);
-		//int result = repo.insertAccount(account);
-		return "success";
+		int result = repo.insertAccount(account);
+		return "redirect:/insertAccount";
 	}
 	
-	
+	@RequestMapping(value = "/loadAccountList", method = RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<AccountVO> loadAccountList(){
+		ArrayList<AccountVO> list = repo.selectAllList();
+		System.out.println(list);
+		return list;
+	}
 	
 	
 }

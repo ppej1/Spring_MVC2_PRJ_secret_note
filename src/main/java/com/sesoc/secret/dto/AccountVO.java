@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountVO {
-	String accontName;
+	String accountName;
 	String aImg;
 	String aManager;
 	String aPhone;
-	String acontent;
+	String acontents;
 	String aURL;
 }
