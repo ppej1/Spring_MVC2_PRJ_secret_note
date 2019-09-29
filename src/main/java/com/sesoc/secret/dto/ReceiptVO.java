@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ReceiptVO {
 	String rSerialNumber;
-	String accountName;
 	String scSerialNumber;
 	String userid;
 	int rAmount;
 	String rDate;
+	String rComment;
+	String accountserial;
 }
