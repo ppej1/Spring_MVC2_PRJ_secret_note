@@ -57,7 +57,7 @@
 									<select id="mcserialNumber" size ="1" name="mcserialNumber"class="form-control validate select_mcserialNumber">
 									
 									</select>
-									<span id="mcserialNumber"></span>
+									<span id="mcserialNumber1"></span>
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="foodCode">FOOD CODE</label> 
@@ -72,10 +72,10 @@
 								<div class="form-group col-lg-6">
 									<label for="unit">単位</label> 
 									<select id="unit" name="unit"class="form-control validate">
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
-									<option value="">a</option>
+									<option value="kg">kg</option>
+									<option value="g">g</option>
+									<option value="L">L</option>
+									<option value="ml">ml</option>
 									</select>
 									<span id="unit"></span>
 								</div>
@@ -85,7 +85,7 @@
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="location">貯蔵位置</label> 
-									<select id="location" name="mcserialNumber"class="form-control validate">
+									<select id="location" name="location"class="form-control validate">
 									<option value="1">冷凍</option>
 									<option value="2">冷蔵</option>
 									<option value="3">常温</option>
@@ -99,7 +99,7 @@
 							</div>
 							<div class="col-12 button_popup">
 								<label class="tm-hide-sm">&nbsp;</label>
-								<button type="button" class="btn btn-primary btn-block text-uppercase" onclick="regdata();">登録</button>
+								<button type="button" class="btn btn-primary btn-block text-uppercase" id="btnSub">登録</button>
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
@@ -120,6 +120,11 @@
 		<script>
 			$(function() {
 				MainClass();
+				
+				$("#btnSub").on("click", function(){
+					subList();
+				})
+
 				$("#deleteImg").on("click", function() {
 					deleteImage(); // 미리보기 함수
 				})		
@@ -132,6 +137,58 @@
 				});
 			});
 		
+			function subList(){
+				var mcserialNumber  = $("#mcserialNumber").val();
+				var foodCode = $("#foodCode").val();
+				var sName = $("#sName").val();
+				var unit = $("#unit").val();
+				var price = $("#price").val();
+				var location = $("#location").val();
+				var eDate = $("#eDate").val();
+				
+				var formData = new FormData(); // 첨부 파일을 ajax로 끌고가기위한 객체
+				var inputFile = $("input[name='upload']");
+				var files = inputFile[0].files;
+				
+				formData.append("upload", files[0]);
+				
+				var sImg ='';
+				
+				$.ajax({
+					url : "subpic",
+					async : false,
+					data : formData,
+					type : "POST",
+					processData : false,
+					contentType : false,
+					success : function(resp){
+						sImg = resp;
+					}
+				})
+
+				var subList = {
+					"mcserialNumber"  : mcserialNumber
+					, "foodCode" : foodCode
+					, "sImg" : sImg
+					, "sName" : sName
+					, "unit" : unit
+					, "price" : price
+					, "location" : location
+					, "eDate" : eDate
+				};
+				
+				alert(JSON.stringify(subList))
+				
+				$.ajax({
+					type : "POST"
+					, url : "insertSubclass"
+					, async : false
+					, data : subList
+					, success : function(resp) {
+						self.close();
+					}
+				});
+			}
 			
 			function MainClass(){
 				$.ajax({
@@ -152,9 +209,6 @@
 
 			}
 			
-			
-			
-			
 			function previewImage(input) {
 				// 이미지를 선택하면
 				if (input.files && input.files[0]) {
@@ -169,10 +223,6 @@
 				$("#upload").attr("src", "resources/img/meterial/food.jpg")
 
 			}
-			function regdata(){
-				alert("dddd")
-			}
-			
 			
 		</script>
 </body>
