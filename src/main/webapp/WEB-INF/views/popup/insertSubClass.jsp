@@ -76,6 +76,8 @@
 									<option value="g">g</option>
 									<option value="L">L</option>
 									<option value="ml">ml</option>
+									<option value="個">個</option>
+									<option value="本">本</option>
 									</select>
 									<span id="unit"></span>
 								</div>
