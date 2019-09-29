@@ -274,6 +274,8 @@ CREATE SEQUENCE mc_seq;
 CREATE SEQUENCE ac_seq;
 CREATE SEQUENCE re_seq;
 CREATE SEQUENCE stock_seq;
+CREATE SEQUENCE sb_seq;
+CREATE SEQUENCE stock_seql;
 
 
 insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');
