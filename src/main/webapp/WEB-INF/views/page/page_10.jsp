@@ -12,25 +12,28 @@
 								style="background-image: url('resources/template/img/dishes_1.jpg');">
 							</div>
 							<div class="tm-product-table-container">
-								<form>
+								<form id="stockForm">
 									<table id="regist">
 										<tr>
 											<th>担当者</th>
-											<td colspan="2"><input id="aManager" type="text"
-												name="aManager" /></td>
-											<td class="tm-product-name" colspan="2"><select
-												id="account" name="account">
-													<option value="OURHOME">OUR HOME</option>
-													<option value="CJ">CJ</option>
-													<option value="HYUNDAI">HYUNDAI</option>
-													<option value="SAMSUNG">SAMSUNG</option>
-											</select></td>
+											<td colspan="2">	
+												<select id="strEmp" name="strEmp">
+													<!-- tag -->
+												</select>
+											</td>
+											<td class="tm-product-name" colspan="2">
+												<select id="accList" name="accList">
+													<!-- tag -->
+												</select>
+											</td>
 										</tr>
-
 										<tr>
 											<th>材料名</th>
-											<td colspan="2"><input id="sName" type="text"
-												name="sName" /></td>
+											<td colspan="2">
+												<select id="selectSub" name="selectSub">
+													<!-- tag -->
+												</select>
+											</td>
 										</tr>
 										<tr>
 											<th>個数</th>
@@ -69,9 +72,9 @@
 
 				</div>
 				<div class="info_button_container">
-					<button type="button" id="regist" name="regist"
+					<button type="button" id="regist1" name="regist1"
 						class="btn btn-primary btn-sm detail_btn">입고 등록</button>
-					<button type="button" id="cancel" name="cancel"
+					<button type="button" id="cancel1" name="cancel1"
 						class="btn btn-primary btn-sm detail_btn">취소</button>
 				</div>
 			</div>
@@ -89,4 +92,3 @@
 		</div>
 	</div>
 </div>
-

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sesoc.secret.dto.MainClassVO;
+import com.sesoc.secret.dto.SubClassVO;
 
 
 @Repository
@@ -20,6 +21,9 @@ public class SubClassRepository {
 		return mapper.selectMainClassList();
 	}
 	
-	
+	public int insert(SubClassVO subclass) {
+		SubClassMapper mapper = session.getMapper(SubClassMapper.class);
+		return mapper.insert(subclass);
+	}
 	
 }

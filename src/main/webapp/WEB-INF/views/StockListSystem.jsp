@@ -131,16 +131,135 @@
 	
 
 	
-	<script>
-	function main(){
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 2);
-			$('.flipbook').turn("disable", true);
-			calendarPage08();
-			calendarPage09();
-	}
-	</script>
 <script>
+function main(){
+		$('.flipbook').turn("disable", false);
+		$('.flipbook').turn("page", 2);
+		$('.flipbook').turn("disable", true);
+		calendarPage08();
+		calendarPage09();
+		}
+</script>
+<script>
+
+$(function(){	
+	empListLoad();
+	accListLoad();
+	subListLoad();
+
+	$("#regist1").on("click", function(){
+		reciept();
+		stock();
+	})
+	
+	$("#cancel1").on("click", function(){
+		$("#stockForm").reset();
+	})
+	
+	
+});
+
+function reciept(){
+	
+	var scSerialNumber  = $("#selectSub").val();
+	var userid  = $("#strEmp").val();
+	var rAmount  = $("#amount").val();
+	var rComment  = $("#status").val();
+	var accountserial  = $("#accList").val();
+	
+	var sendData = {
+			"scSerialNumber": scSerialNumber,
+			"userid": userid,
+			"rAmount": rAmount,
+			"rComment": rComment,
+			"accountserial": accountserial
+		};
+	
+	$.ajax({
+		url:'recieptReg',
+		type: 'post',
+		data: sendData,
+		success: function(res){
+			alert("reciept등록완료")
+		}
+	});	
+}
+
+function stock(){
+	var scSerialNumber  = $("#selectSub").val();
+	var userid  = $("#strEmp").val();
+	var deDate  = $("#deDate").val();
+	
+	var sendData = {
+			"scSerialNumber": scSerialNumber,
+			"userid": userid,
+			"deDate": deDate
+		};
+	
+	$.ajax({
+		url:'stockReg',
+		type: 'post',
+		data: sendData,
+		success: function(res){
+			alert("stock등록완료")
+		}
+	});	
+}
+
+function empListLoad(){
+	$.ajax({
+		url:'empListLoad',
+		type: 'post',
+		success: outputEmp	
+	});	
+}
+
+function outputEmp(res){
+	
+	var tag = '';
+	$.each(res, function (index, item) {
+		tag += '<option value="'+ item.userid +'">'+ item.userName +'</option>';	
+	});
+
+	$("#strEmp").html(tag);
+}
+
+function accListLoad(){
+	$.ajax({
+		url:'accListLoad',
+		type: 'post',
+		success: outputAcc
+	});	
+}
+
+function outputAcc(res){
+	
+	var tag = '';
+	$.each(res, function (index, item) {
+		tag += '<option value="'+ item.accountserial +'">'+ item.accountName +'</option>';	
+	});
+	
+	$("#accList").html(tag);
+}
+
+function subListLoad(){
+	$.ajax({
+		url:'subListLoad',
+		type: 'post',
+		success: outputSub	
+	});	
+}
+
+function outputSub(res){
+	
+	var tag = '';
+	$.each(res, function (index, item) {
+		tag += '<option value="'+ item.scSerialNumber +'">'+ item.sname +'</option>';	
+	});
+	
+	$("#selectSub").html(tag);
+}
+
 $(function(){
 	$('#frozen_storageBtn').on('click', function () {
 		alert("냉동을 클릭했음");
@@ -164,11 +283,7 @@ $(document).ready(function () {
 		$(this).parents().next('.hide').toggle();
 	});
 });
+
 </script>
-
-
-
-
  </body>
-
  </html>
