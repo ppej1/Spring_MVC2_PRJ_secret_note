@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class MainClassVO {
 	String mcSerialNumber;
 	String mClass;
-	String mcImg;
 }

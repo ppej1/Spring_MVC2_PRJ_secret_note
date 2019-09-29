@@ -14,7 +14,7 @@
 			e.userName,
 			e.rank,
 			d.dAmount,
-			d.dDate
+			TO_CHAR(d.dDate,'yyyy-MM-dd') AS dDate
 		FROM
 			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON d.userid = e.userid
@@ -29,13 +29,13 @@
 			e.userName,
 			e.rank,
 			d.dAmount,
-			d.dDate
+			TO_CHAR(d.dDate,'yyyy-MM-dd') AS dDate
 		FROM
 			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON d.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
-        dDate = #{dDate}
+        TO_CHAR(dDate,'yyyy-MM-dd') = #{dDate}
 	</select>	
 	
 	<select id="disposalAmountPieChart1" parameterType="DisposalListVO" resultType="DisposalListVO">
@@ -48,7 +48,7 @@
 			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
-        dDate = #{dDate}
+        TO_CHAR(dDate,'yyyy-MM-dd') =  #{dDate}
          GROUP BY 	m.mClass,s.location,s.sName 
 	</select>		
 </mapper>

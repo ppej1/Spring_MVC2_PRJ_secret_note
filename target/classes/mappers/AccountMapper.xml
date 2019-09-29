@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.AccountMapper">
+	<insert id="insertAccount" parameterType="AccountVO">
+	insert into ACCOUNT
+	(
+	ACCOUNTNAME,
+	AIMG,
+	AMANAGER,
+	APHONE,
+	ACONTENTS,
+	AURL,
+	ACCOUNTSERIAL
+	)
+	values(
+	#{accountName},
+	#{aImg},
+	#{aManager},
+	#{aPhone},
+	#{acontents},
+	#{aURL},
+	AC_SEQ.nextval
+	)
+	</insert>
+	<select id="selectAllList" resultType="AccountVO">
+	select 
+	 	ACCOUNTNAME,
+		AIMG,
+		AMANAGER,
+		APHONE,
+		ACONTENTS,
+		AURL
+	from ACCOUNT
+	</select>
+</mapper>

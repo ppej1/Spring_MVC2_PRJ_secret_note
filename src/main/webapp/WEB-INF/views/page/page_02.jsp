@@ -30,7 +30,7 @@
 						<div class="col-md-8 text-center col-sm-12 element-animate">
 							<h1>プレミアムバージョンを購入。</h1>
 							<a
-								href="http://ec2-3-19-240-8.us-east-2.compute.amazonaws.com/potoFolio/index"
+								href="#"
 								class="btn btn-white btn-outline-white">会社のホームページへ</a>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 					<div class="col-md-4">
 						<blockquote class="testimonial">
 							<div class="d-flex author">
-								<img src="resources/template/img/person_1.jpg" alt=""
+								<img src="resources/template/img/PARK.jpg" alt=""
 									class="mr-4">
 								<div class="author-info">
 									<h4>パク テヲン</h4>

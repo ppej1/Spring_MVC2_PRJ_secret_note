@@ -28,6 +28,9 @@
 		<mapper resource="mappers/UsedMapper.xml" />
 		<mapper resource="mappers/DisposalMapper.xml" />
 		<mapper resource="mappers/CommentMapper.xml" />		
-		<mapper resource="mappers/LossMapper.xml" />		
+		<mapper resource="mappers/LossMapper.xml" />	
+		<mapper resource="mappers/StockMapper.xml" />		
+		<mapper resource="mappers/AccountMapper.xml" />
+		<mapper resource="mappers/SubClassMapper.xml" />
 	</mappers>
 </configuration>

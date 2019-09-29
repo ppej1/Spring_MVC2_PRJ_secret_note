@@ -39,6 +39,7 @@
 		FROM CHECKLIST
 		WHERE 	
 		COMPLETES = #{completes}
+		ORDER BY IMPORTANCE DESC
 	</select>
 	<update id="successCheckList" parameterType="CheckListVO">
 	update CHECKLIST

@@ -7,6 +7,7 @@
  <head>
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>店長のシークレットノート</title>	
  	<style>
 	 	body {
  		}
@@ -101,12 +102,14 @@
     <script src="resources/template/js/main.js"></script>
 
 	<script type="text/javascript" src="resources/js/page/introducemenu.js"></script>		
+	<script src="resources/js/account.js"></script>
 	
 	<script>
 	function main(){
 		$('.flipbook').turn("disable", false);
 		$('.flipbook').turn("page", 2);
 		$('.flipbook').turn("disable", true);
+		
 	}
 	</script>
 		

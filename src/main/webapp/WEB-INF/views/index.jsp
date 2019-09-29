@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  	<title>店長のシークレットノート</title>
 	<style>
 		body {
 		}
@@ -62,17 +62,18 @@
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script src="resources/js/turnJs.js"></script>
+	    <script src="resources/template/js/bootstrap.min.js"></script>
 
 	<script>
 		function main() {
-
 			$('.flipbook').turn("disable", true);
-
+			
 			$('#btnSignup').on('click', function() {
 				$(".flipbook").turn("disable", false);
 				$(".flipbook").turn("page", 2);
 				$('.flipbook').turn("disable", true);
 			});
+			
 			$('#btnReturn').on('click', function() {
 				$(".flipbook").turn("disable", false);
 				$(".flipbook").turn("page", 1);
@@ -82,7 +83,6 @@
 		}
 	</script>
 	
-	    <script src="resources/template/js/bootstrap.min.js"></script>
 	
 </body>
 

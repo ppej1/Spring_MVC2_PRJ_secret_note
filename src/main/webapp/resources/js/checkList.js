@@ -53,7 +53,15 @@ function chekListOutput(data) {
 			tag += '<i class="fas fa-check"></i></a>';
 			tag += '</th>';
 			tag += '<td class="tm-product-name" colspan="3">' + '<a href ="#" class ="tm-product-serial" data-value="' + item.ckSerialNumber + '" >' + item.ckTitle + '</a></td>"';
-			tag += '<td>' + item.importance + '</td>';
+			
+			if(item.importance == 3){
+				tag += '<td>상</td>';
+			}else if(item.importance == 2){
+				tag += '<td>중</td>'
+			}else{
+				tag += '<td>하</td>'
+			}
+			
 			tag += '<td rowspan="2">';
 			tag += '<a href="#" class="tm-product-delete-link deleteCheck" data-value="' + item.ckSerialNumber + '">';
 			tag += '<i class="far fa-trash-alt tm-product-delete-icon"></i>';
@@ -89,7 +97,7 @@ function chekListOutput(data) {
 function createCheckList() {
 	var url = "insertCheckList";
 	var name = "popup test";
-	var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+	var option = "width = 367, height = 416, top = 100, left = 200, location = no"
 
 	var openDialog = function (uri, name, options, closeCallback) {
 		var win = window.open(uri, name, options);

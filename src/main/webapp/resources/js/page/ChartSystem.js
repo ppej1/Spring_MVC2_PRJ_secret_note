@@ -4,4 +4,7 @@
 				tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
 				$('.selectICon_div').html(tag);
 			
-		}		
+		}
+		function turn(){
+
+		}

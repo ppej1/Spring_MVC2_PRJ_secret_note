@@ -30,13 +30,13 @@
 			e.userName,
 			e.rank,
 			u.uAmount,
-			u.uDate
+			TO_CHAR(u.uDate,'yyyy-MM-dd') AS udate
 		FROM
 			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON u.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
 		WHERE
-			uDate = #{uDate}
+			TO_CHAR(uDate,'yyyy-MM-dd') = #{uDate}
 	</select>
 	
 	<select id="usedList2" resultType="UsedListVO">
