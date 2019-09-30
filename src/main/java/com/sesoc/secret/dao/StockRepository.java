@@ -47,4 +47,10 @@ public class StockRepository {
 		
 		return mapper.insertSt(st);
 	}
+
+	public SubClassVO subSelect(String scSerialNumber) {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.subSelect(scSerialNumber);
+	}
 }

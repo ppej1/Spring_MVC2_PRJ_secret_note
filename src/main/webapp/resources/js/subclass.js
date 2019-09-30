@@ -20,7 +20,7 @@ function insertSubClass() {
 	};
 
 	var insertSubClass = openDialog(url, name, option, function (win) {
-		
+		subListLoad();
 		//팝업창이 닫히게 될 때 실행 된 내용
 	});
 }

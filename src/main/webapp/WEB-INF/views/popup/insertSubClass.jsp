@@ -60,11 +60,6 @@
 									<span id="mcserialNumber1"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="foodCode">FOOD CODE</label> 
-									<input id="foodCode" name="foodCode" type="text" class="form-control validate" />
-									<span id="foodCode"></span>
-								</div>
-								<div class="form-group col-lg-6">
 									<label for="sName">材料名</label> 
 									<input id="sName" name="sName" type="text" class="form-control validate" />
 									<span id="sName"></span>
@@ -170,7 +165,6 @@
 
 				var subList = {
 					"mcserialNumber"  : mcserialNumber
-					, "foodCode" : foodCode
 					, "sImg" : sImg
 					, "sName" : sName
 					, "unit" : unit
