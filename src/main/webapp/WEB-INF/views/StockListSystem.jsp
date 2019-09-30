@@ -36,6 +36,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<!-- even ICON -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet"/>
+	<!-- userInfo 관련 -->	
+	<script src="resources/js/employee.js"></script>
 	
 	<!-- main index page -->
     <link rel="stylesheet" href="resources/template/css/animate.css">
@@ -118,6 +120,7 @@
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
 	<script src="resources/js/subclass.js"></script>
+	<script  src="resources/js/stock.js "type="text/javascript"></script>	
 
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/page/StockListSystem.js"></script>			
@@ -130,16 +133,6 @@
 
 	
 <script>
-function main(){
-		$('.flipbook').turn("disable", false);
-		$('.flipbook').turn("page", 2);
-		$('.flipbook').turn("disable", true);
-		calendarPage08();
-		calendarPage09();
-		}
-</script>
-<script>
-
 $(function(){	
 	accListLoad();
 	subListLoad();
@@ -148,95 +141,15 @@ $(function(){
 		reciept();
 		stock();
 	})
-	
+
 	$("#cancel1").on("click", function(){
 		$("#stockForm").reset();
 	})
-	
-	
-});
 
-function reciept(){
-	
-	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#userid").val();
-	var rAmount  = $("#rAmount").val();
-	var rComment  = $("#rComment").val();
-	var accountserial  = $("#accList").val();
-	
-	var sendData = {
-			"scSerialNumber": scSerialNumber,
-			"userid": userid,
-			"rAmount": rAmount,
-			"rComment": rComment,
-			"accountserial": accountserial
-		};
-	
-	$.ajax({
-		url:'recieptReg',
-		type: 'post',
-		data: sendData,
-		success: function(res){
-			alert("reciept등록완료")
-		}
-	});	
-}
 
-function stock(){
-	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#userid").val();
-	var sAmount  = $("#rAmount").val();	
-	var sendData = {
-			"scSerialNumber": scSerialNumber,
-			"userid": userid,
-			"sAmount": sAmount,
-		};
-	
-	$.ajax({
-		url:'stockReg',
-		type: 'post',
-		data: sendData,
-		success: function(res){
-			alert("stock등록완료")
-		}
-	});	
-}
-
-function accListLoad(){
-	$.ajax({
-		url:'accListLoad',
-		type: 'post',
-		success: outputAcc
-	});	
-}
-
-function outputAcc(res){
-	
-	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.accountserial +'">'+ item.accountName +'</option>';	
 	});
-	
-	$("#accList").html(tag);
-}
 
-function subListLoad(){
-	$.ajax({
-		url:'subListLoad',
-		type: 'post',
-		success: outputSub	
-	});	
-}
 
-function outputSub(res){
-	
-	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.scSerialNumber +'" data-value="'+item.edate+'">'+ item.sname +'</option>';	
-	});
-	
-	$("#selectSub").html(tag);
-}
 
 $(function(){
 	$('#frozen_storageBtn').on('click', function () {

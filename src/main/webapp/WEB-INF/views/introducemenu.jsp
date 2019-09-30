@@ -91,6 +91,8 @@
 	<!-- turn.js 관련  -->
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+	<!-- userInfo 관련 -->	
+	<script src="resources/js/employee.js"></script>
 
    	<!-- main -->
     <script src="resources/template/js/popper.min.js"></script>

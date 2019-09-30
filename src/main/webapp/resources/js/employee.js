@@ -21,3 +21,5 @@ function updateUserInfo() {
 		// 팝업창이 닫히게 될 때 실행 된 내용
 	});
 }
+
+
