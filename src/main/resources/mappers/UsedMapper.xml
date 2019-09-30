@@ -39,12 +39,30 @@
 			TO_CHAR(uDate,'yyyy-MM-dd') = #{uDate}
 	</select>
 	
-	<select id="usedList2" resultType="UsedListVO">
+	<select id="usdeAmountPieChart" parameterType="UsedListVO" resultType="UsedListVO">
 		SELECT
-            s.sName,
-            sum(u.uAmount*s.price) AS uAmount
+			m.mClass,
+			s.location,
+			s.sName,
+			sum(u.uAmount) As uAmount
 		FROM
 			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
-        GROUP BY s.sName
+			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
+        WHERE
+        TO_CHAR(uDate,'yyyy-MM-dd') =  #{uDate}
+         GROUP BY 	m.mClass,s.location,s.sName 
 	</select>
+	
+	<select id="whoUsedPieChart" parameterType="UsesVO" resultType="UsesVO">
+		SELECT
+            userid,
+            sum(uAmount) AS uAmount
+		FROM
+			Uses
+        WHERE
+            TO_CHAR(uDate,'yyyy-MM-dd') = #{uDate}
+        GROUP BY 
+            userid
+	</select>
+
 </mapper>

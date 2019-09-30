@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sesoc.secret.dto.DisposalListVO;
+import com.sesoc.secret.dto.DisposalVO;
 
 @Repository
 public class DisposalRepository {
@@ -23,8 +24,13 @@ public class DisposalRepository {
 		return mapper.disposalListOneDay(disposal);
 	}
 
-	public List<DisposalListVO> disposalAmountPieChart1(DisposalListVO disposal) {
+	public List<DisposalListVO> disposalAmountPieChart(DisposalListVO disposal) {
 		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
-		return mapper.disposalAmountPieChart1(disposal);
+		return mapper.disposalAmountPieChart(disposal);
+	}
+
+	public List<DisposalVO> whoDestroyPieChart(DisposalVO who) {
+		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
+		return mapper.whoDestroyPieChart(who);
 	}
 }

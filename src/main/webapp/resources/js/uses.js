@@ -1,14 +1,43 @@
-function fusedList(startDate) {
+var nowdate2 = '';
 
+function setnowDate2() {
+	nowdate2 = startDate;
+}
+
+function fusedList(startDate) {
+	setnowDate2(startDate);
+	
 	var sendData = {
 			"uDate": startDate
 		}
-		$.ajax({
-			type: 'POST',
-			url: 'usedListOneDay',
-			data: sendData,
-			success: output1
-		});
+	
+	$.ajax({
+		type: 'POST',
+		url: 'usedListOneDay',
+		data: sendData,
+		success: output1
+	});
+	
+	$.ajax({
+		type :'POST'
+		, url : 'usedAmountPieChart'
+		,data: sendData
+		, success : usedAmountPieChart
+	})
+	
+	$.ajax({
+		type :'POST'
+		, url : 'whoUsedPieChart'
+		,data: sendData
+		, success : whoUsedPieChart
+	})
+	
+	$.ajax({
+		type :'POST'
+		, url : 'usedAmountPieChart'
+		,data: sendData
+		, success : materialChart1
+	})
 }
 
 function output1(resp) {
@@ -42,85 +71,130 @@ function output1(resp) {
 		$("#newUsedList").html(tag);
 	}
 
-cusedList();
+function usedAmountPieChart(resp){
+	var result = [];
 
+		result = resp.map(item => [item.mclass,parseInt(item.uamount)])
+	
+		anychart.onDocumentReady(function () {
+			
+			// create pie chart with passed data
+		    var chart = anychart.pie(result);
+		    
+		    chart.palette(anychart.palettes.blue);
+		    chart.fill("aquastyle");
+		    // set chart title text settings
+		    chart.title('분류별 사용량')
+		            //set chart radius
+		            .radius('43%')
+		            // create empty area in pie chart
+		            .innerRadius('30%');
 
+		    // set container id for the chart
+		    chart.container('pieChart1');
+		    // initiate chart drawing
+		    chart.draw();
+		});
+	};
 
-var sName = [];
-var uAmount = [];
+function whoUsedPieChart(resp){
+	var result = [];
+		
+		result = resp.map(item => [item.userid,parseInt(item.uamount)])
+		
+	anychart.onDocumentReady(function () {
 
-function cusedList() {
-	$.ajax({
-		type :'GET'
-		, url : 'usedList'
-		, success : output2
-	})
+	    // create a chart and set the data
+	    var chart = anychart.pie(result);
+	    
+	    // configure the visual settings of the chart
+	    chart.fill("aquastyle");
+
+	    // set the chart title
+	    chart.title("담당자별 사용량");
+
+	    // set the container id
+	    chart.container("whoUsedPieChart");
+
+	    // initiate drawing the chart
+	    chart.draw();
+	});
 }
 
-function output2(resp) {
+function materialChart1(resp){
 	
-	$.each(resp, function(index, item){
-		sName.push(item.sname)
-		uAmount.push(item.uamount)
-	})
+	var result = [];
+
+	result = resp.map(item => [item.sname,parseInt(item.uamount)])
 	
-	for(var i = 0; i < uAmount.length; i++){
-		pieChart.push((uAmount[i]/sum(uAmount))*100)
+	anychart.onDocumentReady(function () {
+	    // create column chart
+	    var chart = anychart.column();
+
+	    var dataSet = anychart.data.set(result);
+
+	    // set chart title
+	    chart.title('재료별 사용량');
+	    
+	    // map data for the first series, take x from the zero column and value from the first column of data set
+	    var seriesData_one = dataSet.mapAs({'x': 0, 'value': 1});
+
+	    // map data for the second series, take x from the zero column and value from the second column of data set
+	    var seriesData_two = dataSet.mapAs({'x': 0, 'value': 2});
+
+	    // create first series with mapped data
+	    var seriesFirst = chart.column(seriesData_one);
+	    seriesFirst.name('사용량');
+
+	    var shapes = seriesFirst.rendering().shapes();
+
+	    seriesFirst.color('#5AC5CF');
+	    // set rendering settings
+	    seriesFirst.rendering()
+	            // set point function to drawing
+	            .point(drawer)
+	            // set update point function to drawing, change the point shape when the state changes
+	            .updatePoint(drawer)
+	            // set shapes
+	            .shapes(shapes);
+	    // set titles for Y-axis
+	    //chart.yAxis().title('Revenue in Dollars');
+	    // set minimum for y-scale
+	    chart.yScale().minimum(0);
+	    // set tooltip prefix
+	    //chart.tooltip().valuePrefix('$');
+	    // turn on legend
+	    chart.legend(false);
+	    // set container id for the chart
+	    chart.container('materialChart1');
+	    // initiate chart drawing
+	    chart.draw();
+	});
+
+	function drawer() {
+	    // if missing (not correct data), then skipping this point drawing
+	    if (this.missing) {
+	        return;
+	    }
+
+	    // get shapes group
+	    var shapes = this.shapes || this.getShapesGroup(this.pointState);
+	    // calculate the left value of the x-axis
+	    var leftX = this.x - this.pointWidth / 2;
+	    // calculate the right value of the x-axis
+	    var rightX = leftX + this.pointWidth;
+	    // calculate the half of point width
+	    var rx = this.pointWidth / 2;
+
+	    shapes.path
+	            // resets all 'line' operations
+	            .clear()
+	            // draw column with rounded edges
+	            .moveTo(leftX, this.zero)
+	            .lineTo(leftX, this.value + rx)
+	            .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
+	            .lineTo(rightX, this.zero)
+	            // close by connecting the last point with the first straight line
+	            .close();
 	}
 }
-
-var label = sName;
-var usedData = uAmount;
-var preUsedData = [18,47,75,34]; //예상사용량 
-
-
-var ctx = document.getElementById('usedChart');
-var myChart = new Chart(ctx, {
-  type: 'horizontalBar',
-  data: {
-    labels: label,
-    datasets: [
-      {
-        label: "사용량",
-        backgroundColor: "#3e95cd",
-        data: usedData
-      }, {
-        label: "예상사용량",
-        backgroundColor: "#c45850",
-        data: preUsedData
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Used Graph'
-    }
-  }
-});
-
-//For a pie chart
-function sum(array) {
-	  var result = 0;
-	  for (var i = 0; i < array.length; i++){
-			result += parseInt(array[i]);
-	  }
-	  return result;
-}
-
-var pieChart = [];
-
-var ctx = document.getElementById('usedChart2');
-var myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: label,
-        datasets: [
-          {
-            backgroundColor: "#ff6384",
-            data: pieChart
-          }
-        ]
-      }
-});
-

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.UsedRepository;
 import com.sesoc.secret.dto.UsedListVO;
+import com.sesoc.secret.dto.UsesVO;
 
 @Controller
 public class UsedController {
@@ -28,16 +29,23 @@ public class UsedController {
 	@RequestMapping(value = "/usedListOneDay", method = RequestMethod.POST)
 	@ResponseBody
 	public List<UsedListVO> usedListOneDay(UsedListVO used){
-		System.out.println(used);
 		List<UsedListVO> list = repo.usedListOneDay(used);
-		System.out.println(list);
 		return list;
 	}
 	
-	@RequestMapping(value = "/usedList2", method = RequestMethod.GET)
+	@RequestMapping(value = "/usedAmountPieChart", method = RequestMethod.POST)
 	@ResponseBody
-	public List<UsedListVO> usedList2(Model model){
-		List<UsedListVO> list = repo.usedList2();
+	public List<UsedListVO> usedAmountPieChart(UsedListVO used){
+		List<UsedListVO> list = repo.usedAmountPieChart(used);
 		return list;
-	}
+	}	
+	
+	@RequestMapping(value = "/whoUsedPieChart", method = RequestMethod.POST)
+	@ResponseBody
+	public List<UsesVO> whoUsedPieChart(UsesVO who){
+		System.out.println("pie"+who);
+		List<UsesVO> list = repo.whoUsedPieChart(who);
+		System.out.println("pie22"+list);
+		return list;
+	}	
 }

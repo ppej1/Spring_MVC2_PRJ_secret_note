@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.sesoc.secret.dto.DisposalListVO;
 import com.sesoc.secret.dto.UsedListVO;
+import com.sesoc.secret.dto.UsesVO;
 
 @Repository
 public class UsedRepository {
@@ -25,9 +27,13 @@ public class UsedRepository {
 		return mapper.usedListOneDay(used);
 	}
 	
-	public List<UsedListVO> usedList2() {
+	public List<UsedListVO> usedAmountPieChart(UsedListVO used) {
 		UsedMapper mapper = session.getMapper(UsedMapper.class);
-	
-		return mapper.usedList2();
+		return mapper.usdeAmountPieChart(used);
+	}
+
+	public List<UsesVO> whoUsedPieChart(UsesVO who) {
+		UsedMapper mapper = session.getMapper(UsedMapper.class);
+		return mapper.whoUsedPieChart(who);
 	}
 }
