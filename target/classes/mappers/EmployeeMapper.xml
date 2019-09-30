@@ -27,6 +27,16 @@
 		,#{ePhone}
 		)
 	</insert>
+	<update id="insertUserInfo" parameterType="Employee_VO">
+		UPDATE Employee
+		SET eImg = #{eImg}
+			,username = #{username}
+			,rank = #{rank}
+			,email = #{email}
+			,ePhone = #{ePhone}
+			,status = #{status}
+		WHERE userid = #{userid}
+	</update>
 
 	<select id="selectone" parameterType="Employee_VO" resultType="Employee_VO">
 		select

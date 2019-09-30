@@ -20,6 +20,22 @@ public class EmployeeController {
 	EmployeeRepository repo;
 	
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
+	
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
+	public String  insertUserInfo(HttpSession session, Model model, Employee_VO employee){
+		employee.setUserid((String) session.getAttribute("loginId"));
+		Employee_VO result = repo.selectone(employee);
+		model.addAttribute("loginUser",result);
+		return "popup/insertUserInfo";
+	}
+	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.POST)
+	@ResponseBody
+	public String  insertUserInfo(Employee_VO employee, HttpSession session){
+		employee.setUserid((String)session.getAttribute("loginId"));
+		System.out.println("수정됨"+ employee);
+		repo.insertUserInfo(employee);
+		return "popup/insertUserInfo";
+	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
@@ -49,7 +65,7 @@ public class EmployeeController {
 			employee.setEImg("avatar.png");
 		}
 		System.out.println("ddd"+ employee.getEImg());
-		int result = repo.insert(employee);
+		repo.insert(employee);
 		return "index";
 	}
 	

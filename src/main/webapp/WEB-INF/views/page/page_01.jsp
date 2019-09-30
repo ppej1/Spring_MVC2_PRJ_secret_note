@@ -5,14 +5,14 @@
 	$(function() {
 		$("#deleteImg").on("click", function() {
 			deleteImage(); // 미리보기 함수
-		})	
+		})
 		$("#eimg").on("change", function() {
 			previewImage(this); // 미리보기 함수
 		})
 
 		$("#idcheck").on("click", idcheck);
-		
-		$("#btnReturn").on("click", function(){
+
+		$("#btnReturn").on("click", function() {
 			location.replace("home");
 		})
 	});
@@ -39,11 +39,11 @@
 			}
 		})
 	};
-	function deleteImage(){
+	function deleteImage() {
 		$("#upload").attr("src", "resources/img/employee/avatar.png")
 
 	}
-	function regdata(){
+	function regdata() {
 		var userid = document.getElementById("userid");
 		var userpwd = document.getElementById("userpwd");
 		var username = document.getElementById("userName");
@@ -52,13 +52,9 @@
 		var phone = document.getElementById("ePhone");
 
 		var img = document.getElementById("eImg");
-		
-		if (
-			userid.value == '' || userpwd.value == ''
-			|| username.value == '' || rank.value =='0' 
-			|| email.value == '' || phone.value == ''
-			)
-		{
+
+		if (userid.value == '' || userpwd.value == '' || username.value == ''
+				|| rank.value == '0' || email.value == '' || phone.value == '') {
 			alert('빈칸을 채워주세요.');
 			userid.focus();
 			return;
@@ -82,7 +78,8 @@ span {
 		<div class="page_title_container_div"></div>
 	</div>
 	<div class="page_container">
-		<form id="regForm" action="signup" method="POST" enctype="multipart/form-data">
+		<form id="regForm" action="signup" method="POST"
+			enctype="multipart/form-data">
 			<div class="container mt-5">
 				<div class="row tm-content-row">
 					<div class="col-12 tm-block-col">
@@ -90,11 +87,10 @@ span {
 							<h2 class="tm-block-title">List of Accounts</h2>
 							<p class="text-white">Accounts</p>
 							<select class="custom-select" id="rank" name="rank">
-								<option value="0">Select account</option>
-								<option value="1">Admin</option>
-								<option value="2">Editor</option>
-								<option value="3">Merchant</option>
-								<option value="4">Customer</option>
+								<option value="0">店長</option>
+								<option value="1">マネージャー</option>
+								<option value="2">クルー</option>
+								<option value="3">バイト</option>
 							</select>
 						</div>
 					</div>
@@ -112,8 +108,8 @@ span {
 								</a>
 							</div>
 							<input id="eimg" name="upload" type="file" style="display: none;" />
-							<span id = "imgresult"></span>
-							<input type="button" class="btn btn-primary btn-block mx-auto"
+							<span id="imgresult"></span> <input type="button"
+								class="btn btn-primary btn-block mx-auto"
 								value="UPLOAD PRODUCT IMAGE"
 								onclick="document.getElementById('eimg').click();" />
 						</div>
@@ -125,17 +121,16 @@ span {
 								<div class="form-group col-lg-6">
 									<label for="userid">Account Id &nbsp;
 										<button type="button" id="idcheck">check</button>
-									</label> 
-									<input id="userid" name="userid" type="text" class="form-control validate" />
-									<span id="idresult"></span>
+									</label> <input id="userid" name="userid" type="text"
+										class="form-control validate" /> <span id="idresult"></span>
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="name">Account Name</label> 
-									<input id="userName" name="userName" type="text" class="form-control validate" />
+									<label for="name">Account Name</label> <input id="userName"
+										name="userName" type="text" class="form-control validate" />
 								</div>
 								<div class="form-group col-lg-6">
-									<label for="password">Password</label> 
-									<input id="userpwd" name="userpwd" type="password" class="form-control validate" />
+									<label for="password">Password</label> <input id="userpwd"
+										name="userpwd" type="password" class="form-control validate" />
 									<span id="pwdresult"></span>
 								</div>
 								<div class="form-group col-lg-6">
@@ -155,8 +150,8 @@ span {
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
 								<button type="button"
-									class="btn btn-primary btn-block text-uppercase" onclick="regdata();">Sign
-									Up</button>
+									class="btn btn-primary btn-block text-uppercase"
+									onclick="regdata();">Sign Up</button>
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
