@@ -29,7 +29,7 @@
 	</insert>
 	<update id="insertUserInfo" parameterType="Employee_VO">
 		UPDATE Employee
-		SET eImg = #{eImg}
+		SET userpwd = #{userpwd}
 			,username = #{username}
 			,rank = #{rank}
 			,email = #{email}

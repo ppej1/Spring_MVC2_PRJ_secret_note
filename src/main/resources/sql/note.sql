@@ -78,7 +78,7 @@ CREATE TABLE Employee
 (
 	userid varchar2(40) NOT NULL,
 	userpwd varchar2(40) NOT NULL,
-	eImg varchar2(200) NOT NULL,
+	eImg varchar2(200) ,
 	userName varchar2(40) NOT NULL,
 	rank varchar2(40) NOT NULL,
 	email varchar2(40) NOT NULL,

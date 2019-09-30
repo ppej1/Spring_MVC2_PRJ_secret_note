@@ -26,12 +26,14 @@ public class EmployeeController {
 		employee.setUserid((String) session.getAttribute("loginId"));
 		Employee_VO result = repo.selectone(employee);
 		model.addAttribute("loginUser",result);
+		System.out.println(result);
 		return "popup/insertUserInfo";
 	}
 	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.POST)
 	@ResponseBody
 	public String  insertUserInfo(Employee_VO employee, HttpSession session){
 		employee.setUserid((String)session.getAttribute("loginId"));
+		employee.setEImg((String) session.getAttribute("uploadPath"));
 		System.out.println("수정됨"+ employee);
 		repo.insertUserInfo(employee);
 		return "popup/insertUserInfo";

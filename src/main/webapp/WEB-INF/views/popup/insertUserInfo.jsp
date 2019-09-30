@@ -27,36 +27,6 @@
 	margin-bottom: 10px;
 }
 </style>
-<script src="resources/template/js/jquery-3.2.1.min.js"></script>
-<script>
-	$(function() {
-		var completes = $("#completes", opener.document).attr("data-value");
-		$("#completes").val(completes);
-		$("#createBtn").on('click', function() {
-			var sendData = {
-				"userName" : $("#userName").val(),
-				"rank" : $("#rank").val(),
-				"email" : $("#email").val(),
-				"phone" : $("#phone").val(),
-				"status" : $("#status").val(),
-				"completes" : completes
-			};
-			$.ajax({
-				type : 'POST',
-				url : 'insertUserInfo',
-				data : sendData,
-				success : function(data) {
-					self.close();
-				}
-			});
-
-		});
-		$("#cancelBtn").on('click', function() {
-			self.close();
-		});
-	});
-</script>
-
 </head>
 
 <body>
@@ -66,8 +36,7 @@
 			<div class="page_title_container_div"></div>
 		</div>
 		<div class="page_container">
-			<form id="regForm" action="signup" method="POST"
-				enctype="multipart/form-data">
+			<form id="updateForm" action="insertUserInfo" method="POST" ="multipart/form-data">
 				<div class="container mt-5">
 					<div class="row tm-content-row">
 						<div class="col-12 tm-block-col">
@@ -90,40 +59,47 @@
 								<h2 class="tm-block-title">Account Settings</h2>
 								<div class="tm-signup-form row">
 									<div class="form-group col-lg-6">
-										<label for="userid">Account Id &nbsp;
-											<button type="button" id="idcheck">check</button>
-										</label> <input id="userid" name="userid" type="text" class="form-control validate" value="${loginUser.userid}" placeholder="ID" readonly="readonly" />
-										<span id="idresult"></span>
+										<label for="userid">Account Id &nbsp;</label> <input
+											id="userid" name="userid" type="text"
+											class="form-control validate" value="${loginUser.userid}"
+											readonly="readonly" /> <span id="idresult"></span>
 									</div>
 									<div class="form-group col-lg-6">
 										<label for="name">Account Name</label> <input id="userName"
-											name="userName" type="text" class="form-control validate" value="${loginUser.userName}" placeholder="Name" readonly="readonly"/>
+											name="userName" type="text" class="form-control validate"
+											value="${loginUser.userName}" />
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="password">Password</label> <input id="userpwd" name="userpwd" type="password" class="form-control validate" />
+										<label for="password">Password</label> <input id="userpwd"
+											name="userpwd" type="password" class="form-control validate" />
 										<span id="pwdresult"></span>
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="re_password">Re-enter Password</label> <input type="password" id="re_password"
+										<label for="re_password">Re-enter Password</label> <input
+											type="password" id="re_password"
 											class="form-control validate" /> <span id="re_pwdresult"></span>
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="email">Account Email</label> <input id="email" name="email" type="email" class="form-control validate" value="${loginUser.email}"/>
+										<label for="email">Account Email</label> <input id="email"
+											name="email" type="email" class="form-control validate"
+											value="${loginUser.email}" />
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="phone">Phone</label> <input id="ePhone" name="ePhone" type="tel" class="form-control validate" value="${loginUser.ePhone}"/>
-									</div>
-									<div class="form-group col-lg-6">
-										<label for="status">status</label> <input id="status" name="status" type="text" class="form-control validate" value="${loginUser.status}"/>
+										<label for="phone">Phone</label> <input id="ePhone"
+											name="ePhone" type="tel" class="form-control validate" />
 									</div>
 								</div>
 								<div class="col-12">
 									<label class="tm-hide-sm">&nbsp;</label>
-									<button type="button" class="btn btn-primary btn-block text-uppercase" onclick="regdata();">修正完了</button>
+									<button type="button"
+										class="btn btn-primary btn-block text-uppercase"
+										onclick="regdata();">修正完了</button>
 								</div>
 								<div class="col-12">
 									<label class="tm-hide-sm">&nbsp;</label>
-									<button type="button" class="btn btn-primary btn-block text-uppercase" id="btnReturn">修正取消</button>
+									<button type="button"
+										class="btn btn-primary btn-block text-uppercase"
+										id="btnReturn">修正取消</button>
 								</div>
 							</div>
 						</div>
@@ -131,38 +107,30 @@
 				</div>
 			</form>
 		</div>
-		</form>
-	</div>
-
 	</div>
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<script>
 		$(function() {
-			var completes = $("#completes", opener.document).attr("data-value");
-			$("#completes").val(completes);
-			$("#createBtn").on('click', function() {
-				var sendData = {
-					"userName" : $("#userName").val(),
-					"email" : $("#email").val(),
-					"ePhone" : $("#ePhone").val(),
-					"status" : $("#status").val(),
-					"completes" : completes
-				};
-				$.ajax({
-					type : 'POST',
-					url : 'insertUserInfo',
-					data : sendData,
-					success : function(data) {
-						self.close();
-					}
-				});
-
-			});
-			$("#cancelBtn").on('click', function() {
-				self.close();
-			});
+			$("#btnReturn").on("click", function() {
+				location.replace("home");
+			})
 		});
+		function regdata() {
+			var userpwd = document.getElementById("userpwd");
+			var username = document.getElementById("userName");
+			var rank = document.getElementById("rank");
+			var email = document.getElementById("email");
+			var phone = document.getElementById("ePhone");
+			if (userpwd.value == '' || username.value == ''
+					|| rank.value == '0' || email.value == ''
+					|| phone.value == '0') {
+				alert('빈칸을 채워주세요.');
+				userid.focus();
+				return;
+			}
+			var form = document.getElementById("regForm");
+			form.submit();
+		}
 	</script>
 </body>
-
 </html>
