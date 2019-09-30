@@ -97,8 +97,6 @@
  						<jsp:include page="page/page_last.jsp" flush="false"/>
 
  					</div>
- 				
-
  			</div>
  		</div>
 	</div>
@@ -143,7 +141,6 @@ function main(){
 <script>
 
 $(function(){	
-	empListLoad();
 	accListLoad();
 	subListLoad();
 
@@ -203,24 +200,6 @@ function stock(){
 			alert("stock등록완료")
 		}
 	});	
-}
-
-function empListLoad(){
-	$.ajax({
-		url:'empListLoad',
-		type: 'post',
-		success: outputEmp	
-	});	
-}
-
-function outputEmp(res){
-	
-	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.userid +'">'+ item.userName +'</option>';	
-	});
-
-	$("#strEmp").html(tag);
 }
 
 function accListLoad(){
