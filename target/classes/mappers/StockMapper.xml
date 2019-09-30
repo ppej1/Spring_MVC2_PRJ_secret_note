@@ -6,4 +6,69 @@
 
 <mapper namespace="com.sesoc.secret.dao.StockMapper">
 
+	<select id="subLoad" resultType="SubClassVO">
+		select
+			 *
+		from
+			SUBCLASS
+		order by SCSERIALNUMBER asc
+	</select>
+
+	<select id="empLoad" resultType="Employee_VO">
+		select
+			 *
+		from
+			EMPLOYEE
+		order by RANK asc
+	</select>
+	
+	<select id="accLoad" resultType="AccountVO">
+		select
+			 *
+		from
+			ACCOUNT
+		order by ACCOUNTNAME asc
+	</select>
+	
+	<insert id="insertRec" parameterType="ReceiptVO">
+		INSERT INTO RECEIPT
+		(
+		rSerialNumber,
+		scSerialNumber,
+		userid,
+		rAmount,
+		rDate,
+		rComment,
+		accountserial
+		)
+		VALUES
+		(
+		re_seq.nextval,
+		#{scSerialNumber},
+		#{userid},
+		#{rAmount},
+		sysdate,
+		#{rComment},
+		#{accountserial}
+		)
+	</insert>
+	
+	<insert id="insertSt" parameterType="StockVO">
+		INSERT INTO STOCK
+		(
+		sSerialNumber,
+		scSerialNumber,
+		userid,
+		sDate,
+		deDate
+		)
+		VALUES
+		(
+		stock_seq.nextval,
+		#{scSerialNumber},
+		#{userid},
+		sysdate,
+		#{deDate}
+		)
+	</insert>
 </mapper>

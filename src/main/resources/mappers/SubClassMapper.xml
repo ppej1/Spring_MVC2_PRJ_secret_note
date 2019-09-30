@@ -13,4 +13,31 @@
 		MAINCLASS
 	order by MCSERIALNUMBER asc
 </select>
+	
+<insert id="insert" parameterType="SubClassVO">
+	insert into SubClass
+	(
+		scSerialNumber
+		,mcserialNumber
+		,foodCode
+		,sImg
+		,sName
+		,unit
+		,price
+		,location
+		,eDate
+	)
+	values
+	(
+		sb_seq.nextval
+		,#{mcserialNumber}
+		,#{foodCode}
+		,#{sImg}
+		,#{sName}
+		,#{unit}
+		,#{price}
+		,#{location}
+		,#{eDate}
+	)	
+	</insert>
 </mapper>
