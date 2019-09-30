@@ -23,9 +23,6 @@ public class CheckListController {
 		return "popup/insertCheckList";
 	}
 
-
-	
-	
 	/*ajax*/
 	@RequestMapping(value = "/loadCheckList", method = RequestMethod.POST)
 	@ResponseBody

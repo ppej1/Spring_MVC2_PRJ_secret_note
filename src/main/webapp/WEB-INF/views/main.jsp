@@ -78,7 +78,6 @@
  					<!--last  page-->
  					<div id="last_page">
  						<jsp:include page="page/page_last.jsp" flush="false"/>
-
  					</div>
  				
 
@@ -90,7 +89,10 @@
 
 	<!-- turn.js 관련  -->
 	<script type="text/javascript" src="resources/extras/modernizr.2.5.3.min.js"></script>
-	<script type="text/javascript" src="resources/js/turnJs.js"></script>	
+	<script type="text/javascript" src="resources/js/turnJs.js"></script>
+	
+	<!-- userInfo 관련 -->	
+	<script src="resources/js/employee.js"></script>
 
    	<!-- main -->
     <script src="resources/template/js/popper.min.js"></script>
@@ -101,10 +103,8 @@
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
     <script src="resources/js/account.js"></script>
-    
 	<script type="text/javascript" src="resources/js/page/introducemenu.js"></script>		
 
-	
 	<script>
 	function main(){
 		

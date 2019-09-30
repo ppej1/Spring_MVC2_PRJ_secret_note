@@ -25,4 +25,14 @@ public class EmployeeRepository {
 		return mapper.selectone(employee);
 	}
 
+	public int insertCheckList(Employee_VO employee) {
+		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+		return mapper.insertUserInfo(employee);
+	}
+
+	public int modifyUserInfo(Employee_VO employee) {
+		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+		return mapper.modifyUserInfo(employee);
+	}
+
 }

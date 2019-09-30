@@ -188,7 +188,7 @@
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
-					alert("회원정보 수정");
+				updateUserInfo();
 			});	
 			$('.log-out').on('click', function () {
 				console.log("logout");

@@ -6,5 +6,7 @@ public interface EmployeeMapper {
 
 	int insert(Employee_VO employee);
 	Employee_VO selectone(Employee_VO employee);
+	int insertUserInfo(Employee_VO employee);
+	int modifyUserInfo(Employee_VO employee);
 
 }
