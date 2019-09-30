@@ -162,9 +162,9 @@ $(function(){
 function reciept(){
 	
 	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#strEmp").val();
-	var rAmount  = $("#amount").val();
-	var rComment  = $("#status").val();
+	var userid  = $("#userid").val();
+	var rAmount  = $("#rAmount").val();
+	var rComment  = $("#rComment").val();
 	var accountserial  = $("#accList").val();
 	
 	var sendData = {
@@ -187,13 +187,12 @@ function reciept(){
 
 function stock(){
 	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#strEmp").val();
-	var deDate  = $("#deDate").val();
-	
+	var userid  = $("#userid").val();
+	var sAmount  = $("#rAmount").val();	
 	var sendData = {
 			"scSerialNumber": scSerialNumber,
 			"userid": userid,
-			"deDate": deDate
+			"sAmount": sAmount,
 		};
 	
 	$.ajax({
@@ -254,7 +253,7 @@ function outputSub(res){
 	
 	var tag = '';
 	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.scSerialNumber +'">'+ item.sname +'</option>';	
+		tag += '<option value="'+ item.scSerialNumber +'" data-value="'+item.edate+'">'+ item.sname +'</option>';	
 	});
 	
 	$("#selectSub").html(tag);

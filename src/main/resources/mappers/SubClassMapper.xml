@@ -31,7 +31,7 @@
 	(
 		sb_seq.nextval
 		,#{mcserialNumber}
-		,#{foodCode}
+		,rpad(ABS(dbms_random.random),2)||'-'||rpad(ABS(dbms_random.random),3)
 		,#{sImg}
 		,#{sName}
 		,#{unit}
