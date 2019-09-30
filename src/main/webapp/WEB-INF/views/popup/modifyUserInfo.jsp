@@ -36,19 +36,18 @@
 			<div class="page_title_container_div"></div>
 		</div>
 		<div class="page_container">
-			<form id="updateForm" action="insertUserInfo" method="POST" ="multipart/form-data">
+			<form id="updateForm" action="insertUserInfo" method="POST" enctype="multipart/form-data">
 				<div class="container mt-5">
 					<div class="row tm-content-row">
 						<div class="col-12 tm-block-col">
 							<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
 								<h2 class="tm-block-title">List of Accounts</h2>
 								<p class="text-white">Accounts</p>
-								<select class="custom-select" id="rank" name="rank">
-									<option value="0">店長</option>
-									<option value="1">マネージャー</option>
-									<option value="2">クルー</option>
-									<option value="3">バイト</option>
-								</select>
+								<div class="form-group col-lg-6">
+										<label for="userName">Account Name</label> 
+										<input  id="rank" name="rank" readonly="readonly"type="text" class="form-control validate"
+											value="${loginUser.rank}" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -65,19 +64,14 @@
 											readonly="readonly" /> <span id="idresult"></span>
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="name">Account Name</label> <input id="userName"
+										<label for="userName">Account Name</label> <input id="userName"
 											name="userName" type="text" class="form-control validate"
 											value="${loginUser.userName}" />
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="password">Password</label> <input id="userpwd"
+										<label for="userpwd">Password</label> <input id="userpwd"
 											name="userpwd" type="password" class="form-control validate" />
-										<span id="pwdresult"></span>
-									</div>
-									<div class="form-group col-lg-6">
-										<label for="re_password">Re-enter Password</label> <input
-											type="password" id="re_password"
-											class="form-control validate" /> <span id="re_pwdresult"></span>
+										<span id="userpwd"></span>
 									</div>
 									<div class="form-group col-lg-6">
 										<label for="email">Account Email</label> <input id="email"
@@ -85,15 +79,19 @@
 											value="${loginUser.email}" />
 									</div>
 									<div class="form-group col-lg-6">
-										<label for="phone">Phone</label> <input id="ePhone"
-											name="ePhone" type="tel" class="form-control validate" />
+										<label for="ePhone">Phone</label> <input id="ePhone"
+											name="ePhone" type="tel" class="form-control validate" value="${ephone}"/>
+									</div>
+									<div class="form-group col-lg-6">
+										<label for="status">status</label> <input id="status"
+											name="status" type="text" class="form-control validate"  value="${loginUser.status}" readonly="readonly"/>
 									</div>
 								</div>
 								<div class="col-12">
 									<label class="tm-hide-sm">&nbsp;</label>
 									<button type="button"
 										class="btn btn-primary btn-block text-uppercase"
-										onclick="regdata();">修正完了</button>
+										id="btnUpdate">修正完了</button>
 								</div>
 								<div class="col-12">
 									<label class="tm-hide-sm">&nbsp;</label>
@@ -111,26 +109,39 @@
 	<script type="text/javascript" src="resources/extras/jquery.min.1.7.js"></script>
 	<script>
 		$(function() {
+			$("#btnUpdate").on("click", function() {
+				
+				updateUSER();
+
+			});
+
 			$("#btnReturn").on("click", function() {
-				location.replace("home");
-			})
+				self.close();
+			});	
 		});
-		function regdata() {
-			var userpwd = document.getElementById("userpwd");
-			var username = document.getElementById("userName");
-			var rank = document.getElementById("rank");
-			var email = document.getElementById("email");
-			var phone = document.getElementById("ePhone");
-			if (userpwd.value == '' || username.value == ''
-					|| rank.value == '0' || email.value == ''
-					|| phone.value == '0') {
-				alert('빈칸을 채워주세요.');
-				userid.focus();
-				return;
-			}
-			var form = document.getElementById("regForm");
-			form.submit();
-		}
+		
+		function updateUSER(){
+			sendData = {
+					"rank": $("#rank").val(),
+					"userid": $("#userid").val(),
+					"userName": $("#userName").val(),
+					"userpwd" : $("#userpwd").val(),
+					"email": $("#email").val(),
+					"ePhone": $("#ePhone").val()
+				}
+			 	$.ajax({
+					url:'modifyUserInfo',
+					type:'post',
+					data: sendData,
+					success: function(data){
+						self.close();
+
+					}
+				}); 
+			
+		}	
+		
+		
 	</script>
 </body>
 </html>

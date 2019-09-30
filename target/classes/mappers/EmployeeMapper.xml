@@ -27,14 +27,12 @@
 		,#{ePhone}
 		)
 	</insert>
-	<update id="insertUserInfo" parameterType="Employee_VO">
+	<update id="modifyUserInfo" parameterType="Employee_VO">
 		UPDATE Employee
 		SET userpwd = #{userpwd}
-			,username = #{username}
-			,rank = #{rank}
+			,username = #{userName}
 			,email = #{email}
 			,ePhone = #{ePhone}
-			,status = #{status}
 		WHERE userid = #{userid}
 	</update>
 

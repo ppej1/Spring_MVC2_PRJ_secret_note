@@ -30,9 +30,9 @@ public class EmployeeRepository {
 		return mapper.insertUserInfo(employee);
 	}
 
-	public int insertUserInfo(Employee_VO employee) {
+	public int modifyUserInfo(Employee_VO employee) {
 		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-		return mapper.insertUserInfo(employee);
+		return mapper.modifyUserInfo(employee);
 	}
 
 }

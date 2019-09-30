@@ -1,5 +1,5 @@
 function updateUserInfo() {
-	var url = "insertUserInfo";
+	var url = "modifyUserInfo";
 	var name = "popup test";
 	var option = "width = 500, height = 500, top = 100, left = 200, location = no"
 
@@ -17,7 +17,7 @@ function updateUserInfo() {
 		}, 1000);
 		return win;
 	};
-	var insertUserInfo = openDialog(url, name, option, function(win) {
+	var modifyUserInfo = openDialog(url, name, option, function(win) {
 		// 팝업창이 닫히게 될 때 실행 된 내용
 	});
 }

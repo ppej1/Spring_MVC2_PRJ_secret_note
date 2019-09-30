@@ -21,22 +21,26 @@ public class EmployeeController {
 	
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
 	
-	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
-	public String  insertUserInfo(HttpSession session, Model model, Employee_VO employee){
+	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.GET)
+	public String  modifyUserInfo(HttpSession session, Model model, Employee_VO employee){
 		employee.setUserid((String) session.getAttribute("loginId"));
 		Employee_VO result = repo.selectone(employee);
 		model.addAttribute("loginUser",result);
-		System.out.println(result);
-		return "popup/insertUserInfo";
+		String ephone = result.getEPhone();
+		model.addAttribute("ephone",ephone);
+		return "popup/modifyUserInfo";
 	}
-	@RequestMapping(value = "/insertUserInfo", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public String  insertUserInfo(Employee_VO employee, HttpSession session){
-		employee.setUserid((String)session.getAttribute("loginId"));
-		employee.setEImg((String) session.getAttribute("uploadPath"));
-		System.out.println("수정됨"+ employee);
-		repo.insertUserInfo(employee);
-		return "popup/insertUserInfo";
+	public String  modifyUserInfo(Employee_VO employee){
+		System.out.println(employee);
+		int result = repo.modifyUserInfo(employee);
+		System.out.println(result);
+		if(result == 1){
+			return "sucess";
+		}
+		return "fail";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
