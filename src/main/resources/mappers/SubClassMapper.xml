@@ -40,4 +40,12 @@
 		,#{eDate}
 	)	
 	</insert>
+	<select id="chaingeSubClassPicture" parameterType="SubClassVO" resultType="SubClassVO">
+		 select
+		 	 SIMG
+		 from
+			 subclass
+		where
+		SCSERIALNUMBER = #{scSerialNumber}
+	</select>		
 </mapper>

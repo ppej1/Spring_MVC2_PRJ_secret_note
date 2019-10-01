@@ -88,10 +88,33 @@ $.each(res, function (index, item) {
 	tag += '<option value="'+ item.scSerialNumber +'" data-value="'+item.edate+'">'+ item.sname +'</option>';	
 });
 
-$("#selectSub").html(tag);
+	$("#selectSub").html(tag);
+	
+	$("#selectSub").on('change', function(){
+		var data = $("#selectSub").val()
+		chaingePicture(data);
+	});
 }
+function chaingePicture(data){
+	var data = data;
+	var sendata = {
+			"scSerialNumber" : data
+	}
+	$.ajax({
+		url:'chaingeSubClassPicture',
+		type:'post',
+		data:sendata,
+		success:chaingesubClassPicture
+	});
+}
+function chaingesubClassPicture(data){
 
+		alert(data.simg)
+	
+	
+	$(".bg-image").attr('style', 'background-image: url("resources/img/meterial/'+data.simg+'");')
 
+}
 
 
 /* */
@@ -128,10 +151,6 @@ function inputSelectStock(storage){
 		async : false,
 		success: outputSelectStock
 	});
-	
-	
-	
-
 	
 }
 

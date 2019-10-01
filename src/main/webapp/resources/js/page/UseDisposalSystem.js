@@ -6,6 +6,3 @@
 				$('.selectICon_div').html(tag);
 			
 		}				
- 		function turn(){
-
- 		}

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -57,9 +58,22 @@ public class SubClassController {
 	@ResponseBody
 	public int insert(SubClassVO subclass) {
 		System.out.println(subclass);
-		
+
+		if (subclass.getSImg() == "") {
+			subclass.setSImg("food.jpg");
+		}
 		repo.insert(subclass);
 		
 		return 0;
 	}
+	
+	
+	@RequestMapping(value = "/chaingeSubClassPicture", method = RequestMethod.POST)
+	@ResponseBody
+	public SubClassVO chaingeSubClassPicture(SubClassVO sub){
+		System.out.println(sub);
+		SubClassVO list = repo.chaingeSubClassPicture(sub);
+		System.out.println(list);
+		return list;
+	}	
 }
