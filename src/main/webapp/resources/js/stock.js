@@ -108,10 +108,7 @@ function chaingePicture(data){
 	});
 }
 function chaingesubClassPicture(data){
-
-		alert(data.simg)
-	
-	
+		
 	$(".bg-image").attr('style', 'background-image: url("resources/img/meterial/'+data.simg+'");')
 
 }
