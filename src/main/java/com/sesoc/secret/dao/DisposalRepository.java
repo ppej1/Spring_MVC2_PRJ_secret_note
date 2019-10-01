@@ -33,4 +33,9 @@ public class DisposalRepository {
 		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
 		return mapper.whoDestroyPieChart(who);
 	}
+	
+	public List<DisposalListVO> materialChart2(DisposalListVO disposal) {
+		DisposalMapper mapper = session.getMapper(DisposalMapper.class);
+		return mapper.materialChart2(disposal);
+	}
 }
