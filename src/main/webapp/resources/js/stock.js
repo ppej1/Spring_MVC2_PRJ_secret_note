@@ -117,7 +117,6 @@ function open_storage(){
 
 function inputSelectStock(storage){
 	var storage = storage;
-	alert(storage);
 	sendData = {
 			"location": storage
 	}
@@ -125,38 +124,60 @@ function inputSelectStock(storage){
 		type: 'post',
 		url : 'selectStockAsLocation',
 		data : sendData,
+		async : false,
 		success: outputSelectStock
 	});
+	
+	
+	
 
+	
 }
 
 
 function outputSelectStock(data){
-	var tag ='';
+tag = "";
 	$.each(data, function ( index, item){
 		
 		tag +='<tbody class="labels">';
 		tag +='<tr>';
-		tag +='<td colspan="5">';
+		tag +='<td colspan="6">';
 		tag +='	<label for="'+item.scSerialNumber+'">'+item.sname+'</label>';
 		tag +='<input type="checkbox" name="'+item.scSerialNumber+'" id="'+item.scSerialNumber+'" data-toggle="toggle">';
 		tag +='</td>';
 		tag +='</tr>';
 		tag +='</tbody>';
 		tag +='<tbody class="hide" id = "'+item.scSerialNumber+'"style="display: none;">';
-		tag +='</tbody>';
 		
+		sendData = {
+				"scSerialNumber": item.scSerialNumber
+		}
+		$.ajax({
+			type: 'post',
+			url : 'selectStockDetail',
+			data : sendData,
+			async : false,
+			success: function(data2){
+				$.each(data2, function ( index, item){
+					tag +='<tr>';
+					tag +='<td>'+item.sserialNumber+'</td>';
+					tag +='<td>'+item.sname+'</td>';
+					tag +='<td>'+item.mclass+'</td>';
+					tag +='<td>'+item.samount+'/'+item.ramount+' '+item.unit+'</td>';
+					tag +='<td>'+item.sdate+'</td>';
+					tag +='<td>'+item.deDate+'</td>';
+					tag +='</tr>';
+				});
+			}
+		});
+		
+		tag +='</tbody>';
 	});
 		$('.main_tbody').html(tag);
+		
 		$('[data-toggle="toggle"]').change(function () {
 			$(this).parents().next('.hide').toggle();
 		});
-		
-
-
-				
-		
-		
-
 
 }
+

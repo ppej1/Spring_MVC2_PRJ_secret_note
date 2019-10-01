@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class StockVO {
 	private String sSerialNumber;
 	private String scSerialNumber;
+	private String rSerialNumber;
 	private String userid;
 	private String sAmount;
 	private String sDate;

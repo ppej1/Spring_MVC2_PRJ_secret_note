@@ -20,4 +20,5 @@ public interface StockMapper {
 	SubClassVO subSelect(String scSerialNumber);
 	ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub);
 	ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info);
+	String selectrSerial();
 }

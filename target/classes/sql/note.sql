@@ -127,18 +127,17 @@ CREATE TABLE Receipt
 	PRIMARY KEY (rSerialNumber)
 );
 
-
 CREATE TABLE Stock
 (
 	sSerialNumber varchar2(40) NOT NULL,
 	scSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
-	sAmount Number,
 	sDate date NOT NULL,
 	deDate date NOT NULL,
+	sAmount number,
+	rSerialNumber varchar2(40) NOT NULL,
 	PRIMARY KEY (sSerialNumber)
 );
-
 
 CREATE TABLE SubClass
 (

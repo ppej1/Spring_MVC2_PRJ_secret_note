@@ -60,12 +60,19 @@
 		#{accountserial}
 		)
 	</insert>
+	<select id="selectrSerial" resultType="String">
+	select 
+	    max(RSERIALNUMBER)
+	from 
+	    RECEIPT
+	</select>
 	
 	<insert id="insertSt" parameterType="StockVO">
 		INSERT INTO STOCK
 		(
 		sSerialNumber,
 		scSerialNumber,
+		RSERIALNUMBER,
 		userid,
 		sDate,
 		deDate,
@@ -75,6 +82,7 @@
 		(
 		stock_seq.nextval,
 		#{scSerialNumber},
+		#{rSerialNumber},
 		#{userid},
 		sysdate,
 		sysdate + #{deDate},
@@ -87,8 +95,9 @@
 			su.sname
 			From Stock  st join subclass  su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
 			where
-			 location = 2
+			 location = #{location}
 			 group by st.SCSERIALNUMBER,su.sname
+			 order by SCSERIALNUMBER
 	</select>
 	<select id="selectStockDetail" parameterType="StockInfoVO" resultType="StockDetailVO">
 		 select
@@ -103,9 +112,20 @@
 			 mc.MCLASS
 		 from
 			 stock st join subclass su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
-			 join  receipt re on St.SCSERIALNUMBER =  re.SCSERIALNUMBER
-			 join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
+			join  receipt re on St.RSERIALNUMBER =  re.RSERIALNUMBER
+            join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
 		 where
-		 	 st.SCSERIALNUMBER = #{scSerialNumber}
+		 	 st.SCSERIALNUMBER = 6
+             group by 			
+             st.sSerialNumber,
+			 su.sname,
+			 st.SCSERIALNUMBER,
+			 st.SAMOUNT,
+			 re.RAMOUNT,
+			 st.SDATE,
+			 st.DEDATE,
+			 su.UNIT,
+			 mc.MCLASS
+		 	 order by SCSERIALNUMBER
 	</select>	
 </mapper>

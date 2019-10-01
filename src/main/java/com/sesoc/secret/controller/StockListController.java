@@ -73,6 +73,9 @@ public class StockListController {
 		
 		System.out.println(st);
 		st.setDeDate(sub.getEDate());
+		String rserial = repo.selectrSerial();
+		System.out.println(rserial);
+		st.setRSerialNumber(rserial);
 		repo.insertSt(st);
 		System.out.println("확인");
 		return 0;

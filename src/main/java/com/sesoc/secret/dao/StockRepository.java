@@ -67,4 +67,10 @@ public class StockRepository {
 		
 		return mapper.selectStockDetail(info);
 	}
+
+	public String selectrSerial() {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.selectrSerial();
+	}
 }
