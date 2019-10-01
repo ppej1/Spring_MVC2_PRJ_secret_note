@@ -10,6 +10,7 @@ function fdisposalList(startDate) {
 	var sendData = {
 			"dDate": startDate
 		}
+	
 	$.ajax({
 		type :'POST'
 		, url : 'disposalListOneDay'
@@ -17,14 +18,25 @@ function fdisposalList(startDate) {
 		, success : output3
 	});
 	
-	var sendData = {
-			"dDate": startDate
-		}
 	$.ajax({
 		type :'POST'
-		, url : 'disposalAmountPieChart1'
+		, url : 'disposalAmountPieChart'
 		,data: sendData
-		, success : disposalAmountPieChart1
+		, success : disposalAmountPieChart
+	})
+	
+	$.ajax({
+		type :'POST'
+		, url : 'whoDestroyPieChart'
+		,data: sendData
+		, success : whoDestroyPieChart
+	})
+	
+	$.ajax({
+		type :'POST'
+		, url : 'disposalAmountPieChart'
+		,data: sendData
+		, success : materialChart2
 	})
 
 	
@@ -64,32 +76,132 @@ function output3(resp) {
 
 // pg 17  그래프
 
-function disposalAmountPieChart1(resp){
-		var result = [];
+function disposalAmountPieChart(resp){
+	var result = [];
 
-			result = resp.map(item => [item.sname,parseInt(item.damount)])
-
+		result = resp.map(item => [item.mclass,parseInt(item.damount)])
+	
+		anychart.onDocumentReady(function () {
 			
-			anychart.onDocumentReady(function () {
-			    // create pie chart with passed data
-			    var chart = anychart.pie(result);
+			// create pie chart with passed data
+		    var chart = anychart.pie(result);
+		    
+		    chart.palette(anychart.palettes.glamour);
+		    chart.fill("aquastyle");
+		    // set chart title text settings
+		    chart.title('분류별 폐기량')
+		            //set chart radius
+		            .radius('43%')
+		            // create empty area in pie chart
+		            .innerRadius('30%');
 
-			    // set chart title text settings
-			    chart.title('종류별 폐기량')
-			            //set chart radius
-			            .radius('43%')
-			            // create empty area in pie chart
-			            .innerRadius('30%');
+		    // set container id for the chart
+		    chart.container('pieChart2');
+		    // initiate chart drawing
+		    chart.draw();
+		});
+	};
 
-			    // set container id for the chart
-			    chart.container('pieChart');
-			    // initiate chart drawing
-			    chart.draw();
-			});
-			
-			
-			
-};
+function whoDestroyPieChart(resp){
+	var result = [];
+	
+	result = resp.map(item => [item.userid,parseInt(item.damount)])
+	
+	anychart.onDocumentReady(function () {
+	
+	    // create a chart and set the data
+	    var chart = anychart.pie(result);
+	    
+	    chart.palette(anychart.palettes.provence);
+	    // configure the visual settings of the chart
+	    chart.fill("aquastyle");
+	
+	    // set the chart title
+	    chart.title("담당자별 폐기량");
+	
+	    // set the container id
+	    chart.container("whoDestroyPieChart");
+	
+	    // initiate drawing the chart
+	    chart.draw();
+	});
+}
 
+function materialChart2(resp){
+	
+	var result = [];
 
+	result = resp.map(item => [item.sname,parseInt(item.damount)])
+	
+	anychart.onDocumentReady(function () {
+	    // create column chart
+	    var chart = anychart.column();
+
+	    var dataSet = anychart.data.set(result);
+
+	    // set chart title
+	    chart.title('재료별 폐기량');
+	    
+	    // map data for the first series, take x from the zero column and value from the first column of data set
+	    var seriesData_one = dataSet.mapAs({'x': 0, 'value': 1});
+
+	    // map data for the second series, take x from the zero column and value from the second column of data set
+	    var seriesData_two = dataSet.mapAs({'x': 0, 'value': 2});
+
+	    // create first series with mapped data
+	    var seriesFirst = chart.column(seriesData_one);
+	    seriesFirst.name('폐기량');
+
+	    var shapes = seriesFirst.rendering().shapes();
+
+	    seriesFirst.color('#E76A7A');
+	    // set rendering settings
+	    seriesFirst.rendering()
+	            // set point function to drawing
+	            .point(drawer)
+	            // set update point function to drawing, change the point shape when the state changes
+	            .updatePoint(drawer)
+	            // set shapes
+	            .shapes(shapes);
+	    // set titles for Y-axis
+	    //chart.yAxis().title('Revenue in Dollars');
+	    // set minimum for y-scale
+	    chart.yScale().minimum(0);
+	    // set tooltip prefix
+	    //chart.tooltip().valuePrefix('$');
+	    // turn on legend
+	    chart.legend(false);
+	    // set container id for the chart
+	    chart.container('materialChart2');
+	    // initiate chart drawing
+	    chart.draw();
+	});
+
+	function drawer() {
+	    // if missing (not correct data), then skipping this point drawing
+	    if (this.missing) {
+	        return;
+	    }
+
+	    // get shapes group
+	    var shapes = this.shapes || this.getShapesGroup(this.pointState);
+	    // calculate the left value of the x-axis
+	    var leftX = this.x - this.pointWidth / 2;
+	    // calculate the right value of the x-axis
+	    var rightX = leftX + this.pointWidth;
+	    // calculate the half of point width
+	    var rx = this.pointWidth / 2;
+
+	    shapes.path
+	            // resets all 'line' operations
+	            .clear()
+	            // draw column with rounded edges
+	            .moveTo(leftX, this.zero)
+	            .lineTo(leftX, this.value + rx)
+	            .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
+	            .lineTo(rightX, this.zero)
+	            // close by connecting the last point with the first straight line
+	            .close();
+	}
+}
 

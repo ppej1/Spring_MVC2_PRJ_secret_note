@@ -38,7 +38,7 @@
         TO_CHAR(dDate,'yyyy-MM-dd') = #{dDate}
 	</select>	
 	
-	<select id="disposalAmountPieChart1" parameterType="DisposalListVO" resultType="DisposalListVO">
+	<select id="disposalAmountPieChart" parameterType="DisposalListVO" resultType="DisposalListVO">
 		SELECT
 			m.mClass,
 			s.location,
@@ -51,4 +51,16 @@
         TO_CHAR(dDate,'yyyy-MM-dd') =  #{dDate}
          GROUP BY 	m.mClass,s.location,s.sName 
 	</select>		
+	
+	<select id="whoDestroyPieChart" parameterType="DisposalVO" resultType="DisposalVO">
+		SELECT
+            userid,
+            sum(dAmount) AS dAmount
+		FROM
+			Disposal
+        WHERE
+            TO_CHAR(dDate,'yyyy-MM-dd') = #{dDate}
+        GROUP BY 
+            userid
+	</select>
 </mapper>

@@ -11,6 +11,6 @@ public class DisposalVO {
 	String dSerialNumber;
 	String scSerialNumber;
 	String userid;
-	String eDAte;
+	String dDate;
 	int dAmount;
 }

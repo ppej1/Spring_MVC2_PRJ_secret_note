@@ -3,6 +3,7 @@ package com.sesoc.secret.dao;
 import java.util.List;
 
 import com.sesoc.secret.dto.DisposalListVO;
+import com.sesoc.secret.dto.DisposalVO;
 
 public interface DisposalMapper {
 
@@ -10,6 +11,8 @@ public interface DisposalMapper {
 
 	List<DisposalListVO> disposalListOneDay(DisposalListVO disposal);
 
-	List<DisposalListVO> disposalAmountPieChart1(DisposalListVO disposal);
+	List<DisposalListVO> disposalAmountPieChart(DisposalListVO disposal);
+
+	List<DisposalVO> whoDestroyPieChart(DisposalVO who);
 
 }
