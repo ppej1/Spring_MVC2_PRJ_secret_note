@@ -6,9 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.SubClassVO;
 
@@ -52,5 +54,17 @@ public class StockRepository {
 		StockMapper mapper = session.getMapper(StockMapper.class);
 		
 		return mapper.subSelect(scSerialNumber);
+	}
+
+	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub) {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.selectStockAsLocation(sub);
+	}
+
+	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info) {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.selectStockDetail(info);
 	}
 }

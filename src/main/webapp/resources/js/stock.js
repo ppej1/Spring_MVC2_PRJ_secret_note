@@ -90,3 +90,73 @@ $.each(res, function (index, item) {
 
 $("#selectSub").html(tag);
 }
+
+
+
+
+/* */
+function open_frozen_storage(){
+	alert("냉동을 클릭했음");
+	storage = 1;
+	inputSelectStock(storage);
+	
+}
+
+function open_cold_storage(){
+	alert("냉장을 클릭했음");
+	storage = 2;
+	inputSelectStock(storage);
+}
+
+function open_storage(){
+	alert("상온을 클릭했음");
+	storage = 3;
+	inputSelectStock(storage);
+}
+
+
+function inputSelectStock(storage){
+	var storage = storage;
+	alert(storage);
+	sendData = {
+			"location": storage
+	}
+	$.ajax({
+		type: 'post',
+		url : 'selectStockAsLocation',
+		data : sendData,
+		success: outputSelectStock
+	});
+
+}
+
+
+function outputSelectStock(data){
+	var tag ='';
+	$.each(data, function ( index, item){
+		
+		tag +='<tbody class="labels">';
+		tag +='<tr>';
+		tag +='<td colspan="5">';
+		tag +='	<label for="'+item.scSerialNumber+'">'+item.sname+'</label>';
+		tag +='<input type="checkbox" name="'+item.scSerialNumber+'" id="'+item.scSerialNumber+'" data-toggle="toggle">';
+		tag +='</td>';
+		tag +='</tr>';
+		tag +='</tbody>';
+		tag +='<tbody class="hide" id = "'+item.scSerialNumber+'"style="display: none;">';
+		tag +='</tbody>';
+		
+	});
+		$('.main_tbody').html(tag);
+		$('[data-toggle="toggle"]').change(function () {
+			$(this).parents().next('.hide').toggle();
+		});
+		
+
+
+				
+		
+		
+
+
+}

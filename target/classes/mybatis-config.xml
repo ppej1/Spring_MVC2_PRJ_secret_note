@@ -19,7 +19,9 @@
 		<typeAlias type="com.sesoc.secret.dto.UsedListVO" alias="UsedListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.DisposalListVO" alias="DisposalListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.LossVO" alias="LossVO"/>
-
+		<typeAlias type="com.sesoc.secret.dto.StockInfoVO" alias="StockInfoVO"/>
+		<typeAlias type="com.sesoc.secret.dto.StockDetailVO" alias="StockDetailVO"/>
+		
 	</typeAliases>
 	
 	<mappers>

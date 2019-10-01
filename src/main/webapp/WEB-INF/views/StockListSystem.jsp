@@ -120,15 +120,13 @@
     <script src="resources/template/js/magnific-popup-options.js"></script>
     <script src="resources/template/js/main.js"></script>
 	<script src="resources/js/subclass.js"></script>
-	<script  src="resources/js/stock.js "type="text/javascript"></script>	
 
 	<!-- service -->
 	<script type="text/javascript" src="resources/js/page/StockListSystem.js"></script>			
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/uses.js"></script>	
 	<script type="text/javascript" src="resources/js/disposal.js"></script>	
-		
-<!-- 	<script src='resources/js/fullcalendar/lib/jquery.min.js'></script> -->
+	<script type="text/javascript" src="resources/js/stock.js "></script>			
 	
 
 	
@@ -140,32 +138,24 @@ $(function(){
 	$("#regist1").on("click", function(){
 		reciept();
 		stock();
-	})
+	});
 
 	$("#cancel1").on("click", function(){
 		$("#stockForm").reset();
-	})
-
-
 	});
-
-
-
-$(function(){
 	$('#frozen_storageBtn').on('click', function () {
-		alert("냉동을 클릭했음");
+		open_frozen_storage();
 	});	
-})
-$(function(){
 	$('#cold_storageBtn').on('click', function () {
-		alert("냉장을 클릭했음");
+		open_cold_storage();
 	});	
-})
-$(function(){
 	$('#storageBtn').on('click', function () {
-		alert("상온을 클릭했음");
+		open_storage();
 	});	
-})
+	
+});
+
+
 </script>		
 <script>
 

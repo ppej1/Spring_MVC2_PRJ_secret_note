@@ -81,4 +81,31 @@
 		#{sAmount}
 		)
 	</insert>
+	<select id="selectStockAsLocation" parameterType="SubClassVO" resultType="StockInfoVO">
+		select
+			st.SCSERIALNUMBER,
+			su.sname
+			From Stock  st join subclass  su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
+			where
+			 location = 2
+			 group by st.SCSERIALNUMBER,su.sname
+	</select>
+	<select id="selectStockDetail" parameterType="StockInfoVO" resultType="StockDetailVO">
+		 select
+			 st.sSerialNumber,
+			 su.sname,
+			 st.SCSERIALNUMBER,
+			 st.SAMOUNT,
+			 re.RAMOUNT,
+			 st.SDATE,
+			 st.DEDATE,
+			 su.UNIT,
+			 mc.MCLASS
+		 from
+			 stock st join subclass su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
+			 join  receipt re on St.SCSERIALNUMBER =  re.SCSERIALNUMBER
+			 join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
+		 where
+		 	 st.SCSERIALNUMBER = #{scSerialNumber}
+	</select>	
 </mapper>

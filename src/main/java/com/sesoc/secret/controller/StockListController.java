@@ -15,6 +15,8 @@ import com.sesoc.secret.dao.StockRepository;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockDetailVO;
+import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.SubClassVO;
 @Controller
@@ -75,4 +77,23 @@ public class StockListController {
 		System.out.println("확인");
 		return 0;
 	}	
+	
+	@RequestMapping(value = "/selectStockAsLocation", method = RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub){
+			System.out.println(sub);
+			ArrayList<StockInfoVO> list = repo.selectStockAsLocation(sub);
+			System.out.println(list);
+		return list;
+	}
+	
+	@RequestMapping(value = "/selectStockDetail", method = RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info){
+			System.out.println(info);
+			ArrayList<StockDetailVO> list = repo.selectStockDetail(info);
+			System.out.println(list);
+		return list;
+	}
+		
 }

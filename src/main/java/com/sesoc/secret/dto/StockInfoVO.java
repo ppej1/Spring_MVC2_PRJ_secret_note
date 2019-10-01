@@ -7,13 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReceiptVO {
-	String rSerialNumber;
+public class StockInfoVO {
 	String scSerialNumber;
-	String userid;
-	int rAmount;
-	String rDate;
-	String rComment;
-	String accountserial;
-	
+	String sName;
 }
