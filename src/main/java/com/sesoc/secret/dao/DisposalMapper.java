@@ -14,5 +14,7 @@ public interface DisposalMapper {
 	List<DisposalListVO> disposalAmountPieChart(DisposalListVO disposal);
 
 	List<DisposalVO> whoDestroyPieChart(DisposalVO who);
+	
+	List<DisposalListVO> materialChart2(DisposalListVO disposal);
 
 }

@@ -34,7 +34,7 @@ function fusedList(startDate) {
 	
 	$.ajax({
 		type :'POST'
-		, url : 'usedAmountPieChart'
+		, url : 'materialChart1'
 		,data: sendData
 		, success : materialChart1
 	})

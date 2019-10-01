@@ -48,4 +48,11 @@ public class UsedController {
 		System.out.println("pie22"+list);
 		return list;
 	}	
+	
+	@RequestMapping(value = "/materialChart1", method = RequestMethod.POST)
+	@ResponseBody
+	public List<UsedListVO> materialChart1(UsedListVO used){
+		List<UsedListVO> list = repo.materialChart1(used);
+		return list;
+	}	
 }

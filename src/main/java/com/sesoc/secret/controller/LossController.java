@@ -20,8 +20,9 @@ public class LossController {
 	
 	@RequestMapping(value = "/lossList", method = RequestMethod.GET)
 	@ResponseBody
-	public List<LossVO> lossList(Model model){
-		List<LossVO> list = repo.lossList();
+	public List<LossVO> lossList(LossVO year){
+		System.out.println(year);
+		List<LossVO> list = repo.lossList(year);
 		return list;
 	}
 	

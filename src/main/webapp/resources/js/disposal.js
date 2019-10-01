@@ -34,7 +34,7 @@ function fdisposalList(startDate) {
 	
 	$.ajax({
 		type :'POST'
-		, url : 'disposalAmountPieChart'
+		, url : 'materialChart2'
 		,data: sendData
 		, success : materialChart2
 	})

@@ -36,4 +36,9 @@ public class UsedRepository {
 		UsedMapper mapper = session.getMapper(UsedMapper.class);
 		return mapper.whoUsedPieChart(who);
 	}
+	
+	public List<UsedListVO> materialChart1(UsedListVO used) {
+		UsedMapper mapper = session.getMapper(UsedMapper.class);
+		return mapper.materialChart1(used);
+	}
 }

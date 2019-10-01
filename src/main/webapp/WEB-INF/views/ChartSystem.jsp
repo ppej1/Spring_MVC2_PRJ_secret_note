@@ -136,44 +136,61 @@ body {
 	<!-- userInfo 관련 -->	
 	<script src="resources/js/employee.js"></script>
 
+  	<!-- main -->
+  	<script src="resources/template/js/popper.min.js"></script>
+  	<script src="resources/template/js/bootstrap.min.js"></script>
+  	<script src="resources/template/js/owl.carousel.min.js"></script>
+  	<script src="resources/template/js/jquery.waypoints.min.js"></script>
+  	<script src="resources/template/js/jquery.magnific-popup.min.js"></script>
+  	<script src="resources/template/js/magnific-popup-options.js"></script>
+  	<script src="resources/template/js/main.js"></script>
 
-	<!-- main -->
-	<script src="resources/template/js/popper.min.js"></script>
-	<script src="resources/template/js/bootstrap.min.js"></script>
-	<script src="resources/template/js/owl.carousel.min.js"></script>
-	<script src="resources/template/js/jquery.waypoints.min.js"></script>
-	<script src="resources/template/js/jquery.magnific-popup.min.js"></script>
-	<script src="resources/template/js/magnific-popup-options.js"></script>
-	<script src="resources/template/js/main.js"></script>
+  	<!-- service -->
+  	<script type="text/javascript" src="resources/js/page/ChartSystem.js"></script>
+  	<script type="text/javascript" src="resources/js/uses.js"></script>
+  	<script type="text/javascript" src="resources/js/disposal.js"></script>
 
-	<!-- service -->
-	<script type="text/javascript" src="resources/js/page/ChartSystem.js"></script>
-	<script type="text/javascript" src="resources/js/uses.js"></script>
-	<script type="text/javascript" src="resources/js/disposal.js"></script>
+<!-- anychart -->
+  	<script src="resources/js/anychart/js/regression.min.js"></script>
+  	<script src="resources/js/anychart/js/anychart-base.min.js"></script>
+  	<script src="resources/js/anychart/js/anychart-exports.min.js"></script>
+  	<script src="resources/js/anychart/js/anychart-ui.min.js"></script>
+  	<script src="resources/js/anychart/css/anychart-font.css"></script>
+  	<script src="resources/js/anychart/css/anychart-ui.min.css"></script>
 
-	<!-- anychart -->
-	<script src="resources/js/anychart/js/regression.min.js"></script>
-	<script src="resources/js/anychart/js/anychart-base.min.js"></script>
-	<script src="resources/js/anychart/js/anychart-exports.min.js"></script>
-	<script src="resources/js/anychart/js/anychart-ui.min.js"></script>
-	<script src="resources/js/anychart/css/anychart-font.css"></script>
-	<script src="resources/js/anychart/css/anychart-ui.min.css"></script>
-
-	<script>
+  	<script>	
 
   		$(function () {
-  			$.ajax({
-  				type: 'GET',
-  				url: 'lossList',
-  				success: output5
-  			})
+  	  		var year = $("#yearChart").val();
+  	  		var yearChart = {"ydate" : year};
+  			
+  	  		$.ajax({
+  	  			type: 'GET',
+  	  			url: 'lossList',
+  	  			data: yearChart,
+  	  			success: output5
+  	  		})
+  	  		
+  	  		$("#yearChart").change(function(){
+	  			alert("변경");
+	  			$("#AnalysisChart").empty();  			
+  	  	  		year = $("#yearChart").val();
+  	  	  		yearChart = {"ydate" : year};
+
+  	  	  		$.ajax({
+  	  	  			type: 'GET',
+  	  	  			url: 'lossList',
+  	  	  			data: yearChart,
+  	  	  			success: output5
+  	  	  		})
+  	  		})
   		})
 
-  		var arr = new Array(12).fill(0);
-
+  		
   		function output5(resp) {
+  			var arr = new Array(12).fill(0);
+  			
   			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price)
-  			//alert(JSON.stringify(arr))
 
   			//experimental data
 
