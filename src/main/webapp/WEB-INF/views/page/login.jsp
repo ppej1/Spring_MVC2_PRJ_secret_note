@@ -14,19 +14,44 @@ function login() {
 	form.submit();
 }
 </script>
-
-
+<style>
+.title_info {
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+}
+#title {
+	font-family : 'Noto Serif JP', serif;
+	font-size : 30px;
+	font-weight: 700;
+	color: #3CB371;
+}
+#headbox{
+	float: left;
+	width:30%;
+	height:80%;
+	margin-left:5%;
+	box-sizing: border-box;
+　　}
+#bottombox{
+	position:absolute; 
+    top:80%; left:40%;
+    margin-left:15%; 
+    width:200px; height:850px;
+    color : #871908;
+　　}
+</style>
 </head>
 <div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
-	<div class="title_head">
-		<h1>delicious</h1>
+	<div class="title_head" id="headbox">
+		<div id="title" style="writing-mode:tb-rl;">店長のシークレットノート</div>
 	</div>
 	<div class="title_center">
 
 	</div>
 	<div class="title_bottom">
-		<div class="title_login">
+		<div class="title_login" id="bottombox">
 			<form id="login_form" action="login" method="post">
 				<div style="float: left">
 

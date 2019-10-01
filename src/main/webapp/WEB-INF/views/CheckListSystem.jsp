@@ -112,6 +112,9 @@
 	<!-- userInfo 관련 -->	
 	<script src="resources/js/employee.js"></script>
 
+	<!-- userInfo 관련 -->	
+	<script src="resources/js/employee.js"></script>
+
    	<!-- main -->
     <script src="resources/template/js/popper.min.js"></script>
     <script src="resources/template/js/bootstrap.min.js"></script>
