@@ -20,7 +20,7 @@ function login() {
 	font-size: 20px;
 	font-weight: bold;
 }
-p {
+#title {
 	font-family : 'Noto Serif JP', serif;
 	font-size : 30px;
 	font-weight: 700;
@@ -29,14 +29,14 @@ p {
 #headbox{
 	float: left;
 	width:30%;
-	height:70%;
-	margin-left:25px;
+	height:80%;
+	margin-left:5%;
 	box-sizing: border-box;
 　　}
 #bottombox{
 	position:absolute; 
-    top:50%; left:50%;
-    margin-top:250px; margin-left:100px; 
+    top:80%; left:40%;
+    margin-left:15%; 
     width:200px; height:850px;
     color : #871908;
 　　}
@@ -45,7 +45,7 @@ p {
 <div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
 	<div class="title_head" id="headbox">
-		<p style="writing-mode:tb-rl;">店長のシークレットノート</p>
+		<div id="title" style="writing-mode:tb-rl;">店長のシークレットノート</div>
 	</div>
 	<div class="title_center">
 
