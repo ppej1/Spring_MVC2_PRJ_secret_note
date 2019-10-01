@@ -6,6 +6,6 @@ import com.sesoc.secret.dto.LossVO;
 
 public interface LossMapper {
 
-	List<LossVO> lossList();
+	List<LossVO> lossList(LossVO year);
 	List<LossVO> lossList2();
 }

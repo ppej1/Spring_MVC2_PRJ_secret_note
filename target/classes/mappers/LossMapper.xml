@@ -5,14 +5,17 @@
 
 
 <mapper namespace="com.sesoc.secret.dao.LossMapper">
-	<select id="lossList" resultType="LossVO">
+	<select id="lossList" resultType="LossVO" parameterType="LossVO">
 		SELECT 
             s.sName,
             s.price,
             d.dAmount,
-			TO_CHAR(d.dDate, 'MM') AS mdate
+			TO_CHAR(d.dDate, 'MM') AS mdate,
+			TO_CHAR(d.dDate, 'YYYY') AS ydate
 		FROM
 			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+		WHERE 
+			TO_CHAR(d.dDate, 'YYYY') = #{ydate}
 	</select>
 	
 	<select id="lossList2" resultType="LossVO">
