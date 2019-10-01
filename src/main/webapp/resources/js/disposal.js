@@ -79,7 +79,7 @@ function output3(resp) {
 function disposalAmountPieChart(resp){
 	var result = [];
 
-		result = resp.map(item => [item.sname,parseInt(item.damount)])
+		result = resp.map(item => [item.mclass,parseInt(item.damount)])
 	
 		anychart.onDocumentReady(function () {
 			
