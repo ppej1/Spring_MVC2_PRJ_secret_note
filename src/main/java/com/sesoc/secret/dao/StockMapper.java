@@ -15,4 +15,5 @@ public interface StockMapper {
 	ArrayList<AccountVO> accLoad();
 	int insertRec(ReceiptVO rec);
 	int insertSt(StockVO st);
+	SubClassVO subSelect(String scSerialNumber);
 }

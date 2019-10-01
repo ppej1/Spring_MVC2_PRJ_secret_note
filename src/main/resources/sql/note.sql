@@ -133,6 +133,7 @@ CREATE TABLE Stock
 	sSerialNumber varchar2(40) NOT NULL,
 	scSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
+	sAmount Number,
 	sDate date NOT NULL,
 	deDate date NOT NULL,
 	PRIMARY KEY (sSerialNumber)

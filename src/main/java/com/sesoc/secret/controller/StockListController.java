@@ -32,7 +32,6 @@ public class StockListController {
 	public List<SubClassVO> subListLoad(){
 		
 		ArrayList<SubClassVO> list = repo.subLoad();
-		
 		return list;
 	}	
 	
@@ -57,6 +56,8 @@ public class StockListController {
 	@RequestMapping(value = "/recieptReg", method = RequestMethod.POST)
 	@ResponseBody
 	public int recieptReg(ReceiptVO rec){
+		
+		System.out.println(rec);
 		repo.insertRec(rec);
 		return 0;
 	}	
@@ -64,7 +65,12 @@ public class StockListController {
 	@RequestMapping(value = "/stockReg", method = RequestMethod.POST)
 	@ResponseBody
 	public int stockReg(StockVO st){
+		String scSerialNumber = st.getScSerialNumber();
+		SubClassVO sub = repo.subSelect(scSerialNumber);
+		System.out.println(sub);
+		
 		System.out.println(st);
+		st.setDeDate(sub.getEDate());
 		repo.insertSt(st);
 		System.out.println("확인");
 		return 0;

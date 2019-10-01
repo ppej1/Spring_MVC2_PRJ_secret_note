@@ -97,8 +97,6 @@
  						<jsp:include page="page/page_last.jsp" flush="false"/>
 
  					</div>
- 				
-
  			</div>
  		</div>
 	</div>
@@ -146,7 +144,6 @@ function main(){
 <script>
 
 $(function(){	
-	empListLoad();
 	accListLoad();
 	subListLoad();
 
@@ -165,9 +162,9 @@ $(function(){
 function reciept(){
 	
 	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#strEmp").val();
-	var rAmount  = $("#amount").val();
-	var rComment  = $("#status").val();
+	var userid  = $("#userid").val();
+	var rAmount  = $("#rAmount").val();
+	var rComment  = $("#rComment").val();
 	var accountserial  = $("#accList").val();
 	
 	var sendData = {
@@ -190,13 +187,12 @@ function reciept(){
 
 function stock(){
 	var scSerialNumber  = $("#selectSub").val();
-	var userid  = $("#strEmp").val();
-	var deDate  = $("#deDate").val();
-	
+	var userid  = $("#userid").val();
+	var sAmount  = $("#rAmount").val();	
 	var sendData = {
 			"scSerialNumber": scSerialNumber,
 			"userid": userid,
-			"deDate": deDate
+			"sAmount": sAmount,
 		};
 	
 	$.ajax({
@@ -207,24 +203,6 @@ function stock(){
 			alert("stock등록완료")
 		}
 	});	
-}
-
-function empListLoad(){
-	$.ajax({
-		url:'empListLoad',
-		type: 'post',
-		success: outputEmp	
-	});	
-}
-
-function outputEmp(res){
-	
-	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.userid +'">'+ item.userName +'</option>';	
-	});
-
-	$("#strEmp").html(tag);
 }
 
 function accListLoad(){
@@ -257,7 +235,7 @@ function outputSub(res){
 	
 	var tag = '';
 	$.each(res, function (index, item) {
-		tag += '<option value="'+ item.scSerialNumber +'">'+ item.sname +'</option>';	
+		tag += '<option value="'+ item.scSerialNumber +'" data-value="'+item.edate+'">'+ item.sname +'</option>';	
 	});
 	
 	$("#selectSub").html(tag);

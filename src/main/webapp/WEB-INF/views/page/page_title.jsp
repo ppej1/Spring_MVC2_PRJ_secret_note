@@ -9,11 +9,11 @@
 	font-size: 20px;
 	font-weight: bold;
 }
-p {
+#title {
 	font-family : 'Noto Serif JP', serif;
 	font-size : 30px;
 	font-weight: 700;
-	color: green;
+	color: #3CB371;
 }
 #headbox{
 	float: left;
@@ -38,7 +38,7 @@ p {
 <div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
 	<div class="title_head" id="headbox">
-		<p style="writing-mode:tb-rl;">店長のシークレットノート</p>
+		<div id="title" style="writing-mode:tb-rl;">店長のシークレットノート</div>
 	</div>
 	<div class="title_main">
 		<div class="title_content" id="mainbox"
