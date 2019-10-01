@@ -9,18 +9,7 @@
 		</div>
 		<div class="tm-block-scroll tm-block-list">
 			<table class="info_list">
-				<thead>
-					<tr>
-						<th>Regian</th>
-						<th>Q1 2010</th>
-						<th>Q2 2010</th>
-						<th>Q3 2010</th>
-						<th>Q4 2010</th>
-					</tr>
-				</thead>
-				<tbody class="main_tbody">
 
-				</tbody>
 			</table>
 		</div>
 

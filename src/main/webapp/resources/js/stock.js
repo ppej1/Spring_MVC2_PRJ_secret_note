@@ -136,7 +136,22 @@ function inputSelectStock(storage){
 
 
 function outputSelectStock(data){
-tag = "";
+
+
+	tag = "";
+	tag +='<thead>';
+	tag +='<tr>';
+	tag +='	<th>serial</th>';
+	tag +='	<th>材料</th>';
+	tag +='	<th>大分類</th>';
+	tag +='	<th>在庫</th>';
+	tag +='	<th>登録日</th>';
+	tag +='	<th>賞味期限</th>';
+	tag +='</tr>';
+tag +='</thead>';
+
+tag +='<tbody class="main_tbody">';
+
 	$.each(data, function ( index, item){
 		
 		tag +='<tbody class="labels">';
@@ -173,8 +188,9 @@ tag = "";
 		
 		tag +='</tbody>';
 	});
-		$('.main_tbody').html(tag);
 		
+		tag +='</tbody>';
+		$('.info_list').html(tag);
 		$('[data-toggle="toggle"]').change(function () {
 			$(this).parents().next('.hide').toggle();
 		});

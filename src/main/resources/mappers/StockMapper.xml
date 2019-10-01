@@ -115,7 +115,7 @@
 			join  receipt re on St.RSERIALNUMBER =  re.RSERIALNUMBER
             join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
 		 where
-		 	 st.SCSERIALNUMBER = 6
+		 	 st.SCSERIALNUMBER = #{scSerialNumber}
              group by 			
              st.sSerialNumber,
 			 su.sname,
