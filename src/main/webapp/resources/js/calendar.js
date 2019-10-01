@@ -131,20 +131,37 @@ function calendarPage08() {
 		navLinkDayClick: function (date, jsEvent) {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
-		},
-		eventClick: function (calEvent, jsEvent, view) {
-			date = new Date(calEvent.start);
-			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
+			alert(startDate);
+			createReceipt(startDate);
+			
+			
+			
+			
+			
+			
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
-		events: []
+		events:  function (start, end, timezone, callback) {
+			var events = [];
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllreceipt',
+				dataType: 'json',
+				success: function (data) {
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({
+							title: item.sname,
+							id: item.ramount,
+							start: item.rdate
+						});
+					});
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
 	});
 }
 
@@ -158,27 +175,38 @@ function calendarPage09() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + mm + '-' + dd,
 		navLinks: true,
 		navLinkDayClick: function (date, jsEvent) {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
-		},
-		eventClick: function (calEvent, jsEvent, view) {
-			date = new Date(calEvent.start);
-			startDate = dateToYYYYMMDD(date);
-			$('.flipbook').turn("disable", false);
-			$('.flipbook').turn("page", 4);
-			$('.flipbook').turn("disable", true);
+			alert(startDate);
+			createReceipt(startDate);
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
-		events:[]
+		events: function (start, end, timezone, callback) {
+			var events = [];
+			$.ajax({
+				type: 'POST',
+				url: 'loadAllreceipt',
+				dataType: 'json',
+				success: function (data) {
+					var events = [];
+					$.each(data, function (index, item) {
+						events.push({
+							title: item.sname,
+							id: item.ramount,
+							start: item.rdate
+						});
+					});
+					console.log(events);
+					callback(events);
+				}
+			});
+		}
 	});
 }
 

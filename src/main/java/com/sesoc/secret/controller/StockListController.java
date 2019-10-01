@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sesoc.secret.dao.StockRepository;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
+import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
 import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.StockInfoVO;
@@ -98,5 +99,13 @@ public class StockListController {
 			System.out.println(list);
 		return list;
 	}
-		
+
+	@RequestMapping(value = "/loadAllreceipt", method = RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<ReceiptSubClassVO> loadAllreceipt(){
+			ArrayList<ReceiptSubClassVO> list = repo.loadAllreceipt();
+			System.out.println(list);
+		return list;
+	}	
+	
 }

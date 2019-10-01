@@ -21,6 +21,7 @@
 		<typeAlias type="com.sesoc.secret.dto.LossVO" alias="LossVO"/>
 		<typeAlias type="com.sesoc.secret.dto.StockInfoVO" alias="StockInfoVO"/>
 		<typeAlias type="com.sesoc.secret.dto.StockDetailVO" alias="StockDetailVO"/>
+		<typeAlias type="com.sesoc.secret.dto.ReceiptSubClassVO" alias="ReceiptSubClassVO"/>
 		
 	</typeAliases>
 	

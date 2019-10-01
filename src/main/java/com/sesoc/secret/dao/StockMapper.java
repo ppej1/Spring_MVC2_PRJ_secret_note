@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
+import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
 import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.StockInfoVO;
@@ -21,4 +22,5 @@ public interface StockMapper {
 	ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub);
 	ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info);
 	String selectrSerial();
+	ArrayList<ReceiptSubClassVO> loadAllreceipt();
 }

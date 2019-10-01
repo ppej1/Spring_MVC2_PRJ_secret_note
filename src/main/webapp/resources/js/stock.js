@@ -115,6 +115,7 @@ function open_storage(){
 }
 
 
+
 function inputSelectStock(storage){
 	var storage = storage;
 	sendData = {
@@ -136,8 +137,6 @@ function inputSelectStock(storage){
 
 
 function outputSelectStock(data){
-
-
 	tag = "";
 	tag +='<thead>';
 	tag +='<tr>';
@@ -176,24 +175,31 @@ tag +='<tbody class="main_tbody">';
 				$.each(data2, function ( index, item){
 					tag +='<tr>';
 					tag +='<td>'+item.sserialNumber+'</td>';
-					tag +='<td>'+item.sname+'</td>';
+					tag +='<td ><a href="#" class="detail_for_stock" data-value = '+item.sserialNumber+'>'+item.sname+'</a></td>';
 					tag +='<td>'+item.mclass+'</td>';
 					tag +='<td>'+item.samount+'/'+item.ramount+' '+item.unit+'</td>';
 					tag +='<td>'+item.sdate+'</td>';
 					tag +='<td>'+item.deDate+'</td>';
 					tag +='</tr>';
-				});
+				});		
+
 			}
 		});
 		
 		tag +='</tbody>';
 	});
-		
 		tag +='</tbody>';
 		$('.info_list').html(tag);
+		
 		$('[data-toggle="toggle"]').change(function () {
 			$(this).parents().next('.hide').toggle();
 		});
+		$(".detail_for_stock").on('click',function(){
+			serial = $(this).attr("data-value");
+			alert(serial);
+		});
 
+	
 }
+
 

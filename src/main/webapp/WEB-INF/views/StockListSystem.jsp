@@ -130,6 +130,7 @@
 	<script type="text/javascript" src="resources/js/uses.js"></script>	
 	<script type="text/javascript" src="resources/js/disposal.js"></script>	
 	<script type="text/javascript" src="resources/js/stock.js "></script>			
+	<script type="text/javascript" src="resources/js/receipt.js"></script>
 	
 
 	
@@ -160,14 +161,6 @@ $(function(){
 
 
 </script>		
-<script>
 
-$(document).ready(function () {
-	$('[data-toggle="toggle"]').change(function () {
-		$(this).parents().next('.hide').toggle();
-	});
-});
-
-</script>
  </body>
  </html>

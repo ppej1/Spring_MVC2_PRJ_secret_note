@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
+import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
@@ -72,5 +73,11 @@ public class StockRepository {
 		StockMapper mapper = session.getMapper(StockMapper.class);
 		
 		return mapper.selectrSerial();
+	}
+
+	public ArrayList<ReceiptSubClassVO> loadAllreceipt() {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.loadAllreceipt();
 	}
 }

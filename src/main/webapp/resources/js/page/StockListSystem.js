@@ -3,11 +3,13 @@
  			if(currentPage == 4 || currentPage== 5 ){
 				var tag = '';
 				tag+=  '<a href="#" class="btn_plus_subClass"><i class="fas fa-book-medical"></i></a>';
+				tag+=  '<a href="#" class="btn-recieptList"><i class="fas fa-file-alt"></i></a>';
 				tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
 				tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
 				$('.selectICon_div').html(tag);
 			}else{
 				tag = '';
+				tag+=  '<a href="#" class="btn-stock"><i class="fas fa-file-alt"></i></a>';
 				tag+=  '<a href="#" class="btn-userInfo"><i class="fas fa-user"></i></a>';
 				tag+=  '<a href="#"class="log-out"><i class="fas fa-sign-out-alt"></i></a>';
 				$('.selectICon_div').html(tag);

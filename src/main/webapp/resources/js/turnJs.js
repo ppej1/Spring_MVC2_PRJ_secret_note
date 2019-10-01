@@ -203,6 +203,18 @@
 			$(".btn_plus_subClass").on('click',function(){
 				insertSubClass();
 			});
+			
+			$(".btn-stock").on('click',function(){
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 4);
+				$('.flipbook').turn("disable", true);
+			});
+			
+			$(".btn-recieptList").on('click',function(){
+				$('.flipbook').turn("disable", false);
+				$('.flipbook').turn("page", 2);
+				$('.flipbook').turn("disable", true);
+			});
 
 		}	
 

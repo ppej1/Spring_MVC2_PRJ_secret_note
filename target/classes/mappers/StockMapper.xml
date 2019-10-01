@@ -127,5 +127,19 @@
 			 su.UNIT,
 			 mc.MCLASS
 		 	 order by SCSERIALNUMBER
-	</select>	
+	</select>
+	<select id="loadAllreceipt" resultType="ReceiptSubClassVO">
+		 select
+		 	 su.sname,
+			 su.SCSERIALNUMBER,
+			 re.rSerialNumber,
+			 re.RAMOUNT,
+			 re.rDate
+		 from
+			 receipt re join subclass su on re.SCSERIALNUMBER = su.SCSERIALNUMBER
+            join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
+
+
+	</select>		
+		
 </mapper>
