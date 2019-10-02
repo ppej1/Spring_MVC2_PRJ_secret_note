@@ -37,6 +37,9 @@
 		<div class="info_page_container">
 			<div class="info_detail_container" id='root'>
 				<!-- react 위치 -->
+
+				<!--  -->
+				
 			</div>
 			<div class="info_select_container">
 				<div class="info_select frozen_storage">
