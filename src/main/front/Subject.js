@@ -50,7 +50,6 @@ export default class Subject extends Component{
 														<input id="rComment" name="rComment" type="text"
 															class="form-control validate" />
 													</div>
-
 												</div>
 											</div>
 										</div>
