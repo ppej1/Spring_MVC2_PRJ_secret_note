@@ -78,7 +78,7 @@ CREATE TABLE Employee
 (
 	userid varchar2(40) NOT NULL,
 	userpwd varchar2(40) NOT NULL,
-	eImg varchar2(200) ,
+	eImg varchar2(200) NOT NULL,
 	userName varchar2(40) NOT NULL,
 	rank varchar2(40) NOT NULL,
 	email varchar2(40) NOT NULL,
@@ -127,7 +127,6 @@ CREATE TABLE Receipt
 	PRIMARY KEY (rSerialNumber)
 );
 
-
 CREATE TABLE Stock
 (
 	sSerialNumber varchar2(40) NOT NULL,
@@ -135,9 +134,10 @@ CREATE TABLE Stock
 	userid varchar2(40) NOT NULL,
 	sDate date NOT NULL,
 	deDate date NOT NULL,
+	sAmount number,
+	rSerialNumber varchar2(40) NOT NULL,
 	PRIMARY KEY (sSerialNumber)
 );
-
 
 CREATE TABLE SubClass
 (

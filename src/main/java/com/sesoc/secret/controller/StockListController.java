@@ -1,7 +1,5 @@
 package com.sesoc.secret.controller;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,58 +18,59 @@ import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.SubClassVO;
+
 @Controller
 public class StockListController {
 	@Autowired
 	StockRepository repo;
-	
+
 	@RequestMapping(value = "/insertSubClass", method = RequestMethod.GET)
-	public String  insertSubClass(){
+	public String insertSubClass() {
 		return "popup/insertSubClass";
-	}	
-	
+	}
+
 	@RequestMapping(value = "/subListLoad", method = RequestMethod.POST)
 	@ResponseBody
-	public List<SubClassVO> subListLoad(){
-		
+	public List<SubClassVO> subListLoad() {
+
 		ArrayList<SubClassVO> list = repo.subLoad();
 		return list;
-	}	
-	
+	}
+
 	@RequestMapping(value = "/empListLoad", method = RequestMethod.POST)
 	@ResponseBody
-	public List<Employee_VO> empListLoad(){
-		
+	public List<Employee_VO> empListLoad() {
+
 		ArrayList<Employee_VO> list = repo.empLoad();
-		
+
 		return list;
-	}	
-	
+	}
+
 	@RequestMapping(value = "/accListLoad", method = RequestMethod.POST)
 	@ResponseBody
-	public List<AccountVO> accListLoad(){
-		
+	public List<AccountVO> accListLoad() {
+
 		ArrayList<AccountVO> list = repo.accLoad();
-		
+
 		return list;
-	}	
-	
+	}
+
 	@RequestMapping(value = "/recieptReg", method = RequestMethod.POST)
 	@ResponseBody
-	public int recieptReg(ReceiptVO rec){
-		
+	public int recieptReg(ReceiptVO rec) {
+
 		System.out.println(rec);
 		repo.insertRec(rec);
 		return 0;
-	}	
-	
+	}
+
 	@RequestMapping(value = "/stockReg", method = RequestMethod.POST)
 	@ResponseBody
-	public int stockReg(StockVO st){
+	public int stockReg(StockVO st) {
 		String scSerialNumber = st.getScSerialNumber();
 		SubClassVO sub = repo.subSelect(scSerialNumber);
 		System.out.println(sub);
-		
+
 		System.out.println(st);
 		st.setDeDate(sub.getEDate());
 		String rserial = repo.selectrSerial();
@@ -80,32 +79,31 @@ public class StockListController {
 		repo.insertSt(st);
 		System.out.println("확인");
 		return 0;
-	}	
-	
+	}
+
 	@RequestMapping(value = "/selectStockAsLocation", method = RequestMethod.POST)
 	@ResponseBody
-	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub){
-			System.out.println(sub);
-			ArrayList<StockInfoVO> list = repo.selectStockAsLocation(sub);
-			System.out.println(list);
+	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub) {
+		System.out.println(sub);
+		ArrayList<StockInfoVO> list = repo.selectStockAsLocation(sub);
+		System.out.println(list);
 		return list;
 	}
-	
+
 	@RequestMapping(value = "/selectStockDetail", method = RequestMethod.POST)
 	@ResponseBody
-	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info){
-			System.out.println(info);
-			ArrayList<StockDetailVO> list = repo.selectStockDetail(info);
-			System.out.println(list);
+	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info) {
+		System.out.println(info);
+		ArrayList<StockDetailVO> list = repo.selectStockDetail(info);
+		System.out.println(list);
 		return list;
 	}
 
 	@RequestMapping(value = "/loadAllreceipt", method = RequestMethod.POST)
 	@ResponseBody
-	public ArrayList<ReceiptSubClassVO> loadAllreceipt(){
-			ArrayList<ReceiptSubClassVO> list = repo.loadAllreceipt();
-			System.out.println(list);
+	public ArrayList<ReceiptSubClassVO> loadAllreceipt() {
+		ArrayList<ReceiptSubClassVO> list = repo.loadAllreceipt();
 		return list;
-	}	
-	
+	}
+
 }
