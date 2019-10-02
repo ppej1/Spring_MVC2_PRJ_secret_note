@@ -35,5 +35,6 @@
 		<mapper resource="mappers/StockMapper.xml" />		
 		<mapper resource="mappers/AccountMapper.xml" />
 		<mapper resource="mappers/SubClassMapper.xml" />
+		<mapper resource="mappers/ReceiptMapper.xml" />
 	</mappers>
 </configuration>

@@ -131,13 +131,7 @@ function calendarPage08() {
 		navLinkDayClick: function (date, jsEvent) {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
-			alert(startDate);
-			createReceipt(startDate);
-			
-			
-			
-			
-			
+			loadReceipt(startDate);
 			
 		},
 		editable: true,
@@ -183,7 +177,7 @@ function calendarPage09() {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
 			alert(startDate);
-			createReceipt(startDate);
+			loadReceipt(startDate);
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events

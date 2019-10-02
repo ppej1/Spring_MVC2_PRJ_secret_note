@@ -130,8 +130,9 @@
 	<script type="text/javascript" src="resources/js/calendar.js"></script>	
 	<script type="text/javascript" src="resources/js/uses.js"></script>	
 	<script type="text/javascript" src="resources/js/disposal.js"></script>	
-	<script type="text/javascript" src="resources/js/stock.js "></script>			
-	<script type="text/javascript" src="resources/js/receipt.js"></script>
+	<script type="text/javascript" src="resources/js/stock.js "></script>	
+	<script type="text/javascript" src="resources/js/receipt.js"></script>		
+	
 	
 	<!-- react -->
 	<script type="text/javascript" src="resources/js/webpack/index.js"></script>	

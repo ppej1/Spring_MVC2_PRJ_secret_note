@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.sesoc.secret.dao.ReceiptListMapper">
+	<select id="selectListByDate" parameterType="ReceiptSubClassVO"
+		resultType="ReceiptSubClassVO">
+		select
+		r.rSerialNumber
+		,s.sName
+		,r.rAmount
+		,s.unit
+		,r.userid
+		,to_char(r.RDATE, 'YYYY-MM-DD') AS RDATE
+		,r.rcomment
+		FROM receipt r join subclass s on r.SCSERIALNUMBER = s.SCSERIALNUMBER
+		where TO_CHAR(r.rdate, 'YYYY-MM-DD') = #{rDate}
+	</select>
+	<delete id="deleteReceiptList" parameterType="ReceiptSubClassVO">
+	DELETE receipt
+	WHERE
+		rSerialNumber = #{rSerialNumber}
+	
+	</delete>
+</mapper>
