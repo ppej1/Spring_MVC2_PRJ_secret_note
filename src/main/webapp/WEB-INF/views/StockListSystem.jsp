@@ -56,6 +56,7 @@
 	<link rel="stylesheet" href="resources/css/main.css">
 	<link rel="stylesheet" href="resources/css/pages_button.css">
 	<link rel="stylesheet" href="resources/css/backgroundImg.css">
+	<link rel="stylesheet" href="resources/css/stockStyle.css">
 	
 	
 	<link href='resources/js/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
@@ -132,13 +133,15 @@
 	<script type="text/javascript" src="resources/js/stock.js "></script>			
 	<script type="text/javascript" src="resources/js/receipt.js"></script>
 	
-
+	<!-- react -->
+	<script type="text/javascript" src="resources/js/webpack/index.js"></script>	
 	
 <script>
 $(function(){	
 	accListLoad();
 	subListLoad();
-
+	var loginId = '${sessionScope.loginId}';
+	$("#userid").attr('value',loginId);
 	$("#regist1").on("click", function(){
 		reciept();
 		stock();
@@ -156,7 +159,7 @@ $(function(){
 	$('#storageBtn').on('click', function () {
 		open_storage();
 	});	
-	
+
 });
 
 

@@ -74,6 +74,9 @@ body {
 	<!-- userInfo 관련 -->	
 	<script src="resources/js/employee.js"></script>
 
+
+
+
 	<script>
 		function main() {
 			$('.flipbook').turn("disable", true);

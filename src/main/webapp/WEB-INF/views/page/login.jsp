@@ -45,7 +45,10 @@ function login() {
 <div class="page_content_odd_title title_content_odd">
 	<!-- title page -->
 	<div class="title_head" id="headbox">
-		<div id="title" style="writing-mode:tb-rl;">店長のシークレットノート</div>
+		<div id="title" style="writing-mode:tb-rl;">店長のシークレットノート
+		<div id="root"></div>
+		</div>
+		
 	</div>
 	<div class="title_center">
 

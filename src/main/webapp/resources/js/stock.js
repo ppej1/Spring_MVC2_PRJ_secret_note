@@ -36,6 +36,7 @@ $.ajax({
 }
 
 function stock(){
+	
 var scSerialNumber  = $("#selectSub").val();
 var userid  = $("#userid").val();
 var sAmount  = $("#rAmount").val();	
@@ -94,6 +95,8 @@ $.each(res, function (index, item) {
 		var data = $("#selectSub").val()
 		chaingePicture(data);
 	});
+	
+	
 }
 function chaingePicture(data){
 	var data = data;

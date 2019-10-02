@@ -7,8 +7,8 @@
 	<div class="page_container_full">
 		<h1 class="tm-block-title">USED LIST</h1>
 		<div class="tm-block-scroll tm-block-list">
-			<table id = "newUsedList" class="table tablelist">
-				
+			<table id="newUsedList" class="table tablelist">
+
 			</table>
 		</div>
 
