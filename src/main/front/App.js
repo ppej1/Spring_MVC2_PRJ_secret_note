@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import Subject from './Subject';
 import ButtonReact from './ButtonReact';
+
+$(function(){
+
+});
+function appel(){
+	alert("appel")
+}
 export default class App extends Component {
 		
 
@@ -12,14 +19,14 @@ export default class App extends Component {
 	}
 	render() {
 		var _article, _buttonDiv = null;
-	  if(this.state.mode ==='welcome'){
-		  _article = <Subject></Subject>
-		  _buttonDiv = <ButtonReact></ButtonReact>
-	  }else if(this.state.mode === 'read'){
-		  _article =<h1>dddd</h1>
-		  _buttonDiv = <h1>bbbb</h1>
-	  }
-  
+		  if(this.state.mode ==='welcome'){
+			  _article = <Subject></Subject>
+			  _buttonDiv = <ButtonReact></ButtonReact>
+		  }else if(this.state.mode === 'read'){
+			  _article =<h1>dddd</h1>
+			  _buttonDiv = <h1>bbbb</h1>
+		  }
+
     return (　
     	<div class="info_div">
     			{_article}

@@ -135,8 +135,9 @@
 	
 	
 	<!-- react -->
+
 	<script type="text/javascript" src="resources/js/webpack/index.js"></script>	
-	
+	  
 <script>
 $(function(){	
 	accListLoad();

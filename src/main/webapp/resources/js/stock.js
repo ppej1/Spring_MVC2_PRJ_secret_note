@@ -239,6 +239,7 @@ function outputSelectStock(data) {
 	$(".detail_for_stock").on('click', function() {
 		serial = $(this).attr("data-value");
 		alert(serial);
+		
 	});
 
 }
