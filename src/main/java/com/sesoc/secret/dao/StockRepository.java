@@ -11,6 +11,7 @@ import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockDetailNuturitionVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.SubClassVO;
@@ -79,6 +80,12 @@ public class StockRepository {
 		StockMapper mapper = session.getMapper(StockMapper.class);
 		
 		return mapper.loadAllreceipt();
+	}
+
+	public StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock) {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.selectOnebyserial(stock);
 	}
 
 

@@ -14,6 +14,7 @@ import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockDetailNuturitionVO;
 import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
@@ -106,5 +107,16 @@ public class StockListController {
 		return list;
 
 	}
+	
+	
+	@RequestMapping(value = "/selectOnebyserial", method = RequestMethod.POST)
+	@ResponseBody
+	public StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock) {
+		System.out.println(stock);
+		StockDetailNuturitionVO list = repo.selectOnebyserial(stock);
+		System.out.println(list);
+		return list;
+
+	}	
 
 }
