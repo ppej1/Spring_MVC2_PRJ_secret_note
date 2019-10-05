@@ -201,7 +201,7 @@ function outputSelectStock(data) {
 															tag += '<td>'
 																	+ item.sserialNumber
 																	+ '</td>';
-															tag += '<td ><a href="#" class="detail_for_stock" data-value = '
+															tag += '<td ><a href="#" class="detail_for_stock"  data-value = '
 																	+ item.sserialNumber
 																	+ '>'
 																	+ item.sname
