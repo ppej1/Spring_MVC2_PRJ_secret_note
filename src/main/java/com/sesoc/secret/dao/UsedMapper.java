@@ -14,5 +14,7 @@ public interface UsedMapper {
 	List<UsedListVO> usdeAmountPieChart(UsedListVO used);
 
 	List<UsesVO> whoUsedPieChart(UsesVO who);
+	
+	List<UsedListVO> materialChart1(UsedListVO used);
 
 }

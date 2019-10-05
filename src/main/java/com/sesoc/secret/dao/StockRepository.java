@@ -80,4 +80,6 @@ public class StockRepository {
 		
 		return mapper.loadAllreceipt();
 	}
+
+
 }

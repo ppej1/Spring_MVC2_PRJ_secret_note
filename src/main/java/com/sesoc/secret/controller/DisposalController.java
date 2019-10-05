@@ -52,4 +52,13 @@ public class DisposalController {
 		System.out.println("pie22"+list);
 		return list;
 	}	
+	
+	@RequestMapping(value = "/materialChart2", method = RequestMethod.POST)
+	@ResponseBody
+	public List<DisposalListVO> materialChart2(DisposalListVO disposal){
+
+		List<DisposalListVO> list = repo.materialChart2(disposal);
+
+		return list;
+	}
 }

@@ -104,6 +104,7 @@ public class StockListController {
 	public ArrayList<ReceiptSubClassVO> loadAllreceipt() {
 		ArrayList<ReceiptSubClassVO> list = repo.loadAllreceipt();
 		return list;
+
 	}
 
 }

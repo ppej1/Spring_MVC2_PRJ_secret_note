@@ -25,5 +25,10 @@ public class SubClassRepository {
 		SubClassMapper mapper = session.getMapper(SubClassMapper.class);
 		return mapper.insert(subclass);
 	}
+
+	public SubClassVO chaingeSubClassPicture(SubClassVO sub) {
+		SubClassMapper mapper = session.getMapper(SubClassMapper.class);
+		return mapper.chaingeSubClassPicture(sub);
+	}
 	
 }

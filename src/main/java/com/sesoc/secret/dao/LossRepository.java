@@ -13,10 +13,10 @@ public class LossRepository {
 	@Autowired
 	SqlSession session;
 
-	public List<LossVO> lossList() {
+	public List<LossVO> lossList(LossVO year) {
 		LossMapper mapper = session.getMapper(LossMapper.class);
 	
-		return mapper.lossList();
+		return mapper.lossList(year);
 	}
 	
 	public List<LossVO> lossList2() {

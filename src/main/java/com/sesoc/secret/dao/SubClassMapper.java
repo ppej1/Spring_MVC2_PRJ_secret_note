@@ -9,4 +9,5 @@ public interface SubClassMapper {
 
 	ArrayList<MainClassVO> selectMainClassList();
 	int insert(SubClassVO subclass);
+	SubClassVO chaingeSubClassPicture(SubClassVO sub);
 }

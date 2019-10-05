@@ -12,4 +12,5 @@ public class LossVO {
 	int price;
 	int dAmount;
 	String mdate;
+	String ydate;
 }

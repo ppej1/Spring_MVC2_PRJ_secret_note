@@ -2,9 +2,74 @@ function main() {
 	$('.flipbook').turn("disable", false);
 	$('.flipbook').turn("page", 2);
 	$('.flipbook').turn("disable", true);
+	createDetailForm()
 	calendarPage08();
 	calendarPage09();
+
 }
+
+function createDetailForm() {
+	tag = '';
+	img = "resources/template/img/dishes_1.jpg"
+	tag += '<div class="info_detail">';
+	tag += '<div class="col-md-16 mb-4 detail_info">';
+	tag += '<div class="blog d-block d-lg-flex">';
+	tag += '<div class="bg-image" style="background-image: url('+img+');">';
+	tag += '</div>';
+	tag += '<div class="page_container">';
+	tag += '<form id="accountForm" action="insertAccount" method="POST" enctype="multipart/form-data">';
+	tag += '<div class="container container_mt-5">';
+	tag += '<div class="row tm-content-row">';
+	tag += '<div class="tm-block-col tm-col-account-settings">';
+	tag += '<div class="tm-bg-primary-dark tm-block tm-block-settings">';
+	tag += '<h2 class="tm-block-title">取引先</h2>';
+	tag += '<div class="tm-signup-form row">';
+	tag += '<div class="form-group col-lg-6">';
+	tag += '<label for="selectSub">材料名</label>';
+	tag += '<select id="selectSub" size="1" name="selectSub" class="form-control validate select_mcserialNumber">';
+	tag += '</select>';
+	tag += '<span id="mcserialNumber1"></span>';
+	tag += '</div>';
+	tag += '<div class="form-group col-lg-6">';
+	tag += '<label for="userid">担当者</label>';
+	tag += '<input id="userid" name="userid" type="text" class="form-control validate" value="" readonly="readonly" />';
+	tag += '<span id="userid"></span>';
+	tag += '</div>';
+	tag += '<div class="form-group col-lg-6">';
+	tag += '<label for="rAmount">個数</label>';
+	tag += '<input id="rAmount" name="rAmount" type="number" class="form-control validate" />';
+	tag += '<span id="rAmount"></span>';
+	tag += '</div>';
+	tag += '<div class="form-group col-lg-6">';
+	tag += '<label for="accList">取引先</label>';
+	tag += '<select id="accList" name="accList" class="form-control validate">';
+	tag += '</select>';
+	tag += '<span id="accList"></span>';
+	tag += '</div>';
+	tag += '<div class="form-group col-lg-6">';
+	tag += '<label for="rComment">備考欄</label>';
+	tag += '<input id="rComment" name="rComment" type="text" class="form-control validate" />';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</form>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '</div>';
+	tag += '<div class="info_button_container">';
+	tag += '<button type="button" id="regist1" name="regist1" class="btn btn-primary btn-sm detail_btn">입고 등록</button>';
+	tag += '<button type="button" id="cancel1" name="cancel1" class="btn btn-primary btn-sm detail_btn">취소</button>';
+	tag += '</div>';
+	
+	$("#root").html(tag);
+	detailoperation()
+	
+}
+
 
 function reciept() {
 	var scSerialNumber = $("#selectSub").val();
@@ -13,38 +78,40 @@ function reciept() {
 	var rComment = $("#rComment").val();
 	var accountserial = $("#accList").val();
 	var sendData = {
-		"scSerialNumber" : scSerialNumber,
-		"userid" : userid,
-		"rAmount" : rAmount,
-		"rComment" : rComment,
-		"accountserial" : accountserial
+		"scSerialNumber": scSerialNumber,
+		"userid": userid,
+		"rAmount": rAmount,
+		"rComment": rComment,
+		"accountserial": accountserial
 	};
 	$.ajax({
-		url : 'recieptReg',
-		type : 'post',
-		data : sendData,
-		success : function(res){
-			
+		url: 'recieptReg',
+		type: 'post',
+		data: sendData,
+		success: function (res) {
+
 		}
-	
+
 	});
 }
 
 function stock() {
+
 	var scSerialNumber = $("#selectSub").val();
 	var userid = $("#userid").val();
 	var sAmount = $("#rAmount").val();
 	var sendData = {
-		"scSerialNumber" : scSerialNumber,
-		"userid" : userid,
-		"sAmount" : sAmount,
+		"scSerialNumber": scSerialNumber,
+		"userid": userid,
+		"sAmount": sAmount,
+
 	};
 
 	$.ajax({
-		url : 'stockReg',
-		type : 'post',
-		data : sendData,
-		success : function(res) {
+		url: 'stockReg',
+		type: 'post',
+		data: sendData,
+		success: function (res) {
 			alert("stock등록완료")
 		}
 	});
@@ -52,18 +119,18 @@ function stock() {
 
 function accListLoad() {
 	$.ajax({
-		url : 'accListLoad',
-		type : 'post',
-		success : outputAcc
+		url: 'accListLoad',
+		type: 'post',
+		success: outputAcc
 	});
 }
 
 function outputAcc(res) {
 
 	var tag = '';
-	$.each(res, function(index, item) {
-		tag += '<option value="' + item.accountserial + '">' + item.accountName
-				+ '</option>';
+	$.each(res, function (index, item) {
+		tag += '<option value="' + item.accountserial + '">' + item.accountName +
+			'</option>';
 	});
 
 	$("#accList").html(tag);
@@ -71,21 +138,45 @@ function outputAcc(res) {
 
 function subListLoad() {
 	$.ajax({
-		url : 'subListLoad',
-		type : 'post',
-		success : outputSub
+		url: 'subListLoad',
+		type: 'post',
+		success: outputSub
 	});
 }
 
 function outputSub(res) {
 
 	var tag = '';
-	$.each(res, function(index, item) {
-		tag += '<option value="' + item.scSerialNumber + '" data-value="'
-				+ item.edate + '">' + item.sname + '</option>';
+	$.each(res, function (index, item) {
+		tag += '<option value="' + item.scSerialNumber + '" data-value="' +
+			item.edate + '">' + item.sname + '</option>';
 	});
 
 	$("#selectSub").html(tag);
+	$("#selectSub").on('change', function () {
+		var data = $("#selectSub").val()
+		chaingePicture(data);
+	});
+
+}
+
+function chaingePicture(data) {
+	var data = data;
+	var sendata = {
+		"scSerialNumber": data
+	}
+	$.ajax({
+		url: 'chaingeSubClassPicture',
+		type: 'post',
+		data: sendata,
+		success: chaingesubClassPicture
+	});
+}
+
+function chaingesubClassPicture(data) {
+
+	$(".bg-image").attr('style', 'background-image: url("resources/img/meterial/' + data.simg + '");')
+
 }
 
 /* */
@@ -111,14 +202,14 @@ function open_storage() {
 function inputSelectStock(storage) {
 	var storage = storage;
 	sendData = {
-		"location" : storage
+		"location": storage
 	}
 	$.ajax({
-		type : 'post',
-		url : 'selectStockAsLocation',
-		data : sendData,
-		async : false,
-		success : outputSelectStock
+		type: 'post',
+		url: 'selectStockAsLocation',
+		data: sendData,
+		async: false,
+		success: outputSelectStock
 	});
 
 }
@@ -139,82 +230,83 @@ function outputSelectStock(data) {
 	tag += '<tbody class="main_tbody">';
 
 	$
-			.each(
-					data,
-					function(index, item) {
+		.each(
+			data,
+			function (index, item) {
 
-						tag += '<tbody class="labels">';
-						tag += '<tr>';
-						tag += '<td colspan="6">';
-						tag += '	<label for="' + item.scSerialNumber + '">'
-								+ item.sname + '</label>';
-						tag += '<input type="checkbox" name="'
-								+ item.scSerialNumber + '" id="'
-								+ item.scSerialNumber
-								+ '" data-toggle="toggle">';
-						tag += '</td>';
-						tag += '</tr>';
-						tag += '</tbody>';
-						tag += '<tbody class="hide" id = "'
-								+ item.scSerialNumber
-								+ '"style="display: none;">';
+				tag += '<tbody class="labels">';
+				tag += '<tr>';
+				tag += '<td colspan="6">';
+				tag += '	<label for="' + item.scSerialNumber + '">' +
+					item.sname + '</label>';
+				tag += '<input type="checkbox" name="' +
+					item.scSerialNumber + '" id="' +
+					item.scSerialNumber +
+					'" data-toggle="toggle">';
+				tag += '</td>';
+				tag += '</tr>';
+				tag += '</tbody>';
+				tag += '<tbody class="hide" id = "' +
+					item.scSerialNumber +
+					'"style="display: none;">';
 
-						sendData = {
-							"scSerialNumber" : item.scSerialNumber
+				sendData = {
+					"scSerialNumber": item.scSerialNumber
+				}
+				$
+					.ajax({
+						type: 'post',
+						url: 'selectStockDetail',
+						data: sendData,
+						async: false,
+						success: function (data2) {
+							$
+								.each(
+									data2,
+									function (index, item) {
+										tag += '<tr>';
+										tag += '<td>' +
+											item.sserialNumber +
+											'</td>';
+										tag += '<td ><a href="#" class="detail_for_stock"  data-value = ' +
+											item.sserialNumber +
+											'>' +
+											item.sname +
+											'</a></td>';
+										tag += '<td>' +
+											item.mclass +
+											'</td>';
+										tag += '<td>' +
+											item.samount +
+											'/' +
+											item.ramount +
+											' ' +
+											item.unit +
+											'</td>';
+										tag += '<td>' +
+											item.sdate +
+											'</td>';
+										tag += '<td>' +
+											item.deDate +
+											'</td>';
+										tag += '</tr>';
+									});
+
 						}
-						$
-								.ajax({
-									type : 'post',
-									url : 'selectStockDetail',
-									data : sendData,
-									async : false,
-									success : function(data2) {
-										$
-												.each(
-														data2,
-														function(index, item) {
-															tag += '<tr>';
-															tag += '<td>'
-																	+ item.sserialNumber
-																	+ '</td>';
-															tag += '<td ><a href="#" class="detail_for_stock" data-value = '
-																	+ item.sserialNumber
-																	+ '>'
-																	+ item.sname
-																	+ '</a></td>';
-															tag += '<td>'
-																	+ item.mclass
-																	+ '</td>';
-															tag += '<td>'
-																	+ item.samount
-																	+ '/'
-																	+ item.ramount
-																	+ ' '
-																	+ item.unit
-																	+ '</td>';
-															tag += '<td>'
-																	+ item.sdate
-																	+ '</td>';
-															tag += '<td>'
-																	+ item.deDate
-																	+ '</td>';
-															tag += '</tr>';
-														});
-
-									}
-								});
-
-						tag += '</tbody>';
 					});
+
+				tag += '</tbody>';
+			});
 	tag += '</tbody>';
 	$('.info_list').html(tag);
 
-	$('[data-toggle="toggle"]').change(function() {
+	$('[data-toggle="toggle"]').change(function () {
 		$(this).parents().next('.hide').toggle();
 	});
-	$(".detail_for_stock").on('click', function() {
+	$(".detail_for_stock").on('click', function () {
 		serial = $(this).attr("data-value");
 		alert(serial);
+
 	});
 
 }

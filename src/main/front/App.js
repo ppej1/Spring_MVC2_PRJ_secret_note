@@ -1,40 +1,36 @@
-import React from 'react';
-import { Table } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {Component} from 'react';
+import Subject from './Subject';
+import ButtonReact from './ButtonReact';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Table striped>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </Table>
+export default class App extends Component {
+	constructor(props){
+		super(props);
+		this.state={
+				mode:'welcome'
+		}
+	}
+	render() {
+
+		var _article, _buttonDiv = null;
+		  if(this.state.mode ==='welcome'){
+			  _article = <Subject></Subject>
+			  _buttonDiv = <ButtonReact></ButtonReact>
+		  }else if(this.state.mode === 'read'){
+			  _article =<h1>dddd</h1>
+			  _buttonDiv = <h1>bbbb</h1>
+		  }
+  		$(function(){
+			alert("appel")
+			this.setSTate({
+				mode:'read'
+			});
+		});
+    return (　
+
+    	<div class="info_div">
+    			{_article}
+    			{_buttonDiv}
+		</div>	
     );
   }
 }

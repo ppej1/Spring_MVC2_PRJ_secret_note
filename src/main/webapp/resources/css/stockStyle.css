@@ -1,0 +1,14 @@
+.tm-content-row {
+  justify-content: space-between;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.tm-col-account-settings {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.info_div{
+	height: 100%;
+}
