@@ -2,6 +2,8 @@ package com.sesoc.secret.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,15 +22,6 @@ public class UsedController {
 	@Autowired
 	UsedRepository repo;
 	
-	
-	
-	
-	@RequestMapping(value = "/insertUses", method = RequestMethod.POST)
-	@ResponseBody
-	public String insertUses(StockVO stock){
-		System.out.println(stock);
-		return "true";
-	}	
 	
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)

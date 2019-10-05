@@ -89,4 +89,41 @@ public class StockRepository {
 	}
 
 
+	public int insertUses(StockVO stock) {
+		int result =0;
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		int result1 = mapper.insertUses(stock);
+		if (result1 == 1) {
+			StockVO stockR = mapper.selectStockBySerial(stock);
+			System.out.println("DD" + stockR);
+			int amount = stockR.getSAmount();
+			int useAmount = stock.getSAmount();
+			int nowAmount = amount - useAmount;
+			stock.setSAmount(nowAmount);
+			
+			result = mapper.updateStock(stock);
+			
+		}
+
+		
+		return result;
+	}
+
+	public int insertDisposal(StockVO stock) {
+		int result =0;
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		int result1 = mapper.insertDisposal(stock);
+		if (result1 == 1) {
+			StockVO stockR = mapper.selectStockBySerial(stock);
+			System.out.println("DD" + stockR);
+			int amount = stockR.getSAmount();
+			int useAmount = stock.getSAmount();
+			int nowAmount = amount - useAmount;
+			stock.setSAmount(nowAmount);
+			
+			result = mapper.updateStock(stock);
+		}
+		return result;
+	
+	}
 }

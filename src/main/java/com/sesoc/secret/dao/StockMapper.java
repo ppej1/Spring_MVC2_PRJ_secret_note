@@ -25,4 +25,8 @@ public interface StockMapper {
 	String selectrSerial();
 	ArrayList<ReceiptSubClassVO> loadAllreceipt();
 	StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock);
+	StockVO selectStockBySerial(StockVO stock);
+	int insertUses(StockVO stock);
+	int updateStock(StockVO stock);
+	int insertDisposal(StockVO stock);
 }

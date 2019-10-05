@@ -24,7 +24,7 @@ function createDetailForm() {
 	tag += '<div class="row tm-content-row">';
 	tag += '<div class="tm-block-col tm-col-account-settings">';
 	tag += '<div class="tm-bg-primary-dark tm-block tm-block-settings">';
-	tag += '<h2 class="tm-block-title">取引先</h2>';
+	tag += '<h2 class="tm-block-title">入庫</h2>';
 	tag += '<div class="tm-signup-form row">';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="selectSub">材料名</label>';
@@ -473,10 +473,11 @@ function selectBtn(serial,samount){
 		alert("사용 - serial : " + serial);
 		var useamount = prompt("사용할 갯수를 입력해 주세요 최대 " + samount + "까지 가능합니다.", 0);
 		if (useamount >0 && useamount <=samount) {
-			alert("OK")
+			alert("정상 사용 등록 되었습니다.")
+			
 			sendData = {
-				"sserialNumber" : serial,
-				"samount" : samount
+				"sSerialNumber" : serial,
+				"sAmount" : useamount
 			}
 			$.ajax({
 				type:'post',
@@ -490,7 +491,25 @@ function selectBtn(serial,samount){
 		}
 	});
 	$("#proposal").on("click", function(){
-		alert("폐기");
+		alert("폐기 - serial : " + serial);
+		var useamount = samount
+		if (confirm("정말 폐기 하시겠습니까.?")) {
+			alert("정상적으로 폐기 되었습니다.")
+			
+			sendData = {
+				"sSerialNumber" : serial,
+				"sAmount" : useamount
+			}
+			$.ajax({
+				type:'post',
+				url: 'insertDisposal',
+				data : sendData,
+				success: createDetailForm
+			})
+			
+		}else{
+			alert("폐기를 취소합니다.")
+		}
 	});
 	
 }

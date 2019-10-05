@@ -6,7 +6,7 @@
     <div class="page_container_full">
         <div class="page_title_container">
             <div class="page_title_container_div_right">
-                <h1 id="title_comment">COMMENT</h1>
+                <h1 id="title_comment">コメント</h1>
             </div>
         </div>
         <div class="comment_container">

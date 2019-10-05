@@ -34,9 +34,9 @@ function login() {
 	box-sizing: border-box;
 　　}
 #bottombox{
-	position:absolute; 
+/* 	position:absolute; 
     top:80%; left:40%;
-    margin-left:15%; 
+    margin-left:15%;  */
     width:200px; height:850px;
     color : #871908;
 　　}

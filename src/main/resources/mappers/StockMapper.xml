@@ -176,4 +176,61 @@
             left outer join ACCOUNT ac on ac.ACCOUNTSERIAL = re.ACCOUNTSERIAL
          where sSerialNumber =#{sSerialNumber}
 	</select>
+	
+	<select id="selectStockBySerial"  parameterType="StockVO" resultType="StockVO">
+		select
+			SSERIALNUMBER,
+			USERID,
+			SAMOUNT
+		from
+			STOCK
+		where
+			sSerialNumber = #{sSerialNumber}
+	</select>
+	<insert id="insertUses" parameterType="StockVO">
+		insert into USES
+		(
+		USERIALNUMBER,
+		SSERIALNUMBER,
+		USERID,
+		UDATE,
+		UAMOUNT
+		)
+		values
+		(
+		use_seq.nextval,
+		#{sSerialNumber},
+		#{userid},
+		sysdate,
+		#{sAmount}
+		)
+	</insert>
+	<insert id="insertDisposal" parameterType="StockVO">
+		insert into DISPOSAL
+		(
+		DSERIALNUMBER,
+		SSERIALNUMBER,
+		USERID,
+		DDATE,
+		DAMOUNT
+		)
+		values
+		(
+		disposal_seq.nextval,
+		#{sSerialNumber},
+		#{userid},
+		sysdate,
+		#{sAmount}
+		)
+	</insert>	
+	<update id="updateStock" parameterType="StockVO">
+		update STOCK
+		set
+			USERID = #{userid},
+			SDATE = sysdate,
+			SAMOUNT = #{sAmount}
+		where
+		SSERIALNUMBER = #{sSerialNumber}
+	</update>
+	
 </mapper>

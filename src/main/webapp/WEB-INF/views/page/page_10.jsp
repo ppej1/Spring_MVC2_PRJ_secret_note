@@ -43,13 +43,13 @@
 			</div>
 			<div class="info_select_container">
 				<div class="info_select frozen_storage">
-					<a href="#" id="frozen_storageBtn"><span>냉동</span></a>
+					<a href="#" id="frozen_storageBtn"><span><h1>冷凍</h1></span></a>
 				</div>
 				<div class="info_select cold_storage">
-					<a href="#" id="cold_storageBtn"><span>냉장</span></a>
+					<a href="#" id="cold_storageBtn"><span><h1>冷蔵</h1></span></a>
 				</div>
 				<div class="info_select storage">
-					<a href="#" id="storageBtn"><span>상온</span></a>
+					<a href="#" id="storageBtn"><span><h1>常温</h1></span></a>
 				</div>
 			</div>
 		</div>

@@ -181,8 +181,8 @@ button:focus {
   width: 21.95%;
 }
 .tm-gray-circle {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   background-color: #aaa;
   border-radius: 50%;
   margin-right: 15px;
@@ -391,7 +391,7 @@ thead {
 
 .checklistTable td,
 .checklistTable th{
-	padding: 1.7% 1%;
+	padding: 0.5% 3%;
 }
 
 .checklistTable tr:nth-child(4n){

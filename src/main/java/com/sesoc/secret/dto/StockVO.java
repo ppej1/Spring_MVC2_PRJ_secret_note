@@ -12,7 +12,7 @@ public class StockVO {
 	private String scSerialNumber;
 	private String rSerialNumber;
 	private String userid;
-	private String sAmount;
+	private int sAmount;
 	private String sDate;
 	private String deDate;
 }

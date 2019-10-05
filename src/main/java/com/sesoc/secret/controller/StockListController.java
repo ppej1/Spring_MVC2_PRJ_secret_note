@@ -3,6 +3,8 @@ package com.sesoc.secret.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -118,5 +120,27 @@ public class StockListController {
 		return list;
 
 	}	
-
+	
+	@RequestMapping(value = "/insertUses", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertUses(HttpSession session, StockVO stock){
+		stock.setUserid((String) session.getAttribute("loginId"));
+		int result = repo.insertUses(stock);
+		if(result == 1){
+			return "true";
+		}
+		return "false";
+	}		
+	
+	@RequestMapping(value = "/insertDisposal", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertDisposal(HttpSession session, StockVO stock){
+		stock.setUserid((String) session.getAttribute("loginId"));
+		System.out.println("aaaa"+stock);
+		int result = repo.insertDisposal(stock);
+		if(result == 1){
+			return "true";
+		}
+		return "false";
+	}	
 }

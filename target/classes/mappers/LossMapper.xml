@@ -13,7 +13,8 @@
 			TO_CHAR(d.dDate, 'MM') AS mdate,
 			TO_CHAR(d.dDate, 'YYYY') AS ydate
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+			Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 		WHERE 
 			TO_CHAR(d.dDate, 'YYYY') = #{ydate}
 	</select>
@@ -23,7 +24,8 @@
             s.sName,
             sum(d.dAmount*s.price) As dAmount
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+			Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
         GROUP BY s.sName
 	</select>
 </mapper>
