@@ -24,6 +24,12 @@ public class ReceiptRepository {
 		return list;
 	}
 
+	public ReceiptSubClassVO selectReceipt(int rSerialNumber) {
+		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
+		ReceiptSubClassVO receipt = mapper.selectReceipt(rSerialNumber);
+		return receipt;
+	}
+
 	public int deleteReceiptList(ReceiptSubClassVO receiptList) {
 		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
 		return mapper.deleteReceiptList(receiptList);

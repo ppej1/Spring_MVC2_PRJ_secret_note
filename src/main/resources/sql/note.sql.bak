@@ -179,7 +179,7 @@ ALTER TABLE Receipt
 
 ALTER TABLE Comments
 	ADD FOREIGN KEY (ckSerialNumber)
-	REFERENCES CheckList (ckSerialNumber)
+	REFERENCES CheckList (ckSerialNumber) ON DELETE CASCADE
 ;
 
 

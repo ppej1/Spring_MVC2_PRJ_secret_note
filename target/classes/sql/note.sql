@@ -1,13 +1,13 @@
-﻿
+
 /* Drop Tables */
 
+DROP TABLE Disposal CASCADE CONSTRAINTS;
+DROP TABLE Uses CASCADE CONSTRAINTS;
+DROP TABLE Stock CASCADE CONSTRAINTS;
 DROP TABLE Receipt CASCADE CONSTRAINTS;
 DROP TABLE Account CASCADE CONSTRAINTS;
 DROP TABLE Comments CASCADE CONSTRAINTS;
 DROP TABLE CheckList CASCADE CONSTRAINTS;
-DROP TABLE Disposal CASCADE CONSTRAINTS;
-DROP TABLE Stock CASCADE CONSTRAINTS;
-DROP TABLE Uses CASCADE CONSTRAINTS;
 DROP TABLE Employee CASCADE CONSTRAINTS;
 DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 DROP TABLE SubClass CASCADE CONSTRAINTS;
@@ -20,6 +20,7 @@ DROP TABLE MainClass CASCADE CONSTRAINTS;
 
 CREATE TABLE Account
 (
+	ACCOUNTSERIAL number NOT NULL,
 	accountName varchar2(40) NOT NULL,
 	aImg varchar2(200),
 	aManager varchar2(40) NOT NULL,
@@ -28,7 +29,6 @@ CREATE TABLE Account
 	aContents varchar2(1000),
 	-- 홈페이지 주소
 	aURL varchar2(300),
-	ACCOUNTSERIAL number NOT NULL,
 	PRIMARY KEY (ACCOUNTSERIAL)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE Comments
 CREATE TABLE Disposal
 (
 	dSerialNumber varchar2(40) NOT NULL,
-	scSerialNumber varchar2(40) NOT NULL,
+	sSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
 	dDate date NOT NULL,
 	dAmount number NOT NULL,
@@ -119,25 +119,27 @@ CREATE TABLE Receipt
 	rSerialNumber varchar2(40) NOT NULL,
 	scSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
+	ACCOUNTSERIAL number NOT NULL,
 	rAmount number NOT NULL,
 	rDate date NOT NULL,
 	-- 입고시 상태를 적어놓는다
 	rComment varchar2(100),
-	ACCOUNTSERIAL number NOT NULL,
 	PRIMARY KEY (rSerialNumber)
 );
+
 
 CREATE TABLE Stock
 (
 	sSerialNumber varchar2(40) NOT NULL,
 	scSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
+	rSerialNumber varchar2(40) NOT NULL,
 	sDate date NOT NULL,
 	deDate date NOT NULL,
 	sAmount number,
-	rSerialNumber varchar2(40) NOT NULL,
 	PRIMARY KEY (sSerialNumber)
 );
+
 
 CREATE TABLE SubClass
 (
@@ -159,7 +161,7 @@ CREATE TABLE SubClass
 CREATE TABLE Uses
 (
 	uSerialNumber varchar2(40) NOT NULL,
-	scSerialNumber varchar2(40) NOT NULL,
+	sSerialNumber varchar2(40) NOT NULL,
 	userid varchar2(40) NOT NULL,
 	uDate date NOT NULL,
 	uAmount number NOT NULL,
@@ -179,7 +181,7 @@ ALTER TABLE Receipt
 
 ALTER TABLE Comments
 	ADD FOREIGN KEY (ckSerialNumber)
-	REFERENCES CheckList (ckSerialNumber) ON DELETE CASCADE
+	REFERENCES CheckList (ckSerialNumber)
 ;
 
 
@@ -219,9 +221,21 @@ ALTER TABLE SubClass
 ;
 
 
+ALTER TABLE Stock
+	ADD FOREIGN KEY (rSerialNumber)
+	REFERENCES Receipt (rSerialNumber)
+;
+
+
 ALTER TABLE Disposal
-	ADD FOREIGN KEY (scSerialNumber)
-	REFERENCES SubClass (scSerialNumber)
+	ADD FOREIGN KEY (sSerialNumber)
+	REFERENCES Stock (sSerialNumber)
+;
+
+
+ALTER TABLE Uses
+	ADD FOREIGN KEY (sSerialNumber)
+	REFERENCES Stock (sSerialNumber)
 ;
 
 
@@ -243,12 +257,6 @@ ALTER TABLE Stock
 ;
 
 
-ALTER TABLE Uses
-	ADD FOREIGN KEY (scSerialNumber)
-	REFERENCES SubClass (scSerialNumber)
-;
-
-
 
 /* Comments */
 
@@ -262,37 +270,5 @@ COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 
-
-
-
-
-
-CREATE SEQUENCE ck_seq;
-CREATE SEQUENCE comment_seq;
-CREATE SEQUENCE st_seq;
-CREATE SEQUENCE mc_seq;
-CREATE SEQUENCE ac_seq;
-CREATE SEQUENCE re_seq;
-CREATE SEQUENCE stock_seq;
-CREATE SEQUENCE sb_seq;
-CREATE SEQUENCE stock_seql;
-
-
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(2,'견과류및종실류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(3,'곡류및그제품');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(4,'과일류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(5,'난류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(6,'당류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(7,'두류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(8,'버섯류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(9,'소스류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(10,'어패류및기타수산물');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(11,'우유및유제품류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(12,'유지류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(13,'육류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(14,'차류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(15,'채소류');
-insert into mainclass(MCSERIALNUMBER ,MCLASS) values(16,'향신료류');
 
 

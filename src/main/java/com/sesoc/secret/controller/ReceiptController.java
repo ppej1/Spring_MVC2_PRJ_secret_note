@@ -19,6 +19,7 @@ public class ReceiptController {
 	@Autowired
 	ReceiptRepository repo;
 	
+	
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.GET)
 	public String insertReceipt(String data, Model model) {
 		System.out.println(data);
@@ -33,10 +34,12 @@ public class ReceiptController {
 		ArrayList<ReceiptSubClassVO> list = repo.selectListByDate(receiptList);
 		return list;
 	}
-	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.POST)
+	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.GET)
 	@ResponseBody
-	public int deleteReceiptList(ReceiptSubClassVO receiptList){
+	public String deleteReceiptList(ReceiptSubClassVO receiptList, int rSerialNumber, Model model){
+		ReceiptSubClassVO receipt = repo.selectReceipt(rSerialNumber);
+		repo.deleteStock(rSerialNumber);
 		int result = repo.deleteReceiptList(receiptList);
-		return 0;
+		return "popup/loadReceiptList";
 	}
 }

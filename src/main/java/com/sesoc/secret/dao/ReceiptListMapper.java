@@ -10,4 +10,8 @@ public interface ReceiptListMapper {
 
 	int deleteReceiptList(ReceiptSubClassVO receiptList);
 
+	ReceiptSubClassVO selectReceipt(int rSerialNumber);
+
+	ReceiptSubClassVO deleteStock(int rSerialNumber);
+
 }
