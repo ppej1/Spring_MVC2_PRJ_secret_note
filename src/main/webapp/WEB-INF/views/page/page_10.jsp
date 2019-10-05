@@ -36,7 +36,7 @@
 	<div class="page_container_full">
 		<div class="info_page_container">
 			<div class="info_detail_container" id='root'>
-				<!-- react 위치 -->
+				<!-- ajax 위치 -->
 
 				<!--  -->
 				

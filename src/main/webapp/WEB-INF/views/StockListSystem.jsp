@@ -133,25 +133,11 @@
 	<script type="text/javascript" src="resources/js/stock.js "></script>	
 	<script type="text/javascript" src="resources/js/receipt.js"></script>		
 	
-	
-	<!-- react -->
-
-	<script type="text/javascript" src="resources/js/webpack/index.js"></script>	
-	  
 <script>
 $(function(){	
 	accListLoad();
 	subListLoad();
-	var loginId = '${sessionScope.loginId}';
-	$("#userid").attr('value',loginId);
-	$("#regist1").on("click", function(){
-		reciept();
-		stock();
-	});
 
-	$("#cancel1").on("click", function(){
-		$("#stockForm").reset();
-	});
 	$('#frozen_storageBtn').on('click', function () {
 		open_frozen_storage();
 	});	
@@ -162,10 +148,22 @@ $(function(){
 		open_storage();
 	});	
 
+
 });
 
-
 </script>		
-
+<script>
+function detailoperation(){
+	var loginId = '${sessionScope.loginId}';
+	$("#userid").attr('value',loginId);
+	$("#regist1").on("click", function(){
+		reciept();
+		stock();
+	});
+	$("#cancel1").on("click", function(){
+		$("#stockForm").reset();
+	});
+}
+</script>
  </body>
  </html>
