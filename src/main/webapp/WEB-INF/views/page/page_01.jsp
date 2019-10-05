@@ -84,13 +84,13 @@ span {
 				<div class="row tm-content-row">
 					<div class="col-12 tm-block-col">
 						<div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-							<h2 class="tm-block-title">List of Accounts</h2>
+							<h2 class="tm-block-title">役柄</h2>
 							<p class="text-white">Accounts</p>
 							<select class="custom-select" id="rank" name="rank">
-								<option value="0">店長</option>
-								<option value="1">マネージャー</option>
-								<option value="2">クルー</option>
-								<option value="3">バイト</option>
+								<option value="1">店長</option>
+								<option value="2">マネージャー</option>
+								<option value="3">クルー</option>
+								<option value="4">バイト</option>
 							</select>
 						</div>
 					</div>
@@ -99,7 +99,7 @@ span {
 				<div class="row tm-content-row">
 					<div class="tm-block-col tm-col-avatar">
 						<div class="tm-bg-primary-dark tm-block tm-block-avatar">
-							<h2 class="tm-block-title">Change Picture</h2>
+							<h2 class="tm-block-title">写真変換</h2>
 							<div class="tm-avatar-container">
 								<img id="upload" src="resources/data/img/profile/avatar.png"
 									alt="Avatar" class="tm-avatar img-fluid mb-4" /> <a href="#"
@@ -116,7 +116,7 @@ span {
 					</div>
 					<div class="tm-block-col tm-col-account-settings">
 						<div class="tm-bg-primary-dark tm-block tm-block-settings">
-							<h2 class="tm-block-title">Account Settings</h2>
+							<h2 class="tm-block-title">個人情報入力</h2>
 							<div class="tm-signup-form row">
 								<div class="form-group col-lg-6">
 									<label for="userid">Account Id &nbsp;
@@ -151,13 +151,13 @@ span {
 								<label class="tm-hide-sm">&nbsp;</label>
 								<button type="button"
 									class="btn btn-primary btn-block text-uppercase"
-									onclick="regdata();">Sign Up</button>
+									onclick="regdata();">会員加入完了</button>
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
 								<button type="button"
 									class="btn btn-primary btn-block text-uppercase" id="btnReturn">
-									Return to login</button>
+									会員加入の取り消し</button>
 							</div>
 						</div>
 					</div>

@@ -7,7 +7,7 @@
 <mapper namespace="com.sesoc.secret.dao.ReceiptListMapper">
 	<select id="selectListByDate" parameterType="ReceiptSubClassVO"
 		resultType="ReceiptSubClassVO">
-		select
+		SELECT
 		r.rSerialNumber
 		,s.sName
 		,r.rAmount
@@ -16,7 +16,7 @@
 		,to_char(r.RDATE, 'YYYY-MM-DD') AS RDATE
 		,r.rcomment
 		FROM receipt r join subclass s on r.SCSERIALNUMBER = s.SCSERIALNUMBER
-		where TO_CHAR(r.rdate, 'YYYY-MM-DD') = #{rDate}
+		WHERE TO_CHAR(r.rdate, 'YYYY-MM-DD') = #{rDate}
 	</select>
 	<delete id="deleteReceiptList" parameterType="ReceiptSubClassVO">
 	DELETE receipt
@@ -24,4 +24,13 @@
 		rSerialNumber = #{rSerialNumber}
 	
 	</delete>
+	<select id="selectReceipt" parameterType="ReceiptSubClassVO"
+		resultType="ReceiptSubClassVO">
+		SELECT
+		*
+		FROM 
+			receipt
+		WHERE
+			rSerialNumber = #{rSerialNumber}
+	</select>
 </mapper>
