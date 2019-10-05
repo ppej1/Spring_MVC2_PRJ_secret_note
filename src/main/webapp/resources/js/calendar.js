@@ -53,7 +53,8 @@ function calendarPage04() {
 						events.push({
 							title: item.ckTitle,
 							id: item.ckSerialNumber,
-							start: item.completes
+							start: item.completes,
+							color : '#fbe23247'
 						});
 					});
 					callback(events);
@@ -105,7 +106,8 @@ function calendarPage05() {
 						events.push({
 							title: item.ckTitle,
 							id: item.ckSerialNumber,
-							start: item.completes
+							start: item.completes,
+							color : '#fbe23247'
 						});
 					});
 					console.log(events);
@@ -148,7 +150,8 @@ function calendarPage08() {
 						events.push({
 							title: item.sname,
 							id: item.ramount,
-							start: item.rdate
+							start: item.rdate,
+							color: '#4de85285'
 						});
 					});
 					console.log(events);
@@ -192,7 +195,8 @@ function calendarPage09() {
 						events.push({
 							title: item.sname,
 							id: item.ramount,
-							start: item.rdate
+							start: item.rdate,
+							color: '#4de85285'
 						});
 					});
 					console.log(events);
@@ -248,7 +252,7 @@ function calendarPage12() {
 							title: item.sname,
 							id: 'use',
 							start: item.udate,
-							color : 'yellow'
+							color : '#007bff66'
 						});
 					});
 					$.ajax({
@@ -260,7 +264,7 @@ function calendarPage12() {
 									title: item.sname,
 									id: 'disposal',
 									start: item.ddate,
-									color : 'green'
+									color : '#a516087a'
 								});
 							});
 							
@@ -323,7 +327,7 @@ function calendarPage13() {
 							title: item.sname,
 							id: 'use',
 							start: item.udate,
-							color : 'yellow'
+							color : '#007bff66'
 						});
 					});
 					$.ajax({
@@ -335,7 +339,7 @@ function calendarPage13() {
 									title: item.sname,
 									id: 'disposal',
 									start: item.ddate,
-									color : 'green'
+									color : '#a516087a'
 								});
 							});
 							

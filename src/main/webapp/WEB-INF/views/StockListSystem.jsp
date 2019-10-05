@@ -18,7 +18,7 @@
 			width: 100%;
 		}
 		.labels tr td {
-			background-color: #4fe153;
+			background-color: #68de9240;
 			font-weight: bold;
 			color: #fff;
 		}

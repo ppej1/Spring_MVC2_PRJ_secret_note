@@ -42,15 +42,36 @@
 				
 			</div>
 			<div class="info_select_container">
-				<div class="info_select frozen_storage">
-					<a href="#" id="frozen_storageBtn"><span><h1>冷凍</h1></span></a>
+				
+				<!--  -->
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					  <ol class="carousel-indicators">
+					    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					  </ol>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img class="d-block w-100" src="resources/img/foodtableTitle.jpg" id="frozen_storageBtn" alt="First slide">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="resources/img/foodTable.jpg" id="cold_storageBtn" alt="Second slide">
+					    </div>
+					    <div class="carousel-item">
+					      <img class="d-block w-100" src="resources/img/foodtableTitle.jpg" id="storageBtn" alt="Third slide">
+					    </div>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
 				</div>
-				<div class="info_select cold_storage">
-					<a href="#" id="cold_storageBtn"><span><h1>冷蔵</h1></span></a>
-				</div>
-				<div class="info_select storage">
-					<a href="#" id="storageBtn"><span><h1>常温</h1></span></a>
-				</div>
+				<!--  -->
+	
 			</div>
 		</div>
 	</div>

@@ -17,7 +17,7 @@ body {
 }
 a {
   transition: all 0.3s ease;
-  color:#3CB371;
+  color:#3cb371c2;
 }
 a:focus,
 a:hover {
@@ -194,7 +194,7 @@ button:focus {
 }
 .tm-notification-item {
   padding: 15px;
-  background-color: #3CB371;
+  background-color: #3cb371c2;
   color: #fff;
   font-size: 95%;
   margin-bottom: 15px;
@@ -212,14 +212,14 @@ button:focus {
   font-size: 90%;
 }
 .table {
-  background-color: #c3ffc4;
+  background-color: #68de9240;
   color: #0a7164;
   font-size: 85%;
   margin-bottom: 0;
 }
 
 thead {
-  background-color: #3CB371;
+  background-color: #3cb371c2;
   color: #fff;
 }
 .table thead th {
@@ -291,7 +291,7 @@ thead {
   padding-right: 15px;
 }
 .form-control {
-  background-color: #3CB371;
+  background-color: #3cb371c2;
   border: 0;
 }
 .form-control:focus {
@@ -344,16 +344,16 @@ thead {
 }
 .btn-primary {
   color: #fff;
-  background-color: #3CB371;
-  border: 2px solid #3CB371;
+  background-color: #3cb371c2;
+  border: 2px solid #3cb371c2;
   font-size: 90%;
   font-weight: 600;
 }
 .btn-primary:active,
 .btn-primary:hover {
-  color: #3CB371;
+  color: #3cb371c2;
   background-color: transparent;
-  border: 2px solid #3CB371;
+  border: 2px solid #3cb371c2;
 }
 .custom-file-input {
   cursor: pointer;
@@ -497,7 +497,7 @@ input[type="checkbox"]:focus {
   -o-border-radius: 0;
   border-radius: 0;
   padding: 15px;
-  background: url(../img/arrow-down.png) 98% no-repeat #3CB371;
+  background: url(../img/arrow-down.png) 98% no-repeat #3cb371c2;
 }
 .custom-select:focus {
   outline: 0;
@@ -595,8 +595,8 @@ input[type="checkbox"]:focus {
 
 .btn-outline-secondary:hover{
 	color: #fff;
-    background-color: #3CB371;
-    border-color: #3CB371;
+    background-color: #3cb371c2;
+    border-color: #3cb371c2;
 }
 @media (min-width: 1200px) {
   .navbar-expand-xl .navbar-nav .nav-link {
