@@ -33,7 +33,7 @@ function receiptListOutput(data) {
 
 	if (data == 0) {
 		tag += '<tr>';
-		tag += '<th colspan="8">체크리스트가 없습니다</th>';
+		tag += '<th colspan="8">登録リストがありません。</th>';
 		tag += '</tr>';
 
 	} else {
@@ -73,7 +73,7 @@ function deleteReceipt() {
 		url : 'deleteReceiptList',
 		data : sendData,
 		success : function(res) {
-			alert("삭제완료")
+			alert("削除完了")
 		}
 
 	})

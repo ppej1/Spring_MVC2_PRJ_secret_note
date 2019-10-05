@@ -124,7 +124,7 @@ function calendarPage08() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + (mm-1) + '-' + dd,
 		navLinks: true,
@@ -176,7 +176,6 @@ function calendarPage09() {
 		navLinkDayClick: function (date, jsEvent) {
 			selectdate = new Date(date);
 			startDate = dateToYYYYMMDD(selectdate);
-			alert(startDate);
 			loadReceipt(startDate);
 		},
 		editable: true,
