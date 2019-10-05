@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.UsedRepository;
+import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.UsedListVO;
 import com.sesoc.secret.dto.UsesVO;
 
@@ -18,6 +19,17 @@ public class UsedController {
 	
 	@Autowired
 	UsedRepository repo;
+	
+	
+	
+	
+	@RequestMapping(value = "/insertUses", method = RequestMethod.POST)
+	@ResponseBody
+	public String insertUses(StockVO stock){
+		System.out.println(stock);
+		return "true";
+	}	
+	
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)
 	@ResponseBody

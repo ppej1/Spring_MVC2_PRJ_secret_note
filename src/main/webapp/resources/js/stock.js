@@ -474,6 +474,17 @@ function selectBtn(serial,samount){
 		var useamount = prompt("사용할 갯수를 입력해 주세요 최대 " + samount + "까지 가능합니다.", 0);
 		if (useamount >0 && useamount <=samount) {
 			alert("OK")
+			sendData = {
+				"sserialNumber" : serial,
+				"samount" : samount
+			}
+			$.ajax({
+				type:'post',
+				url: 'insertUses',
+				data : sendData,
+				success: createDetailForm
+			})
+			
 		}else{
 			alert("사용갯수가 잘못 되었습니다.")
 		}
