@@ -52,13 +52,13 @@
 					  </ol>
 					  <div class="carousel-inner">
 					    <div class="carousel-item active">
-					      <img class="d-block w-100" src="resources/img/foodtableTitle.jpg" id="frozen_storageBtn" alt="First slide">
+					      <img class="d-block w-100" src="resources/img/cold.jpg" id="frozen_storageBtn" alt="First slide">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100" src="resources/img/foodTable.jpg" id="cold_storageBtn" alt="Second slide">
+					      <img class="d-block w-100" src="resources/img/fresh.jpg" id="cold_storageBtn" alt="Second slide">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100" src="resources/img/foodtableTitle.jpg" id="storageBtn" alt="Third slide">
+					      <img class="d-block w-100" src="resources/img/fruit.jpg" id="storageBtn" alt="Third slide">
 					    </div>
 					  </div>
 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -19,7 +19,7 @@ function calendarPage04() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + mm + '-' + dd,
 		navLinks: true,
@@ -72,7 +72,7 @@ function calendarPage05() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + (mm + 1) + '-' + dd,
 		navLinks: true,
@@ -217,7 +217,7 @@ function calendarPage12() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + (mm-1) + '-' + dd,
 
@@ -292,7 +292,7 @@ function calendarPage13() {
 		header: {
 			left: 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay,listWeek'
+			right: 'month'
 		},
 		defaultDate: yyyy + '-' + mm + '-' + dd,
 
