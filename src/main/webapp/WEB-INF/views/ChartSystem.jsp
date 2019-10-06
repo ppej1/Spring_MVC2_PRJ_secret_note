@@ -166,14 +166,12 @@ body {
 
 <!-- google chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
   	<script>	
   		$("#yearChart").change(function(){
-			//$("#AnalysisChart").html("");  			
 	  		year = $("#yearChart").val();
 	  		selectType = $("#selectType").val();
 	  		yearChart = {"ydate" : year
-						,"condition" : selectType
+						,"condition" : "Disposal"
 						};
 				$.ajax({
 	  				type: 'GET',
@@ -183,7 +181,7 @@ body {
 	  			})
 	  			
 			})
-		$("#selectType").change(function(){
+/* 		$("#selectType").change(function(){
 			//$("#AnalysisChart").html("");  			
 	  		year = $("#yearChart").val();
 	  		selectType = $("#selectType").val();
@@ -196,15 +194,14 @@ body {
 	  				data: yearChart,
 	  				success: output5
 	  			})
-			}) 
-		
+			})  */
+			var year = $("#yearChart").val();
   		$(function () {
-  	  		var year = $("#yearChart").val();
   	  		var selectType = $("#selectType").val();
 
   	  		var yearChart = {
   	  				"ydate" : year
-  	  				,"condition" : selectType
+  	  				,"condition" : "Disposal"
   	  						};
   	  		chart1(yearChart);
   	  		chart2();
@@ -257,47 +254,53 @@ body {
 		
 		
   		function output5(resp) {
-  			
   			google.charts.load('current', {packages: ['corechart', 'line']});
-  			google.charts.setOnLoadCallback(drawBackgroundColor);
-
-  			
-  			var arr = new Array(12).fill(0);
-
-  			$.each(resp, function (index, item) {
-  				if (item.condition =='Uses') {
-  	  				arr[parseInt(item.mdate) - 1] += item.uamount * item.price;
-  	  			
-				}else{
-  	  				arr[parseInt(item.mdate) - 1] += item.damount * item.price;
-
-				}
-  			})
-  			//experimental data
+  			google.charts.setOnLoadCallback(drawLineColors);
 				
-  			var rawData = [];
+  			var arr = [ [0, 0, 0],[1, 0, 0], [2, 0, 0], [3, 0, 0],  [4,0, 0], [5,0, 0],
+			        [6, 0, 0], [7,0, 0],  [8,0, 0], [9,0, 0], [10,0, 0], [11,0, 0]    ]
+  			
+  			$.each(resp, function (index, item) {
+  	  				arr[parseInt(item.mdate) - 1][1] += item.damount * item.price;
+				    
+  			})
+  			yearChart = {"ydate" : year
+						,"condition" : "Uses"
+						};
+				$.ajax({
+	  				type: 'GET',
+	  				url: 'lossList',
+	  				data: yearChart,
+	  				success: function(resp2){
+	  					alert("Ddd")
+	  		  			$.each(resp2, function (index, item) {
+	  	  	  				arr[parseInt(item.mdate) - 1][2] += item.uamount * item.price;
+	  	  	  			})
 
-  			rawData = arr.map((v, i) => {
-  				return [i + 1, v]
-  			});
+	  				}
+	  			});
+				
   			
   			
   			
-  			function drawBackgroundColor() {
+  			function drawLineColors() {
+	  			alert(JSON.stringify(arr))
+
   			      var data = new google.visualization.DataTable();
   			      data.addColumn('number', 'X');
-  			      data.addColumn('number', 'data');
+  			      data.addColumn('number', 'Dogs');
+  			      data.addColumn('number', 'Cats');
 
-  			      data.addRows(rawData);
+  			      data.addRows(arr);
 
   			      var options = {
   			        hAxis: {
-  			          title: 'month'
+  			          title: 'Time'
   			        },
   			        vAxis: {
-  			          title: 'money'
+  			          title: 'Popularity'
   			        },
-  			        backgroundColor: '#fff'
+  			        colors: ['#a52714', '#097138']
   			      };
 
   			      var chart = new google.visualization.LineChart(document.getElementById('AnalysisChart'));
