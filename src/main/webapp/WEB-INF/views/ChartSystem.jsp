@@ -170,13 +170,13 @@ body {
   	  	  		year = $("#yearChart").val();
   	  	  		yearChart = {"ydate" : year};
 
-  	  			$.ajax({
-  	  	  			type: 'GET',
-  	  	  			url: 'lossList',
-  	  	  			data: yearChart,
-  	  	  			success: output8
-  	  	  		})
-  	  		}) */
+  	  				$.ajax({
+  	  	  				type: 'GET',
+  	  	  				url: 'lossList',
+  	  	  				data: yearChart,
+  	  	  				success: output8
+  	  	  			})
+  	  			}) */
   	  		
   	  		$.ajax({
   	  	  		type: 'GET',
