@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
+import com.sesoc.secret.dto.UsageVO;
 import com.sesoc.secret.dto.UsedListVO;
 import com.sesoc.secret.dto.UsesVO;
 
@@ -40,6 +40,18 @@ public class UsedRepository {
 	public List<UsedListVO> materialChart1(UsedListVO used) {
 		UsedMapper mapper = session.getMapper(UsedMapper.class);
 		return mapper.materialChart1(used);
+	}
+	
+	public List<UsageVO> usedList2() {
+		UsedMapper mapper = session.getMapper(UsedMapper.class);
+	
+		return mapper.usedList2();
+	}
+
+	public List<UsageVO> usedList3(UsageVO year) {
+		UsedMapper mapper = session.getMapper(UsedMapper.class);
+		
+		return mapper.usedList3(year);
 	}
 
 

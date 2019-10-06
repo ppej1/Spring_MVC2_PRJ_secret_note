@@ -16,6 +16,7 @@
 		<typeAlias type="com.sesoc.secret.dto.StockVO" alias="StockVO"/>
 		<typeAlias type="com.sesoc.secret.dto.SubClassVO" alias="SubClassVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsesVO" alias="UsesVO"/>
+		<typeAlias type="com.sesoc.secret.dto.UsageVO" alias="UsageVO"/>
 		<typeAlias type="com.sesoc.secret.dto.UsedListVO" alias="UsedListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.DisposalListVO" alias="DisposalListVO"/>
 		<typeAlias type="com.sesoc.secret.dto.LossVO" alias="LossVO"/>
