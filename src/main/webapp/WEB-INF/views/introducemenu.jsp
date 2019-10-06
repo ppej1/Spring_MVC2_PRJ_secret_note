@@ -131,10 +131,6 @@ body {
 	</script>
 
 
-
-
-
-
 </body>
 
 </html>

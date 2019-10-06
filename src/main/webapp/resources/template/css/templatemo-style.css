@@ -29,7 +29,11 @@ button:focus {
 .tablelist tr:nth-child(2n) {
 	  background-color: #ffffff;
 }
-
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #2af986c2;
+    border-color: #2af986c2;
+}
 
 .navbar-brand {
   display: flex;

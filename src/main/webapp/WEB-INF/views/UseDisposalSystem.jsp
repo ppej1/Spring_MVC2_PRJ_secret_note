@@ -147,13 +147,6 @@
 	<script type="text/javascript" src="resources/js/disposal.js"></script>	
 
 
-
-
-
-
-
-
-	
 	<script>
 	function main(){
 		$('.flipbook').turn("disable", false);
@@ -163,11 +156,6 @@
 		calendarPage13();
 	}
 	</script>
-		
-
-
-
-
 
  </body>
 

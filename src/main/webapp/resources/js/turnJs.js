@@ -158,6 +158,10 @@
 			$('.btn-go-menu').on('click', function () {
 				location.href = "introducemenu";
 			});	
+			$('.btn-go-menu').on('mouseenter', function () {
+				
+			});	
+
 			$('.btn-go-check').on('click', function () {
 				location.href = "CheckListSystem";
 			});	

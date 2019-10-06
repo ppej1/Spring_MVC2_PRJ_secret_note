@@ -226,4 +226,23 @@ margin-bottom :5px;
     padding: 0%
 
 }
-
+.btn-info {
+    color: #fff;
+    background-color: #17a2b800;
+    border-color: #17a2b800;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d00;
+    border-color: #6c757d00;
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a74500;
+    border-color: #28a74500;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #ffc10700;
+    border-color: #ffc10700;
+}

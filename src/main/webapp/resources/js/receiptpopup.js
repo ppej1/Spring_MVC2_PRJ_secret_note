@@ -78,7 +78,11 @@ function deleteReceipt(rserialNumber) {
 		url : 'deleteReceiptList',
 		data : sendData,
 		success : function(res) {
-			alert(res)
+			if(res == 'success'){
+				alert("成功的に削除しました。")
+			}else{
+				alert("すでに使用しているので削除できません。")
+			}
 			inputSelectReceipt()
 		}
 	})
