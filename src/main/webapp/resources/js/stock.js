@@ -63,8 +63,8 @@ function createDetailForm() {
 	tag += '</div>';
 	tag += '</div>';
 	tag += '<div class="info_button_container">';
-	tag += '<button type="button" id="regist1" name="regist1" class="btn btn-primary btn-sm detail_btn">입고 등록</button>';
-	tag += '<button type="button" id="cancel1" name="cancel1" class="btn btn-primary btn-sm detail_btn">취소</button>';
+	tag += '<button type="button" id="regist1" name="regist1" class="btn btn-primary btn-sm detail_btn">入庫登録</button>';
+	tag += '<button type="button" id="cancel1" name="cancel1" class="btn btn-primary btn-sm detail_btn">キャンセル</button>';
 	tag += '</div>';
 
 	$("#root").html(tag);
@@ -369,59 +369,59 @@ function DetailForm(data) {
 	tag += '<span id="rdate"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="deDate">유통기한</label>'
+	tag += '<label for="deDate">賞味期限</label>'
 	tag += '<input id="deDate" name="deDate" type="text" class="form-control validate" value="'+data.deDate +'" readonly="readonly" />';
 	tag += '<span id="deDate"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="price">가격</label>';
+	tag += '<label for="price">価格</label>';
 	tag += '<input id="price" name="price" type="text" class="form-control validate" value="'+data.price +'" readonly="readonly" />';
 	tag += '<span id="price"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="location">저장위치</label>'
+	tag += '<label for="location">貯蔵位置</label>'
 		if (data.location == 2 ) {
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="냉동" readonly="readonly" />';
+			tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷凍" readonly="readonly" />';
 		}else if(data.location == 1){
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="냉장" readonly="readonly" />';
+			tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷蔵" readonly="readonly" />';
 		}else{
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="상온" readonly="readonly" />';
+			tag += '<input id="location" name="location" type="text" class="form-control validate" value="常温" readonly="readonly" />';
 		}
 
 	tag += '<span id="rAmount"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="foodCode">식품코드</label>';
+	tag += '<label for="foodCode">食品コード</label>';
 	tag += '<input id="foodCode" name="foodCode" type="text" class="form-control validate" value="'+data.foodCode +'" readonly="readonly" />';
 	tag += '<span id="foodCode"></span>';
 	tag += '</div>';	
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="energyNumber">열량</label>'
+	tag += '<label for="energyNumber">熱量</label>'
 	tag += '<input id="energyNumber" name="energyNumber" type="text" class="form-control validate" value="'+data.energyNumber +'" readonly="readonly" />';
 	tag += '<span id="energyNumber"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="protein">단백질</label>';
+	tag += '<label for="protein">蛋白質</label>';
 	tag += '<input id="protein" name="protein" type="text" class="form-control validate" value="'+data.protein +'" readonly="readonly" />';
 	tag += '<span id="protein"></span>';
 	tag += '</div>';	
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="carbon">탄수화물</label>'
+	tag += '<label for="carbon">炭水化物</label>'
 	tag += '<input id="carbon" name="carbon" type="text" class="form-control validate" value="'+data.carbon +'" readonly="readonly" />';
 	tag += '<span id="carbon"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="sugar">당류</label>';
+	tag += '<label for="sugar">糖類</label>';
 	tag += '<input id="sugar" name="sugar" type="text" class="form-control validate" value="'+data.sugar +'" readonly="readonly" />';
 	tag += '<span id="sugar"></span>';
 	tag += '</div>';		
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="natrium">나트륨</label>'
+	tag += '<label for="natrium">ナトリウム</label>'
 	tag += '<input id="natrium" name="natrium" type="text" class="form-control validate" value="'+data.natrium +'" readonly="readonly" />';
 	tag += '<span id="natrium"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="chole">콜레스테롤</label>';
+	tag += '<label for="chole">コレステロール</label>';
 	tag += '<input id="chole" name="chole" type="text" class="form-control validate" value="'+data.chole +'" readonly="readonly" />';
 	tag += '<span id="chole"></span>';
 	tag += '</div>';		
@@ -447,9 +447,9 @@ function DetailForm(data) {
 	tag += '</div>';
 	tag += '</div>';
 	tag += '<div class="info_button_container">';
-	tag += '<button type="button" id="uses" name="uses" class="btn btn-primary btn-sm detail_btn">사용하기</button>';
-	tag += '<button type="button" id="proposal" name="proposal" class="btn btn-primary btn-sm detail_btn">폐기하기</button>';
-	tag += '<button type="button" id="registration" name="registration" class="btn btn-primary btn-sm detail_btn">등록하기</button>';
+	tag += '<button type="button" id="uses" name="uses" class="btn btn-primary btn-sm detail_btn">使用する</button>';
+	tag += '<button type="button" id="proposal" name="proposal" class="btn btn-primary btn-sm detail_btn">廃棄する</button>';
+	tag += '<button type="button" id="registration" name="registration" class="btn btn-primary btn-sm detail_btn">登録する</button>';
 	tag += '</div>';
 	var serial = data.sserialNumber;
 	var samount = data.samount;
@@ -470,10 +470,10 @@ function selectBtn(serial,samount){
 		createDetailForm();
 	});
 	$("#uses").on("click", function(){
-		alert("사용 - serial : " + serial);
-		var useamount = prompt("사용할 갯수를 입력해 주세요 최대 " + samount + "까지 가능합니다.", 0);
+		alert("使用- serial : " + serial);
+		var useamount = prompt("使用する個数を入力してください。 最大" + samount + "までできます", 0);
 		if (useamount >0 && useamount <=samount) {
-			alert("정상 사용 등록 되었습니다.")
+			alert("正常使用登録されました。")
 			
 			sendData = {
 				"sSerialNumber" : serial,
@@ -487,14 +487,14 @@ function selectBtn(serial,samount){
 			})
 			
 		}else{
-			alert("사용갯수가 잘못 되었습니다.")
+			alert("使用個数が間違っています。")
 		}
 	});
 	$("#proposal").on("click", function(){
-		alert("폐기 - serial : " + serial);
+		alert("廃棄 - serial : " + serial);
 		var useamount = samount
-		if (confirm("정말 폐기 하시겠습니까.?")) {
-			alert("정상적으로 폐기 되었습니다.")
+		if (confirm("本当に廃棄されますか。?")) {
+			alert("正常に廃棄されました。")
 			
 			sendData = {
 				"sSerialNumber" : serial,
@@ -508,7 +508,7 @@ function selectBtn(serial,samount){
 			})
 			
 		}else{
-			alert("폐기를 취소합니다.")
+			alert("廃棄を取り消します。")
 		}
 	});
 	

@@ -25,8 +25,8 @@ function receiptListOutput(data) {
 	tag += '<td>数量</td>';
 	tag += '<td>単位</td>';
 	tag += '<td>担当者</td>';
-	tag += '<td>削除</td>';
 	tag += '<td>入庫日</td>';
+	tag += '<td>削除</td>';
 	tag += '<td>備考</td>';
 	tag += '</tr>';
 	tag += '</thead>';
@@ -46,7 +46,11 @@ function receiptListOutput(data) {
 			tag += '<td>' + item.unit + '</td>';
 			tag += '<td>' + item.userid + '</td>';
 			tag += '<td>' + item.rdate + '</td>';
-			tag += '<td>' + item.rcomment + '</td>';
+			if (item.rcomment == null) {
+				tag += '<td>内容なし</td>';
+			}else{
+				tag += '<td>' + item.rcomment + '</td>';
+			}
 			tag += '<td>';
 			tag += '<a href="#" class="tm-product-delete-link deleteReceipt" data-value="'
 				+ item.rserialNumber + '">';

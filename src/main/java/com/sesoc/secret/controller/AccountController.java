@@ -34,6 +34,9 @@ public class AccountController {
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		account.setAImg(savedfile);
 		System.out.println(account);
+		if (account.getAImg() == "") {
+			account.setAImg("nobrand.jpg");
+		}
 		int result = repo.insertAccount(account);
 		return "redirect:/insertAccount";
 	}

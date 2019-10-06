@@ -22,7 +22,7 @@ function AccountListOutput(data) {
 						tag += '<p>' + item.acontents + '</p>';
 						tag += '<p>담당자 : ' + item.amanager + '</p>';
 						tag += '<p>H.P : ' + item.aphone + '</p>';
-						tag += '<p><a href="'+ item.aurl + '" class="btn btn-primary btn-sm">ホームページのショートカット</a></p>';
+						tag += '<p><a href="'+ item.aurl + '" class="btn btn-primary btn-sm" target="_blank">ホームページのショートカット</a></p>';
 						tag += '</div>';
 						tag += '</div>';
 						tag += '</div>';

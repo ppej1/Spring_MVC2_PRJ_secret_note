@@ -27,21 +27,21 @@ function chekListOutput(data) {
 	tag += '<thead>';
 	tag += '<tr>';
 	tag += '<th scope="row" rowspan="2">&nbsp;</th>';
-	tag += '<td class="tm-product-name" colspan="3">제목</td>';
-	tag += '<td>난이도</td>';
+	tag += '<td class="tm-product-name" colspan="3">題目</td>';
+	tag += '<td>難易度</td>';
 	tag += '<td rowspan="2">&nbsp;</td>';
 	tag += '</tr>';
 	tag += '<tr>';
-	tag += '<td id="completes" data-value="' + nowdate + '">등록일</td>';
-	tag += '<td>등록자</td>';
-	tag += '<td>완료일</td>';
-	tag += '<td>완료자</td>';
+	tag += '<td id="completes" data-value="' + nowdate + '">登録日</td>';
+	tag += '<td>登録者</td>';
+	tag += '<td>完了日</td>';
+	tag += '<td>完了者</td>';
 	tag += '</tr>';
 	tag += '</thead>';
 
 	if (data == 0) {
 		tag += '<tr>';
-		tag += '<th colspan="5">체크리스트가 없습니다</th>';
+		tag += '<th colspan="5">チェックリストがありません。</th>';
 		tag += '</tr>';
 
 	} else {
@@ -55,11 +55,11 @@ function chekListOutput(data) {
 			tag += '<td class="tm-product-name" colspan="3">' + '<a href ="#" class ="tm-product-serial" data-value="' + item.ckSerialNumber + '" >' + item.ckTitle + '</a></td>"';
 			
 			if(item.importance == 3){
-				tag += '<td>상</td>';
+				tag += '<td>上</td>';
 			}else if(item.importance == 2){
-				tag += '<td>중</td>'
+				tag += '<td>中</td>'
 			}else{
-				tag += '<td>하</td>'
+				tag += '<td>下</td>'
 			}
 			
 			tag += '<td rowspan="2">';
