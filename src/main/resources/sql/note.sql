@@ -9,9 +9,9 @@ DROP TABLE Account CASCADE CONSTRAINTS;
 DROP TABLE Comments CASCADE CONSTRAINTS;
 DROP TABLE CheckList CASCADE CONSTRAINTS;
 DROP TABLE Employee CASCADE CONSTRAINTS;
-DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 DROP TABLE SubClass CASCADE CONSTRAINTS;
 DROP TABLE MainClass CASCADE CONSTRAINTS;
+DROP TABLE NuturitionDB CASCADE CONSTRAINTS;
 
 
 
@@ -35,7 +35,7 @@ CREATE TABLE Account
 
 CREATE TABLE CheckList
 (
-	ckSerialNumber varchar2(40) NOT NULL,
+	ckSerialNumber number NOT NULL,
 	ckTitle varchar2(100) NOT NULL,
 	-- check 제약 조건으로 완료. 미완료만 사용
 	completes varchar2(40) NOT NULL,
@@ -52,8 +52,8 @@ CREATE TABLE CheckList
 
 CREATE TABLE Comments
 (
-	cSerialNumber varchar2(40) NOT NULL,
-	ckSerialNumber varchar2(40) NOT NULL,
+	cSerialNumber number NOT NULL,
+	ckSerialNumber number NOT NULL,
 	userid varchar2(40) NOT NULL,
 	comments varchar2(100) NOT NULL,
 	cDate date NOT NULL,
@@ -64,8 +64,8 @@ CREATE TABLE Comments
 
 CREATE TABLE Disposal
 (
-	dSerialNumber varchar2(40) NOT NULL,
-	sSerialNumber varchar2(40) NOT NULL,
+	dSerialNumber number NOT NULL,
+	sSerialNumber number NOT NULL,
 	userid varchar2(40) NOT NULL,
 	dDate date NOT NULL,
 	dAmount number NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE Employee
 
 CREATE TABLE MainClass
 (
-	mcSerialNumber varchar2(40) NOT NULL,
+	mcSerialNumber number NOT NULL,
 	mClass varchar2(40) NOT NULL,
 	PRIMARY KEY (mcSerialNumber)
 );
@@ -99,6 +99,7 @@ CREATE TABLE MainClass
 
 CREATE TABLE NuturitionDB
 (
+	foodCode varchar2(40) UNIQUE,
 	foodTitle varchar2(40) NOT NULL,
 	indexs varchar2(40) NOT NULL,
 	foodGroup varchar2(40) NOT NULL,
@@ -109,15 +110,14 @@ CREATE TABLE NuturitionDB
 	natrium number NOT NULL,
 	chole number NOT NULL,
 	nutritionserial number NOT NULL,
-	foodCode varchar2(40) NOT NULL UNIQUE,
 	PRIMARY KEY (nutritionserial)
 );
 
 
 CREATE TABLE Receipt
 (
-	rSerialNumber varchar2(40) NOT NULL,
-	scSerialNumber varchar2(40) NOT NULL,
+	rSerialNumber number NOT NULL,
+	scSerialNumber number NOT NULL,
 	userid varchar2(40) NOT NULL,
 	ACCOUNTSERIAL number NOT NULL,
 	rAmount number NOT NULL,
@@ -130,10 +130,10 @@ CREATE TABLE Receipt
 
 CREATE TABLE Stock
 (
-	sSerialNumber varchar2(40) NOT NULL,
-	scSerialNumber varchar2(40) NOT NULL,
+	sSerialNumber number NOT NULL,
+	scSerialNumber number NOT NULL,
 	userid varchar2(40) NOT NULL,
-	rSerialNumber varchar2(40) NOT NULL,
+	rSerialNumber number NOT NULL,
 	sDate date NOT NULL,
 	deDate date NOT NULL,
 	sAmount number,
@@ -143,8 +143,8 @@ CREATE TABLE Stock
 
 CREATE TABLE SubClass
 (
-	scSerialNumber varchar2(40) NOT NULL,
-	mcSerialNumber varchar2(40) NOT NULL,
+	scSerialNumber number NOT NULL,
+	mcSerialNumber number NOT NULL,
 	sImg varchar2(200),
 	sName varchar2(40) NOT NULL,
 	unit varchar2(40) NOT NULL,
@@ -160,8 +160,8 @@ CREATE TABLE SubClass
 
 CREATE TABLE Uses
 (
-	uSerialNumber varchar2(40) NOT NULL,
-	sSerialNumber varchar2(40) NOT NULL,
+	uSerialNumber number NOT NULL,
+	sSerialNumber number NOT NULL,
 	userid varchar2(40) NOT NULL,
 	uDate date NOT NULL,
 	uAmount number NOT NULL,
@@ -239,12 +239,6 @@ ALTER TABLE Uses
 ;
 
 
-ALTER TABLE NuturitionDB
-	ADD FOREIGN KEY (foodCode)
-	REFERENCES SubClass (scSerialNumber)
-;
-
-
 ALTER TABLE Receipt
 	ADD FOREIGN KEY (scSerialNumber)
 	REFERENCES SubClass (scSerialNumber)
@@ -270,15 +264,6 @@ COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 
-DROP SEQUENCE ck_seq;
-DROP SEQUENCE comment_seq;
-DROP SEQUENCE st_seq;
-DROP SEQUENCE mc_seq;
-DROP SEQUENCE ac_seq;
-DROP SEQUENCE re_seq;
-DROP SEQUENCE stock_seq;
-DROP SEQUENCE sb_seq;
-DROP SEQUENCE stock_seql;
 
 CREATE SEQUENCE ck_seq;
 CREATE SEQUENCE comment_seq;
@@ -289,6 +274,10 @@ CREATE SEQUENCE re_seq;
 CREATE SEQUENCE stock_seq;
 CREATE SEQUENCE sb_seq;
 CREATE SEQUENCE stock_seql;
+CREATE SEQUENCE DISPOSAL_SEQ
+CREATE SEQUENCE STOCK_SEQ
+
+
 
 
 insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');
