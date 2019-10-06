@@ -18,6 +18,12 @@
 		FROM receipt r join subclass s on r.SCSERIALNUMBER = s.SCSERIALNUMBER
 		WHERE TO_CHAR(r.rdate, 'YYYY-MM-DD') = #{rDate}
 	</select>
+	<delete id="deleteStockList" parameterType="StockVO">
+	DELETE stock
+	WHERE
+		rSerialNumber = #{rSerialNumber}
+	
+	</delete>
 	<delete id="deleteReceiptList" parameterType="ReceiptSubClassVO">
 	DELETE receipt
 	WHERE

@@ -8,10 +8,10 @@ public interface ReceiptListMapper {
 
 	ArrayList<ReceiptSubClassVO> selectListByDate(ReceiptSubClassVO receiptList);
 
-	int deleteReceiptList(ReceiptSubClassVO receiptList);
+	int deleteReceiptList(String rSerialNumber);
 
-	ReceiptSubClassVO selectReceipt(int rSerialNumber);
+	ReceiptSubClassVO selectReceipt(String rSerialNumber);
 
-	ReceiptSubClassVO deleteStock(int rSerialNumber);
+	int deleteStockList(String rSerialNumber);
 
 }

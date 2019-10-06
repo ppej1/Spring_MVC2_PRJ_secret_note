@@ -59,15 +59,16 @@ function receiptListOutput(data) {
 	}
 	$("#receiptlistTable").html(tag);
 	$(".deleteReceipt").on('click', function() {
-		rSerialNumber = $(this).attr("data-value");
-		deleteReceipt(rSerialNumber);
+		rserialNumber = $(this).attr("data-value");
+		deleteReceipt(rserialNumber);
 	});
 }
 
-function deleteReceipt() {
+function deleteReceipt(rserialNumber) {
 	var sendData = {
-		"rSerialNumber" : rSerialNumber
+		"rSerialNumber" : rserialNumber
 	}
+	alert(rserialNumber)
 	$.ajax({
 		type : 'POST',
 		url : 'deleteReceiptList',
@@ -75,6 +76,5 @@ function deleteReceipt() {
 		success : function(res) {
 			alert("삭제완료")
 		}
-
 	})
 }

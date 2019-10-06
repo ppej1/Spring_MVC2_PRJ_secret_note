@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.ReceiptRepository;
-import com.sesoc.secret.dto.CheckListVO;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 
 @Controller
@@ -34,12 +33,18 @@ public class ReceiptController {
 		ArrayList<ReceiptSubClassVO> list = repo.selectListByDate(receiptList);
 		return list;
 	}
-	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.POST)
 	@ResponseBody
-	public String deleteReceiptList(ReceiptSubClassVO receiptList, int rSerialNumber, Model model){
-		ReceiptSubClassVO receipt = repo.selectReceipt(rSerialNumber);
+	public String deleteReceiptList(String rSerialNumber){
+		System.out.println(rSerialNumber);
+		repo.selectReceipt(rSerialNumber);
 		repo.deleteStock(rSerialNumber);
-		int result = repo.deleteReceiptList(receiptList);
+		int result = repo.deleteReceiptList(rSerialNumber);
+		if(result == 1){
+			System.out.println("삭제 성공");
+		}else{
+			System.out.println("삭제 실패");
+		}
 		return "popup/loadReceiptList";
 	}
 }
