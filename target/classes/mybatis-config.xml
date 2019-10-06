@@ -22,6 +22,7 @@
 		<typeAlias type="com.sesoc.secret.dto.StockInfoVO" alias="StockInfoVO"/>
 		<typeAlias type="com.sesoc.secret.dto.StockDetailVO" alias="StockDetailVO"/>
 		<typeAlias type="com.sesoc.secret.dto.ReceiptSubClassVO" alias="ReceiptSubClassVO"/>
+		<typeAlias type="com.sesoc.secret.dto.StockDetailNuturitionVO" alias="StockDetailNuturitionVO"/>
 		
 	</typeAliases>
 	

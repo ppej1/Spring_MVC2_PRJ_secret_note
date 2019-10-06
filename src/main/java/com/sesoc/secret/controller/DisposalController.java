@@ -2,6 +2,8 @@ package com.sesoc.secret.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sesoc.secret.dao.DisposalRepository;
 import com.sesoc.secret.dto.DisposalListVO;
 import com.sesoc.secret.dto.DisposalVO;
+import com.sesoc.secret.dto.StockVO;
 
 @Controller
 public class DisposalController {
+	
+	
+
 	
 	@Autowired
 	DisposalRepository repo;

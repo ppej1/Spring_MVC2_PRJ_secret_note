@@ -18,7 +18,7 @@
 			width: 100%;
 		}
 		.labels tr td {
-			background-color: #4fe153;
+			background-color: #68de9240;
 			font-weight: bold;
 			color: #fff;
 		}
@@ -135,9 +135,6 @@
 	
 <script>
 $(function(){	
-	accListLoad();
-	subListLoad();
-
 	$('#frozen_storageBtn').on('click', function () {
 		open_frozen_storage();
 	});	
@@ -147,8 +144,6 @@ $(function(){
 	$('#storageBtn').on('click', function () {
 		open_storage();
 	});	
-
-
 });
 
 </script>		
@@ -157,11 +152,18 @@ function detailoperation(){
 	var loginId = '${sessionScope.loginId}';
 	$("#userid").attr('value',loginId);
 	$("#regist1").on("click", function(){
-		reciept();
-		stock();
+		if ($("#rAmount").val()>0) {
+			reciept();
+			stock();
+		}else{
+			alert("1개 이상이여야 입고 가능합니다.")
+		}
+		
 	});
 	$("#cancel1").on("click", function(){
-		$("#stockForm").reset();
+		$("#rAmount").val(0);
+		$("#rComment").val('');
+		
 	});
 }
 </script>

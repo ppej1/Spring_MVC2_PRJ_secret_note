@@ -2,6 +2,8 @@ package com.sesoc.secret.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.UsedRepository;
+import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.UsedListVO;
 import com.sesoc.secret.dto.UsesVO;
 
@@ -18,6 +21,8 @@ public class UsedController {
 	
 	@Autowired
 	UsedRepository repo;
+	
+	
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)
 	@ResponseBody

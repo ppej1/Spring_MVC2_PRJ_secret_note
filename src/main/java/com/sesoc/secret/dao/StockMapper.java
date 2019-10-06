@@ -6,6 +6,7 @@ import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockDetailNuturitionVO;
 import com.sesoc.secret.dto.StockDetailVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
@@ -23,4 +24,9 @@ public interface StockMapper {
 	ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info);
 	String selectrSerial();
 	ArrayList<ReceiptSubClassVO> loadAllreceipt();
+	StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock);
+	StockVO selectStockBySerial(StockVO stock);
+	int insertUses(StockVO stock);
+	int updateStock(StockVO stock);
+	int insertDisposal(StockVO stock);
 }

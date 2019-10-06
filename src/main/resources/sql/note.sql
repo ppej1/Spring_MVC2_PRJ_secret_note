@@ -1,4 +1,4 @@
-
+﻿
 /* Drop Tables */
 
 DROP TABLE Disposal CASCADE CONSTRAINTS;
@@ -270,5 +270,40 @@ COMMENT ON COLUMN Receipt.rComment IS '입고시 상태를 적어놓는다';
 COMMENT ON COLUMN SubClass.price IS '
 ';
 
+DROP SEQUENCE ck_seq;
+DROP SEQUENCE comment_seq;
+DROP SEQUENCE st_seq;
+DROP SEQUENCE mc_seq;
+DROP SEQUENCE ac_seq;
+DROP SEQUENCE re_seq;
+DROP SEQUENCE stock_seq;
+DROP SEQUENCE sb_seq;
+DROP SEQUENCE stock_seql;
+
+CREATE SEQUENCE ck_seq;
+CREATE SEQUENCE comment_seq;
+CREATE SEQUENCE st_seq;
+CREATE SEQUENCE mc_seq;
+CREATE SEQUENCE ac_seq;
+CREATE SEQUENCE re_seq;
+CREATE SEQUENCE stock_seq;
+CREATE SEQUENCE sb_seq;
+CREATE SEQUENCE stock_seql;
 
 
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(1,'감자류및전분류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(2,'견과류및종실류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(3,'곡류및그제품');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(4,'과일류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(5,'난류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(6,'당류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(7,'두류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(8,'버섯류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(9,'소스류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(10,'어패류및기타수산물');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(11,'우유및유제품류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(12,'유지류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(13,'육류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(14,'차류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(15,'채소류');
+insert into mainclass(MCSERIALNUMBER ,MCLASS) values(16,'향신료류');

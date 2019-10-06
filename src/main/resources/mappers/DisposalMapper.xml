@@ -16,7 +16,8 @@
 			d.dAmount,
 			TO_CHAR(d.dDate,'yyyy-MM-dd') AS dDate
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON d.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
 	</select>
@@ -31,7 +32,8 @@
 			d.dAmount,
 			TO_CHAR(d.dDate,'yyyy-MM-dd') AS dDate
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON d.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
@@ -43,7 +45,8 @@
 			m.mClass,
 			sum(d.dAmount) As dAmount
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
         TO_CHAR(dDate,'yyyy-MM-dd') =  #{dDate}
@@ -69,7 +72,8 @@
 			s.sName,
 			sum(d.dAmount) As dAmount
 		FROM
-			Disposal d INNER JOIN SubClass s ON d.scSerialNumber = s.scSerialNumber
+            Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
         TO_CHAR(dDate,'yyyy-MM-dd') =  #{dDate}

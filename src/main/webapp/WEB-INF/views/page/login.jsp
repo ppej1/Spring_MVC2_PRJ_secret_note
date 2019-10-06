@@ -34,12 +34,13 @@ function login() {
 	box-sizing: border-box;
 　　}
 #bottombox{
-	position:absolute; 
+/* 	position:absolute; 
     top:80%; left:40%;
-    margin-left:15%; 
+    margin-left:15%;  */
     width:200px; height:850px;
     color : #871908;
 　　}
+
 </style>
 </head>
 <div class="page_content_odd_title title_content_odd">
@@ -81,7 +82,7 @@ function login() {
 				</div>
 			</form>
 			<div class="register">
-				<a href="#" id="btnSignup">I DONT HAVE ID</a>
+				<a href="#" id="btnSignup">新規取得</a>
 			</div>
 		</div>
 

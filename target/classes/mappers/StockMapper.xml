@@ -141,5 +141,96 @@
 
 
 	</select>		
-		
+	<select id="selectOnebyserial" parameterType="StockDetailNuturitionVO" resultType="StockDetailNuturitionVO">
+	select
+            su.SIMG,
+            su.sname,
+            st.sSerialNumber,
+            st.SCSERIALNUMBER,
+             mc.mcSerialNumber,
+             st.USERID,
+             mc.MCLASS,
+			 st.SAMOUNT,
+			 re.RAMOUNT,
+             su.UNIT,
+			 st.SDATE,
+             re.rdate,
+			 st.DEDATE,
+             su.PRICE,
+             su.location,
+             su.foodcode,
+             nu.ENERGY,
+             nu.PROTEIN,
+             nu.CARBON,
+             nu.SUGAR,
+             nu.NATRIUM,
+             nu.CHOLE,
+             nu.NUTRITIONSERIAL,
+             ac.ACCOUNTNAME,
+             re.RCOMMENT
+		 from
+			 stock st join subclass su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
+			join  receipt re on St.RSERIALNUMBER =  re.RSERIALNUMBER
+            join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
+            left outer join NUTURITIONDB nu on su.foodcode = nu.foodcode
+            left outer join ACCOUNT ac on ac.ACCOUNTSERIAL = re.ACCOUNTSERIAL
+         where sSerialNumber =#{sSerialNumber}
+	</select>
+	
+	<select id="selectStockBySerial"  parameterType="StockVO" resultType="StockVO">
+		select
+			SSERIALNUMBER,
+			USERID,
+			SAMOUNT
+		from
+			STOCK
+		where
+			sSerialNumber = #{sSerialNumber}
+	</select>
+	<insert id="insertUses" parameterType="StockVO">
+		insert into USES
+		(
+		USERIALNUMBER,
+		SSERIALNUMBER,
+		USERID,
+		UDATE,
+		UAMOUNT
+		)
+		values
+		(
+		use_seq.nextval,
+		#{sSerialNumber},
+		#{userid},
+		sysdate,
+		#{sAmount}
+		)
+	</insert>
+	<insert id="insertDisposal" parameterType="StockVO">
+		insert into DISPOSAL
+		(
+		DSERIALNUMBER,
+		SSERIALNUMBER,
+		USERID,
+		DDATE,
+		DAMOUNT
+		)
+		values
+		(
+		disposal_seq.nextval,
+		#{sSerialNumber},
+		#{userid},
+		sysdate,
+		#{sAmount}
+		)
+	</insert>	
+	<update id="updateStock" parameterType="StockVO">
+		update STOCK
+		set
+			USERID = #{userid},
+			SDATE = sysdate,
+			SAMOUNT = #{sAmount}
+		where
+		SSERIALNUMBER = #{sSerialNumber}
+	</update>
+	
 </mapper>

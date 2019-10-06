@@ -110,7 +110,7 @@ span {
 							<input id="eimg" name="upload" type="file" style="display: none;" />
 							<span id="imgresult"></span> <input type="button"
 								class="btn btn-primary btn-block mx-auto"
-								value="UPLOAD PRODUCT IMAGE"
+								value="アカウントイメージのアップロード"
 								onclick="document.getElementById('eimg').click();" />
 						</div>
 					</div>

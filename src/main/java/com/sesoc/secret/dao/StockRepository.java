@@ -11,6 +11,7 @@ import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 import com.sesoc.secret.dto.ReceiptVO;
+import com.sesoc.secret.dto.StockDetailNuturitionVO;
 import com.sesoc.secret.dto.StockInfoVO;
 import com.sesoc.secret.dto.StockVO;
 import com.sesoc.secret.dto.SubClassVO;
@@ -81,5 +82,48 @@ public class StockRepository {
 		return mapper.loadAllreceipt();
 	}
 
+	public StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock) {
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		
+		return mapper.selectOnebyserial(stock);
+	}
 
+
+	public int insertUses(StockVO stock) {
+		int result =0;
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		int result1 = mapper.insertUses(stock);
+		if (result1 == 1) {
+			StockVO stockR = mapper.selectStockBySerial(stock);
+			System.out.println("DD" + stockR);
+			int amount = stockR.getSAmount();
+			int useAmount = stock.getSAmount();
+			int nowAmount = amount - useAmount;
+			stock.setSAmount(nowAmount);
+			
+			result = mapper.updateStock(stock);
+			
+		}
+
+		
+		return result;
+	}
+
+	public int insertDisposal(StockVO stock) {
+		int result =0;
+		StockMapper mapper = session.getMapper(StockMapper.class);
+		int result1 = mapper.insertDisposal(stock);
+		if (result1 == 1) {
+			StockVO stockR = mapper.selectStockBySerial(stock);
+			System.out.println("DD" + stockR);
+			int amount = stockR.getSAmount();
+			int useAmount = stock.getSAmount();
+			int nowAmount = amount - useAmount;
+			stock.setSAmount(nowAmount);
+			
+			result = mapper.updateStock(stock);
+		}
+		return result;
+	
+	}
 }

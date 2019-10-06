@@ -16,27 +16,29 @@
 			u.uAmount,
 			TO_CHAR(u.uDate,'yyyy-MM-dd') AS udate
 		FROM
-			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+            USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON u.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
 	</select>
 
 	<select id="usedListOneDay" parameterType="UsedListVO" resultType="UsedListVO">
 		SELECT
-			u.uSerialNumber,
-			m.mClass,
-			s.location,
-			s.sName,
-			e.userName,
-			e.rank,
-			u.uAmount,
+			u.uSerialNumber as uSerialNumber ,
+			m.mClass as mClass,
+			s.location as location,
+			s.sName as sName,
+			e.userName as userName,
+			e.rank as rank,
+			u.UAMOUNT as uAmount,
 			TO_CHAR(u.uDate,'yyyy-MM-dd') AS udate
 		FROM
-			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+            USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
             INNER JOIN Employee e ON u.userid = e.userid
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
-		WHERE
-			TO_CHAR(uDate,'yyyy-MM-dd') = #{uDate}
+        WHERE
+			TO_CHAR(UDATE,'yyyy-MM-dd') = #{uDate}
 	</select>
 	
 	<select id="usdeAmountPieChart" parameterType="UsedListVO" resultType="UsedListVO">
@@ -44,7 +46,8 @@
 			m.mClass,
 			sum(u.uAmount) As uAmount
 		FROM
-			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+		    USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
         TO_CHAR(uDate,'yyyy-MM-dd') =  #{uDate}
@@ -70,7 +73,8 @@
 			s.sName,
 			sum(u.uAmount) As uAmount
 		FROM
-			Uses u INNER JOIN SubClass s ON u.scSerialNumber = s.scSerialNumber
+		    USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 			INNER JOIN MainClass m ON s.mcSerialNumber = m.mcSerialNumber
         WHERE
         TO_CHAR(uDate,'yyyy-MM-dd') =  #{uDate}
