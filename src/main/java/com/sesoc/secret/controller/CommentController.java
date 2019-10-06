@@ -22,9 +22,7 @@ public class CommentController {
 	@RequestMapping(value = "/loadAllComment", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CommentsVO_img> loadAllMemo(CommentsVO comments){
-		System.out.println("allComment" + comments);
 		ArrayList<CommentsVO_img> result = repo.loadAllMemo (comments);
-		System.out.println("result" + result);
 		
 		return result;
 	}		
@@ -35,7 +33,6 @@ public class CommentController {
 	public int insertComment(CommentsVO comments, HttpSession session){
 		comments.setUserid((String)session.getAttribute("loginId"));
 
-		System.out.println("insert: " + comments);
 		int result = repo.insertComment(comments);
 		return result;
 	}	

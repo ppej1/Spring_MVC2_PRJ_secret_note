@@ -11,6 +11,8 @@ public class LossVO {
 	String sName;
 	int price;
 	int dAmount;
+	int uAmount;
 	String mdate;
 	String ydate;
+	String condition;
 }

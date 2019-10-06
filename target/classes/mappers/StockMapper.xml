@@ -95,8 +95,8 @@
 			su.sname
 			From Stock  st join subclass  su on St.SCSERIALNUMBER = su.SCSERIALNUMBER
 			where
-			 location = #{location}
-			 group by st.SCSERIALNUMBER,su.sname
+			 location = #{location} and  st.SAMOUNT != 0
+			 group by st.SCSERIALNUMBER,su.sname 
 			 order by SCSERIALNUMBER
 	</select>
 	<select id="selectStockDetail" parameterType="StockInfoVO" resultType="StockDetailVO">
@@ -138,8 +138,6 @@
 		 from
 			 receipt re join subclass su on re.SCSERIALNUMBER = su.SCSERIALNUMBER
             join mainclass mc on su.MCSERIALNUMBER = mc.MCSERIALNUMBER
-
-
 	</select>		
 	<select id="selectOnebyserial" parameterType="StockDetailNuturitionVO" resultType="StockDetailNuturitionVO">
 	select

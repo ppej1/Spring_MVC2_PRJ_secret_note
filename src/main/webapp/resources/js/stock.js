@@ -91,7 +91,7 @@ function reciept() {
 		type: 'post',
 		data: sendData,
 		success: function (res) {
-
+				
 		}
 
 	});
@@ -114,6 +114,15 @@ function stock() {
 		type: 'post',
 		data: sendData,
 		success: function (res) {
+			if (res == 1) {
+				alert("成功的に登録されました。")
+				$("#rAmount").val(0);
+				$("#rComment").val('');
+			}else{
+				alert("登録に失敗しました。")
+				$("#rAmount").val(0);
+				$("#rComment").val('');
+			}
 		}
 	});
 }
@@ -158,6 +167,36 @@ function outputSub(res) {
 		var data = $("#selectSub").val()
 		chaingePicture(data);
 	});
+	
+	var tag1 = '';
+	tag1 += '<thead>';
+	tag1 += '<tr>';
+	tag1 += '	<th colspan ="5">材料</th>';
+	tag1 += '	<th>単位</th>';
+	tag1 += '</tr>';
+	tag1 += '</thead>';
+
+	tag1 += '<tbody class="main_tbody">';
+	$.each(res, function (index, item) {
+		tag1 += '<tbody class="labels">';
+		tag1 += '<tr>';
+		tag1 += '<td colspan="5">';
+		tag1 += '	<label for="' + item.scSerialNumber + '">' + item.sname + '</label>';
+		tag1 += '</td>';
+		tag1 += '<td>';
+		tag1 += '	<label>' + item.unit + '</label>';
+		tag1 += '</td>';
+		tag1 += '</tr>';
+		tag1 += '</tbody>';
+		tag1 += '<tbody class="hide" id = "' +
+			item.scSerialNumber +
+			'"style="display: none;">';
+	});
+	tag += '</tbody>';
+	$('.info_list').html(tag1);
+
+	
+	
 
 }
 
@@ -262,32 +301,39 @@ function outputSelectStock(data) {
 								.each(
 									data2,
 									function (index, item) {
-										tag += '<tr>';
-										tag += '<td>' +
-											item.sserialNumber +
-											'</td>';
-										tag += '<td ><a href="#" class="detail_for_stock"  data-value = ' +
-											item.sserialNumber +
-											'>' +
-											item.sname +
-											'</a></td>';
-										tag += '<td>' +
-											item.mclass +
-											'</td>';
-										tag += '<td>' +
-											item.samount +
-											'/' +
-											item.ramount +
-											' ' +
-											item.unit +
-											'</td>';
-										tag += '<td>' +
-											item.sdate +
-											'</td>';
-										tag += '<td>' +
-											item.deDate +
-											'</td>';
-										tag += '</tr>';
+										if (item.samount>0) {
+											if (item.samount <= (item.ramount/3)) {
+												tag += '<tr style="color:red;">';
+											}else{
+												tag += '<tr>';
+											}
+											
+											tag += '<td>' +
+												item.sserialNumber +
+												'</td>';
+											tag += '<td ><a href="#" class="detail_for_stock"  data-value = ' +
+												item.sserialNumber +
+												'>' +
+												item.sname +
+												'</a></td>';
+											tag += '<td>' +
+												item.mclass +
+												'</td>';
+												tag += '<td>' +
+												item.samount +
+												'/' +
+												item.ramount +
+												' ' +
+												item.unit +
+												'</td>';
+											tag += '<td>' +
+												item.sdate +
+												'</td>';
+											tag += '<td>' +
+												item.deDate +
+												'</td>';
+											tag += '</tr>';
+										}
 									});
 
 						}
@@ -465,7 +511,6 @@ function DetailForm(data) {
 function selectBtn(serial,samount){
 	var serial = serial;
 	var samount = samount;
-	alert(serial +","+ samount)
 	$("#registration").on("click", function(){
 		createDetailForm();
 	});

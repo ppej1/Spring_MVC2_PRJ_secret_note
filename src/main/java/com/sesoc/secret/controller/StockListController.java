@@ -62,7 +62,6 @@ public class StockListController {
 	@ResponseBody
 	public int recieptReg(ReceiptVO rec) {
 
-		System.out.println(rec);
 		repo.insertRec(rec);
 		return 0;
 	}
@@ -72,33 +71,25 @@ public class StockListController {
 	public int stockReg(StockVO st) {
 		String scSerialNumber = st.getScSerialNumber();
 		SubClassVO sub = repo.subSelect(scSerialNumber);
-		System.out.println(sub);
 
-		System.out.println(st);
 		st.setDeDate(sub.getEDate());
 		String rserial = repo.selectrSerial();
-		System.out.println(rserial);
 		st.setRSerialNumber(rserial);
-		repo.insertSt(st);
-		System.out.println("확인");
-		return 0;
+		int result = repo.insertSt(st);
+		return result;
 	}
 
 	@RequestMapping(value = "/selectStockAsLocation", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub) {
-		System.out.println(sub);
 		ArrayList<StockInfoVO> list = repo.selectStockAsLocation(sub);
-		System.out.println(list);
 		return list;
 	}
 
 	@RequestMapping(value = "/selectStockDetail", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info) {
-		System.out.println(info);
 		ArrayList<StockDetailVO> list = repo.selectStockDetail(info);
-		System.out.println(list);
 		return list;
 	}
 
@@ -114,9 +105,7 @@ public class StockListController {
 	@RequestMapping(value = "/selectOnebyserial", method = RequestMethod.POST)
 	@ResponseBody
 	public StockDetailNuturitionVO selectOnebyserial(StockDetailNuturitionVO stock) {
-		System.out.println(stock);
 		StockDetailNuturitionVO list = repo.selectOnebyserial(stock);
-		System.out.println(list);
 		return list;
 
 	}	
@@ -136,7 +125,6 @@ public class StockListController {
 	@ResponseBody
 	public String insertDisposal(HttpSession session, StockVO stock){
 		stock.setUserid((String) session.getAttribute("loginId"));
-		System.out.println("aaaa"+stock);
 		int result = repo.insertDisposal(stock);
 		if(result == 1){
 			return "true";

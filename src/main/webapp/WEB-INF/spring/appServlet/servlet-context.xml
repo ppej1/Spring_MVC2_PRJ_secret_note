@@ -23,6 +23,59 @@
 	
 	<context:component-scan base-package="com.sesoc.secret" />
 	
-	
+	<beans:bean id="LoginInterceptor" class="com.sesoc.secret.interceptor.LoginInterceptor"/>
+		<interceptors>
+			<interceptor>
+			<mapping path="/insertCheckList" />
+			<mapping path="/loadCheckList" />
+			<mapping path="/successCheckList" />
+			<mapping path="/deleteCheckList" />
+			<mapping path="/loadAllCheckList" />
+			<mapping path="/loadAllComment" />
+			<mapping path="/insertComment" />
+			<mapping path="/deleteComment" />
+			<mapping path="/disposalList" />
+			<mapping path="/disposalListOneDay" />
+			<mapping path="/disposalAmountPieChart" />
+			<mapping path="/whoDestroyPieChart" />
+			<mapping path="/materialChart2" />
+			<mapping path="/modifyUserInfo" />
+			<mapping path="/lossList" />
+			<mapping path="/lossList2" />
+			<mapping path="/lossList3" />
+			<mapping path="/introducemenu" />
+			<mapping path="/CheckListSystem" />
+			<mapping path="/StockListSystem" />
+			<mapping path="/UseDisposalSystem" />
+			<mapping path="/ChartSystem" />
+			<mapping path="/loadReceiptList" />
+			<mapping path="/deleteReceiptList" />
+			<mapping path="/insertSubClass" />
+			<mapping path="/subListLoad" />
+			<mapping path="/empListLoad" />
+			<mapping path="/accListLoad" />
+			<mapping path="/recieptReg" />
+			<mapping path="/stockReg" />
+			<mapping path="/selectStockAsLocation" />
+			<mapping path="/selectStockDetail" />
+			<mapping path="/loadAllreceipt" />
+			<mapping path="/selectOnebyserial" />
+			<mapping path="/insertUses" />
+			<mapping path="/insertDisposal" />
+			<mapping path="/selectMainClassList" />
+			<mapping path="/subpic" />
+			<mapping path="/insertSubclass" />
+			<mapping path="/chaingeSubClassPicture" />
+			<mapping path="/usedList" />
+			<mapping path="/usedListOneDay" />
+			<mapping path="/usedAmountPieChart" />
+			<mapping path="/whoUsedPieChart" />
+			<mapping path="/materialChart1" />
+			<mapping path="/usedList2" />
+			<mapping path="/usedList3" />
+			
+			<beans:ref bean="LoginInterceptor"/>
+		</interceptor>	
+		</interceptors>	
 	
 </beans:beans>

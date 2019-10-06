@@ -61,7 +61,13 @@ function output3(resp) {
 		    tag += '<tr>'
 			tag += '<th scope="row"><b>'+item.dserialNumber+'</b></th>'
 			tag += '<td>'+item.mclass+'</td>'
-			tag += '<td><b>'+item.location+'</b></td>'		
+			if (item.location== 1) {
+				tag += '<td><b>冷凍</b></td>'		
+			}else if(item.location== 2){
+				tag += '<td><b>冷蔵</b></td>'		
+			}else{
+				tag += '<td><b>常温</b></td>'		
+			}		
 			tag += '<td><b>'+item.sname+'</b></td>'
 			tag += '<td><b>'+item.userName+'</b></td>'
 			tag += '<td>'+item.rank+'</td>'

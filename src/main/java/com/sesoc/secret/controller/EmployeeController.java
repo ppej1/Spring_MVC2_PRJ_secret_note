@@ -34,9 +34,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.POST)
 	@ResponseBody
 	public String  modifyUserInfo(Employee_VO employee){
-		System.out.println(employee);
 		int result = repo.modifyUserInfo(employee);
-		System.out.println(result);
 		if(result == 1){
 			return "success";
 		}
@@ -67,7 +65,6 @@ public class EmployeeController {
 		if (employee.getEImg() == "") {
 			employee.setEImg("avatar.png");
 		}
-		System.out.println("ddd"+ employee.getEImg());
 		repo.insert(employee);
 		return "index";
 	}

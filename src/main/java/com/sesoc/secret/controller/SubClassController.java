@@ -30,7 +30,6 @@ public class SubClassController {
 	public ArrayList<MainClassVO> selectMainClassList(){
 		
 		ArrayList<MainClassVO> list = repo.selectMainClassList();
-		System.out.println(list);
 		return list;
 	}
 	
@@ -57,8 +56,6 @@ public class SubClassController {
 	@RequestMapping(value = "/insertSubclass", method = RequestMethod.POST)
 	@ResponseBody
 	public int insert(SubClassVO subclass) {
-		System.out.println(subclass);
-
 		if (subclass.getSImg() == "") {
 			subclass.setSImg("food.jpg");
 		}
@@ -71,9 +68,7 @@ public class SubClassController {
 	@RequestMapping(value = "/chaingeSubClassPicture", method = RequestMethod.POST)
 	@ResponseBody
 	public SubClassVO chaingeSubClassPicture(SubClassVO sub){
-		System.out.println(sub);
 		SubClassVO list = repo.chaingeSubClassPicture(sub);
-		System.out.println(list);
 		return list;
 	}	
 }

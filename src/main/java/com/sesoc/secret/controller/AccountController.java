@@ -33,7 +33,6 @@ public class AccountController {
 	public String home(AccountVO account, Model model, MultipartFile upload) {
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		account.setAImg(savedfile);
-		System.out.println(account);
 		if (account.getAImg() == "") {
 			account.setAImg("nobrand.jpg");
 		}
@@ -45,7 +44,6 @@ public class AccountController {
 	@ResponseBody
 	public ArrayList<AccountVO> loadAccountList(){
 		ArrayList<AccountVO> list = repo.selectAllList();
-		System.out.println(list);
 		return list;
 	}
 	

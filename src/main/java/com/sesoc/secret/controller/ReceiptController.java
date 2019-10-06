@@ -21,7 +21,6 @@ public class ReceiptController {
 	
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.GET)
 	public String insertReceipt(String data, Model model) {
-		System.out.println(data);
 		model.addAttribute("selectDate", data);
 		return "popup/loadReceiptList";
 	}
@@ -29,14 +28,12 @@ public class ReceiptController {
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<ReceiptSubClassVO> loadReceiptList(ReceiptSubClassVO receiptList) {
-		System.out.println(receiptList);
 		ArrayList<ReceiptSubClassVO> list = repo.selectListByDate(receiptList);
 		return list;
 	}
 	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.POST)
 	@ResponseBody
 	public String deleteReceiptList(String rSerialNumber){
-		System.out.println(rSerialNumber);
 		int result = repo.deleteReceiptList(rSerialNumber);
 		if(result == 1){
 			return "success";

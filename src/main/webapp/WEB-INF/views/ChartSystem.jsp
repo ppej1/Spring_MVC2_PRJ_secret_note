@@ -65,6 +65,11 @@ body {
 	float: right;
 	height: 45%;
 }
+#AnalysisChart6 {
+	overflow: hidden;
+	float: left;
+	height: 45%;
+}
 </style>
 <!-- bootStrap -->
 <link rel="stylesheet"
@@ -158,34 +163,65 @@ body {
   	<script src="resources/js/anychart/css/anychart-font.css"></script>
   	<script src="resources/js/anychart/css/anychart-ui.min.css"></script>
 
-  	<script>	
 
+<!-- google chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  	<script>	
+  		$("#yearChart").change(function(){
+			//$("#AnalysisChart").html("");  			
+	  		year = $("#yearChart").val();
+	  		selectType = $("#selectType").val();
+	  		yearChart = {"ydate" : year
+						,"condition" : selectType
+						};
+				$.ajax({
+	  				type: 'GET',
+	  				url: 'lossList',
+	  				data: yearChart,
+	  				success: output5
+	  			})
+	  			
+			})
+		$("#selectType").change(function(){
+			//$("#AnalysisChart").html("");  			
+	  		year = $("#yearChart").val();
+	  		selectType = $("#selectType").val();
+	  		yearChart = {"ydate" : year
+					,"condition" : selectType
+					};
+				$.ajax({
+	  				type: 'GET',
+	  				url: 'lossList',
+	  				data: yearChart,
+	  				success: output5
+	  			})
+			}) 
+		
   		$(function () {
   	  		var year = $("#yearChart").val();
-  	  		var yearChart = {"ydate" : year};
-  	  		
-/*   	  		$("#yearChart").change(function(){
-	  			alert("변경");
-	  			$("#AnalysisChart").empty();  			
-  	  	  		year = $("#yearChart").val();
-  	  	  		yearChart = {"ydate" : year};
+  	  		var selectType = $("#selectType").val();
 
-  	  				$.ajax({
-  	  	  				type: 'GET',
-  	  	  				url: 'lossList',
-  	  	  				data: yearChart,
-  	  	  				success: output8
-  	  	  			})
-  	  			}) */
+  	  		var yearChart = {
+  	  				"ydate" : year
+  	  				,"condition" : selectType
+  	  						};
+  	  		chart1(yearChart);
+  	  		chart2();
+  	  		chart3(yearChart);
   	  		
+  		})
+
+		function chart1(yearChart){
   	  		$.ajax({
   	  	  		type: 'GET',
   	  	  		url: 'lossList',
   	  	  		data: yearChart,
   	  	  		success: output5
   	  	  	})
-  	  		
-  	  		$.ajax({
+  		}
+		function chart2(){
+	  		$.ajax({
   				type: 'GET',
   				url: 'lossList2',
   				success: output6
@@ -196,10 +232,11 @@ body {
   				url: 'usedList2',
   				success: output7
   			})
-  			
+  		}
+		function chart3(yearChart){
   			$.ajax({
   	  			type: 'GET',
-  	  			url: 'lossList',
+  	  			url: 'lossList3',
   	  			data: yearChart,
   	  			success: output8
   	  		})
@@ -210,86 +247,72 @@ body {
   				data: yearChart,
   				success: output9
   			})
-  		})
-
-  		
+  			$.ajax({
+  				type: 'GET',
+  				url: 'usedList3',
+  				data: yearChart,
+  				success: output10
+  			})
+  		}
+		
+		
   		function output5(resp) {
   			
-  			var arr = new Array(12).fill(0);
+  			google.charts.load('current', {packages: ['corechart', 'line']});
+  			google.charts.setOnLoadCallback(drawBackgroundColor);
+
   			
-  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price)
+  			var arr = new Array(12).fill(0);
 
+  			$.each(resp, function (index, item) {
+  				if (item.condition =='Uses') {
+  	  				arr[parseInt(item.mdate) - 1] += item.uamount * item.price;
+  	  			
+				}else{
+  	  				arr[parseInt(item.mdate) - 1] += item.damount * item.price;
+
+				}
+  			})
   			//experimental data
-
+				
   			var rawData = [];
 
   			rawData = arr.map((v, i) => {
   				return [i + 1, v]
-  			})
-
-  			//alert(JSON.stringify(rawData))
-
-  			anychart.onDocumentReady(function () {
-
-
-  				var data_1 = rawData;
-  				var data_2 = setTheoryData(rawData);
-
-
-  				chart = anychart.scatter();
-
-  				chart.title("EACH MONTH TOTAL LOSS STATUS GRAPH / YEAR");
-
-  				chart.legend(true);
-
-  				// creating the first series (marker) and setting the experimental data
-  				var series1 = chart.marker(data_1);
-  				series1.name("Loss Data");
-
-  				// creating the second series (line) and setting the theoretical data
-  				var series2 = chart.line(data_2);
-  				series2.name("Loss Linear Regression");
-  				series2.markers(true);
-
-  				chart.container("AnalysisChart");
-  				chart.draw();
   			});
+  			
+  			
+  			
+  			function drawBackgroundColor() {
+  			      var data = new google.visualization.DataTable();
+  			      data.addColumn('number', 'X');
+  			      data.addColumn('number', 'data');
 
-  			//getting the regression object
-  			//the type of regression depends on the experimental data
-  			var result = regression('linear', rawData);
+  			      data.addRows(rawData);
 
+  			      var options = {
+  			        hAxis: {
+  			          title: 'month'
+  			        },
+  			        vAxis: {
+  			          title: 'money'
+  			        },
+  			        backgroundColor: '#fff'
+  			      };
 
-  			//get coefficients from the calculated formula
-  			var coeff = result.equation;
-
-
-
-  			//input X and calculate Y using the formula found
-  			//this works with all types of regression
-  			function formula(coeff, x) {
-  				var result = null;
-  				for (var i = 0, j = coeff.length - 1; i < coeff.length; i++, j--) {
-  					result += coeff[i] * Math.pow(x, j);
-  				}
-  				return result;
-  			}
-
-  			//setting theoretical data array of [X][Y] using experimental X coordinates
-  			//this works with all types of regression
-  			function setTheoryData(rawData) {
-  				var theoryData = [];
-  				for (var i = 0; i < rawData.length; i++) {
-  					theoryData[i] = [rawData[i][0], formula(coeff, rawData[i][0])];
-  				}
-  				return theoryData;
-  			}
+  			      var chart = new google.visualization.LineChart(document.getElementById('AnalysisChart'));
+  			      chart.draw(data, options);
+  			    }
   		}
+	
+  		
+  		
+  		
   		
   		function output6(resp) {
   			var result = [];
 
-  			result = resp.map(item => [item.sname, parseInt(item.damount)])
+  			result = resp.map(item => [item.sname, parseInt(item.damount)]);
 
   			anychart.onDocumentReady(function () {
   				// create pie chart with passed data
@@ -312,7 +335,7 @@ body {
   		function output7(resp) {
   			var result = [];
 
-  			result = resp.map(item => [item.sname, parseInt(item.uamount)])
+  			result = resp.map(item => [item.sname, parseInt(item.uamount)]);
 
   			anychart.onDocumentReady(function () {
   				// create pie chart with passed data
@@ -337,7 +360,7 @@ body {
   				
   	  			var arr = new Array(12).fill(0);
   	  			
-  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price)
+  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price);
 
   	  			//experimental data
 
@@ -372,7 +395,7 @@ body {
   				
  	  			var arr = new Array(12).fill(0);
   	  			
-  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.uamount * item.price)
+  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.uamount * item.price);
 
   	  			//experimental data
 
@@ -400,8 +423,11 @@ body {
   				// initiate chart drawing
   				chart.draw();
   			});
-  		}
+  		} 		
   	</script>
+
+
+
 
 	<script>
   		function main() {

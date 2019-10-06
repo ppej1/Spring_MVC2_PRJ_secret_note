@@ -10,5 +10,6 @@
   		<div id="AnalysisChart3"></div>
   		<div id="AnalysisChart4"></div>
   		<div id="AnalysisChart5"></div>
+  		<div id="AnalysisChart6"></div>
     </div>
 </div>

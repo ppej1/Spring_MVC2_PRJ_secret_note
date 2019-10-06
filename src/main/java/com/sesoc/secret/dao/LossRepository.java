@@ -15,8 +15,12 @@ public class LossRepository {
 
 	public List<LossVO> lossList(LossVO year) {
 		LossMapper mapper = session.getMapper(LossMapper.class);
-	
-		return mapper.lossList(year);
+	if (year.getCondition().equals("Disposal")) {
+		return mapper.lossListD(year);
+	}else{
+		return mapper.lossListU(year);
+
+	}
 	}
 	
 	public List<LossVO> lossList2() {
@@ -24,4 +28,11 @@ public class LossRepository {
 	
 		return mapper.lossList2();
 	}
+
+	public List<LossVO> lossList3(LossVO year) {
+		LossMapper mapper = session.getMapper(LossMapper.class);
+		
+		return mapper.lossListD(year);
+	}
+	
 }

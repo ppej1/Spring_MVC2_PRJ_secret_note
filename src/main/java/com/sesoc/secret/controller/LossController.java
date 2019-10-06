@@ -22,6 +22,7 @@ public class LossController {
 	@ResponseBody
 	public List<LossVO> lossList(LossVO year){
 		List<LossVO> list = repo.lossList(year);
+		System.out.println(list);
 		return list;
 	}
 	
@@ -31,4 +32,12 @@ public class LossController {
 		List<LossVO> list = repo.lossList2();
 		return list;
 	}
+	
+	@RequestMapping(value = "/lossList3", method = RequestMethod.GET)
+	@ResponseBody
+	public List<LossVO> lossList3(LossVO year){
+		List<LossVO> list = repo.lossList3(year);
+		return list;
+	}
+	
 }

@@ -58,7 +58,6 @@ public class CheckListController {
 	@ResponseBody
 	public String  insertCheckList(CheckListVO checklist, HttpSession session){
 		checklist.setRegistid((String)session.getAttribute("loginId"));
-		System.out.println("인풋됨"+ checklist);
 		int result = repo.insertCheckList(checklist);
 		return "popup/insertCheckList";
 	}		

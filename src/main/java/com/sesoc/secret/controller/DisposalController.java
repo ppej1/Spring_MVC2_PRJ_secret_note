@@ -53,9 +53,7 @@ public class DisposalController {
 	@RequestMapping(value = "/whoDestroyPieChart", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalVO> whoDestroyPieChart(DisposalVO who){
-		System.out.println("pie"+who);
 		List<DisposalVO> list = repo.whoDestroyPieChart(who);
-		System.out.println("pie22"+list);
 		return list;
 	}	
 	

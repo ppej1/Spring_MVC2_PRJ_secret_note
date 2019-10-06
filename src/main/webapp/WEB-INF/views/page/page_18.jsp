@@ -10,6 +10,10 @@
 		  	<option value="2018">2018</option>
 		 	<option value="2017">2017</option>
 		</select>
+		<select id="selectType" name="selectType">
+			<option value="Disposal" >Disposal</option>
+		  	<option value="USES" selected="selected">USES</option>
+		</select>
   		<div id="AnalysisChart"></div>
     </div>
 </div>
