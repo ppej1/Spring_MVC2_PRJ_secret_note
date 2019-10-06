@@ -30,12 +30,19 @@
 
 	function idcheck() {
 		var userid = $("#userid").val();
+		if(userid == ""){
+			alert("아이디를 입력하세요.");
+			return
+		}
 		$.ajax({
 			type : 'GET',
 			url : 'idcheck',
 			data : "userid=" + userid,
 			success : function(resp) {
 				alert(resp);
+				if(resp=="able"){
+					$("#regbtn").attr('disabled', false);
+				}
 			}
 		})
 	};
@@ -119,10 +126,12 @@ span {
 							<h2 class="tm-block-title">個人情報入力</h2>
 							<div class="tm-signup-form row">
 								<div class="form-group col-lg-6">
-									<label for="userid">Account Id &nbsp;
-										<button type="button" id="idcheck">check</button>
-									</label> <input id="userid" name="userid" type="text"
+									<label for="userid">Account Id&nbsp;&nbsp;&nbsp;<button type="button" id="idcheck" 
+									style="background-color: white;border: 2px solid #6DB385;color: black;width: 100px">check</button></label>
+									
+									<input id="userid" name="userid" type="text"
 										class="form-control validate" /> <span id="idresult"></span>
+									
 								</div>
 								<div class="form-group col-lg-6">
 									<label for="name">Account Name</label> <input id="userName"
@@ -149,9 +158,9 @@ span {
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>
-								<button type="button"
+								<input type="button" id="regbtn" value="会員加入完了"
 									class="btn btn-primary btn-block text-uppercase"
-									onclick="regdata();">会員加入完了</button>
+									onclick="regdata();" disabled="disabled">
 							</div>
 							<div class="col-12">
 								<label class="tm-hide-sm">&nbsp;</label>

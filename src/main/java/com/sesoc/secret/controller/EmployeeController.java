@@ -38,16 +38,13 @@ public class EmployeeController {
 		int result = repo.modifyUserInfo(employee);
 		System.out.println(result);
 		if(result == 1){
-			return "sucess";
+			return "success";
 		}
 		return "fail";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
-		if(logid == null || logpwd == null){
-			return "index";
-		}
 		Employee_VO result = new Employee_VO();
 		result.setUserid(logid);
 		result.setUserpwd(logpwd);
@@ -84,10 +81,10 @@ public class EmployeeController {
 	@RequestMapping(value = "/idcheck", method = RequestMethod.GET)
 	@ResponseBody
 	public String idcheck(Employee_VO employee) {
+		String message = "disable";
 		Employee_VO user = repo.selectone(employee);
-		String message = "This is already used id.";
 		if(user == null) {
-			message = "You can use this id.";
+			message = "able";
 		}
 		return message;
 	}

@@ -163,31 +163,58 @@ body {
   		$(function () {
   	  		var year = $("#yearChart").val();
   	  		var yearChart = {"ydate" : year};
-  			
-  	  		$.ajax({
-  	  			type: 'GET',
-  	  			url: 'lossList',
-  	  			data: yearChart,
-  	  			success: output5
-  	  		})
   	  		
-  	  		$("#yearChart").change(function(){
+/*   	  		$("#yearChart").change(function(){
 	  			alert("변경");
 	  			$("#AnalysisChart").empty();  			
   	  	  		year = $("#yearChart").val();
   	  	  		yearChart = {"ydate" : year};
 
-  	  	  		$.ajax({
-  	  	  			type: 'GET',
-  	  	  			url: 'lossList',
-  	  	  			data: yearChart,
-  	  	  			success: output5
-  	  	  		})
+  	  				$.ajax({
+  	  	  				type: 'GET',
+  	  	  				url: 'lossList',
+  	  	  				data: yearChart,
+  	  	  				success: output8
+  	  	  			})
+  	  			}) */
+  	  		
+  	  		$.ajax({
+  	  	  		type: 'GET',
+  	  	  		url: 'lossList',
+  	  	  		data: yearChart,
+  	  	  		success: output5
+  	  	  	})
+  	  		
+  	  		$.ajax({
+  				type: 'GET',
+  				url: 'lossList2',
+  				success: output6
+  			})
+
+  			$.ajax({
+  				type: 'GET',
+  				url: 'usedList2',
+  				success: output7
+  			})
+  			
+  			$.ajax({
+  	  			type: 'GET',
+  	  			url: 'lossList',
+  	  			data: yearChart,
+  	  			success: output8
   	  		})
+  	  		
+  	  		$.ajax({
+  				type: 'GET',
+  				url: 'usedList3',
+  				data: yearChart,
+  				success: output9
+  			})
   		})
 
   		
   		function output5(resp) {
+  			
   			var arr = new Array(12).fill(0);
   			
   			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price)
@@ -258,34 +285,7 @@ body {
   				return theoryData;
   			}
   		}
-  	</script>
-	<script>
-  		$(function () {
-  			$.ajax({
-  				type: 'GET',
-  				url: 'lossList2',
-  				success: output6
-  			})
-
-  			$.ajax({
-  				type: 'GET',
-  				url: 'usedList2',
-  				success: output7
-  			})
-
-  			$.ajax({
-  				type: 'GET',
-  				url: 'lossList',
-  				success: output8
-  			})
-
-  			$.ajax({
-  				type: 'GET',
-  				url: 'lossList',
-  				success: output9
-  			})
-  		})
-
+  		
   		function output6(resp) {
   			var result = [];
 
@@ -331,70 +331,72 @@ body {
   				chart.draw();
   			});
   		}
-
-  		function output8() {
+  		
+  		function output8(resp){
   			anychart.onDocumentReady(function () {
-  				// create pie chart with passed data
-  				var chart = anychart.pie([
-  					['Apples', 6371664],
-  					['Pears', 789622],
-  					['Bananas', 7216301],
-  					['Grapes', 1486621],
-  					['Oranges', 1200000]
-  				]);
+  				
+  	  			var arr = new Array(12).fill(0);
+  	  			
+  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price)
 
-  				// set chart title text settings
-  				chart.title('Fruits imported in 2015 (in kg)');
-  				// set chart labels position to outside
-  				chart.labels().position('outside');
-  				// set legend title settings
-  				chart.legend().title()
-  					.enabled(true)
-  					.text('Retail channels')
-  					.padding([0, 0, 10, 0]);
+  	  			//experimental data
 
-  				// set legend position and items layout
-  				chart.legend()
-  					.position('center-bottom')
-  					.itemsLayout('horizontal')
-  					.align('center');
+  	  			var rawData = [];
+
+  	  			rawData = arr.map((v, i) => {
+  	  				return [i + 1, v]
+  	  			})
+  				
+  				// create line chart
+  				var chart = anychart.line();
+
+  				chart.yScale().minimum(0);
+
+  				// create line series
+  				var series = chart.line(rawData);
+
+  				series.normal().stroke('#999999', 5, null, 'round', 'round');
+  				series.normal().risingStroke('#66BB6A', 5, null, 'round', 'round');
+  				series.normal().fallingStroke('#FF7043', 5, null, 'round', 'round');
 
   				// set container id for the chart
   				chart.container('AnalysisChart4');
+
   				// initiate chart drawing
   				chart.draw();
   			});
   		}
-
-  		function output9() {
+  		
+  		function output9(resp){
   			anychart.onDocumentReady(function () {
-  				// create pie chart with passed data
-  				var chart = anychart.pie([
-  					['Apples', 6371664],
-  					['Pears', 789622],
-  					['Bananas', 7216301],
-  					['Grapes', 1486621],
-  					['Oranges', 1200000]
-  				]);
+  				
+ 	  			var arr = new Array(12).fill(0);
+  	  			
+  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.uamount * item.price)
 
-  				// set chart title text settings
-  				chart.title('Fruits imported in 2015 (in kg)');
-  				// set chart labels position to outside
-  				chart.labels().position('outside');
-  				// set legend title settings
-  				chart.legend().title()
-  					.enabled(true)
-  					.text('Retail channels')
-  					.padding([0, 0, 10, 0]);
+  	  			//experimental data
 
-  				// set legend position and items layout
-  				chart.legend()
-  					.position('center-bottom')
-  					.itemsLayout('horizontal')
-  					.align('center');
+  	  			var rawData = [];
+
+  	  			rawData = arr.map((v, i) => {
+  	  				return [i + 1, v]
+  	  			})
+  				
+  				// create line chart
+  				var chart = anychart.line();
+
+  				chart.yScale().minimum(0);
+
+  				// create line series
+  				var series = chart.line(rawData);
+
+  				series.normal().stroke('#999999', 5, null, 'round', 'round');
+  				series.normal().risingStroke('#66BB6A', 5, null, 'round', 'round');
+  				series.normal().fallingStroke('#FF7043', 5, null, 'round', 'round');
 
   				// set container id for the chart
   				chart.container('AnalysisChart5');
+
   				// initiate chart drawing
   				chart.draw();
   			});

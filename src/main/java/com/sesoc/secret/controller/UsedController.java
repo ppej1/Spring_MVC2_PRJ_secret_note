@@ -2,8 +2,6 @@ package com.sesoc.secret.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.UsedRepository;
-import com.sesoc.secret.dto.StockVO;
+import com.sesoc.secret.dto.LossVO;
+import com.sesoc.secret.dto.UsageVO;
 import com.sesoc.secret.dto.UsedListVO;
 import com.sesoc.secret.dto.UsesVO;
 
@@ -48,9 +47,7 @@ public class UsedController {
 	@RequestMapping(value = "/whoUsedPieChart", method = RequestMethod.POST)
 	@ResponseBody
 	public List<UsesVO> whoUsedPieChart(UsesVO who){
-		System.out.println("pie"+who);
 		List<UsesVO> list = repo.whoUsedPieChart(who);
-		System.out.println("pie22"+list);
 		return list;
 	}	
 	
@@ -60,4 +57,18 @@ public class UsedController {
 		List<UsedListVO> list = repo.materialChart1(used);
 		return list;
 	}	
+	
+	@RequestMapping(value = "/usedList2", method = RequestMethod.GET)
+	@ResponseBody
+	public List<UsageVO> usedList2(Model model){
+		List<UsageVO> list = repo.usedList2();
+		return list;
+	}
+	
+	@RequestMapping(value = "/usedList3", method = RequestMethod.GET)
+	@ResponseBody
+	public List<UsageVO> usedList3(UsageVO year){
+		List<UsageVO> list = repo.usedList3(year);
+		return list;
+	}
 }

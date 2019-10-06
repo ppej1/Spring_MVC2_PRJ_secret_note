@@ -81,4 +81,27 @@
         GROUP BY 	m.mClass,s.location,s.sName
 	</select>
 
+	<select id="usedList2" resultType="UsageVO">
+		SELECT
+            s.sName,
+            sum(u.uAmount*s.price) As uAmount
+		FROM
+			Uses u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
+        GROUP BY s.sName
+    </select>
+    
+    <select id="usedList3" resultType="UsageVO" parameterType="UsageVO">
+		SELECT 
+            s.sName,
+            s.price,
+            u.uAmount,
+			TO_CHAR(u.uDate, 'MM') AS mdate,
+			TO_CHAR(u.uDate, 'YYYY') AS ydate
+		FROM
+			Uses u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
+			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
+		WHERE 
+			TO_CHAR(u.uDate, 'YYYY') = #{ydate}
+	</select>
 </mapper>
