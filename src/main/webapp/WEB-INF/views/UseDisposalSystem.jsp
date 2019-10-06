@@ -8,30 +8,7 @@
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>店長のシークレットノート</title>
- 	<style>
-	 	body {
- 		}
- 		.no-js {
- 			display: none;
- 		}
- 		.info_list{
-			width: 100%;
-		}
-		.labels tr td {
-			background-color: #4fe153;
-			font-weight: bold;
-			color: #fff;
-		}
 
-		.label tr td label {
-			display: block;
-		}
-
-		[data-toggle="toggle"] {
-			display: none;
-		}
- 		
-	</style>
 	<!-- bootStrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<!-- even ICON -->
@@ -44,10 +21,12 @@
     <link rel="stylesheet" href="resources/template/fonts/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="resources/template/fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/template/fonts/flaticons/font/flaticon.css">
+   
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/template/css/style.css">
 	<link rel="stylesheet" href="resources/template/css/templatemo-style.css">		
 	 <link rel="shortcut icon" href="resources/img/chess.ico">
+	<link rel="stylesheet" href="resources/css/useDisposalStyle.css">
 
 
     <!-- custum templet Style -->

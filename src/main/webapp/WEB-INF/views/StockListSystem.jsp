@@ -8,30 +8,7 @@
  	<meta charset="UTF-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>店長のシークレットノート</title>
- 	<style>
-	 	body {
- 		}
- 		.no-js {
- 			display: none;
- 		}
- 		.info_list{
-			width: 100%;
-		}
-		.labels tr td {
-			background-color: #68de9240;
-			font-weight: bold;
-			color: #fff;
-		}
 
-		.label tr td label {
-			display: block;
-		}
-
-		[data-toggle="toggle"] {
-			display: none;
-		}
- 		
-	</style>
 	<!-- bootStrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<!-- even ICON -->
@@ -61,7 +38,6 @@
 	
 	<link href='resources/js/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
 	<link href='resources/js/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-
 	
  </head>
  <body class="no-js">
