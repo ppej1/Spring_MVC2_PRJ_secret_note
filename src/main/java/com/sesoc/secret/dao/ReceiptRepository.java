@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sesoc.secret.dto.ReceiptSubClassVO;
+import com.sesoc.secret.dto.StockDetailVO;
 
 @Repository
 public class ReceiptRepository {
@@ -24,20 +25,26 @@ public class ReceiptRepository {
 		return list;
 	}
 
-	public ReceiptSubClassVO selectReceipt(String rSerialNumber) {
-		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
-		ReceiptSubClassVO receipt = mapper.selectReceipt(rSerialNumber);
-		return receipt;
-	}
-
-	public int deleteReceiptList(String  rSerialNumber) {
-		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
-		return mapper.deleteReceiptList(rSerialNumber);
-	}
-
 	public int deleteStock(String rSerialNumber) {
 		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
 		return mapper.deleteStockList(rSerialNumber);
 	}
+	
+	public int deleteReceiptList(String  rSerialNumber) {
+		ReceiptListMapper mapper = session.getMapper(ReceiptListMapper.class);
 
+		
+		StockDetailVO receipt = mapper.selectReceipt(rSerialNumber);
+		int result = 0;
+		System.out.println(receipt);
+		if(receipt.getSAmount() == receipt.getRAmount()){
+			System.out.println("ddd");
+			return mapper.deleteReceiptList(rSerialNumber);
+
+		}
+		return result;
+
+	}
+	
+	
 }

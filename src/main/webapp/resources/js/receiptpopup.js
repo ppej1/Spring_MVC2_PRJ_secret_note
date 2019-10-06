@@ -49,7 +49,7 @@ function receiptListOutput(data) {
 			tag += '<td>' + item.rcomment + '</td>';
 			tag += '<td>';
 			tag += '<a href="#" class="tm-product-delete-link deleteReceipt" data-value="'
-				+ item.rSerialNumber + '">';
+				+ item.rserialNumber + '">';
 			tag += '<i class="far fa-trash-alt tm-product-delete-icon"></i>';
 			tag += '</a>';
 			tag += '</td>';
@@ -74,7 +74,8 @@ function deleteReceipt(rserialNumber) {
 		url : 'deleteReceiptList',
 		data : sendData,
 		success : function(res) {
-			alert("削除完了")
+			alert(res)
+			inputSelectReceipt()
 		}
 	})
 }

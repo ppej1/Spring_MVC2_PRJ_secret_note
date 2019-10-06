@@ -30,13 +30,13 @@
 		rSerialNumber = #{rSerialNumber}
 	
 	</delete>
-	<select id="selectReceipt" parameterType="ReceiptSubClassVO"
-		resultType="ReceiptSubClassVO">
+	<select id="selectReceipt" parameterType="StockDetailVO"
+		resultType="StockDetailVO">
 		SELECT
 		*
 		FROM 
-			receipt
+			receipt re join  stock st on St.RSERIALNUMBER =  re.RSERIALNUMBER
 		WHERE
-			rSerialNumber = #{rSerialNumber}
+			re.rSerialNumber = #{rSerialNumber}
 	</select>
 </mapper>

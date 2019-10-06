@@ -37,14 +37,10 @@ public class ReceiptController {
 	@ResponseBody
 	public String deleteReceiptList(String rSerialNumber){
 		System.out.println(rSerialNumber);
-		repo.selectReceipt(rSerialNumber);
-		repo.deleteStock(rSerialNumber);
 		int result = repo.deleteReceiptList(rSerialNumber);
 		if(result == 1){
-			System.out.println("삭제 성공");
-		}else{
-			System.out.println("삭제 실패");
+			return "success";
 		}
-		return "popup/loadReceiptList";
+		return "fail";
 	}
 }
