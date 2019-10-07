@@ -19,7 +19,7 @@ public class DeleteRepository {
 		StockMapper mapper = session.getMapper(StockMapper.class);
 		DeleteMapper mapper2 = session.getMapper(DeleteMapper.class);
 		ArrayList<StockVO> DeleteList = mapper2.selectDeleteList();
-		/*for (StockVO stock : DeleteList) {
+		for (StockVO stock : DeleteList) {
 			int result1 = mapper.insertDisposal(stock);
 			if (result1 == 1) {
 				StockVO stockR = mapper.selectStockBySerial(stock);
@@ -32,7 +32,7 @@ public class DeleteRepository {
 				result = mapper.updateStock(stock);
 			}
 
-		}*/
+		}
 		return result;
 	}
 }
