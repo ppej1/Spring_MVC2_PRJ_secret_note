@@ -192,7 +192,23 @@
 				$('.flipbook').turn("disable", true);
 			});	
 			$('.btn-userInfo').on('click', function () {
-				updateUserInfo();
+				var userpwd = prompt("비밀번호를 입력해 주세요");
+				var sendData = {
+						'userpwd': userpwd
+				}
+				$.ajax({
+					type:'post',
+					url : 'checkpassword',
+					data : sendData,
+					success:function(data){
+						if(data =="success"){
+							updateUserInfo();
+						}else{
+							alert("비밀번호가 틀렸습니다.");
+						}
+					}
+				})
+				
 			});	
 			$('.log-out').on('click', function () {
 				console.log("logout");

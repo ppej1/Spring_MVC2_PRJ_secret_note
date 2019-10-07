@@ -161,7 +161,6 @@ body {
   		$("#yearChart").change(function(){
 	  		year = $("#yearChart").val();
 	  		selectType = $("#selectType").val();
-	  		alert("ddd : " + selectType);
 	  		yearChart = {"ydate" : year
   	  					,"condition" : "Disposal"
   	  	  				,"scSerialNumber" : selectType
@@ -191,7 +190,6 @@ body {
   		$("#selectType").change(function(){
 	  		year = $("#yearChart").val();
 	  		selectType = $("#selectType").val();
-			alert("ddd : " + selectType)
 
 	  		yearChart = {"ydate" : year
 	  					,"condition" : "Disposal"

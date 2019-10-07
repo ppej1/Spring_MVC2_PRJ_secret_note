@@ -35,4 +35,9 @@ public class EmployeeRepository {
 		return mapper.modifyUserInfo(employee);
 	}
 
+	public Employee_VO checklist(Employee_VO employee) {
+		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+		return mapper.selectone(employee);
+	}
+
 }

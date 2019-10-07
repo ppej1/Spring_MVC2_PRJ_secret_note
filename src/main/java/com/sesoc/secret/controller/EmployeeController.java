@@ -25,10 +25,14 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.GET)
 	public String  modifyUserInfo(HttpSession session, Model model, Employee_VO employee){
-		del.delete();
 		employee.setUserid((String) session.getAttribute("loginId"));
+
 		Employee_VO result = repo.selectone(employee);
+		System.out.println(result);
+
 		String ephone = result.getEPhone();
+		model.addAttribute("loginUser", result);
+		model.addAttribute("ephone", ephone);
 		return "popup/modifyUserInfo";
 	}
 	
@@ -42,7 +46,20 @@ public class EmployeeController {
 		}
 		return "fail";
 	}
-
+	@RequestMapping(value = "/checkpassword", method = RequestMethod.POST)
+	@ResponseBody
+	public String  checkpassword(HttpSession session, Employee_VO employee){
+		
+		employee.setUserid((String) session.getAttribute("loginId"));
+		Employee_VO result = repo.checklist(employee);
+		if(result != null){
+			return "success";
+		}
+		return "fail";
+	}
+	
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
 		del.delete();
