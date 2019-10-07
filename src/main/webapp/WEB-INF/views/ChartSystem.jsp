@@ -155,15 +155,6 @@ body {
   	<script type="text/javascript" src="resources/js/uses.js"></script>
   	<script type="text/javascript" src="resources/js/disposal.js"></script>
 
-<!-- anychart -->
-  	<script src="resources/js/anychart/js/regression.min.js"></script>
-  	<script src="resources/js/anychart/js/anychart-base.min.js"></script>
-  	<script src="resources/js/anychart/js/anychart-exports.min.js"></script>
-  	<script src="resources/js/anychart/js/anychart-ui.min.js"></script>
-  	<script src="resources/js/anychart/css/anychart-font.css"></script>
-  	<script src="resources/js/anychart/css/anychart-ui.min.css"></script>
-
-
 <!-- google chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   	<script>	
@@ -338,23 +329,28 @@ body {
   			var result = [];
 
   			result = resp.map(item => [item.sname, parseInt(item.damount)]);
-
-  			anychart.onDocumentReady(function () {
-  				// create pie chart with passed data
-  				var chart = anychart.pie(result);
-
-  				// set chart title text settings
-  				chart.title('Loss (Disposal * Price)')
-  					// set points grouping settings
-  					.group(function (value) {
-  						return (value >= 1000);
-  					});
-
-  				// set container id for the chart
-  				chart.container('AnalysisChart2');
-  				// initiate chart drawing
-  				chart.draw();
-  			});
+  			
+  			var inputData = ['Task', 'Hours per Day'];
+  			
+  			var newArr = [inputData, ...result];
+  			
+	  	      google.charts.load('current', {'packages':['corechart']});
+	  	      google.charts.setOnLoadCallback(drawChart);
+	
+	  	      function drawChart() {
+	
+	  	        var data = google.visualization.arrayToDataTable(newArr);
+	
+	  	        var options = {
+	  	          title: 'Loss (Disposal * Price)',
+	  	          is3D: true,
+	  	          chartArea: {width:'90%'},
+	  	        };
+	
+	  	        var chart = new google.visualization.PieChart(document.getElementById('AnalysisChart2'));
+	
+	  	        chart.draw(data, options);
+	  	      }
   		}
 
   		function output7(resp) {
@@ -362,92 +358,95 @@ body {
 
   			result = resp.map(item => [item.sname, parseInt(item.uamount)]);
 
-  			anychart.onDocumentReady(function () {
-  				// create pie chart with passed data
-  				var chart = anychart.pie(result);
-
-  				// set chart title text settings
-  				chart.title('Usage (Uses * Price)')
-  					// set points grouping settings
-  					.group(function (value) {
-  						return (value >= 1000);
-  					});
-
-  				// set container id for the chart
-  				chart.container('AnalysisChart3');
-  				// initiate chart drawing
-  				chart.draw();
-  			});
+  			var inputData = ['Task', 'Hours per Day'];
+  			
+  			var newArr = [inputData, ...result];
+  			
+	  	      google.charts.load('current', {'packages':['corechart']});
+	  	      google.charts.setOnLoadCallback(drawChart);
+	
+	  	      function drawChart() {
+	
+	  	        var data = google.visualization.arrayToDataTable(newArr);
+	
+	  	        var options = {
+	  	          title: 'Usage (Use * Price)',
+	  	          is3D: true,
+	  	          chartArea: {width:'90%'},
+	  	        };
+	
+	  	        var chart = new google.visualization.PieChart(document.getElementById('AnalysisChart3'));
+	
+	  	        chart.draw(data, options);
+	  	      }
   		}
   		
-  		function output8(resp){
-  			anychart.onDocumentReady(function () {
-  				
-  	  			var arr = new Array(12).fill(0);
+  		function output8(resp){	
+  			
+  	  			var arr = new Array(12).fill(0);  			
   	  			
   	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.damount * item.price);
-
-  	  			//experimental data
-
+  	  			
   	  			var rawData = [];
 
   	  			rawData = arr.map((v, i) => {
   	  				return [i + 1, v]
   	  			})
-  				
-  				// create line chart
-  				var chart = anychart.line();
+  	  			
+  	  			var inputData = ['Loss', 'Month'];
+  			
+  				var newArr = [inputData, ...rawData];
 
-  				chart.yScale().minimum(0);
-
-  				// create line series
-  				var series = chart.line(rawData);
-
-  				series.normal().stroke('#999999', 5, null, 'round', 'round');
-  				series.normal().risingStroke('#66BB6A', 5, null, 'round', 'round');
-  				series.normal().fallingStroke('#FF7043', 5, null, 'round', 'round');
-
-  				// set container id for the chart
-  				chart.container('AnalysisChart4');
-
-  				// initiate chart drawing
-  				chart.draw();
-  			});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			  var data = google.visualization.arrayToDataTable(newArr);
+			
+			  var options = {
+			    title: 'Loss each Month',
+			    hAxis: {title: 'Month', minValue: 1, maxValue: 12},
+			    vAxis: {title: 'Loss', minValue: 0},
+			    chartArea: {width:'90%'},
+			    legend: 'none',
+			    trendlines: { 0: {} }    // Draw a trendline for data series 0.
+			  };
+			
+			  var chart = new google.visualization.ScatterChart(document.getElementById('AnalysisChart4'));
+			  chart.draw(data, options);
+			}
   		}
   		
   		function output9(resp){
-  			anychart.onDocumentReady(function () {
-  				
- 	  			var arr = new Array(12).fill(0);
-  	  			
-  	  			resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.uamount * item.price);
 
-  	  			//experimental data
+ 	  		var arr = new Array(12).fill(0);
+  	  		
+  	  		resp.forEach((item) => arr[parseInt(item.mdate) - 1] += item.uamount * item.price);
 
-  	  			var rawData = [];
+  	  		var rawData = [];
 
-  	  			rawData = arr.map((v, i) => {
-  	  				return [i + 1, v]
-  	  			})
-  				
-  				// create line chart
-  				var chart = anychart.line();
-
-  				chart.yScale().minimum(0);
-
-  				// create line series
-  				var series = chart.line(rawData);
-
-  				series.normal().stroke('#999999', 5, null, 'round', 'round');
-  				series.normal().risingStroke('#66BB6A', 5, null, 'round', 'round');
-  				series.normal().fallingStroke('#FF7043', 5, null, 'round', 'round');
-
-  				// set container id for the chart
-  				chart.container('AnalysisChart5');
-
-  				// initiate chart drawing
-  				chart.draw();
-  			});
+  	  		rawData = arr.map((v, i) => {
+  	  			return [i + 1, v]
+  	  		})
+  	  		
+  	  		var inputData = ['Usage', 'Month'];
+  			
+  			var newArr = [inputData, ...rawData];
+  	  		
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			  var data = google.visualization.arrayToDataTable(newArr);
+			
+			  var options = {
+			    title: 'Usage each Month',
+			    hAxis: {title: 'Month', minValue: 1, maxValue: 12},
+			    vAxis: {title: 'Usage', minValue: 0},
+			    legend: 'none',
+			    chartArea: {width:'90%'},
+			    trendlines: { 0: {} }    // Draw a trendline for data series 0.
+			  };
+			
+			  var chart = new google.visualization.ScatterChart(document.getElementById('AnalysisChart5'));
+			  chart.draw(data, options);
+			}
   		} 		
   	</script>
 
