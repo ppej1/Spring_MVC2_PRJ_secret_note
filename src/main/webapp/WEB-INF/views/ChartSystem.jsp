@@ -194,20 +194,7 @@ body {
   	  	  	})
 	  			
 			})
-/* 		$("#selectType").change(function(){
-			//$("#AnalysisChart").html("");  			
-	  		year = $("#yearChart").val();
-	  		selectType = $("#selectType").val();
-	  		yearChart = {"ydate" : year
-					,"condition" : selectType
-					};
-				$.ajax({
-	  				type: 'GET',
-	  				url: 'lossList',
-	  				data: yearChart,
-	  				success: output5
-	  			})
-			})  */
+
 			var year = $("#yearChart").val();
   		$(function () {
   	  		var selectType = $("#selectType").val();
@@ -280,8 +267,6 @@ body {
 		
 		
   		function output5(resp,resp2) {
-  				alert(resp)
-				alert(resp2)
   			google.charts.load('current', {packages: ['corechart', 'line']});
   			google.charts.setOnLoadCallback(drawLineColors);
 				
