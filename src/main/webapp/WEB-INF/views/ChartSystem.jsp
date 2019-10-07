@@ -173,12 +173,25 @@ body {
 	  		yearChart = {"ydate" : year
 						,"condition" : "Disposal"
 						};
-				$.ajax({
-	  				type: 'GET',
-	  				url: 'lossListD',
-	  				data: yearChart,
-	  				success: output5
-	  			})
+  	  		$.ajax({
+  	  	  		type: 'post',
+  	  	  		url: 'lossListD',
+  	  	  		data: yearChart,
+  	  	  		success: function(resp){
+  	    			yearChart = {"ydate" : year
+  							,"condition" : "Uses"
+  							};
+  					$.ajax({
+  		  				type: 'post',
+  		  				url: 'lossListY',
+  		  				data: yearChart,
+  		  				success: function(resp2){
+  		  					
+  		  				output5(resp,resp2)
+  		  				}
+  		  			});
+  	  	  		}
+  	  	  	})
 	  			
 			})
 /* 		$("#selectType").change(function(){
@@ -211,10 +224,23 @@ body {
 
 		function chart1(yearChart){
   	  		$.ajax({
-  	  	  		type: 'GET',
+  	  	  		type: 'post',
   	  	  		url: 'lossListD',
   	  	  		data: yearChart,
-  	  	  		success: output5
+  	  	  		success: function(resp){
+  	    			yearChart = {"ydate" : year
+  							,"condition" : "Uses"
+  							};
+  					$.ajax({
+  		  				type: 'post',
+  		  				url: 'lossListY',
+  		  				data: yearChart,
+  		  				success: function(resp2){
+  		  					
+  		  				output5(resp,resp2)
+  		  				}
+  		  			});
+  	  	  		}
   	  	  	})
   		}
 		function chart2(){
@@ -253,31 +279,23 @@ body {
   		}
 		
 		
-  		function output5(resp) {
+  		function output5(resp,resp2) {
+  				alert(resp)
+				alert(resp2)
   			google.charts.load('current', {packages: ['corechart', 'line']});
   			google.charts.setOnLoadCallback(drawLineColors);
 				
   			var arr = [ [0, 0, 0],[1, 0, 0], [2, 0, 0], [3, 0, 0],  [4,0, 0], [5,0, 0],
 			        [6, 0, 0], [7,0, 0],  [8,0, 0], [9,0, 0], [10,0, 0], [11,0, 0]    ]
-  			
+
   			$.each(resp, function (index, item) {
+
   	  				arr[parseInt(item.mdate) - 1][1] += item.damount * item.price;
 				    
   			})
-  			yearChart = {"ydate" : year
-						,"condition" : "Uses"
-						};
-				$.ajax({
-	  				type: 'GET',
-	  				url: 'lossListY',
-	  				data: yearChart,
-	  				success: function(resp2){
-	  					alert(JSON.stringify(resp2))
-	  		  			$.each(resp2, function (index, item) {
-	  	  	  				arr[parseInt(item.mdate) - 1][2] += item.uamount * item.price;
-	  	  	  			})
-	  				}
-	  			});
+  			$.each(resp2, function (index, item) {
+ 	  				arr[parseInt(item.mdate) - 1][2] += item.uamount * item.price;
+  			})
 				
   			
   			
