@@ -175,7 +175,7 @@ body {
 						};
 				$.ajax({
 	  				type: 'GET',
-	  				url: 'lossList',
+	  				url: 'lossListD',
 	  				data: yearChart,
 	  				success: output5
 	  			})
@@ -212,7 +212,7 @@ body {
 		function chart1(yearChart){
   	  		$.ajax({
   	  	  		type: 'GET',
-  	  	  		url: 'lossList',
+  	  	  		url: 'lossListD',
   	  	  		data: yearChart,
   	  	  		success: output5
   	  	  	})
@@ -269,14 +269,13 @@ body {
 						};
 				$.ajax({
 	  				type: 'GET',
-	  				url: 'lossList',
+	  				url: 'lossListY',
 	  				data: yearChart,
 	  				success: function(resp2){
-	  					alert("Ddd")
+	  					alert(JSON.stringify(resp2))
 	  		  			$.each(resp2, function (index, item) {
 	  	  	  				arr[parseInt(item.mdate) - 1][2] += item.uamount * item.price;
 	  	  	  			})
-
 	  				}
 	  			});
 				
@@ -284,23 +283,21 @@ body {
   			
   			
   			function drawLineColors() {
-	  			alert(JSON.stringify(arr))
-
   			      var data = new google.visualization.DataTable();
   			      data.addColumn('number', 'X');
-  			      data.addColumn('number', 'Dogs');
-  			      data.addColumn('number', 'Cats');
+  			      data.addColumn('number', 'Disposal');
+  			      data.addColumn('number', 'Uses');
 
   			      data.addRows(arr);
 
   			      var options = {
   			        hAxis: {
-  			          title: 'Time'
+  			          title: 'YEAR'
   			        },
   			        vAxis: {
-  			          title: 'Popularity'
+  			          title: 'MONEY'
   			        },
-  			        colors: ['#a52714', '#097138']
+  			        colors: ['#fc0362', '#03cafc']
   			      };
 
   			      var chart = new google.visualization.LineChart(document.getElementById('AnalysisChart'));

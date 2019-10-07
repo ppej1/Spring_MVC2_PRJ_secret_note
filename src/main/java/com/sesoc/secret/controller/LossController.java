@@ -18,13 +18,21 @@ public class LossController {
 	@Autowired
 	LossRepository repo;
 	
-	@RequestMapping(value = "/lossList", method = RequestMethod.GET)
+	@RequestMapping(value = "/lossListD", method = RequestMethod.GET)
 	@ResponseBody
-	public List<LossVO> lossList(LossVO year){
-		List<LossVO> list = repo.lossList(year);
+	public List<LossVO> lossListD(LossVO year){
+		List<LossVO> list = repo.lossListD(year);
 		System.out.println(list);
 		return list;
 	}
+	@RequestMapping(value = "/lossListY", method = RequestMethod.GET)
+	@ResponseBody
+	public List<LossVO> lossListY(LossVO year){
+		List<LossVO> list = repo.lossListY(year);
+		System.out.println(list);
+		return list;
+	}
+	
 	
 	@RequestMapping(value = "/lossList2", method = RequestMethod.GET)
 	@ResponseBody
