@@ -27,7 +27,8 @@ import com.sesoc.secret.dto.SubClassVO;
 public class StockListController {
 	@Autowired
 	StockRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	@RequestMapping(value = "/insertSubClass", method = RequestMethod.GET)
 	public String insertSubClass() {
 		return "popup/insertSubClass";
@@ -36,7 +37,6 @@ public class StockListController {
 	@RequestMapping(value = "/subListLoad", method = RequestMethod.POST)
 	@ResponseBody
 	public List<SubClassVO> subListLoad() {
-
 		ArrayList<SubClassVO> list = repo.subLoad();
 		return list;
 	}
@@ -44,6 +44,7 @@ public class StockListController {
 	@RequestMapping(value = "/empListLoad", method = RequestMethod.POST)
 	@ResponseBody
 	public List<Employee_VO> empListLoad() {
+		
 		ArrayList<Employee_VO> list = repo.empLoad();
 
 		return list;

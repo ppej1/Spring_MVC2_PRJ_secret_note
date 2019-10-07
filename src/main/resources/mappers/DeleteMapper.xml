@@ -10,5 +10,8 @@
 			*
 		from
 			STOCK
+        where
+            DEDATE &lt; sysdate 
+            and SAMOUNT &gt; 0
 	</select>
 </mapper>

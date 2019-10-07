@@ -18,7 +18,8 @@ public class ReceiptController {
 	
 	@Autowired
 	ReceiptRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.GET)
 	public String insertReceipt(String data, Model model) {

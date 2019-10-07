@@ -21,7 +21,8 @@ public class UsedController {
 	
 	@Autowired
 	UsedRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)
 	@ResponseBody

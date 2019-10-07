@@ -20,6 +20,9 @@ public class AccountController {
 
 	@Autowired
 	AccountRepository repo;
+	@Autowired
+	DeleteRepository del;
+	
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/company"; //C 드라이버 밑에 만들어짐
 
 	

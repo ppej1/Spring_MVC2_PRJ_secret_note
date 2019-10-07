@@ -21,10 +21,12 @@ public class DisposalController {
 	
 	@Autowired
 	DisposalRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	@RequestMapping(value = "/disposalList", method = RequestMethod.GET)
 	@ResponseBody
 	public List<DisposalListVO> disposalList(){
+		
 		List<DisposalListVO> list = repo.disposalList();
 
 		return list;

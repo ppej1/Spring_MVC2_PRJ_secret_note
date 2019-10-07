@@ -19,7 +19,8 @@ import com.sesoc.secret.dto.CommentsVO_img;
 public class CommentController {
 	@Autowired
 	CommentRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	@RequestMapping(value = "/loadAllComment", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CommentsVO_img> loadAllMemo(CommentsVO comments){
@@ -33,7 +34,6 @@ public class CommentController {
 	@ResponseBody
 	public int insertComment(CommentsVO comments, HttpSession session){
 		comments.setUserid((String)session.getAttribute("loginId"));
-
 		int result = repo.insertComment(comments);
 		return result;
 	}	
@@ -42,8 +42,6 @@ public class CommentController {
 	public int deleteComment(CommentsVO comments, HttpSession session){
 		comments.setUserid((String)session.getAttribute("loginId"));
 		int result = repo.deleteComment(comments);
-
-		
 		return result;
 	}	
 }

@@ -11,7 +11,6 @@ import com.sesoc.secret.dao.DeleteRepository;
 
 @Controller
 public class PageController {
-	@Autowired
 
 	@RequestMapping(value = "/introducemenu", method = RequestMethod.GET)
 	public String  introducemenu(){

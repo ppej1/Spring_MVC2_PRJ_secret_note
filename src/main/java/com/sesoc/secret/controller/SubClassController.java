@@ -23,7 +23,8 @@ public class SubClassController {
 	
 	@Autowired
 	SubClassRepository repo;
-
+	@Autowired
+	DeleteRepository del;
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/meterial"; //C 드라이버 밑에 만들어짐
 	
 	@RequestMapping(value = "/selectMainClassList",  method = RequestMethod.POST)
@@ -43,10 +44,9 @@ public class SubClassController {
 			try {
 				upload.transferTo(saveFile);
 			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
+				del.delete();
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

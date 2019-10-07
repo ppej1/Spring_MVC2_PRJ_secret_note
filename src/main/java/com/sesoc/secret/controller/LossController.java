@@ -29,9 +29,9 @@ public class LossController {
 	@RequestMapping(value = "/lossListY", method = RequestMethod.POST)
 	@ResponseBody
 	public List<LossVO> lossListY(LossVO year){
+		
 		List<LossVO> list = repo.lossListY(year);
 		System.out.println(list);
-		System.out.println("리쿠루트 합격축하합니다");
 		return list;
 	}
 	
@@ -39,6 +39,7 @@ public class LossController {
 	@RequestMapping(value = "/lossList2", method = RequestMethod.GET)
 	@ResponseBody
 	public List<LossVO> lossList2(){
+		
 		List<LossVO> list = repo.lossList2();
 		return list;
 	}
