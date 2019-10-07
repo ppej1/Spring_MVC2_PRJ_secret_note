@@ -15,4 +15,5 @@ public class LossVO {
 	String mdate;
 	String ydate;
 	String condition;
+	String scSerialNumber;
 }

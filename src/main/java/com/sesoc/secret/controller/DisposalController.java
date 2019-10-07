@@ -26,7 +26,7 @@ public class DisposalController {
 	@RequestMapping(value = "/disposalList", method = RequestMethod.GET)
 	@ResponseBody
 	public List<DisposalListVO> disposalList(){
-		
+	
 		List<DisposalListVO> list = repo.disposalList();
 
 		return list;
@@ -34,6 +34,7 @@ public class DisposalController {
 	@RequestMapping(value = "/disposalListOneDay", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> disposalListOneDay(DisposalListVO disposal){
+		del.delete();
 		List<DisposalListVO> list = repo.disposalListOneDay(disposal);
 
 		return list;

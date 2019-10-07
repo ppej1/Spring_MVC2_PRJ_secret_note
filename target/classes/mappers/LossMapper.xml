@@ -9,6 +9,7 @@
 		SELECT 
             s.sName,
             s.price,
+            s.scSerialNumber,
             d.dAmount,
             d.CONDITION,
 			TO_CHAR(d.dDate, 'MM') AS mdate,
@@ -18,11 +19,15 @@
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 		WHERE 
 			TO_CHAR(d.dDate, 'YYYY') = #{ydate}
+			<if test="scSerialNumber != 'all'">
+			  and s.scSerialNumber  LIKE #{scSerialNumber}
+			</if>
 	</select>
 	<select id="lossListU" resultType="LossVO" parameterType="LossVO">
 		SELECT 
             s.sName,
             s.price,
+            s.scSerialNumber,
             u.UAMOUNT,
             u.CONDITION,
 			TO_CHAR(u.UDATE, 'MM') AS mdate,
@@ -32,6 +37,9 @@
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
 		WHERE 
 			TO_CHAR(u.UDATE, 'YYYY') = #{ydate}
+			<if test="scSerialNumber != 'all'">
+			  and s.scSerialNumber  LIKE #{scSerialNumber}
+			</if>
 	</select>	
 	<select id="lossList2" resultType="LossVO">
 		SELECT

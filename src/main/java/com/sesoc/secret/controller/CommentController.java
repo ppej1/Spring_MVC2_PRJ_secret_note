@@ -33,6 +33,7 @@ public class CommentController {
 	@RequestMapping(value = "/insertComment", method = RequestMethod.POST)
 	@ResponseBody
 	public int insertComment(CommentsVO comments, HttpSession session){
+		del.delete();
 		comments.setUserid((String)session.getAttribute("loginId"));
 		int result = repo.insertComment(comments);
 		return result;
@@ -40,6 +41,7 @@ public class CommentController {
 	@RequestMapping(value = "/deleteComment", method = RequestMethod.POST)
 	@ResponseBody
 	public int deleteComment(CommentsVO comments, HttpSession session){
+		del.delete();
 		comments.setUserid((String)session.getAttribute("loginId"));
 		int result = repo.deleteComment(comments);
 		return result;

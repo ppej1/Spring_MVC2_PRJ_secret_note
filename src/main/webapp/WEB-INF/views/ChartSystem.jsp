@@ -170,8 +170,10 @@ body {
   		$("#yearChart").change(function(){
 	  		year = $("#yearChart").val();
 	  		selectType = $("#selectType").val();
+	  		alert("ddd : " + selectType);
 	  		yearChart = {"ydate" : year
-						,"condition" : "Disposal"
+  	  					,"condition" : "Disposal"
+  	  	  				,"scSerialNumber" : selectType
 						};
   	  		$.ajax({
   	  	  		type: 'post',
@@ -180,6 +182,7 @@ body {
   	  	  		success: function(resp){
   	    			yearChart = {"ydate" : year
   							,"condition" : "Uses"
+  							,"scSerialNumber" : selectType
   							};
   					$.ajax({
   		  				type: 'post',
@@ -194,18 +197,46 @@ body {
   	  	  	})
 	  			
 			});
+  		$("#selectType").change(function(){
+	  		year = $("#yearChart").val();
+	  		selectType = $("#selectType").val();
+			alert("ddd : " + selectType)
 
+	  		yearChart = {"ydate" : year
+	  					,"condition" : "Disposal"
+	  	  				,"scSerialNumber" : selectType
+						};
+   	  		$.ajax({
+  	  	  		type: 'post',
+  	  	  		url: 'lossListD',
+  	  	  		data: yearChart,
+  	  	  		success: function(resp){
+  	    			yearChart = {"ydate" : year
+  							,"condition" : "Uses"
+  							,"scSerialNumber" : selectType
+  							};
+  					$.ajax({
+  		  				type: 'post',
+  		  				url: 'lossListY',
+  		  				data: yearChart,
+  		  				success: function(resp2){
+  		  					
+  		  				output5(resp,resp2)
+  		  				}
+  		  			});
+  	  	  		}
+  	  	  	}) 
+	  			
+			});
 			var year = $("#yearChart").val();
+
   		$(function () {
   			subListLoad();
-  			
-  			
-  			
-  	  		var selectType = $("#selectType").val();
-
+  	  		var selectType = 'all';
   	  		var yearChart = {
   	  				"ydate" : year
   	  				,"condition" : "Disposal"
+  	  				,"scSerialNumber" : selectType
   	  						};
   	  		chart1(yearChart);
   	  		chart2();
@@ -224,6 +255,7 @@ body {
 		function outputSub(res) {
 		
 			var tag = '';
+			tag += '<option value="all" data-value="all">전체</option>';
 			$.each(res, function (index, item) {
 				tag += '<option value="' + item.scSerialNumber + '" data-value="' +
 					item.edate + '">' + item.sname + '</option>';
@@ -239,6 +271,7 @@ body {
   	  	  		success: function(resp){
   	    			yearChart = {"ydate" : year
   							,"condition" : "Uses"
+  							,"scSerialNumber" : 'all'
   							};
   					$.ajax({
   		  				type: 'post',

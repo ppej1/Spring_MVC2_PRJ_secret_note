@@ -30,12 +30,14 @@ public class ReceiptController {
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<ReceiptSubClassVO> loadReceiptList(ReceiptSubClassVO receiptList) {
+		del.delete();
 		ArrayList<ReceiptSubClassVO> list = repo.selectListByDate(receiptList);
 		return list;
 	}
 	@RequestMapping(value = "/deleteReceiptList", method = RequestMethod.POST)
 	@ResponseBody
 	public String deleteReceiptList(String rSerialNumber){
+		del.delete();
 		int result = repo.deleteReceiptList(rSerialNumber);
 		if(result == 1){
 			return "success";

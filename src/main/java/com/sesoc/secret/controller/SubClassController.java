@@ -68,6 +68,7 @@ public class SubClassController {
 	@RequestMapping(value = "/chaingeSubClassPicture", method = RequestMethod.POST)
 	@ResponseBody
 	public SubClassVO chaingeSubClassPicture(SubClassVO sub){
+		del.delete();
 		SubClassVO list = repo.chaingeSubClassPicture(sub);
 		return list;
 	}	

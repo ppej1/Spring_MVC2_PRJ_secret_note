@@ -25,6 +25,7 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.GET)
 	public String  modifyUserInfo(HttpSession session, Model model, Employee_VO employee){
+		del.delete();
 		employee.setUserid((String) session.getAttribute("loginId"));
 		Employee_VO result = repo.selectone(employee);
 		String ephone = result.getEPhone();
@@ -34,6 +35,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.POST)
 	@ResponseBody
 	public String  modifyUserInfo(Employee_VO employee){
+		del.delete();
 		int result = repo.modifyUserInfo(employee);
 		if(result == 1){
 			return "success";
@@ -43,6 +45,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String home(String logid, String logpwd, Model model, HttpSession session) {
+		del.delete();
 		Employee_VO result = new Employee_VO();
 		result.setUserid(logid);
 		result.setUserpwd(logpwd);
@@ -60,6 +63,7 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String home(Employee_VO employee, Model model, MultipartFile upload) {
+		del.delete();
 		String savedfile = FileService.saveFile(upload, uploadPath);
 		employee.setEImg(savedfile);
 		if (employee.getEImg() == "") {
@@ -71,6 +75,7 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Employee_VO employee, Model model, HttpSession session) {
+		del.delete();
 		session.invalidate();
 		return "index";
 	}

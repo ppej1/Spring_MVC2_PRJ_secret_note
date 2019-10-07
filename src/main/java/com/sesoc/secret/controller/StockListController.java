@@ -31,6 +31,7 @@ public class StockListController {
 	DeleteRepository del;
 	@RequestMapping(value = "/insertSubClass", method = RequestMethod.GET)
 	public String insertSubClass() {
+		del.delete();
 		return "popup/insertSubClass";
 	}
 
@@ -81,6 +82,7 @@ public class StockListController {
 	@RequestMapping(value = "/selectStockAsLocation", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<StockInfoVO> selectStockAsLocation(SubClassVO sub) {
+		del.delete();
 		ArrayList<StockInfoVO> list = repo.selectStockAsLocation(sub);
 		return list;
 	}
@@ -88,6 +90,7 @@ public class StockListController {
 	@RequestMapping(value = "/selectStockDetail", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<StockDetailVO> selectStockDetail(StockInfoVO info) {
+		del.delete();
 		ArrayList<StockDetailVO> list = repo.selectStockDetail(info);
 		return list;
 	}
@@ -95,6 +98,7 @@ public class StockListController {
 	@RequestMapping(value = "/loadAllreceipt", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<ReceiptSubClassVO> loadAllreceipt() {
+		
 		ArrayList<ReceiptSubClassVO> list = repo.loadAllreceipt();
 		return list;
 
@@ -112,6 +116,7 @@ public class StockListController {
 	@RequestMapping(value = "/insertUses", method = RequestMethod.POST)
 	@ResponseBody
 	public String insertUses(HttpSession session, StockVO stock){
+		del.delete();
 		stock.setUserid((String) session.getAttribute("loginId"));
 		int result = repo.insertUses(stock);
 		if(result == 1){
@@ -123,6 +128,7 @@ public class StockListController {
 	@RequestMapping(value = "/insertDisposal", method = RequestMethod.POST)
 	@ResponseBody
 	public String insertDisposal(HttpSession session, StockVO stock){
+		del.delete();
 		stock.setUserid((String) session.getAttribute("loginId"));
 		int result = repo.insertDisposal(stock);
 		if(result == 1){

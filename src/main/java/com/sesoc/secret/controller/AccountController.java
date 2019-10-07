@@ -28,6 +28,7 @@ public class AccountController {
 	
 	@RequestMapping(value = "/insertAccount", method = RequestMethod.GET)
 	public String  insertAccount(){
+		del.delete();
 		return "popup/insertAccount";
 	}
 	

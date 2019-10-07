@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.LossRepository;
 import com.sesoc.secret.dto.LossVO;
 
@@ -22,6 +20,7 @@ public class LossController {
 	@RequestMapping(value = "/lossListD", method = RequestMethod.POST)
 	@ResponseBody
 	public List<LossVO> lossListD(LossVO year){
+		System.out.println(year);
 		List<LossVO> list = repo.lossListD(year);
 		System.out.println(list);
 		return list;
@@ -29,7 +28,7 @@ public class LossController {
 	@RequestMapping(value = "/lossListY", method = RequestMethod.POST)
 	@ResponseBody
 	public List<LossVO> lossListY(LossVO year){
-		
+		System.out.println(year);
 		List<LossVO> list = repo.lossListY(year);
 		System.out.println(list);
 		return list;
