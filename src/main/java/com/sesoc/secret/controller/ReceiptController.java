@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.ReceiptRepository;
 import com.sesoc.secret.dto.ReceiptSubClassVO;
 
@@ -17,7 +18,7 @@ public class ReceiptController {
 	
 	@Autowired
 	ReceiptRepository repo;
-	
+
 	
 	@RequestMapping(value = "/loadReceiptList", method = RequestMethod.GET)
 	public String insertReceipt(String data, Model model) {

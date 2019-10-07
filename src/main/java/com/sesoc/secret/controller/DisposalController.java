@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.DisposalRepository;
 import com.sesoc.secret.dto.DisposalListVO;
 import com.sesoc.secret.dto.DisposalVO;
@@ -18,12 +19,9 @@ import com.sesoc.secret.dto.StockVO;
 @Controller
 public class DisposalController {
 	
-	
-
-	
 	@Autowired
 	DisposalRepository repo;
-	
+
 	@RequestMapping(value = "/disposalList", method = RequestMethod.GET)
 	@ResponseBody
 	public List<DisposalListVO> disposalList(){
@@ -34,7 +32,6 @@ public class DisposalController {
 	@RequestMapping(value = "/disposalListOneDay", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> disposalListOneDay(DisposalListVO disposal){
-
 		List<DisposalListVO> list = repo.disposalListOneDay(disposal);
 
 		return list;
@@ -44,7 +41,6 @@ public class DisposalController {
 	@RequestMapping(value = "/disposalAmountPieChart", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> disposalAmountPieChart(DisposalListVO disposal){
-
 		List<DisposalListVO> list = repo.disposalAmountPieChart(disposal);
 
 		return list;
@@ -60,7 +56,6 @@ public class DisposalController {
 	@RequestMapping(value = "/materialChart2", method = RequestMethod.POST)
 	@ResponseBody
 	public List<DisposalListVO> materialChart2(DisposalListVO disposal){
-
 		List<DisposalListVO> list = repo.materialChart2(disposal);
 
 		return list;

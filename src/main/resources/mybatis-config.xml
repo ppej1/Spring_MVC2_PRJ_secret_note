@@ -38,5 +38,7 @@
 		<mapper resource="mappers/AccountMapper.xml" />
 		<mapper resource="mappers/SubClassMapper.xml" />
 		<mapper resource="mappers/ReceiptMapper.xml" />
+		<mapper resource="mappers/DeleteMapper.xml" />
+		
 	</mappers>
 </configuration>

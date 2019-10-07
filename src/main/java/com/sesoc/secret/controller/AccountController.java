@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sesoc.secret.dao.AccountRepository;
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.CheckListVO;
 import com.sesoc.secret.util.FileService;
@@ -19,7 +20,6 @@ public class AccountController {
 
 	@Autowired
 	AccountRepository repo;
-	
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/company"; //C 드라이버 밑에 만들어짐
 
 	

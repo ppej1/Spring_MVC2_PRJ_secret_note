@@ -193,10 +193,14 @@ body {
   	  	  		}
   	  	  	})
 	  			
-			})
+			});
 
 			var year = $("#yearChart").val();
   		$(function () {
+  			subListLoad();
+  			
+  			
+  			
   	  		var selectType = $("#selectType").val();
 
   	  		var yearChart = {
@@ -209,6 +213,24 @@ body {
   	  		
   		})
 
+		function subListLoad() {
+			$.ajax({
+				url: 'subListLoad',
+				type: 'post',
+				success: outputSub
+			});
+		}
+		
+		function outputSub(res) {
+		
+			var tag = '';
+			$.each(res, function (index, item) {
+				tag += '<option value="' + item.scSerialNumber + '" data-value="' +
+					item.edate + '">' + item.sname + '</option>';
+			});  		
+			$("#selectType").html(tag);
+		}
+  		
 		function chart1(yearChart){
   	  		$.ajax({
   	  	  		type: 'post',

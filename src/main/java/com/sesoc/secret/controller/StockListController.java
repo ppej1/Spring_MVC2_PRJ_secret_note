@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.StockRepository;
 import com.sesoc.secret.dto.AccountVO;
 import com.sesoc.secret.dto.Employee_VO;
@@ -43,7 +44,6 @@ public class StockListController {
 	@RequestMapping(value = "/empListLoad", method = RequestMethod.POST)
 	@ResponseBody
 	public List<Employee_VO> empListLoad() {
-
 		ArrayList<Employee_VO> list = repo.empLoad();
 
 		return list;
@@ -52,7 +52,6 @@ public class StockListController {
 	@RequestMapping(value = "/accListLoad", method = RequestMethod.POST)
 	@ResponseBody
 	public List<AccountVO> accListLoad() {
-
 		ArrayList<AccountVO> list = repo.accLoad();
 
 		return list;
@@ -61,7 +60,6 @@ public class StockListController {
 	@RequestMapping(value = "/recieptReg", method = RequestMethod.POST)
 	@ResponseBody
 	public int recieptReg(ReceiptVO rec) {
-
 		repo.insertRec(rec);
 		return 0;
 	}

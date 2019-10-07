@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sesoc.secret.dao.CommentRepository;
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dto.CommentsVO;
 import com.sesoc.secret.dto.CommentsVO_img;
 
@@ -18,7 +19,7 @@ import com.sesoc.secret.dto.CommentsVO_img;
 public class CommentController {
 	@Autowired
 	CommentRepository repo;
-	
+
 	@RequestMapping(value = "/loadAllComment", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<CommentsVO_img> loadAllMemo(CommentsVO comments){

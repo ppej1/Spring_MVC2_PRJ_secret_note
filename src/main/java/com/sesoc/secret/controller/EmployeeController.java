@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.EmployeeRepository;
 import com.sesoc.secret.dto.Employee_VO;
 import com.sesoc.secret.util.FileService;
@@ -18,7 +19,7 @@ import com.sesoc.secret.util.FileService;
 public class EmployeeController {
 	@Autowired
 	EmployeeRepository repo;
-	
+
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
 	
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.GET)

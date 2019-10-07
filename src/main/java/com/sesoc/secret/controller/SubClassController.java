@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.SubClassRepository;
 import com.sesoc.secret.dto.MainClassVO;
 import com.sesoc.secret.dto.SubClassVO;
@@ -22,13 +23,12 @@ public class SubClassController {
 	
 	@Autowired
 	SubClassRepository repo;
-	
+
 	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/meterial"; //C 드라이버 밑에 만들어짐
 	
 	@RequestMapping(value = "/selectMainClassList",  method = RequestMethod.POST)
 	@ResponseBody 
 	public ArrayList<MainClassVO> selectMainClassList(){
-		
 		ArrayList<MainClassVO> list = repo.selectMainClassList();
 		return list;
 	}

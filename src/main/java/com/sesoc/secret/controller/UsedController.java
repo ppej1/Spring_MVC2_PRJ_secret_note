@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.UsedRepository;
 import com.sesoc.secret.dto.LossVO;
 import com.sesoc.secret.dto.UsageVO;
@@ -20,8 +21,7 @@ public class UsedController {
 	
 	@Autowired
 	UsedRepository repo;
-	
-	
+
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)
 	@ResponseBody

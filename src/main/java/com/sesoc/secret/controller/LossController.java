@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.sesoc.secret.dao.DeleteRepository;
 import com.sesoc.secret.dao.LossRepository;
 import com.sesoc.secret.dto.LossVO;
 
@@ -17,7 +18,7 @@ public class LossController {
 	
 	@Autowired
 	LossRepository repo;
-	
+
 	@RequestMapping(value = "/lossListD", method = RequestMethod.POST)
 	@ResponseBody
 	public List<LossVO> lossListD(LossVO year){
@@ -30,6 +31,7 @@ public class LossController {
 	public List<LossVO> lossListY(LossVO year){
 		List<LossVO> list = repo.lossListY(year);
 		System.out.println(list);
+		System.out.println("리쿠루트 합격축하합니다");
 		return list;
 	}
 	
