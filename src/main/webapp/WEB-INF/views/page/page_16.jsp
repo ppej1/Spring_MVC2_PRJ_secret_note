@@ -4,7 +4,7 @@
 
 <div class="page_content_even">
 	<div class="page_container_full">
-		<h1 class="tm-block-title">DISPOSAL LIST</h1>
+		<h1 class="tm-block-title" style="text-align: center;">DISPOSAL LIST</h1>
 		<div class="tm-block-scroll tm-block-list">
 			<table id = "newDisposalList" class="table tablelist">
 				

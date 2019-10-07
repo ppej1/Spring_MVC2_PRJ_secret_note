@@ -4,7 +4,7 @@
 
 <div class="page_content_odd">
 	<div class="page_container_full">
-		<h1 class="tm-block-title">USED CHART</h1>
+		<h1 class="tm-block-title" style="text-align: center;">USED CHART</h1>
 		<div id="pieChart1" style="float: left; width: 50%; height: 45%;"></div>
 		<div id="whoUsedPieChart" style="float: right; width: 50%; height: 45%;"></div>
 		<div id="materialChart1" style="float: right; width: 100%; height: 45%;"></div>
