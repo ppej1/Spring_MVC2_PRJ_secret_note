@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsedListVO {
 	String uSerialNumber;
+	String unit;
 	String mClass;
 	String location;
 	String sName;

@@ -11,6 +11,7 @@
 			m.mClass,
 			s.location,
 			s.sName,
+			s.unit,
 			e.userName,
 			e.rank,
 			d.dAmount,
@@ -27,6 +28,7 @@
 			m.mClass,
 			s.location,
 			s.sName,
+			s.unit,
 			e.userName,
 			e.rank,
 			d.dAmount,
@@ -43,7 +45,7 @@
 	<select id="disposalAmountPieChart" parameterType="DisposalListVO" resultType="DisposalListVO">
 		SELECT
 			m.mClass,
-			sum(d.dAmount) As dAmount
+			sum(d.dAmount<if test="unit == 'g'">*0.01</if>) As dAmount
 		FROM
             Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
@@ -56,7 +58,7 @@
 	<select id="whoDestroyPieChart" parameterType="DisposalVO" resultType="DisposalVO">
 		SELECT
             userid,
-            sum(dAmount) AS dAmount
+            sum(dAmount<if test="unit == 'g'">*0.01</if>) AS dAmount
 		FROM
 			Disposal
         WHERE
@@ -70,7 +72,7 @@
 			m.mClass,
 			s.location,
 			s.sName,
-			sum(d.dAmount) As dAmount
+			sum(d.dAmount<if test="unit == 'g'">*0.01</if>) As dAmount
 		FROM
             Disposal d INNER JOIN STOCK st  on d.SSERIALNUMBER = st.SSERIALNUMBER
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber

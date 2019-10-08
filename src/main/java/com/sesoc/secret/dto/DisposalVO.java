@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class DisposalVO {
 	String dSerialNumber;
 	String scSerialNumber;
+	String unit;
 	String userid;
 	String dDate;
 	int dAmount;

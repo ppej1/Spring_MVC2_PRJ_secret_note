@@ -55,6 +55,9 @@ function output1(resp) {
 			tag += '</thead>'
 			
 	 	$.each(resp, function(index, item){
+	 		if(item.unit == "g"){
+	 			item.uamount = item.uamount * 0.01
+	 		}
 	 		tag += '<tbody>'
 		    tag += '<tr>'
 			tag += '<th scope="row"><b>'+item.userialNumber+'</b></th>'
@@ -91,7 +94,7 @@ function usedAmountPieChart(resp){
 		    chart.fill("aquastyle");
 		    // set chart title text settings
 		    chart.title('분류별 사용량')
-		            //set chart radius
+		            // set chart radius
 		            .radius('43%')
 		            // create empty area in pie chart
 		            .innerRadius('30%');
@@ -142,10 +145,12 @@ function materialChart1(resp){
 	    // set chart title
 	    chart.title('재료별 사용량');
 	    
-	    // map data for the first series, take x from the zero column and value from the first column of data set
+	    // map data for the first series, take x from the zero column and value
+		// from the first column of data set
 	    var seriesData_one = dataSet.mapAs({'x': 0, 'value': 1});
 
-	    // map data for the second series, take x from the zero column and value from the second column of data set
+	    // map data for the second series, take x from the zero column and value
+		// from the second column of data set
 	    var seriesData_two = dataSet.mapAs({'x': 0, 'value': 2});
 
 	    // create first series with mapped data
@@ -159,16 +164,17 @@ function materialChart1(resp){
 	    seriesFirst.rendering()
 	            // set point function to drawing
 	            .point(drawer)
-	            // set update point function to drawing, change the point shape when the state changes
+	            // set update point function to drawing, change the point shape
+				// when the state changes
 	            .updatePoint(drawer)
 	            // set shapes
 	            .shapes(shapes);
 	    // set titles for Y-axis
-	    //chart.yAxis().title('Revenue in Dollars');
+	    // chart.yAxis().title('Revenue in Dollars');
 	    // set minimum for y-scale
 	    chart.yScale().minimum(0);
 	    // set tooltip prefix
-	    //chart.tooltip().valuePrefix('$');
+	    // chart.tooltip().valuePrefix('$');
 	    // turn on legend
 	    chart.legend(false);
 	    // set container id for the chart
@@ -200,7 +206,8 @@ function materialChart1(resp){
 	            .lineTo(leftX, this.value + rx)
 	            .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
 	            .lineTo(rightX, this.zero)
-	            // close by connecting the last point with the first straight line
+	            // close by connecting the last point with the first straight
+				// line
 	            .close();
 	}
 }

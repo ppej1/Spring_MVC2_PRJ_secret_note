@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsageVO {
 	String sName;
+	String unit;
 	int price;
 	int uAmount;
 	String mdate;

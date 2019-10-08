@@ -57,6 +57,9 @@ function output3(resp) {
 			tag += '</thead>'
 			
 	 	$.each(resp, function(index, item){
+	 		if(item.unit == "g"){
+	 			item.damount = item.damount * 0.01
+	 		}
 	 		tag += '<tbody>'
 		    tag += '<tr>'
 			tag += '<th scope="row"><b>'+item.dserialNumber+'</b></th>'

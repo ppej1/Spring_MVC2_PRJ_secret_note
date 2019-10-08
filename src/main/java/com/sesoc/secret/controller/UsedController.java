@@ -21,8 +21,6 @@ public class UsedController {
 	
 	@Autowired
 	UsedRepository repo;
-	@Autowired
-	DeleteRepository del;
 	
 	@RequestMapping(value = "/usedList", method = RequestMethod.GET)
 	@ResponseBody
@@ -35,6 +33,7 @@ public class UsedController {
 	@ResponseBody
 	public List<UsedListVO> usedListOneDay(UsedListVO used){
 		List<UsedListVO> list = repo.usedListOneDay(used);
+		System.out.println(list);
 		return list;
 	}
 	

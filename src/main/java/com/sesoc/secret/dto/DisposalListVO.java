@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DisposalListVO {
 	String dSerialNumber;
+	String unit;
 	String mClass;
 	String location;
 	String sName;

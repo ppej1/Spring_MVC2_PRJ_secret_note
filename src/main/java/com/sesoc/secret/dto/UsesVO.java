@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class UsesVO {
 	String uSerialNumber;
 	String scSerialNumber;
+	String unit;
 	String userid;
 	String uDate;
 	int uAmount;

@@ -11,6 +11,7 @@
 			m.mClass,
 			s.location,
 			s.sName,
+			s.unit,
 			e.userName,
 			e.rank,
 			u.uAmount,
@@ -28,6 +29,7 @@
 			m.mClass as mClass,
 			s.location as location,
 			s.sName as sName,
+			s.unit as unit,
 			e.userName as userName,
 			e.rank as rank,
 			u.UAMOUNT as uAmount,
@@ -44,7 +46,7 @@
 	<select id="usdeAmountPieChart" parameterType="UsedListVO" resultType="UsedListVO">
 		SELECT
 			m.mClass,
-			sum(u.uAmount) As uAmount
+			sum(u.uAmount<if test="unit == 'g'">*0.01</if>) As uAmount
 		FROM
 		    USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
@@ -57,7 +59,7 @@
 	<select id="whoUsedPieChart" parameterType="UsesVO" resultType="UsesVO">
 		SELECT
             userid,
-            sum(uAmount) AS uAmount
+            sum(uAmount<if test="unit == 'g'">*0.01</if>) AS uAmount
 		FROM
 			Uses
         WHERE
@@ -71,7 +73,7 @@
 			m.mClass,
 			s.location,
 			s.sName,
-			sum(u.uAmount) As uAmount
+			sum(u.uAmount<if test="unit == 'g'">*0.01</if>) As uAmount
 		FROM
 		    USES u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
@@ -84,7 +86,7 @@
 	<select id="usedList2" resultType="UsageVO">
 		SELECT
             s.sName,
-            sum(u.uAmount*s.price) As uAmount
+            sum(u.uAmount<if test="unit == 'g'">*0.01</if>*s.price) As uAmount
 		FROM
 			Uses u INNER JOIN STOCK st  on u.SSERIALNUMBER = st.SSERIALNUMBER
 			INNER JOIN SubClass s ON st.scSerialNumber = s.scSerialNumber
@@ -95,7 +97,7 @@
 		SELECT 
             s.sName,
             s.price,
-            u.uAmount,
+            u.uAmount<if test="unit == 'g'">*0.01</if>,
 			TO_CHAR(u.uDate, 'MM') AS mdate,
 			TO_CHAR(u.uDate, 'YYYY') AS ydate
 		FROM
