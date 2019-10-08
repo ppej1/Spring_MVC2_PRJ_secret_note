@@ -12,14 +12,13 @@ import com.sesoc.secret.dto.StockVO;
 public class DeleteRepository {
 	@Autowired
 	SqlSession session;
-	
-	
+
 	public int delete() {
-		int result =0;
+		int result = 0;
 		StockMapper mapper = session.getMapper(StockMapper.class);
 		DeleteMapper mapper2 = session.getMapper(DeleteMapper.class);
 		ArrayList<StockVO> DeleteList = mapper2.selectDeleteList();
-/*		for (StockVO stock : DeleteList) {
+		for (StockVO stock : DeleteList) {
 			int result1 = mapper.insertDisposal(stock);
 			if (result1 == 1) {
 				StockVO stockR = mapper.selectStockBySerial(stock);
@@ -28,11 +27,11 @@ public class DeleteRepository {
 				int useAmount = stock.getSAmount();
 				int nowAmount = amount - useAmount;
 				stock.setSAmount(nowAmount);
-				
+
 				result = mapper.updateStock(stock);
 			}
 
-		}*/
+		}
 		return result;
 	}
 }
