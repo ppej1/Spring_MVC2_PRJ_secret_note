@@ -126,7 +126,7 @@
 			 st.DEDATE,
 			 su.UNIT,
 			 mc.MCLASS
-		 	 order by SDATE
+		 	 order by SDATE asc
 	</select>
 	<select id="loadAllreceipt" resultType="ReceiptSubClassVO">
 		 select
