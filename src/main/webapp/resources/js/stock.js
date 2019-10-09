@@ -72,7 +72,6 @@ function createDetailForm() {
 
 }
 
-
 function reciept() {
 	var scSerialNumber = $("#selectSub").val();
 	var userid = $("#userid").val();
@@ -80,18 +79,18 @@ function reciept() {
 	var rComment = $("#rComment").val();
 	var accountserial = $("#accList").val();
 	var sendData = {
-		"scSerialNumber": scSerialNumber,
-		"userid": userid,
-		"rAmount": rAmount,
-		"rComment": rComment,
-		"accountserial": accountserial
+		"scSerialNumber" : scSerialNumber,
+		"userid" : userid,
+		"rAmount" : rAmount,
+		"rComment" : rComment,
+		"accountserial" : accountserial
 	};
 	$.ajax({
-		url: 'recieptReg',
-		type: 'post',
-		data: sendData,
-		success: function (res) {
-				
+		url : 'recieptReg',
+		type : 'post',
+		data : sendData,
+		success : function(res) {
+
 		}
 
 	});
@@ -103,22 +102,22 @@ function stock() {
 	var userid = $("#userid").val();
 	var sAmount = $("#rAmount").val();
 	var sendData = {
-		"scSerialNumber": scSerialNumber,
-		"userid": userid,
-		"sAmount": sAmount,
+		"scSerialNumber" : scSerialNumber,
+		"userid" : userid,
+		"sAmount" : sAmount,
 
 	};
 
 	$.ajax({
-		url: 'stockReg',
-		type: 'post',
-		data: sendData,
-		success: function (res) {
+		url : 'stockReg',
+		type : 'post',
+		data : sendData,
+		success : function(res) {
 			if (res == 1) {
 				alert("成功的に登録されました。")
 				$("#rAmount").val(0);
 				$("#rComment").val('');
-			}else{
+			} else {
 				alert("登録に失敗しました。")
 				$("#rAmount").val(0);
 				$("#rComment").val('');
@@ -129,18 +128,18 @@ function stock() {
 
 function accListLoad() {
 	$.ajax({
-		url: 'accListLoad',
-		type: 'post',
-		success: outputAcc
+		url : 'accListLoad',
+		type : 'post',
+		success : outputAcc
 	});
 }
 
 function outputAcc(res) {
 
 	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="' + item.accountserial + '">' + item.accountName +
-			'</option>';
+	$.each(res, function(index, item) {
+		tag += '<option value="' + item.accountserial + '">' + item.accountName
+				+ '</option>';
 	});
 
 	$("#accList").html(tag);
@@ -148,26 +147,26 @@ function outputAcc(res) {
 
 function subListLoad() {
 	$.ajax({
-		url: 'subListLoad',
-		type: 'post',
-		success: outputSub
+		url : 'subListLoad',
+		type : 'post',
+		success : outputSub
 	});
 }
 
 function outputSub(res) {
 
 	var tag = '';
-	$.each(res, function (index, item) {
-		tag += '<option value="' + item.scSerialNumber + '" data-value="' +
-			item.edate + '">' + item.sname + '</option>';
+	$.each(res, function(index, item) {
+		tag += '<option value="' + item.scSerialNumber + '" data-value="'
+				+ item.edate + '">' + item.sname + '</option>';
 	});
 
 	$("#selectSub").html(tag);
-	$("#selectSub").on('change', function () {
+	$("#selectSub").on('change', function() {
 		var data = $("#selectSub").val()
 		chaingePicture(data);
 	});
-	
+
 	var tag1 = '';
 	tag1 += '<thead>';
 	tag1 += '<tr>';
@@ -177,45 +176,45 @@ function outputSub(res) {
 	tag1 += '</thead>';
 
 	tag1 += '<tbody class="main_tbody">';
-	$.each(res, function (index, item) {
+	$.each(res, function(index, item) {
 		tag1 += '<tbody class="labels">';
 		tag1 += '<tr>';
 		tag1 += '<td colspan="5">';
-		tag1 += '	<label for="' + item.scSerialNumber + '">' + item.sname + '</label>';
+		tag1 += '	<label for="' + item.scSerialNumber + '">' + item.sname
+				+ '</label>';
 		tag1 += '</td>';
 		tag1 += '<td>';
 		tag1 += '	<label>' + item.unit + '</label>';
 		tag1 += '</td>';
 		tag1 += '</tr>';
 		tag1 += '</tbody>';
-		tag1 += '<tbody class="hide" id = "' +
-			item.scSerialNumber +
-			'"style="display: none;">';
+		tag1 += '<tbody class="hide" id = "' + item.scSerialNumber
+				+ '"style="display: none;">';
 	});
 	tag += '</tbody>';
 	$('.info_list').html(tag1);
-
-	
-	
 
 }
 
 function chaingePicture(data) {
 	var data = data;
 	var sendata = {
-		"scSerialNumber": data
+		"scSerialNumber" : data
 	}
 	$.ajax({
-		url: 'chaingeSubClassPicture',
-		type: 'post',
-		data: sendata,
-		success: chaingesubClassPicture
+		url : 'chaingeSubClassPicture',
+		type : 'post',
+		data : sendata,
+		success : chaingesubClassPicture
 	});
 }
 
 function chaingesubClassPicture(data) {
 
-	$(".bg-image").attr('style', 'background-image: url("resources/img/meterial/' + data.simg + '");')
+	$(".bg-image").attr(
+			'style',
+			'background-image: url("resources/img/meterial/' + data.simg
+					+ '");')
 
 }
 
@@ -239,14 +238,14 @@ function open_storage() {
 function inputSelectStock(storage) {
 	var storage = storage;
 	sendData = {
-		"location": storage
+		"location" : storage
 	}
 	$.ajax({
-		type: 'post',
-		url: 'selectStockAsLocation',
-		data: sendData,
-		async: false,
-		success: outputSelectStock
+		type : 'post',
+		url : 'selectStockAsLocation',
+		data : sendData,
+		async : false,
+		success : outputSelectStock
 	});
 
 }
@@ -267,109 +266,109 @@ function outputSelectStock(data) {
 	tag += '<tbody class="main_tbody">';
 
 	$
-		.each(
-			data,
-			function (index, item) {
+			.each(
+					data,
+					function(index, item) {
 
-				tag += '<tbody class="labels">';
-				tag += '<tr>';
-				tag += '<td colspan="6">';
-				tag += '	<label for="' + item.scSerialNumber + '">' +
-					item.sname + '</label>';
-				tag += '<input type="checkbox" name="' +
-					item.scSerialNumber + '" id="' +
-					item.scSerialNumber +
-					'" data-toggle="toggle">';
-				tag += '</td>';
-				tag += '</tr>';
-				tag += '</tbody>';
-				tag += '<tbody class="hide" id = "' +
-					item.scSerialNumber +
-					'"style="display: none;">';
+						tag += '<tbody class="labels">';
+						tag += '<tr>';
+						tag += '<td colspan="6">';
+						tag += '	<label for="' + item.scSerialNumber + '">'
+								+ item.sname + '</label>';
+						tag += '<input type="checkbox" name="'
+								+ item.scSerialNumber + '" id="'
+								+ item.scSerialNumber
+								+ '" data-toggle="toggle">';
+						tag += '</td>';
+						tag += '</tr>';
+						tag += '</tbody>';
+						tag += '<tbody class="hide" id = "'
+								+ item.scSerialNumber
+								+ '"style="display: none;">';
 
-				sendData = {
-					"scSerialNumber": item.scSerialNumber
-				}
-				$
-					.ajax({
-						type: 'post',
-						url: 'selectStockDetail',
-						data: sendData,
-						async: false,
-						success: function (data2) {
-							$
-								.each(
-									data2,
-									function (index, item) {
-										if (item.samount>0) {
-											if (item.samount <= (item.ramount/3)) {
-												tag += '<tr style="color:red;">';
-											}else{
-												tag += '<tr>';
-											}
-											
-											tag += '<td>' +
-												item.sserialNumber +
-												'</td>';
-											tag += '<td ><a href="#" class="detail_for_stock"  data-value = ' +
-												item.sserialNumber +
-												'>' +
-												item.sname +
-												'</a></td>';
-											tag += '<td>' +
-												item.mclass +
-												'</td>';
-												tag += '<td>' +
-												item.samount +
-												'/' +
-												item.ramount +
-												' ' +
-												item.unit +
-												'</td>';
-											tag += '<td>' +
-												item.sdate +
-												'</td>';
-											tag += '<td>' +
-												item.deDate +
-												'</td>';
-											tag += '</tr>';
-										}
-									});
-
+						sendData = {
+							"scSerialNumber" : item.scSerialNumber
 						}
-					});
+						$
+								.ajax({
+									type : 'post',
+									url : 'selectStockDetail',
+									data : sendData,
+									async : false,
+									success : function(data2) {
+										$
+												.each(
+														data2,
+														function(index, item) {
+															if (item.samount > 0) {
+																if (item.samount <= (item.ramount / 3)) {
+																	tag += '<tr style="color:red;">';
+																} else {
+																	tag += '<tr>';
+																}
 
-				tag += '</tbody>';
-			});
+																tag += '<td>'
+																		+ item.sserialNumber
+																		+ '</td>';
+																tag += '<td ><a href="#" class="detail_for_stock"  data-value = '
+																		+ item.sserialNumber
+																		+ '>'
+																		+ item.sname
+																		+ '</a></td>';
+																tag += '<td>'
+																		+ item.mclass
+																		+ '</td>';
+																tag += '<td>'
+																		+ item.samount
+																		+ '/'
+																		+ item.ramount
+																		+ ' '
+																		+ item.unit
+																		+ '</td>';
+																tag += '<td>'
+																		+ item.sdate
+																		+ '</td>';
+																tag += '<td>'
+																		+ item.deDate
+																		+ '</td>';
+																tag += '</tr>';
+															}
+														});
+
+									}
+								});
+
+						tag += '</tbody>';
+					});
 	tag += '</tbody>';
 	$('.info_list').html(tag);
 
-	$('[data-toggle="toggle"]').change(function () {
+	$('[data-toggle="toggle"]').change(function() {
 		$(this).parents().next('.hide').toggle();
 	});
-	$(".detail_for_stock").on('click', function () {
+	$(".detail_for_stock").on('click', function() {
 		serial = $(this).attr("data-value");
 		DetailForminput(serial);
 	});
 
 }
-function DetailForminput(serial){
+function DetailForminput(serial) {
 	var serial = serial;
 	sendData = {
-			"sSerialNumber" : serial
+		"sSerialNumber" : serial
 	}
 	$.ajax({
-		type: 'post',
-		url: 'selectOnebyserial',
-		data: sendData,
-		success:DetailForm
+		type : 'post',
+		url : 'selectOnebyserial',
+		data : sendData,
+		success : DetailForm
 	})
 }
 
 function DetailForm(data) {
 
 	tag = '';
-	img = "resources/img/meterial/"+data.simg
+	img = "resources/img/meterial/" + data.simg
 	tag += '<div class="info_detail">';
 	tag += '<div class="col-md-16 mb-4 detail_info">';
 	tag += '<div class="blog d-block d-lg-flex">';
@@ -382,102 +381,86 @@ function DetailForm(data) {
 	tag += '<div class="row tm-content-row">';
 	tag += '<div class="tm-block-col tm-col-account-settings">';
 	tag += '<div class="tm-bg-primary-dark tm-block tm-block-settings">';
-	tag += '<h2 class="tm-block-title">'+data.sname+'</h2>';
+	tag += '<h2 class="tm-block-title">' + data.sname + '</h2>';
 	tag += '<div class="tm-signup-form row">';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="selectSub">材料名</label>';
-	tag += '<input id="selectSub" name="selectSub" type="text" class="form-control validate" value="'+data.mclass+'" readonly="readonly" />';
+	tag += '<input id="selectSub" name="selectSub" type="text" class="form-control validate" value="'
+			+ data.mclass + '" readonly="readonly" />';
 	tag += '<span id="selectSub"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="userid">担当者</label>';
-	tag += '<input id="userid" name="userid" type="text" class="form-control validate" value="'+data.userid+'" readonly="readonly" />';
+	tag += '<input id="userid" name="userid" type="text" class="form-control validate" value="'
+			+ data.userid + '" readonly="readonly" />';
 	tag += '<span id="userid"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="amount">個数</label>'
-	tag += '<input id="amount" name="amount" type="text" class="form-control validate" value="'+data.samount+"/"+data.ramount+" "+data.unit+'" readonly="readonly" />';
+	tag += '<input id="amount" name="amount" type="text" class="form-control validate" value="'
+			+ data.samount
+			+ "/"
+			+ data.ramount
+			+ " "
+			+ data.unit
+			+ '" readonly="readonly" />';
 	tag += '<span id="amount"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="accountName">取引先</label>';
-	tag += '<input id="accountName" name="accountName" type="text" class="form-control validate" value="'+data.accountName +'" readonly="readonly" />';
+	tag += '<input id="accountName" name="accountName" type="text" class="form-control validate" value="'
+			+ data.accountName + '" readonly="readonly" />';
 	tag += '<span id="accountName"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="sdate">登録日</label>'
-	tag += '<input id="sdate" name="sdate" type="text" class="form-control validate" value="'+data.sdate +'" readonly="readonly" />';
+	tag += '<input id="sdate" name="sdate" type="text" class="form-control validate" value="'
+			+ data.sdate + '" readonly="readonly" />';
 	tag += '<span id="sdate"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="rdate">賞味期限</label>';
-	tag += '<input id="rdate" name="rdate" type="text" class="form-control validate" value="'+data.rdate +'" readonly="readonly" />';
+	tag += '<input id="rdate" name="rdate" type="text" class="form-control validate" value="'
+			+ data.rdate + '" readonly="readonly" />';
 	tag += '<span id="rdate"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="deDate">賞味期限</label>'
-	tag += '<input id="deDate" name="deDate" type="text" class="form-control validate" value="'+data.deDate +'" readonly="readonly" />';
+	tag += '<input id="deDate" name="deDate" type="text" class="form-control validate" value="'
+			+ data.deDate + '" readonly="readonly" />';
 	tag += '<span id="deDate"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="price">価格</label>';
-	tag += '<input id="price" name="price" type="text" class="form-control validate" value="'+data.price +'" readonly="readonly" />';
+	tag += '<input id="price" name="price" type="text" class="form-control validate" value="'
+			+ data.price + '" readonly="readonly" />';
 	tag += '<span id="price"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="location">貯蔵位置</label>'
-		if (data.location == 2 ) {
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷凍" readonly="readonly" />';
-		}else if(data.location == 1){
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷蔵" readonly="readonly" />';
-		}else{
-			tag += '<input id="location" name="location" type="text" class="form-control validate" value="常温" readonly="readonly" />';
-		}
+	if (data.location == 2) {
+		tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷凍" readonly="readonly" />';
+	} else if (data.location == 1) {
+		tag += '<input id="location" name="location" type="text" class="form-control validate" value="冷蔵" readonly="readonly" />';
+	} else {
+		tag += '<input id="location" name="location" type="text" class="form-control validate" value="常温" readonly="readonly" />';
+	}
 
 	tag += '<span id="rAmount"></span>';
 	tag += '</div>';
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="foodCode">食品コード</label>';
-	tag += '<input id="foodCode" name="foodCode" type="text" class="form-control validate" value="'+data.foodCode +'" readonly="readonly" />';
+	tag += '<input id="foodCode" name="foodCode" type="text" class="form-control validate" value="'
+			+ data.foodCode + '" readonly="readonly" />';
 	tag += '<span id="foodCode"></span>';
-	tag += '</div>';	
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="energyNumber">熱量</label>'
-	tag += '<input id="energyNumber" name="energyNumber" type="text" class="form-control validate" value="'+data.energyNumber +'" readonly="readonly" />';
-	tag += '<span id="energyNumber"></span>';
 	tag += '</div>';
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="protein">蛋白質</label>';
-	tag += '<input id="protein" name="protein" type="text" class="form-control validate" value="'+data.protein +'" readonly="readonly" />';
-	tag += '<span id="protein"></span>';
-	tag += '</div>';	
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="carbon">炭水化物</label>'
-	tag += '<input id="carbon" name="carbon" type="text" class="form-control validate" value="'+data.carbon +'" readonly="readonly" />';
-	tag += '<span id="carbon"></span>';
-	tag += '</div>';
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="sugar">糖類</label>';
-	tag += '<input id="sugar" name="sugar" type="text" class="form-control validate" value="'+data.sugar +'" readonly="readonly" />';
-	tag += '<span id="sugar"></span>';
-	tag += '</div>';		
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="natrium">ナトリウム</label>'
-	tag += '<input id="natrium" name="natrium" type="text" class="form-control validate" value="'+data.natrium +'" readonly="readonly" />';
-	tag += '<span id="natrium"></span>';
-	tag += '</div>';
-	tag += '<div class="form-group col-lg-6">';
-	tag += '<label for="chole">コレステロール</label>';
-	tag += '<input id="chole" name="chole" type="text" class="form-control validate" value="'+data.chole +'" readonly="readonly" />';
-	tag += '<span id="chole"></span>';
-	tag += '</div>';		
-	
-	
+
 	tag += '<div class="form-group col-lg-6">';
 	tag += '<label for="rComment">備考欄</label>';
 	if (data.rcomment != null) {
-		tag += '<input id="rComment" name="rComment" type="text" class="form-control validate"  value="'+data.rcomment+'" readonly="readonly"  />';
-	}else{
+		tag += '<input id="rComment" name="rComment" type="text" class="form-control validate"  value="'
+				+ data.rcomment + '" readonly="readonly"  />';
+	} else {
 		tag += '<input id="rComment" name="rComment" type="text" class="form-control validate"  value="" readonly="readonly"  />';
 
 	}
@@ -487,7 +470,7 @@ function DetailForm(data) {
 	tag += '</div>';
 	tag += '</div>';
 	tag += '</div>';
-	tag += '</form>';	
+	tag += '</form>';
 	tag += '</div>';
 	tag += '</div>';
 	tag += '</div>';
@@ -500,61 +483,56 @@ function DetailForm(data) {
 	var serial = data.sserialNumber;
 	var samount = data.samount;
 	$("#root").html(tag);
-	
-	selectBtn(serial,samount);
 
-	
-	
-	
+	selectBtn(serial, samount);
+
 }
 
-function selectBtn(serial,samount){
+function selectBtn(serial, samount) {
 	var serial = serial;
 	var samount = samount;
-	$("#registration").on("click", function(){
+	$("#registration").on("click", function() {
 		createDetailForm();
 	});
-	$("#uses").on("click", function(){
-		alert("使用- serial : " + serial);
+	$("#uses").on("click", function() {
 		var useamount = prompt("使用する個数を入力してください。 最大" + samount + "までできます", 0);
-		if (useamount >0 && useamount <=samount) {
+		if (useamount > 0 && useamount <= samount) {
 			alert("正常使用登録されました。")
-			
+
 			sendData = {
 				"sSerialNumber" : serial,
 				"sAmount" : useamount
 			}
 			$.ajax({
-				type:'post',
-				url: 'insertUses',
+				type : 'post',
+				url : 'insertUses',
 				data : sendData,
-				success: createDetailForm
+				success : createDetailForm
 			})
-			
-		}else{
+
+		} else {
 			alert("使用個数が間違っています。")
 		}
 	});
-	$("#proposal").on("click", function(){
-		alert("廃棄 - serial : " + serial);
+	$("#proposal").on("click", function() {
 		var useamount = samount
 		if (confirm("本当に廃棄されますか。?")) {
 			alert("正常に廃棄されました。")
-			
+
 			sendData = {
 				"sSerialNumber" : serial,
 				"sAmount" : useamount
 			}
 			$.ajax({
-				type:'post',
-				url: 'insertDisposal',
+				type : 'post',
+				url : 'insertDisposal',
 				data : sendData,
-				success: createDetailForm
+				success : createDetailForm
 			})
-			
-		}else{
+
+		} else {
 			alert("廃棄を取り消します。")
 		}
 	});
-	
+
 }
