@@ -157,6 +157,16 @@ body {
 
 <!-- google chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  
+  	<script>
+  		function main() {
+  			$('.flipbook').turn("disable", false);
+  			$('.flipbook').turn("page", 2);
+  			$('.flipbook').turn("disable", true);
+  		}
+  	</script>
+  
   	<script>	
   		$("#yearChart").change(function(){
 	  		year = $("#yearChart").val();
@@ -484,13 +494,7 @@ body {
 
 
 
-	<script>
-  		function main() {
-  			$('.flipbook').turn("disable", false);
-  			$('.flipbook').turn("page", 2);
-  			$('.flipbook').turn("disable", true);
-  		}
-  	</script>
+
 
 
 

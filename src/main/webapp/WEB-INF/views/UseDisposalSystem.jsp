@@ -131,8 +131,10 @@
 		$('.flipbook').turn("disable", false);
 		$('.flipbook').turn("page", 2);
 		$('.flipbook').turn("disable", true);
+		
 		calendarPage12();
 		calendarPage13();
+
 	}
 	</script>
 

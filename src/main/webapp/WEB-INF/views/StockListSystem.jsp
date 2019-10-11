@@ -51,16 +51,6 @@
  						<jsp:include page="page/page_title.jsp" flush="false"/>
  						<%--  <jsp:include page="page/button_odd.jsp" flush="false"/> --%>
  					</div>
-					<!--8 page 재고 달력 1-->
- 					<div id="page_08">
- 						<jsp:include page="page/button_even.jsp" flush="false"/>
- 						<jsp:include page="page/page_08.jsp" flush="false"/>
- 					</div>
- 					<!--9 page 재고달력 2 -->
- 					<div id="page_09">
- 						<jsp:include page="page/page_09.jsp" flush="false"/>
- 						<jsp:include page="page/button_odd.jsp" flush="false"/>
- 					</div>
  					<!--10 page 재고 페이지1-->
  					<div id="page_10">
  						<jsp:include page="page/button_even.jsp" flush="false"/>
@@ -71,11 +61,22 @@
  						<jsp:include page="page/page_11.jsp" flush="false"/>
  						<jsp:include page="page/button_odd.jsp" flush="false"/>
  					</div>
+ 					 <!--8 page 재고 달력 1-->
+ 					<div id="page_08">
+ 						<jsp:include page="page/button_even.jsp" flush="false"/>
+ 						<jsp:include page="page/page_08.jsp" flush="false"/>
+ 					</div>
+ 					<!--9 page 재고달력 2 -->
+ 					<div id="page_09">
+ 						<jsp:include page="page/page_09.jsp" flush="false"/>
+ 						<jsp:include page="page/button_odd.jsp" flush="false"/>
+ 					</div>
  					<!--last  page-->
  					<div id="last_page">
  						<jsp:include page="page/page_last.jsp" flush="false"/>
 
  					</div>
+
  			</div>
  		</div>
 	</div>
