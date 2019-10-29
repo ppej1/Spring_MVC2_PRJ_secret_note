@@ -71,7 +71,15 @@ function output1(resp) {
 			}
 			tag += '<td><b>'+item.sname+'</b></td>'
 			tag += '<td><b>'+item.userName+'</b></td>'
-			tag += '<td>'+item.rank+'</td>'
+			if(item.rank==1){
+	            tag += '<td><b>店長</b></td>'
+	         }else if(item.rank==2){
+	            tag += '<td><b>マネージャー</b></td>'
+	         }else if(item.rank==3){
+	            tag += '<td><b>クルー</b></td>'
+	         }else{
+	            tag += '<td><b>バイト</b></td>'
+	         }
 			tag += '<td>'+item.uamount+'</td>'
 			tag += '<td>'+item.udate+'</td>'
 			tag += '</tr>'

@@ -1,14 +1,7 @@
---------------------------------------------------------
---  ������ ������ - ������-10��-07-2019   
---------------------------------------------------------
-REM INSERTING into ACCOUNT
-SET DEFINE OFF;
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('HYUNDAI GREEN FOOD','hyundai_8fc6d23a-4fed-44e2-855b-49fb3aa6092f.jpg','����ʫ󫮫��','02-0909-0909','���۫���?���?�ɪϪ���?���������굪��뫰��?���?�ȫ�?�ǡ���������������Ǫʪ����桢��˫�?����?�ʪɪΫ��󫵫�ƫ��󫰪���ꪹ���?�����?�ɫӫ��ͫ������?��������ƪ��ު���','https://hyundaigreenfood.com/po/INDEX.hgc',5);
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('OUR HOME','ourhome_b68e8e3b-348f-4939-90a0-5eed8aee461f.png','masiro ako','02-0909-0909','����?��?�����������Ϋ�?���ëȫ�?��?�Ȫ������������������������ܪ�?̫����ꪷ�ު��� ���ԪΫ�?����
-									���������쪿��?��?��?��������������?��?�ӫ��������ު��������ê䫳�󫵫�ƫ���?���ު�TOTAL FOOD��
-									SOLUTION����ꪹ�����Ԫ���?��������?�ȫ�?�Ǫ���','http://www.ourhome.co.kr/index.do',1);
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('CJ FRESH WAY','cj_118dbf3f-f866-4daf-a70c-5555c227c8aa.jpg','Mr.LEE','010-9595-9595','CJ�׫�ë����������ު����׵�ת�����ˬ��ڸګ���������������󪹪�������?���ԪΫ���?�Ы����׵�ת���ӫ�?�ɫ�?�ӫ�?ڦ�����Ǫ���','http://www.cjfreshway.com/index.jsp',2);
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('SAMSUNG WELL STORY','samsung_90bf7d23-1e5a-4253-8a20-95f11292d2b2.jpg','Mr.LEE','02-0909-0909','���Ԫ����ت����檭�ƪ�����������׵�ת��ު�����?6�Ī�ڪ׵����?�������1����г1,000�ȫ�����24�����?�����ꪷ�ƪ��ު���','https://www.samsungwelstory.com/',3);
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('MAEIL','Maeil.jpg','�ѫ��ԫ�󫬫�','070-2224-2454',''
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES (
-INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('NO BRAND','nobrand.jpg','NONO','010-0009-0909','��?�֫��ɪ�1994Ҵ���˫�?��?���ǫ�����?�֫��ɪΫ˫ëȡ����֫���׾�������ߧ����﷪�ˡ��������ު�����','http://www.nobland.com/',4);
+﻿INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('OUR HOME','ourhome_b68e8e3b-348f-4939-90a0-5eed8aee461f.png','masiro ako','02-0909-0909','アワ?ホ?ムは食材事業のマ?ケットリ?ダ?として最高品質の商品を合理的な?格で提供します。 顧客のニ?ズに最適化されたオ?ダ?メ?ド商品と衛生点?サ?ビス、食材市場の最新情報やコンサルティング?育までTOTAL FOOD SOLUTIONを提供する顧客の心?い成功パ?トナ?です。','http://www.ourhome.co.kr/index.do',1);
+INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('CJ FRESH WAY','cj_118dbf3f-f866-4daf-a70c-5555c227c8aa.jpg','Mr.LEE','010-9595-9595','CJプレッシウェイは良い食材を流通し、健康で美味しい食文化を創出する大韓民?最高のグロ?バル食材の流通およびフ?ドサ?ビス?門企業です。','http://www.cjfreshway.com/index.jsp',2);
+INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('SAMSUNG WELL STORY','samsung_90bf7d23-1e5a-4253-8a20-95f11292d2b2.jpg','Mr.LEE','02-0909-0909','自然の新鮮さが生きている食材を安全に流通します。全?6つの物流センタ?を基盤に1日平均1,000トンの食材を24時間以?に配送しています。','https://www.samsungwelstory.com/',3);
+INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('NO BRAND','nobrand.jpg','NONO','010-0009-0909','ノ?ブランドは1994年、ニュ?ヨ?クデザイナ?ブランドのニット、ウブン衣類製品の生産を皮切りに、創業しました。','http://www.nobland.com/',4);
+INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('HYUNDAI GREEN FOOD','hyundai_8fc6d23a-4fed-44e2-855b-49fb3aa6092f.jpg','キムナンギョン','02-0909-0909','現代グリ?ンフ?ドはお客?の成功を支援するグリ?ンパ?トナ?で、商品の供給だけでなく衛生、メニュ?の開?などのコンサルティングを提供するト?タルフ?ドビジネスソリュ?ションを提示します。','https://hyundaigreenfood.com/po/INDEX.hgc',5);
+INSERT INTO ACCOUNT (ACCOUNTNAME,AIMG,AMANAGER,APHONE,ACONTENTS,AURL,ACCOUNTSERIAL) VALUES ('MAEIL','Maeil.jpg','matui asahi','070-2224-2454','1969年、韓国酪農家公州式会社として発足した毎日は乳製品を通じて国民の健康な暮らしを作る母体となっています。このような創業精神と信念を受け継ぎ、毎日聞いて毎日答える誠実な姿勢で。皆が健康で幸せな社会を作るために努力する毎日。もう毎日はまた新しい歴史を書いていきます。','https://www.maeil.com/',6);
+

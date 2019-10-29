@@ -173,8 +173,6 @@
 					, "eDate" : eDate
 				};
 				
-				alert(JSON.stringify(subList))
-				
 				$.ajax({
 					type : "POST"
 					, url : "insertSubclass"

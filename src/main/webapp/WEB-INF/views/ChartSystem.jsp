@@ -141,6 +141,14 @@ body {
 	<!-- userInfo 관련 -->	
 	<script src="resources/js/employee.js"></script>
 
+  	<!-- service -->
+  	<script type="text/javascript" src="resources/js/page/ChartSystem.js"></script>
+  	<script type="text/javascript" src="resources/js/uses.js"></script>
+  	<script type="text/javascript" src="resources/js/disposal.js"></script>
+
+	<!-- google chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   	<!-- main -->
   	<script src="resources/template/js/popper.min.js"></script>
   	<script src="resources/template/js/bootstrap.min.js"></script>
@@ -150,13 +158,19 @@ body {
   	<script src="resources/template/js/magnific-popup-options.js"></script>
   	<script src="resources/template/js/main.js"></script>
 
-  	<!-- service -->
-  	<script type="text/javascript" src="resources/js/page/ChartSystem.js"></script>
-  	<script type="text/javascript" src="resources/js/uses.js"></script>
-  	<script type="text/javascript" src="resources/js/disposal.js"></script>
 
-<!-- google chart -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+  	<script>
+  		function main()
+  		{
+  			$('.flipbook').turn("disable", false);
+  			$('.flipbook').turn("page", 2);
+  			$('.flipbook').turn("disable", true);
+  		}
+  	</script>
+  
+  
   	<script>	
   		$("#yearChart").change(function(){
 	  		year = $("#yearChart").val();
@@ -484,13 +498,6 @@ body {
 
 
 
-	<script>
-  		function main() {
-  			$('.flipbook').turn("disable", false);
-  			$('.flipbook').turn("page", 2);
-  			$('.flipbook').turn("disable", true);
-  		}
-  	</script>
 
 
 

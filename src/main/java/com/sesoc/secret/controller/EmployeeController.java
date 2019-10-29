@@ -21,7 +21,7 @@ public class EmployeeController {
 	EmployeeRepository repo;
 	@Autowired
 	DeleteRepository del;
-	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
+	final String uploadPath="../../../workspace/FINAL_PRJ/src/main/webapp/resources/img/employee"; //C 드라이버 밑에 만들어짐
 	
 	@RequestMapping(value = "/modifyUserInfo", method = RequestMethod.GET)
 	public String  modifyUserInfo(HttpSession session, Model model, Employee_VO employee){

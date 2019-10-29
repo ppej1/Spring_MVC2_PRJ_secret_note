@@ -25,7 +25,7 @@ public class SubClassController {
 	SubClassRepository repo;
 	@Autowired
 	DeleteRepository del;
-	final String uploadPath="../../../workspace/Final_project/Final_Project/src/main/webapp/resources/img/meterial"; //C 드라이버 밑에 만들어짐
+	final String uploadPath="../../../workspace/FINAL_PRJ/src/main/webapp/resources/img/meterial"; //C 드라이버 밑에 만들어짐
 	
 	@RequestMapping(value = "/selectMainClassList",  method = RequestMethod.POST)
 	@ResponseBody 
