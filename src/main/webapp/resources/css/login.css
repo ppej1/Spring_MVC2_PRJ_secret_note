@@ -38,6 +38,8 @@
 			height: 25px;
 			border: none;
 			background: transparent;
+			color : #ffffff;
+			
 		}
 
 		#btnlogin {
@@ -45,7 +47,7 @@
 			height: 50px;
 			font-size: 1rem;
 			padding: 6px;
-			background-color: transparent;
+			background: transparent;
 			border: 0px transparent solid;
 		}
 
@@ -60,6 +62,7 @@
 
 		.register {
 			text-align: right;
+			font-style : #ffffff;
 		}
 		.btn-primary:hover {
     	color: #fff; 

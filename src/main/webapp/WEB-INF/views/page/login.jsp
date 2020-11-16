@@ -17,14 +17,14 @@ function login() {
 <style>
 .title_info {
 	color: black;
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
 }
 #title {
 	font-family : 'Noto Serif JP', serif;
-	font-size : 30px;
+	font-size : 40px;
 	font-weight: 700;
-	color: #3CB371;
+	color: #ffffff;
 }
 #headbox{
 	float: left;
@@ -38,7 +38,7 @@ function login() {
     top:80%; left:40%;
     margin-left:15%;  */
     width:200px; height:850px;
-    color : #871908;
+    color : #ffffff;
 　　}
 
 </style>
@@ -58,7 +58,6 @@ function login() {
 		<div class="title_login" id="bottombox">
 			<form id="login_form" action="login" method="post">
 				<div style="float: left">
-
 					<div>
 						<label for="InputID">ID : </label>
 
