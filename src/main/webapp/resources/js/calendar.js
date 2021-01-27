@@ -211,15 +211,13 @@ function calendarPage09() {
 
 /*page12*/
 function calendarPage12() {
-
-
 	$('#UsageCalendar1').fullCalendar({
 		header: {
 			left: 'prev,next today',
 			center: 'title',
 			right: 'month'
 		},
-		defaultDate: yyyy + '-' + (mm-1) + '-' + dd,
+		defaultDate: yyyy + '-' + mm + '-' + dd,
 
 		eventClick: function (calEvent, jsEvent, view) {
 			date = new Date(calEvent.start);
@@ -235,9 +233,6 @@ function calendarPage12() {
 				$('.flipbook').turn("disable", true);
 				fdisposalList(startDate);
 			}
-
-
-
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
@@ -267,27 +262,17 @@ function calendarPage12() {
 									color : '#a516087a'
 								});
 							});
-							
 							console.log(events);
 							callback(events);
 						}
 					});
-					
-					
-					
-					
-
 				}
 			});
-
-
 		}
-	})
+	})	
 }
 /*page13*/
 function calendarPage13() {
-
-
 	$('#UsageCalendar2').fullCalendar({
 		header: {
 			left: 'prev,next today',
@@ -310,9 +295,6 @@ function calendarPage13() {
 				$('.flipbook').turn("disable", true);
 				fdisposalList(startDate);
 			}
-
-
-
 		},
 		editable: true,
 		eventLimit: true, // allow "more" link when too many events
@@ -342,20 +324,12 @@ function calendarPage13() {
 									color : '#a516087a'
 								});
 							});
-							
 							console.log(events);
 							callback(events);
 						}
 					});
-					
-					
-					
-					
-
 				}
 			});
-
-
 		}
 	})
 }
